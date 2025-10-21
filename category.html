@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glob - News & Media</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <div class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Gündem</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Ekonomi</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Magazin</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Technology <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Yapay Zeka & Mobil</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">ChatGPT</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Machine Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">iOS</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Android</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Deep Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Neural Networks</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Gaming & Fintech</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">PC Gaming</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Console</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kripto</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Blockchain</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Startup</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fintech</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Sağlık</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Kapat">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <h2 class="search-overlay__title">Arama</h2>
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main main--category">
+        <!-- Currency Slider Section -->
+        <section class="section section--currency">
+            <div class="container">
+                <div class="currency">
+                    <div class="currency__slider">
+                        <div class="swiper swiper--currency">
+                            <div class="swiper-wrapper">
+                                <!-- USD -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--usd" data-currency="usd">
+                                        <div class="currency__slide__icon"><i class="ri-money-dollar-circle-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">DOLAR $</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- EUR -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--eur" data-currency="eur">
+                                        <div class="currency__slide__icon"><i class="ri-money-euro-circle-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">EURO €</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GOLD -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--gold" data-currency="gold">
+                                        <div class="currency__slide__icon"><i class="ri-coin-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">ALTIN</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- BTC -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--btc" data-currency="btc">
+                                        <div class="currency__slide__icon"><i class="ri-btc-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">BITCOIN</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--down">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ETH -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--eth" data-currency="eth">
+                                        <div class="currency__slide__icon"><i class="ri-currency-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">ETHEREUM</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">$</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--down">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- GBP -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--eur" data-currency="gbp">
+                                        <div class="currency__slide__icon"><i class="ri-money-pound-circle-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">STERLIN £</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CHF -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--eur" data-currency="chf">
+                                        <div class="currency__slide__icon"><i class="ri-copper-coin-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">FRANK ₣</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- JPY -->
+                                <div class="swiper-slide">
+                                    <div class="currency__slide currency__slide--eur" data-currency="jpy">
+                                        <div class="currency__slide__icon"><i class="ri-money-cny-circle-line"></i></div>
+                                        <div class="currency__slide__content">
+                                            <div class="currency__slide__name">YEN ¥</div>
+                                            <div class="currency__slide__value">
+                                                <span class="currency-value">0.00</span>
+                                                <span class="currency-symbol">₺</span>
+                                            </div>
+                                        </div>
+                                        <div class="currency__slide__change currency__slide__change--up">
+                                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M6 2L6 10M6 2L2 6M6 2L10 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <span class="change-value">0.00%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-Categories Section -->
+        <section class="section section--subcategories">
+            <div class="container">
+                <div class="subcategories">
+                    <div class="subcategories__slider">
+                        <div class="swiper swiper--subcategories">
+                            <div class="swiper-wrapper">
+                                <!-- Football -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-football">
+                                            <i class="ri-football-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Futbol</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Basketball -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-basketball">
+                                            <i class="ri-basketball-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Basketbol</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Tennis -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-tennis">
+                                            <i class="ri-ping-pong-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Tenis</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Athletics -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-athletics">
+                                            <i class="ri-run-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Atletizm</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Boxing -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-boxing">
+                                            <i class="ri-boxing-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Boks</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Cycling -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-cycling">
+                                            <i class="ri-riding-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Bisiklet</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Football -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-football">
+                                            <i class="ri-football-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Futbol</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Basketball -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-basketball">
+                                            <i class="ri-basketball-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Basketbol</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Tennis -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-tennis">
+                                            <i class="ri-ping-pong-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Tenis</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Athletics -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-athletics">
+                                            <i class="ri-run-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Atletizm</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Boxing -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-boxing">
+                                            <i class="ri-boxing-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Boks</h3>
+                                    </a>
+                                </div>
+
+                                <!-- Cycling -->
+                                <div class="swiper-slide">
+                                    <a href="category.html" class="subcategories__slide">
+                                        <div class="subcategories__slide__icon sport-cycling">
+                                            <i class="ri-riding-line"></i>
+                                        </div>
+                                        <h3 class="subcategories__slide__title">Bisiklet</h3>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Posts Section -->
+        <section class="section section--posts">
+            <div class="container">
+                <div class="posts">
+                    <!-- Featured Post -->
+                    <article class="featured-post">
+                        <a href="category.html" class="featured-post__link">
+                            <div class="featured-post__image">
+                                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop" alt="Sakarya'da yangın">
+                            </div>
+                            <div class="featured-post__content">
+                                <span class="featured-post__category">Gündem</span>
+                                <h2 class="featured-post__title">Sakarya'da yangın: Köyler boşaltıldı, Bilecik de yanıyor</h2>
+                                <p class="featured-post__excerpt">Sakarya'nın Taraklı ilçesinde saat 11.30 sıralarında çıkan orman yangını saatlerdir devam ediyor. Ba...</p>
+                                <div class="featured-post__meta">
+                                    <span class="featured-post__date">16 Ocak 2024</span>
+                                    <span class="featured-post__views">5.7K görüntüleme</span>
+                                    <span class="featured-post__comments">23 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Posts List -->
+                    <div class="posts-list">
+                        <!-- Post Item 1 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=150&fit=crop" alt="Nvidia">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--world">Dünya</span>
+                                    <h3 class="post-item__title">Nvidia, 6 trilyon dolarlık piyasa değeri yolunda ilerliyor</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">15 Ocak 2024</span>
+                                        <span class="post-item__views">1.2K görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 2 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1580837119756-563d608dd119?w=200&h=150&fit=crop" alt="Bodrum">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--news">Haber</span>
+                                    <h3 class="post-item__title">Bodrum'a 527 milyon TL yatırımla iki tatil köyü yapacak</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">14 Ocak 2024</span>
+                                        <span class="post-item__views">856 görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 3 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200&h=150&fit=crop" alt="Gaziantep FK">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--agenda">Gündem</span>
+                                    <h3 class="post-item__title">Gaziantep FK'da Selçuk İnan ile yollar resmen ayrıldı</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">13 Ocak 2024</span>
+                                        <span class="post-item__views">2.1K görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 4 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=200&h=150&fit=crop" alt="Sait Faik">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--world">Dünya</span>
+                                    <h3 class="post-item__title">Türk hikayeciliğinin usta ismi: Sait Faik Abasıyanık</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">12 Ocak 2024</span>
+                                        <span class="post-item__views">743 görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authors Section -->
+        <section class="section section--authors">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Yazarlarımız</h2>
+                </div>
+                <div class="authors">
+                    <!-- Author 1 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="Ferah Mitat">
+                            </div>
+                            <h3 class="author__name">Ferah Mitat</h3>
+                            <span class="author__posts">42 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 2 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="Oytun Olgun">
+                            </div>
+                            <h3 class="author__name">Oytun Olgun</h3>
+                            <span class="author__posts">38 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 3 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="Menekşe Lale">
+                            </div>
+                            <h3 class="author__name">Menekşe Lale</h3>
+                            <span class="author__posts">56 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 4 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="Emre Fel">
+                            </div>
+                            <h3 class="author__name">Emre Fel</h3>
+                            <span class="author__posts">29 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 5 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop" alt="Ayşe Mehtap">
+                            </div>
+                            <h3 class="author__name">Ayşe Mehtap</h3>
+                            <span class="author__posts">34 yazı</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="section section--news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Turizm Haberleri</h2>
+                </div>
+                <div class="news">
+                    <div class="news__slider">
+                        <div class="swiper swiper--news">
+                            <div class="swiper-wrapper">
+                                <!-- Grid Post1 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&h=400&fit=crop" alt="Türk turistler">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Mehmet Kamçı: Türk turistlerin yurt dışı harcaması 6 milyar doları aştı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post2 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop" alt="Anex Tour">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Anex Tour, Rusya'da kış sezon turlarını başlatacak</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post3 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop" alt="Türkiye turizm">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">İlk beş ayda Türkiye'nin ana turizm pazarı değişmedi</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post4 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop" alt="Bodrum">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Bodrum'a 527 milyon TL yatırımla iki tatil köyü yapacak</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post5 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&h=400&fit=crop" alt="Antalya">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Antalya'da turizm sezonu rekorlarla açıldı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post6 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=400&fit=crop" alt="Turizm">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Yaz sezonunda turist sayısı yüzde 15 arttı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news__slider__nav">
+                                <div class="news__slider__nav__prev">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </div>
+                                <div class="news__slider__nav__next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Posts Section -->
+        <section class="section section--grid-posts">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Spor Haberleri</h2>
+                </div>
+                <div class="grid-posts">
+                    <!-- Grid Post1 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=250&fit=crop" alt="Beşiktaş transfer">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Futbol</span>
+                                <h3 class="grid-post__title">Osayi-Samuel'den sonra bir bomba daha: Beşiktaş teklifi yaptı, opsiyon için... rekor para</h3>
+                                <p class="grid-post__description">Beşiktaş, transfer döneminde yeni bir hamle daha yaparak rekor bir teklif sundu. Detaylar için tıklayın.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">15 Ocak 2024</span>
+                                    <span class="grid-post__views">3.2K görüntüleme</span>
+                                    <span class="grid-post__comments">89 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post2 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="Vincenzo Montella">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Teknik Direktör</span>
+                                <h3 class="grid-post__title">Vincenzo Montella imzayı atıyor</h3>
+                                <p class="grid-post__description">İtalyan teknik direktör Vincenzo Montella ile imza süreci başladı. Yeni dönem için hazırlıklar devam ediyor.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">14 Ocak 2024</span>
+                                    <span class="grid-post__views">1.8K görüntüleme</span>
+                                    <span class="grid-post__comments">45 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post3 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=250&fit=crop" alt="Galatasaray">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Transfer</span>
+                                <h3 class="grid-post__title">Galatasaray'ın milli yıldızına İtalyan devinden teklif</h3>
+                                <p class="grid-post__description">Galatasaray'ın milli takım oyuncusu için İtalya'dan gelen teklif değerlendiriliyor. Süreç hakkında detaylar.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">13 Ocak 2024</span>
+                                    <span class="grid-post__views">2.5K görüntüleme</span>
+                                    <span class="grid-post__comments">67 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post4 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop" alt="Volkan Demirel">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Açıklama</span>
+                                <h3 class="grid-post__title">Volkan Demirel, Aziz Yıldırım'ın teklifini canlı yayında açıkladı</h3>
+                                <p class="grid-post__description">Volkan Demirel, canlı yayında Aziz Yıldırım'dan gelen teklifi kamuoyu ile paylaştı. Detaylar haberimizde.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">12 Ocak 2024</span>
+                                    <span class="grid-post__views">4.1K görüntüleme</span>
+                                    <span class="grid-post__comments">52 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post5 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Gaziantep FK">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Ayrılık</span>
+                                <h3 class="grid-post__title">Gaziantep FK'da Selçuk İnan ile yollar resmen ayrıldı</h3>
+                                <p class="grid-post__description">Gaziantep FK ve Selçuk İnan arasındaki sözleşme resmi olarak sona erdi. Yeni dönem planları açıklandı.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">11 Ocak 2024</span>
+                                    <span class="grid-post__views">2.3K görüntüleme</span>
+                                    <span class="grid-post__comments">78 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post6 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=250&fit=crop" alt="Milli okçular">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Okçuluk</span>
+                                <h3 class="grid-post__title">Milli okçular, Dünya Kupası'nda 2 madalya daha kazandı</h3>
+                                <p class="grid-post__description">Türk milli okçuluk takımı, Dünya Kupası'nda başarılı performans sergileyerek 2 madalya daha kazandı.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">10 Ocak 2024</span>
+                                    <span class="grid-post__views">1.7K görüntüleme</span>
+                                    <span class="grid-post__comments">34 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Section -->
+        <section class="section section--subscription">
+            <div class="container">
+                <div class="subscription">
+                    <div class="subscription__text">
+                        <h2 class="subscription__title">Bülten Aboneliği</h2>
+                        <p class="subscription__description">En son haberleri e-posta adresinize alın.</p>
+                    </div>
+                    <form class="subscription__form">
+                        <input type="email" class="subscription__input" placeholder="E-posta adresiniz" required>
+                        <button type="submit" class="subscription__btn">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Footer Logo and Description -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Home</a></li>
+                        <li><a href="#" class="footer__link">Technology</a></li>
+                        <li><a href="#" class="footer__link">Business</a></li>
+                        <li><a href="#" class="footer__link">Sports</a></li>
+                        <li><a href="#" class="footer__link">Health</a></li>
+                        <li><a href="#" class="footer__link">Entertainment</a></li>
+                        <li><a href="#" class="footer__link">Politics</a></li>
+                        <li><a href="#" class="footer__link">World News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Breaking News</a></li>
+                        <li><a href="#" class="footer__link">AI & Technology</a></li>
+                        <li><a href="#" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="#" class="footer__link">Climate Change</a></li>
+                        <li><a href="#" class="footer__link">Space & Science</a></li>
+                        <li><a href="#" class="footer__link">Gaming</a></li>
+                        <li><a href="#" class="footer__link">Reviews</a></li>
+                        <li><a href="#" class="footer__link">Opinions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">About Us</a></li>
+                        <li><a href="#" class="footer__link">Our Team</a></li>
+                        <li><a href="#" class="footer__link">Careers</a></li>
+                        <li><a href="#" class="footer__link">Press Kit</a></li>
+                        <li><a href="#" class="footer__link">Advertise</a></li>
+                        <li><a href="#" class="footer__link">Partnership</a></li>
+                        <li><a href="#" class="footer__link">Contact</a></li>
+                        <li><a href="#" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
+                        <i class="ri-map-pin-line"></i>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
+                    </a>
+                    <a href="tel:+15551234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </a>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                    <div class="footer__contact-item">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 News Coverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="#" class="footer__legal-link">Privacy Policy</a>
+                        <a href="#" class="footer__legal-link">Terms of Service</a>
+                        <a href="#" class="footer__legal-link">Cookie Policy</a>
+                        <a href="#" class="footer__legal-link">GDPR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

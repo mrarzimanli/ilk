@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glob - News & Media</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Top Ads Above Header -->
+    <section class="ads-section">
+        <div class="container">
+            <div class="ads">
+                <!-- Top Banner Ad 1 - Image/GIF -->
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <!-- Top Banner Ad 2 - Iframe -->
+                <!-- <div class="ad">
+                    <iframe src="https://example.com" width="100%" height="90" frameborder="0"></iframe>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <div class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Gündem</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Magazin</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Kapat">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <h2 class="search-overlay__title">Arama</h2>
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main main--index">
+        <!-- Currency Slider Section -->
+        <section class="section section--currency">
+            <div class="container">
+                <div class="currency">
+                    <div class="currency__slider">
+                        <div class="swiper swiper--currency">
+                            <div class="swiper-wrapper">
+                                <!-- Currency slides will be dynamically generated from CURRENCY_CONFIG -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hot News Section -->
+        <section class="section section--hot-news">
+            <div class="container">
+                <div class="hot-news">
+                    <!-- News Slider -->
+                    <div class="hot-news__slider">
+                        <div class="swiper swiper--hot-news">
+                            <div class="swiper-wrapper">
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop" alt="News 1">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">İçişleri Bakanı açıkladı: 48 ilde siber suçlulara yönelik operasyon</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=800&h=600&fit=crop" alt="News 2">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Ekonomide yeni reform paketi açıklandı: İşte detaylar</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" alt="News 3">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Teknoloji dünyasında dev işbirliği: Yapay zeka projesi başlatıldı</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?w=800&h=600&fit=crop" alt="News 4">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Spor dünyasından kritik transfer haberi: Yıldız oyuncu anlaştı</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 5 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=800&h=600&fit=crop" alt="News 5">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Bilim insanlarından çığır açan keşif: Kanser tedavisinde umut verici gelişme</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 6 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1508780709619-79562169bc64?w=800&h=600&fit=crop" alt="News 6">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Eğitim sisteminde yeni düzenleme: Müfredat güncelleniyor</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 7 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" alt="News 7">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">İklim değişikliğine karşı yeni önlemler alınıyor</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 8 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=800&h=600&fit=crop" alt="News 8">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Sağlık Bakanlığı'ndan önemli açıklama: Yeni hastaneler açılıyor</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 9 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?w=800&h=600&fit=crop" alt="News 9">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Ulaştırma projelerinde son durum: Metro hatları genişliyor</h2>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Slide 10 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="hot-news__slide">
+                                        <div class="hot-news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=600&fit=crop" alt="News 10">
+                                        </div>
+                                        <div class="hot-news__slide__content">
+                                            <h2 class="hot-news__slide__title">Kültür ve sanat etkinlikleri başlıyor: İşte takvim</h2>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- News Agenda -->
+                    <div class="hot-news__agenda">
+                        <div class="news-agenda">
+                            <h3 class="news-agenda__title">Türkiye Gündemi</h3>
+                            <div class="news-agenda__list">
+                                <!-- Agenda Item 1 -->
+                                <div class="agenda-item">
+                                    <div class="agenda-item__label">ŞUANDA GÜNDEMDE</div>
+                                    <a href="category.html" class="agenda-item__hashtag">#Okçuluk</a>
+                                    <div class="agenda-item__stats">
+                                        <span class="agenda-item__count">1 gönderi</span>
+                                        <span class="agenda-item__separator">, </span>
+                                        <span class="agenda-item__count">0 yorum</span>
+                                    </div>
+                                </div>
+
+                                <!-- Agenda Item 2 -->
+                                <div class="agenda-item">
+                                    <div class="agenda-item__label">ŞUANDA GÜNDEMDE</div>
+                                    <a href="category.html" class="agenda-item__hashtag">#Barış Alper</a>
+                                    <div class="agenda-item__stats">
+                                        <span class="agenda-item__count">1 gönderi</span>
+                                        <span class="agenda-item__separator">, </span>
+                                        <span class="agenda-item__count">0 yorum</span>
+                                    </div>
+                                </div>
+
+                                <!-- Agenda Item 3 -->
+                                <div class="agenda-item">
+                                    <div class="agenda-item__label">ŞUANDA GÜNDEMDE</div>
+                                    <a href="category.html" class="agenda-item__hashtag">#Yangın</a>
+                                    <div class="agenda-item__stats">
+                                        <span class="agenda-item__count">1 gönderi</span>
+                                        <span class="agenda-item__separator">, </span>
+                                        <span class="agenda-item__count">0 yorum</span>
+                                    </div>
+                                </div>
+
+                                <!-- Agenda Item 4 -->
+                                <div class="agenda-item">
+                                    <div class="agenda-item__label">ŞUANDA GÜNDEMDE</div>
+                                    <a href="category.html" class="agenda-item__hashtag">#Technology</a>
+                                    <div class="agenda-item__stats">
+                                        <span class="agenda-item__count">2 gönderi</span>
+                                        <span class="agenda-item__separator">, </span>
+                                        <span class="agenda-item__count">5 yorum</span>
+                                    </div>
+                                </div>
+
+                                <!-- Agenda Item 5 -->
+                                <div class="agenda-item">
+                                    <div class="agenda-item__label">ŞUANDA GÜNDEMDE</div>
+                                    <a href="category.html" class="agenda-item__hashtag">#Spor</a>
+                                    <div class="agenda-item__stats">
+                                        <span class="agenda-item__count">3 gönderi</span>
+                                        <span class="agenda-item__separator">, </span>
+                                        <span class="agenda-item__count">12 yorum</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shortcuts Section -->
+        <section class="section section--shortcuts">
+            <div class="container">
+                <div class="shortcuts">
+                    <!-- Test Banner -->
+                    <a href="category.html" class="shortcut shortcut--pink">
+                        <div class="shortcut__icon">
+                            <i class="ri-brain-line"></i>
+                        </div>
+                        <div class="shortcut__content">
+                            <h3 class="shortcut__title">Test Zamanı</h3>
+                            <p class="shortcut__subtitle">Zihnini zorla!</p>
+                        </div>
+                        <div class="shortcut__arrow">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+
+                    <!-- Game Banner -->
+                    <a href="category.html" class="shortcut shortcut--blue">
+                        <div class="shortcut__icon">
+                            <i class="ri-gamepad__line"></i>
+                        </div>
+                        <div class="shortcut__content">
+                            <h3 class="shortcut__title">Hızlı mısın?</h3>
+                            <p class="shortcut__subtitle">Refleksini test et!</p>
+                        </div>
+                        <div class="shortcut__arrow">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+
+                    <!-- TV Banner -->
+                    <a href="category.html" class="shortcut shortcut--orange">
+                        <div class="shortcut__icon">
+                            <i class="ri-tv-2-line"></i>
+                        </div>
+                        <div class="shortcut__content">
+                            <h3 class="shortcut__title">Web TV</h3>
+                            <p class="shortcut__subtitle">Canlı yayınları izle!</p>
+                        </div>
+                        <div class="shortcut__arrow">
+                            <i class="ri-arrow-right-line"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Posts Section -->
+        <section class="section section--posts">
+            <div class="container">
+                <div class="posts">
+                    <!-- Featured Post -->
+                    <article class="featured-post">
+                        <a href="category.html" class="featured-post__link">
+                            <div class="featured-post__image">
+                                <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&h=600&fit=crop" alt="Sakarya'da yangın">
+                            </div>
+                            <div class="featured-post__content">
+                                <span class="featured-post__category">Gündem</span>
+                                <h2 class="featured-post__title">Sakarya'da yangın: Köyler boşaltıldı, Bilecik de yanıyor</h2>
+                                <p class="featured-post__excerpt">Sakarya'nın Taraklı ilçesinde saat 11.30 sıralarında çıkan orman yangını saatlerdir devam ediyor. Ba...</p>
+                                <div class="featured-post__meta">
+                                    <span class="featured-post__date">16 Ocak 2024</span>
+                                    <span class="featured-post__views">5.7K görüntüleme</span>
+                                    <span class="featured-post__comments">23 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Posts List -->
+                    <div class="posts-list">
+                        <!-- Post Item 1 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=200&h=150&fit=crop" alt="Nvidia">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--world">Dünya</span>
+                                    <h3 class="post-item__title">Nvidia, 6 trilyon dolarlık piyasa değeri yolunda ilerliyor</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">15 Ocak 2024</span>
+                                        <span class="post-item__views">1.2K görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 2 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1580837119756-563d608dd119?w=200&h=150&fit=crop" alt="Bodrum">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--news">Haber</span>
+                                    <h3 class="post-item__title">Bodrum'a 527 milyon TL yatırımla iki tatil köyü yapacak</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">14 Ocak 2024</span>
+                                        <span class="post-item__views">856 görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 3 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=200&h=150&fit=crop" alt="Gaziantep FK">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--agenda">Gündem</span>
+                                    <h3 class="post-item__title">Gaziantep FK'da Selçuk İnan ile yollar resmen ayrıldı</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">13 Ocak 2024</span>
+                                        <span class="post-item__views">2.1K görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <!-- Post Item 4 -->
+                        <article class="post-item">
+                            <a href="post.html" class="post-item__link">
+                                <div class="post-item__image">
+                                    <img src="https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=200&h=150&fit=crop" alt="Sait Faik">
+                                </div>
+                                <div class="post-item__content">
+                                    <span class="post-item__category post-item__category--world">Dünya</span>
+                                    <h3 class="post-item__title">Türk hikayeciliğinin usta ismi: Sait Faik Abasıyanık</h3>
+                                    <div class="post-item__meta">
+                                        <span class="post-item__date">12 Ocak 2024</span>
+                                        <span class="post-item__views">743 görüntüleme</span>
+                                        <span class="post-item__comments">0 yorum</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Authors Section -->
+        <section class="section section--authors">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Yazarlarımız</h2>
+                </div>
+                <div class="authors">
+                    <!-- Author 1 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop" alt="Ferah Mitat">
+                            </div>
+                            <h3 class="author__name">Ferah Mitat</h3>
+                            <span class="author__posts">42 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 2 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop" alt="Oytun Olgun">
+                            </div>
+                            <h3 class="author__name">Oytun Olgun</h3>
+                            <span class="author__posts">38 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 3 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop" alt="Menekşe Lale">
+                            </div>
+                            <h3 class="author__name">Menekşe Lale</h3>
+                            <span class="author__posts">56 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 4 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop" alt="Emre Fel">
+                            </div>
+                            <h3 class="author__name">Emre Fel</h3>
+                            <span class="author__posts">29 yazı</span>
+                        </a>
+                    </article>
+
+                    <!-- Author 5 -->
+                    <article class="author">
+                        <a href="category.html" class="author__link">
+                            <div class="author__image">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop" alt="Ayşe Mehtap">
+                            </div>
+                            <h3 class="author__name">Ayşe Mehtap</h3>
+                            <span class="author__posts">34 yazı</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="section section--news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Turizm Haberleri</h2>
+                </div>
+                <div class="news">
+                    <div class="news__slider">
+                        <div class="swiper swiper--news">
+                            <div class="swiper-wrapper">
+                                <!-- Grid Post1 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1583417319070-4a69db38a482?w=600&h=400&fit=crop" alt="Türk turistler">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Mehmet Kamçı: Türk turistlerin yurt dışı harcaması 6 milyar doları aştı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post2 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop" alt="Anex Tour">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Anex Tour, Rusya'da kış sezon turlarını başlatacak</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post3 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop" alt="Türkiye turizm">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">İlk beş ayda Türkiye'nin ana turizm pazarı değişmedi</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post4 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?w=600&h=400&fit=crop" alt="Bodrum">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Bodrum'a 527 milyon TL yatırımla iki tatil köyü yapacak</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post5 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&h=400&fit=crop" alt="Antalya">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Antalya'da turizm sezonu rekorlarla açıldı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- Grid Post6 -->
+                                <div class="swiper-slide">
+                                    <a href="post.html" class="news__slide">
+                                        <div class="news__slide__image">
+                                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=400&fit=crop" alt="Turizm">
+                                        </div>
+                                        <div class="news__slide__content">
+                                            <h3 class="news__slide__title">Yaz sezonunda turist sayısı yüzde 15 arttı</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="news__slider__nav">
+                                <div class="news__slider__nav__prev">
+                                    <i class="ri-arrow-left-s-line"></i>
+                                </div>
+                                <div class="news__slider__nav__next">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Posts Section -->
+        <section class="section section--grid-posts">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Spor Haberleri</h2>
+                </div>
+                <div class="grid-posts">
+                    <!-- Grid Post1 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=250&fit=crop" alt="Beşiktaş transfer">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Futbol</span>
+                                <h3 class="grid-post__title">Osayi-Samuel'den sonra bir bomba daha: Beşiktaş teklifi yaptı, opsiyon için... rekor para</h3>
+                                <p class="grid-post__description">Beşiktaş, transfer döneminde yeni bir hamle daha yaparak rekor bir teklif sundu. Detaylar için tıklayın.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">15 Ocak 2024</span>
+                                    <span class="grid-post__views">3.2K görüntüleme</span>
+                                    <span class="grid-post__comments">89 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post2 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop" alt="Vincenzo Montella">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Teknik Direktör</span>
+                                <h3 class="grid-post__title">Vincenzo Montella imzayı atıyor</h3>
+                                <p class="grid-post__description">İtalyan teknik direktör Vincenzo Montella ile imza süreci başladı. Yeni dönem için hazırlıklar devam ediyor.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">14 Ocak 2024</span>
+                                    <span class="grid-post__views">1.8K görüntüleme</span>
+                                    <span class="grid-post__comments">45 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post3 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=250&fit=crop" alt="Galatasaray">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Transfer</span>
+                                <h3 class="grid-post__title">Galatasaray'ın milli yıldızına İtalyan devinden teklif</h3>
+                                <p class="grid-post__description">Galatasaray'ın milli takım oyuncusu için İtalya'dan gelen teklif değerlendiriliyor. Süreç hakkında detaylar.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">13 Ocak 2024</span>
+                                    <span class="grid-post__views">2.5K görüntüleme</span>
+                                    <span class="grid-post__comments">67 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post4 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=250&fit=crop" alt="Volkan Demirel">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Açıklama</span>
+                                <h3 class="grid-post__title">Volkan Demirel, Aziz Yıldırım'ın teklifini canlı yayında açıkladı</h3>
+                                <p class="grid-post__description">Volkan Demirel, canlı yayında Aziz Yıldırım'dan gelen teklifi kamuoyu ile paylaştı. Detaylar haberimizde.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">12 Ocak 2024</span>
+                                    <span class="grid-post__views">4.1K görüntüleme</span>
+                                    <span class="grid-post__comments">52 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post5 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=250&fit=crop" alt="Gaziantep FK">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Ayrılık</span>
+                                <h3 class="grid-post__title">Gaziantep FK'da Selçuk İnan ile yollar resmen ayrıldı</h3>
+                                <p class="grid-post__description">Gaziantep FK ve Selçuk İnan arasındaki sözleşme resmi olarak sona erdi. Yeni dönem planları açıklandı.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">11 Ocak 2024</span>
+                                    <span class="grid-post__views">2.3K görüntüleme</span>
+                                    <span class="grid-post__comments">78 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post6 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=250&fit=crop" alt="Milli okçular">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Okçuluk</span>
+                                <h3 class="grid-post__title">Milli okçular, Dünya Kupası'nda 2 madalya daha kazandı</h3>
+                                <p class="grid-post__description">Türk milli okçuluk takımı, Dünya Kupası'nda başarılı performans sergileyerek 2 madalya daha kazandı.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">10 Ocak 2024</span>
+                                    <span class="grid-post__views">1.7K görüntüleme</span>
+                                    <span class="grid-post__comments">34 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zodiac Signs Section -->
+        <section class="section section--zodiacs">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Günlük Burç Yorumları</h2>
+                </div>
+                <div class="zodiacs">
+                    <!-- Aries -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C12 2 8 6 8 10C8 12.2091 9.79086 14 12 14C14.2091 14 16 12.2091 16 10C16 6 12 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M8 10V22M16 10V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Koç</h3>
+                            <p class="zodiac__date">21 Mar - 20 Nis</p>
+                        </a>
+                    </div>
+
+                    <!-- Taurus -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="14" r="6" stroke="currentColor" stroke-width="2" />
+                                    <path d="M6 8C6 8 6 4 8 2M18 8C18 8 18 4 16 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Boğa</h3>
+                            <p class="zodiac__date">21 Nis - 20 May</p>
+                        </a>
+                    </div>
+
+                    <!-- Gemini -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 4V20M15 4V20M5 4H13M11 20H19M5 12H13M11 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">İkizler</h3>
+                            <p class="zodiac__date">21 May - 20 Haz</p>
+                        </a>
+                    </div>
+
+                    <!-- Cancer -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="8" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="16" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                    <path d="M4 12C4 12 2 8 4 4M20 12C20 12 22 16 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Yengeç</h3>
+                            <p class="zodiac__date">21 Haz - 22 Tem</p>
+                        </a>
+                    </div>
+
+                    <!-- Leo -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 2V6M12 18V22M22 12H18M6 12H2M19.07 4.93L16.24 7.76M7.76 16.24L4.93 19.07M19.07 19.07L16.24 16.24M7.76 7.76L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Aslan</h3>
+                            <p class="zodiac__date">23 Tem - 22 Ağu</p>
+                        </a>
+                    </div>
+
+                    <!-- Virgo -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 2V14C6 16.2091 7.79086 18 10 18C12.2091 18 14 16.2091 14 14V2M14 2V10C14 12.2091 15.7909 14 18 14C20.2091 14 22 12.2091 22 10V2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M2 18H6M10 18L10 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Başak</h3>
+                            <p class="zodiac__date">23 Ağu - 22 Eyl</p>
+                        </a>
+                    </div>
+
+                    <!-- Libra -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8H21M6 14H18M4 20H20M12 2V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="9" cy="16" r="2" stroke="currentColor" stroke-width="2" />
+                                    <circle cx="15" cy="16" r="2" stroke="currentColor" stroke-width="2" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Terazi</h3>
+                            <p class="zodiac__date">23 Eyl - 22 Eki</p>
+                        </a>
+                    </div>
+
+                    <!-- Scorpio -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 2V14C6 15.1046 6.89543 16 8 16H12C13.1046 16 14 15.1046 14 14V2M14 2V10C14 11.1046 14.8954 12 16 12H18L22 16L18 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Akrep</h3>
+                            <p class="zodiac__date">23 Eki - 21 Kas</p>
+                        </a>
+                    </div>
+
+                    <!-- Sagittarius -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 16L16 8M16 8H10M16 8V14M6 18L8 20M18 6L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Yay</h3>
+                            <p class="zodiac__date">22 Kas - 21 Ara</p>
+                        </a>
+                    </div>
+
+                    <!-- Capricorn -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 2V12C6 14.2091 7.79086 16 10 16C12.2091 16 14 14.2091 14 12V2M14 12C14 12 14 18 18 18C20 18 22 16 22 14C22 12 20 10 18 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Oğlak</h3>
+                            <p class="zodiac__date">22 Ara - 19 Oca</p>
+                        </a>
+                    </div>
+
+                    <!-- Aquarius -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 8C3 8 5 6 7 8C9 10 11 8 13 8C15 8 17 10 19 8C21 6 23 8 23 8M3 16C3 16 5 14 7 16C9 18 11 16 13 16C15 16 17 18 19 16C21 14 23 16 23 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Kova</h3>
+                            <p class="zodiac__date">20 Oca - 18 Şub</p>
+                        </a>
+                    </div>
+
+                    <!-- Pisces -->
+                    <div class="zodiac">
+                        <a href="category.html" class="zodiac__link">
+                            <div class="zodiac__icon">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 12H22M6 6C6 6 4 8 4 12C4 16 6 18 6 18M18 6C18 6 20 8 20 12C20 16 18 18 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="6" cy="6" r="1.5" fill="currentColor" />
+                                    <circle cx="6" cy="18" r="1.5" fill="currentColor" />
+                                    <circle cx="18" cy="6" r="1.5" fill="currentColor" />
+                                    <circle cx="18" cy="18" r="1.5" fill="currentColor" />
+                                </svg>
+                            </div>
+                            <h3 class="zodiac__name">Balık</h3>
+                            <p class="zodiac__date">19 Şub - 20 Mar</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid Posts Section -->
+        <section class="section section--grid-posts">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-header__title">Technology News</h2>
+                </div>
+                <div class="grid-posts">
+                    <!-- Grid Post1 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="Artificial Intelligence">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">AI</span>
+                                <h3 class="grid-post__title">Revolutionary AI breakthrough: GPT-5 promises human-level reasoning</h3>
+                                <p class="grid-post__description">OpenAI announces GPT-5 with unprecedented capabilities in logical reasoning and problem-solving. The future of AI is here.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">16 Ocak 2024</span>
+                                    <span class="grid-post__views">8.5K görüntüleme</span>
+                                    <span class="grid-post__comments">342 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post2 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Data Analytics">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Data Science</span>
+                                <h3 class="grid-post__title">Big Data revolution: New algorithms process petabytes in seconds</h3>
+                                <p class="grid-post__description">Breakthrough in data processing technology enables real-time analysis of massive datasets, transforming business intelligence.</p>
+                                <div class="grid-post__meta">
+                                    <span class="grid-post__date">15 Ocak 2024</span>
+                                    <span class="grid-post__views">6.2K görüntüleme</span>
+                                    <span class="grid-post__comments">189 yorum</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post3 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=250&fit=crop" alt="Quantum Computing">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Quantum</span>
+                                <h3 class="grid-post__title">Quantum computers achieve 1000-qubit milestone</h3>
+                                <p class="grid-post__description">Major breakthrough in quantum computing as researchers successfully scale to 1000 qubits, opening new possibilities for cryptography.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post4 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop" alt="Cybersecurity">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Security</span>
+                                <h3 class="grid-post__title">Next-gen cybersecurity: AI-powered threat detection</h3>
+                                <p class="grid-post__description">New AI systems can detect and prevent cyber attacks in real-time, providing unprecedented protection for digital infrastructure.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post5 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=250&fit=crop" alt="Blockchain">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">Blockchain</span>
+                                <h3 class="grid-post__title">Ethereum 2.0 upgrade reduces energy consumption by 99%</h3>
+                                <p class="grid-post__description">Major Ethereum upgrade successfully implemented, dramatically reducing environmental impact while maintaining network security.</p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Grid Post6 -->
+                    <article class="grid-post">
+                        <a href="post.html" class="grid-post__link">
+                            <div class="grid-post__image">
+                                <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop" alt="IoT">
+                            </div>
+                            <div class="grid-post__content">
+                                <span class="grid-post__category">IoT</span>
+                                <h3 class="grid-post__title">Smart cities: 5G and IoT transform urban living</h3>
+                                <p class="grid-post__description">Integration of 5G networks with IoT devices creates intelligent urban ecosystems, improving efficiency and quality of life.</p>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section section--faqs">
+            <div class="container">
+                <div class="section-header section-header--center">
+                    <h2 class="section-header__title">Frequently Asked Questions</h2>
+                    <p class="section-header__subtitle">Find answers to common questions about our news platform</p>
+                </div>
+                <div class="faqs">
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How do I subscribe to your newsletter?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>You can subscribe to our newsletter by entering your email address in the newsletter signup form found in our footer or sidebar. We send daily updates with the most important news and exclusive content to our subscribers.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Is your news content free to access?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, all our news content is completely free to access. We believe in providing quality journalism and information to everyone without any paywalls or subscription fees.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How often do you update your news content?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>We update our news content 24/7 to ensure you have access to the latest breaking news and developments. Our team works around the clock to bring you real-time updates on important events.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Can I share your articles on social media?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Absolutely! We encourage sharing our articles on social media platforms. Each article has social sharing buttons to make it easy for you to share with your network. Please make sure to credit NewsHub when sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How can I contact your editorial team?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>You can contact our editorial team through the contact information provided in our footer. We have dedicated email addresses for different departments including news tips, corrections, and general inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Do you have a mobile app?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, we have mobile apps available for both iOS and Android devices. You can download them from the App Store or Google Play Store. Our mobile app provides a seamless reading experience with offline capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How do you ensure the accuracy of your news?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>We have a rigorous fact-checking process in place. All our articles go through multiple layers of verification, including source confirmation, cross-referencing with multiple sources, and editorial review before publication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Can I submit news tips or story ideas?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, we welcome news tips and story ideas from our readers. You can submit them through our contact form or email us directly. We review all submissions and may follow up for more information if the story is of interest.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscription Section -->
+        <section class="section section--subscription">
+            <div class="container">
+                <div class="subscription">
+                    <div class="subscription__text">
+                        <h2 class="subscription__title">Bülten Aboneliği</h2>
+                        <p class="subscription__description">En son haberleri e-posta adresinize alın.</p>
+                    </div>
+                    <form class="subscription__form">
+                        <input type="email" class="subscription__input" placeholder="E-posta adresiniz" required>
+                        <button type="submit" class="subscription__btn">Abone Ol</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Footer Logo and Description -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
+                    </p>
+                    <div class="footer__social">
+                        <a href="category.html" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Home</a></li>
+                        <li><a href="category.html" class="footer__link">Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">Sports</a></li>
+                        <li><a href="category.html" class="footer__link">Health</a></li>
+                        <li><a href="category.html" class="footer__link">Entertainment</a></li>
+                        <li><a href="category.html" class="footer__link">Politics</a></li>
+                        <li><a href="category.html" class="footer__link">World News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Breaking News</a></li>
+                        <li><a href="category.html" class="footer__link">AI & Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="category.html" class="footer__link">Climate Change</a></li>
+                        <li><a href="category.html" class="footer__link">Space & Science</a></li>
+                        <li><a href="category.html" class="footer__link">Gaming</a></li>
+                        <li><a href="category.html" class="footer__link">Reviews</a></li>
+                        <li><a href="category.html" class="footer__link">Opinions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">About Us</a></li>
+                        <li><a href="category.html" class="footer__link">Our Team</a></li>
+                        <li><a href="category.html" class="footer__link">Careers</a></li>
+                        <li><a href="category.html" class="footer__link">Press Kit</a></li>
+                        <li><a href="category.html" class="footer__link">Advertise</a></li>
+                        <li><a href="category.html" class="footer__link">Partnership</a></li>
+                        <li><a href="category.html" class="footer__link">Contact</a></li>
+                        <li><a href="category.html" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
+                        <i class="ri-map-pin-line"></i>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
+                    </a>
+                    <a href="tel:+15551234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </a>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                    <div class="footer__contact-item">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 News Coverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="category.html" class="footer__legal-link">Privacy Policy</a>
+                        <a href="category.html" class="footer__legal-link">Terms of Service</a>
+                        <a href="category.html" class="footer__legal-link">Cookie Policy</a>
+                        <a href="category.html" class="footer__legal-link">GDPR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>

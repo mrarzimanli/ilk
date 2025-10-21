@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaz Vaxtları - NewsHub</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <div class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Gündem</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Ekonomi</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Magazin</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Technology <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Yapay Zeka & Mobil</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">ChatGPT</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Machine Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">iOS</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Android</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Deep Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Neural Networks</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Gaming & Fintech</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">PC Gaming</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Console</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kripto</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Blockchain</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Startup</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fintech</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Sağlık</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main main--prayer-times">
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav" aria-label="Breadcrumb">
+                    <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Namaz vaxtları</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Prayer Times Section -->
+        <section class="section section--prayer-times">
+            <div class="container">
+                <div class="section-header section-header--center section-header--lg">
+                    <h1 class="section-header__title">Namaz vaxtları</h1>
+                    <p class="section-header__subtitle">Azərbaycanın bütün şəhərləri üzrə dəqiq namaz vaxtları</p>
+                </div>
+                <div class="prayer-times">
+                    <!-- Current Location & Time Card -->
+                    <div class="prayer-times__header">
+                        <div class="prayer-times__location">
+                            <div class="prayer-times__location-icon">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <div class="prayer-times__location-info">
+                                <h2 class="prayer-times__city" id="currentCity">Bakı</h2>
+                                <p class="prayer-times__date" id="currentDate">19 Oktyabr 2025 15:41</p>
+                            </div>
+                        </div>
+
+                        <!-- Selectors -->
+                        <div class="prayer-times__selectors">
+                            <!-- City Selector -->
+                            <div class="prayer-times__selector">
+                                <label for="citySelect" class="prayer-times__selector-label">Şəhər seçin:</label>
+                                <div class="prayer-times__selector-wrapper">
+                                    <select id="citySelect" class="prayer-times__selector-input">
+                                        <option value="agdam">Ağdam</option>
+                                        <option value="astara">Astara</option>
+                                        <option value="baki">Bakı</option>
+                                        <option value="cebrayil">Cəbrayıl</option>
+                                        <option value="fuzuli">Füzuli</option>
+                                        <option value="ganja">Gəncə</option>
+                                        <option value="goycay">Göyçay</option>
+                                        <option value="kalbacar">Kəlbəcər</option>
+                                        <option value="lacin">Laçın</option>
+                                        <option value="lankaran">Lənkəran</option>
+                                        <option value="masalli">Masallı</option>
+                                        <option value="nakhchivan">Naxçıvan</option>
+                                        <option value="neftcala">Neftçala</option>
+                                        <option value="qazax">Qazax</option>
+                                        <option value="quba">Quba</option>
+                                        <option value="qubadli">Qubadlı</option>
+                                        <option value="qusar">Qusar</option>
+                                        <option value="saatli">Saatlı</option>
+                                        <option value="sabirabad">Sabirabad</option>
+                                        <option value="salyan">Salyan</option>
+                                        <option value="sumqayit">Sumqayıt</option>
+                                        <option value="shamakhi">Şamaxı</option>
+                                        <option value="shaki">Şəki</option>
+                                        <option value="shusha">Şuşa</option>
+                                        <option value="khachmaz">Xaçmaz</option>
+                                        <option value="khankandi">Xankəndi</option>
+                                        <option value="khocali">Xocalı</option>
+                                        <option value="yevlakh">Yevlax</option>
+                                        <option value="zaqatala">Zaqatala</option>
+                                        <option value="zangilan">Zəngilan</option>
+                                    </select>
+                                    <i class="ri-arrow-down-s-line prayer-times__selector-arrow"></i>
+                                </div>
+                            </div>
+
+                            <!-- Month Selector -->
+                            <div class="prayer-times__selector">
+                                <label for="monthSelect" class="prayer-times__selector-label">Ay seçin:</label>
+                                <div class="prayer-times__selector-wrapper">
+                                    <select id="monthSelect" class="prayer-times__selector-input">
+                                        <option value="0">Yanvar</option>
+                                        <option value="1">Fevral</option>
+                                        <option value="2">Mart</option>
+                                        <option value="3">Aprel</option>
+                                        <option value="4">May</option>
+                                        <option value="5">İyun</option>
+                                        <option value="6">İyul</option>
+                                        <option value="7">Avqust</option>
+                                        <option value="8">Sentyabr</option>
+                                        <option value="9">Oktyabr</option>
+                                        <option value="10">Noyabr</option>
+                                        <option value="11">Dekabr</option>
+                                    </select>
+                                    <i class="ri-arrow-down-s-line prayer-times__selector-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Today's Prayer Times -->
+                    <div class="prayer-times__today">
+                        <h3 class="prayer-times__today-title">Bugünkü namaz vaxtları</h3>
+                        <div class="prayer-times__grid">
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-sun-line"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Sübh</h4>
+                                <p class="prayer-time-card__time" id="fajr">05:36</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-sun-fill"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Gün çıxır</h4>
+                                <p class="prayer-time-card__time" id="sunrise">06:56</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-contrast-2-line"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Zöhr</h4>
+                                <p class="prayer-time-card__time" id="dhuhr">12:25</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-cloudy-line"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Əsr</h4>
+                                <p class="prayer-time-card__time" id="asr">16:12</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-moon-line"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Məğrib</h4>
+                                <p class="prayer-time-card__time" id="maghrib">18:08</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-moon-fill"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">İşa</h4>
+                                <p class="prayer-time-card__time" id="isha">19:09</p>
+                            </div>
+
+                            <div class="prayer-time-card">
+                                <div class="prayer-time-card__icon">
+                                    <i class="ri-star-line"></i>
+                                </div>
+                                <h4 class="prayer-time-card__name">Gecə yarısı</h4>
+                                <p class="prayer-time-card__time" id="midnight">23:45</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Prayer Times Table -->
+                    <div class="prayer-times__monthly">
+                        <h3 class="prayer-times__monthly-title">Oktyabr 2025</h3>
+                        <div class="prayer-times__table-wrapper">
+                            <table class="prayer-times__table">
+                                <thead>
+                                    <tr>
+                                        <th>Tarix</th>
+                                        <th>Sübh</th>
+                                        <th>Gün çıxır</th>
+                                        <th>Zöhr</th>
+                                        <th>Əsr</th>
+                                        <th>Məğrib</th>
+                                        <th>İşa</th>
+                                        <th>Gecə yarısı</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="prayerTimesTableBody">
+                                    <!-- Data will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">Azərbaycanın ən etibarlı xəbər mənbəyi</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter"><i class="ri-twitter-fill"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Kateqoriyalar</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Gündem</a></li>
+                        <li><a href="category.html" class="footer__link">Siyaset</a></li>
+                        <li><a href="category.html" class="footer__link">Ekonomi</a></li>
+                        <li><a href="category.html" class="footer__link">Spor</a></li>
+                    </ul>
+                </div>
+
+                <!-- More Links -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Daha Çox</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Teknoloji</a></li>
+                        <li><a href="category.html" class="footer__link">Magazin</a></li>
+                        <li><a href="category.html" class="footer__link">Video</a></li>
+                        <li><a href="category.html" class="footer__link">Foto Qalereya</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div class="footer__column">
+                    <h3 class="footer__title">Hüquqi</h3>
+                    <ul class="footer__list">
+                        <li><a href="privacy-policy.html" class="footer__link">Məxfilik Siyasəti</a></li>
+                        <li><a href="terms-conditions.html" class="footer__link">İstifadə Şərtləri</a></li>
+                        <li><a href="about.html" class="footer__link">Haqqımızda</a></li>
+                        <li><a href="contact.html" class="footer__link">Əlaqə</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer__contact">
+                    <h3 class="footer__title">Bizimlə Əlaqə</h3>
+                    <a href="mailto:info@newshub.az" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.az</span>
+                    </a>
+                    <a href="tel:+994501234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+994 50 123 45 67</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2025 NewsHub. Bütün hüquqlar qorunur.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="privacy-policy.html" class="footer__legal-link">Məxfilik</a>
+                        <a href="terms-conditions.html" class="footer__legal-link">Şərtlər</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/prayer-times.js"></script>
+</body>
+</html>

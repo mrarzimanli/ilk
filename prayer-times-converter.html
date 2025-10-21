@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer Times Data Converter - QMİ Calendar Helper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 32px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .content {
+            padding: 32px;
+        }
+
+        .instructions {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin-bottom: 32px;
+            border-radius: 8px;
+        }
+
+        .instructions h3 {
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .instructions ol {
+            margin-left: 24px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .instructions a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .instructions a:hover {
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        textarea {
+            font-family: 'Courier New', monospace;
+            resize: vertical;
+            min-height: 200px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 24px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            overflow-x: auto;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .output.show {
+            display: block;
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #333;
+        }
+
+        .output-title {
+            color: #4ec9b0;
+            font-weight: 600;
+        }
+
+        .copy-btn {
+            background: #4ec9b0;
+            color: #1e1e1e;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: #5ed9c0;
+        }
+
+        .example {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+        }
+
+        .example h4 {
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .example pre {
+            background: white;
+            padding: 12px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .upload-area {
+            border: 3px dashed #3498db;
+            border-radius: 12px;
+            padding: 48px 24px;
+            text-align: center;
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .upload-area:hover {
+            border-color: #2980b9;
+            background: #e8f4f8;
+        }
+
+        .upload-area.dragover {
+            border-color: #27ae60;
+            background: #e8f8f5;
+            transform: scale(1.02);
+        }
+
+        .upload-icon {
+            font-size: 64px;
+            color: #3498db;
+            margin-bottom: 16px;
+        }
+
+        .upload-text {
+            font-size: 18px;
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .upload-hint {
+            font-size: 14px;
+            color: #7f8c8d;
+        }
+
+        #imageInput {
+            display: none;
+        }
+
+        .preview-container {
+            margin: 24px 0;
+            display: none;
+        }
+
+        .preview-container.show {
+            display: block;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .progress-container {
+            display: none;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .progress-container.show {
+            display: block;
+        }
+
+        .progress-bar-bg {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 12px 0;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            border-radius: 4px;
+        }
+
+        .progress-text {
+            color: #555;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .status-message {
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin: 16px 0;
+            display: none;
+        }
+
+        .status-message.show {
+            display: block;
+        }
+
+        .status-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .status-message.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .btn.processing {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: #7f8c8d;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab:hover {
+            color: #2c3e50;
+        }
+
+        .tab.active {
+            color: #3498db;
+            border-bottom-color: #3498db;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🕌 Prayer Times Data Converter</h1>
+            <p>Convert QMİ Calendar Data to JavaScript Code</p>
+        </div>
+
+        <div class="content">
+            <div class="instructions">
+                <h3>📋 Necə istifadə edilir?</h3>
+                <ol>
+                    <li>QMİ saytından təqvimi açın: <a href="https://www.qafqazislam.com/index.php?lang=az&sectionid=123" target="_blank">qafqazislam.com</a></li>
+                    <li>Təqvim şəklini (JPG/PNG) yükləyin - avtomatik oxunacaq (OCR)</li>
+                    <li>Və ya əl ilə daxil edin (hər sətr bir gün)</li>
+                    <li>"Kodu Yarat" düyməsinə basın</li>
+                    <li>Yaradılmış kodu kopyalayıb <code>prayer-times.js</code> faylına əlavə edin</li>
+                </ol>
+            </div>
+
+            <div class="tabs">
+                <button class="tab active" onclick="switchTab('upload')">📤 Şəkil Yüklə (AI)</button>
+                <button class="tab" onclick="switchTab('manual')">⌨️ Əl ilə Daxil Et</button>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 24px;">
+                <label for="apiKey">OpenAI API Key (gizli saxlanılır):</label>
+                <input type="password" id="apiKey" placeholder="sk-proj-..." style="font-family: monospace;">
+                <small style="display: block; margin-top: 8px; color: #7f8c8d;">
+                    API key yalnız brauzerinizə saxlanılır. Serverdə saxlanmır.
+                    <a href="https://platform.openai.com/api-keys" target="_blank" style="color: #3498db;">API key əldə edin</a>
+                </small>
+            </div>
+
+            <!-- Upload Tab -->
+            <div id="uploadTab" class="tab-content active">
+                <div class="upload-area" onclick="document.getElementById('imageInput').click()" ondrop="handleDrop(event)" ondragover="handleDragOver(event)" ondragleave="handleDragLeave(event)">
+                    <div class="upload-icon">🤖</div>
+                    <div class="upload-text">Təqvim şəklini yükləyin (AI ilə oxunacaq)</div>
+                    <div class="upload-hint">Klikləyin və ya şəkli bura sürüşdürün (JPG, PNG)</div>
+                    <input type="file" id="imageInput" accept="image/*" onchange="handleImageUpload(event)">
+                </div>
+
+                <div id="previewContainer" class="preview-container">
+                    <img id="previewImage" class="preview-image" alt="Preview">
+                </div>
+
+                <div id="progressContainer" class="progress-container">
+                    <div class="progress-text" id="progressText">Şəkil oxunur...</div>
+                    <div class="progress-bar-bg">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                </div>
+
+                <div id="statusMessage" class="status-message"></div>
+            </div>
+
+            <!-- Manual Tab -->
+            <div id="manualTab" class="tab-content">
+                <div class="example">
+                    <h4>Nümunə Format (İki üsul):</h4>
+                    <p><strong>Üsul 1:</strong> Sadə format - hər sətr bir gün</p>
+                    <pre>1 05:17 06:37 12:30 16:37 18:36 19:37 23:50
+                        2 05:18 06:38 12:29 16:35 18:34 19:35 23:50
+                        3 05:19 06:39 12:29 16:34 18:33 19:33 23:50</pre>
+
+                    <p><strong>Üsul 2:</strong> Sadəcə vaxtları daxil edin (gün sırası ilə)</p>
+                    <pre>05:17 06:37 12:30 16:37 18:36 19:37 23:50
+                        05:18 06:38 12:29 16:35 18:34 19:35 23:50
+                        05:19 06:39 12:29 16:34 18:33 19:33 23:50</pre>
+
+                    <small><strong>Format:</strong> səhər, günəşin_çıxması, günorta, əsr, axşam, işa, gecəyarı</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="prayerData">Namaz Vaxtları (hər sətr bir gün):</label>
+                    <textarea id="prayerData" placeholder="Təqvimdən vaxtları kopyalayıb buraya yapışdırın...
+
+Nümunə:
+1 05:17 06:37 12:30 16:37 18:36 19:37 23:50
+2 05:18 06:38 12:29 16:35 18:34 19:35 23:50
+...
+
+və ya sadəcə vaxtlar:
+05:17 06:37 12:30 16:37 18:36 19:37 23:50
+05:18 06:38 12:29 16:35 18:34 19:35 23:50
+..."></textarea>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="form-group">
+                    <label for="year">İl:</label>
+                    <input type="number" id="year" value="2025" min="2020" max="2030">
+                </div>
+
+                <div class="form-group">
+                    <label for="month">Ay:</label>
+                    <select id="month">
+                        <option value="1">Yanvar</option>
+                        <option value="2">Fevral</option>
+                        <option value="3">Mart</option>
+                        <option value="4">Aprel</option>
+                        <option value="5">May</option>
+                        <option value="6">İyun</option>
+                        <option value="7">İyul</option>
+                        <option value="8">Avqust</option>
+                        <option value="9">Sentyabr</option>
+                        <option value="10" selected>Oktyabr</option>
+                        <option value="11">Noyabr</option>
+                        <option value="12">Dekabr</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="btn" id="generateBtn" onclick="generateCode()">🚀 Kodu Yarat</button>
+
+            <div id="output" class="output">
+                <div class="output-header">
+                    <span class="output-title">Generated JavaScript Code:</span>
+                    <button class="copy-btn" onclick="copyCode()">📋 Kopyala</button>
+                </div>
+                <pre id="codeOutput"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let extractedData = null;
+
+        // Tab switching
+        function switchTab(tabName) {
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            if (tabName === 'upload') {
+                document.getElementById('uploadTab').classList.add('active');
+            } else {
+                document.getElementById('manualTab').classList.add('active');
+            }
+        }
+
+        // Handle image upload
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                processImage(file);
+            }
+        }
+
+        // Drag and drop handlers
+        function handleDragOver(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.currentTarget.classList.add('dragover');
+        }
+
+        function handleDragLeave(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.currentTarget.classList.remove('dragover');
+        }
+
+        function handleDrop(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.currentTarget.classList.remove('dragover');
+
+            const file = event.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                processImage(file);
+            } else {
+                showStatus('Yalnız şəkil faylları yükləyə bilərsiniz!', 'error');
+            }
+        }
+
+        // Process image with OpenAI Vision API
+        async function processImage(file) {
+            // Check API key
+            const apiKey = document.getElementById('apiKey').value.trim();
+            if (!apiKey) {
+                showStatus('⚠️ OpenAI API key daxil edin!', 'error');
+                return;
+            }
+
+            // Show preview
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById('previewImage').src = e.target.result;
+                document.getElementById('previewContainer').classList.add('show');
+            };
+            reader.readAsDataURL(file);
+
+            // Show progress
+            document.getElementById('progressContainer').classList.add('show');
+            document.getElementById('progressText').textContent = 'AI şəkli analiz edir...';
+            document.getElementById('progressBar').style.width = '30%';
+            document.getElementById('statusMessage').classList.remove('show');
+
+            try {
+                // Convert image to base64
+                const base64Image = await fileToBase64(file);
+
+                document.getElementById('progressBar').style.width = '50%';
+                document.getElementById('progressText').textContent = 'AI təqvimi oxuyur...';
+
+                // Call OpenAI Vision API
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${apiKey}`
+                    },
+                    body: JSON.stringify({
+                        model: 'gpt-4o',
+                        messages: [
+                            {
+                                role: 'user',
+                                content: [
+                                    {
+                                        type: 'text',
+                                        text: `Bu şəkildə Azərbaycan üçün namaz vaxtları təqvimi var. Təqvimdəki bütün günləri və namaz vaxtlarını oxu və JSON formatında ver.
+
+Lazım olan vaxtlar (hər gün üçün 7 vaxt):
+1. Səhər (Fajr) - "Səhər azam" sütunu
+2. Günəşin çıxması (Sunrise) - "Günəşin çıxması" sütunu
+3. Günorta (Dhuhr) - "Günorta azam" sütunu
+4. Əsr (Asr) - "Əsr azam" sütunu
+5. Axşam (Maghrib) - "Axşam azam" sütunu
+6. İşa (Isha) - "İşa azam" sütunu
+7. Gecəyarı (Midnight) - "Gecə yarısı" sütunu
+
+Qeyd: İmsak və "Günün batması" sütunlarını ATLAYIB keç!
+
+JSON format (hər gün üçün):
+{
+  "days": [
+    {"day": 1, "fajr": "05:17", "sunrise": "06:37", "dhuhr": "12:30", "asr": "16:37", "maghrib": "18:36", "isha": "19:37", "midnight": "23:50"},
+    {"day": 2, ...},
+    ...
+  ]
+}
+
+YALNIZ JSON ver, heç bir əlavə mətn yox!`
+                                    },
+                                    {
+                                        type: 'image_url',
+                                        image_url: {
+                                            url: base64Image
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        max_tokens: 4000
+                    })
+                });
+
+                document.getElementById('progressBar').style.width = '80%';
+
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error?.message || 'API xətası');
+                }
+
+                const data = await response.json();
+                const content = data.choices[0].message.content;
+
+                document.getElementById('progressBar').style.width = '100%';
+                document.getElementById('progressText').textContent = 'Məlumat hazırlanır...';
+
+                console.log('AI Response:', content);
+
+                // Parse JSON response
+                const jsonMatch = content.match(/\{[\s\S]*\}/);
+                if (jsonMatch) {
+                    const jsonData = JSON.parse(jsonMatch[0]);
+                    const parsedData = jsonData.days;
+
+                    if (parsedData && parsedData.length > 0) {
+                        extractedData = parsedData;
+
+                        // Fill manual textarea
+                        const manualText = parsedData.map(day =>
+                            `${day.day} ${day.fajr} ${day.sunrise} ${day.dhuhr} ${day.asr} ${day.maghrib} ${day.isha} ${day.midnight}`
+                        ).join('\n');
+                        document.getElementById('prayerData').value = manualText;
+
+                        document.getElementById('progressContainer').classList.remove('show');
+                        showStatus(`✅ AI uğurla oxudu! ${parsedData.length} gün məlumatı tapıldı.`, 'success');
+
+                        // Save API key to localStorage
+                        localStorage.setItem('openai_api_key', apiKey);
+
+                        setTimeout(() => generateCode(), 500);
+                    } else {
+                        throw new Error('Məlumat tapılmadı');
+                    }
+                } else {
+                    throw new Error('JSON format xətası');
+                }
+
+            } catch (error) {
+                console.error('AI Error:', error);
+                document.getElementById('progressContainer').classList.remove('show');
+                showStatus(`❌ Xəta: ${error.message}. Əl ilə daxil edin.`, 'error');
+            }
+        }
+
+        // Convert file to base64
+        function fileToBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Parse calendar text from OCR
+        function parseCalendarText(text) {
+            console.log('OCR Raw Text:', text); // Debug
+
+            const lines = text.split('\n');
+            const dataArray = [];
+
+            // More flexible time pattern
+            const timePattern = /(\d{1,2}):(\d{2})/g;
+
+            // Try to find all times in the entire text first
+            const allTimes = [];
+            let match;
+            const fullText = text.replace(/\s+/g, ' ');
+
+            while ((match = timePattern.exec(fullText)) !== null) {
+                allTimes.push(match[0]);
+            }
+
+            console.log('All times found:', allTimes.length, allTimes); // Debug
+
+            // Method 1: Line by line parsing
+            lines.forEach(line => {
+                // Skip header lines
+                if (line.includes('Bakı') || line.includes('Gündelik') || line.includes('Namaz') ||
+                    line.includes('İmsak') || line.includes('Səhər') || line.includes('Gün') ||
+                    line.toLowerCase().includes('gun') || line.toLowerCase().includes('ayın')) {
+                    return;
+                }
+
+                // Reset regex for each line
+                const times = [];
+                const lineTimePattern = /(\d{1,2}):(\d{2})/g;
+                let timeMatch;
+
+                while ((timeMatch = lineTimePattern.exec(line)) !== null) {
+                    times.push(timeMatch[0]);
+                }
+
+                // Look for day number - can be anywhere in the line
+                const dayPatterns = [
+                    /^\s*(\d{1,2})\s/,           // Start of line
+                    /\s(\d{1,2})\s/,             // Middle with spaces
+                    /^(\d{1,2})\s/,              // Start no space
+                    /\s(\d{1,2})$/,              // End of line
+                ];
+
+                let day = null;
+                for (const pattern of dayPatterns) {
+                    const dayMatch = line.match(pattern);
+                    if (dayMatch) {
+                        const potentialDay = parseInt(dayMatch[1]);
+                        if (potentialDay >= 1 && potentialDay <= 31) {
+                            day = potentialDay;
+                            break;
+                        }
+                    }
+                }
+
+                // If we have enough times and a valid day
+                if (times.length >= 7 && day) {
+                    // Check if this day already exists
+                    if (!dataArray.find(d => d.day === day)) {
+                        dataArray.push({
+                            day: day,
+                            fajr: times[0],
+                            sunrise: times[1],
+                            dhuhr: times[2],
+                            asr: times[3],
+                            maghrib: times[4],
+                            isha: times[5],
+                            midnight: times[6]
+                        });
+                    }
+                }
+            });
+
+            // Method 2: If line parsing didn't work, try column-based extraction
+            if (dataArray.length === 0 && allTimes.length >= 217) { // 31 days * 7 times = 217
+                console.log('Trying column-based extraction...');
+
+                // Group times by 7s
+                for (let i = 0; i < allTimes.length - 6; i += 7) {
+                    const day = Math.floor(i / 7) + 1;
+                    if (day <= 31) {
+                        dataArray.push({
+                            day: day,
+                            fajr: allTimes[i],
+                            sunrise: allTimes[i + 1],
+                            dhuhr: allTimes[i + 2],
+                            asr: allTimes[i + 3],
+                            maghrib: allTimes[i + 4],
+                            isha: allTimes[i + 5],
+                            midnight: allTimes[i + 6]
+                        });
+                    }
+                }
+            }
+
+            // Sort by day number
+            dataArray.sort((a, b) => a.day - b.day);
+
+            console.log('Parsed data:', dataArray.length, 'days'); // Debug
+
+            return dataArray;
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = `status-message show ${type}`;
+
+            if (type === 'success') {
+                setTimeout(() => {
+                    statusEl.classList.remove('show');
+                }, 5000);
+            }
+        }
+
+        // Generate code
+        function generateCode() {
+            const year = document.getElementById('year').value;
+            const month = document.getElementById('month').value;
+
+            let dataArray = extractedData;
+
+            if (!dataArray) {
+                const prayerData = document.getElementById('prayerData').value.trim();
+
+                if (!prayerData) {
+                    alert('Zəhmət olmasa namaz vaxtlarını daxil edin və ya şəkil yükləyin!');
+                    return;
+                }
+
+                const lines = prayerData.split('\n').filter(line => line.trim());
+                dataArray = [];
+
+                lines.forEach((line, index) => {
+                    const parts = line.trim().split(/\s+/);
+
+                    // Format 1: With day number (8 parts)
+                    if (parts.length >= 8) {
+                        const [day, fajr, sunrise, dhuhr, asr, maghrib, isha, midnight] = parts;
+                        dataArray.push({
+                            day: parseInt(day),
+                            fajr, sunrise, dhuhr, asr, maghrib, isha, midnight
+                        });
+                    }
+                    // Format 2: Without day number (7 parts) - auto-assign day
+                    else if (parts.length === 7) {
+                        const [fajr, sunrise, dhuhr, asr, maghrib, isha, midnight] = parts;
+                        dataArray.push({
+                            day: index + 1, // Auto-assign day based on line order
+                            fajr, sunrise, dhuhr, asr, maghrib, isha, midnight
+                        });
+                    }
+                });
+            }
+
+            if (!dataArray || dataArray.length === 0) {
+                alert('Düzgün format deyil! Nümunəyə baxın.');
+                return;
+            }
+
+            let code = `${month}: [ // ${getMonthName(month)} ${year}\n`;
+
+            dataArray.forEach((day, index) => {
+                const indent = '    ';
+                code += `${indent}{ day: ${day.day}, fajr: '${day.fajr}', sunrise: '${day.sunrise}', dhuhr: '${day.dhuhr}', asr: '${day.asr}', maghrib: '${day.maghrib}', isha: '${day.isha}', midnight: '${day.midnight}' }`;
+
+                if (index < dataArray.length - 1) {
+                    code += ',\n';
+                } else {
+                    code += '\n';
+                }
+            });
+
+            code += ']';
+
+            document.getElementById('codeOutput').textContent = code;
+            document.getElementById('output').classList.add('show');
+
+            document.getElementById('output').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Copy code to clipboard
+        function copyCode() {
+            const code = document.getElementById('codeOutput').textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✅ Kopyalandı!';
+                btn.style.background = '#27ae60';
+
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#4ec9b0';
+                }, 2000);
+            });
+        }
+
+        // Get month name
+        function getMonthName(monthNum) {
+            const months = {
+                '1': 'Yanvar', '2': 'Fevral', '3': 'Mart', '4': 'Aprel',
+                '5': 'May', '6': 'İyun', '7': 'İyul', '8': 'Avqust',
+                '9': 'Sentyabr', '10': 'Oktyabr', '11': 'Noyabr', '12': 'Dekabr'
+            };
+            return months[monthNum] || '';
+        }
+
+        // Auto-resize textarea and load saved API key
+        document.addEventListener('DOMContentLoaded', function () {
+            const textarea = document.getElementById('prayerData');
+            if (textarea) {
+                textarea.addEventListener('input', function () {
+                    this.style.height = 'auto';
+                    this.style.height = Math.max(200, this.scrollHeight) + 'px';
+                });
+            }
+
+            // Load saved API key
+            const savedApiKey = localStorage.getItem('openai_api_key');
+            if (savedApiKey) {
+                document.getElementById('apiKey').value = savedApiKey;
+            }
+        });
+    </script>
+</body>
+</html>

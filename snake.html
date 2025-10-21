@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Oyunu - Glob</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <div class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Gündem</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Ekonomi</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Magazin</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Technology <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Yapay Zeka & Mobil</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">ChatGPT</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Machine Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">iOS</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Android</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Deep Learning</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Neural Networks</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Gaming & Fintech</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">PC Gaming</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Console</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kripto</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Blockchain</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Startup</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fintech</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Sağlık</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Kapat">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <h2 class="search-overlay__title">Arama</h2>
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main main--game">
+        <section class="section section--game">
+            <div class="container">
+                <div class="game game--snake">
+                    <div class="game__header">
+                        <div class="game__header__content">
+                            <h1 class="game__header__title">
+                                <i class="ri-bug-line"></i>
+                                <span>İlan Oyunu</span>
+                            </h1>
+                            <p class="game__header__description">Klassik ilan oyunu! Ox düymələri ilə ilanı idarə edin və almaları yeyin.</p>
+                        </div>
+                        <div class="game__header__actions">
+                            <span class="game__header__score">Xal: <span id="snakeScore">0</span></span>
+                        </div>
+                    </div>
+                    <div class="game__body">
+                        <div class="game__overlay" id="snakeOverlay">
+                            <button id="snakeStartBtn" class="game__start-btn">Başla</button>
+                        </div>
+                        <div class="game__display">
+                            <canvas id="snakeGame" class="snake-game"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Footer Logo and Description -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
+                    </p>
+                    <div class="footer__social">
+                        <a href="category.html" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Home</a></li>
+                        <li><a href="category.html" class="footer__link">Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">Sports</a></li>
+                        <li><a href="category.html" class="footer__link">Health</a></li>
+                        <li><a href="category.html" class="footer__link">Entertainment</a></li>
+                        <li><a href="category.html" class="footer__link">Politics</a></li>
+                        <li><a href="category.html" class="footer__link">World News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Breaking News</a></li>
+                        <li><a href="category.html" class="footer__link">AI & Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="category.html" class="footer__link">Climate Change</a></li>
+                        <li><a href="category.html" class="footer__link">Space & Science</a></li>
+                        <li><a href="category.html" class="footer__link">Gaming</a></li>
+                        <li><a href="category.html" class="footer__link">Reviews</a></li>
+                        <li><a href="category.html" class="footer__link">Opinions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">About Us</a></li>
+                        <li><a href="category.html" class="footer__link">Our Team</a></li>
+                        <li><a href="category.html" class="footer__link">Careers</a></li>
+                        <li><a href="category.html" class="footer__link">Press Kit</a></li>
+                        <li><a href="category.html" class="footer__link">Advertise</a></li>
+                        <li><a href="category.html" class="footer__link">Partnership</a></li>
+                        <li><a href="category.html" class="footer__link">Contact</a></li>
+                        <li><a href="category.html" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
+                        <i class="ri-map-pin-line"></i>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
+                    </a>
+                    <a href="tel:+15551234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </a>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                    <div class="footer__contact-item">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 News Coverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="category.html" class="footer__legal-link">Privacy Policy</a>
+                        <a href="category.html" class="footer__legal-link">Terms of Service</a>
+                        <a href="category.html" class="footer__legal-link">Cookie Policy</a>
+                        <a href="category.html" class="footer__legal-link">GDPR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/games.js"></script>
+</body>
+</html>
