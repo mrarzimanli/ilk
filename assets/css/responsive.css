@@ -1222,21 +1222,21 @@
   }
 }
 @media screen and (max-width: 768px) {
-  .section-header {
+  .section__header {
     margin-bottom: 32px;
   }
-  .section-header--center .section-header__subtitle {
+  .section__header--center .section__header__subtitle {
     max-width: 100%;
   }
-  .section-header__subtitle {
+  .section__header__subtitle {
     font-size: var(--fs-b2);
   }
 }
 @media screen and (max-width: 480px) {
-  .section-header {
+  .section__header {
     margin-bottom: 24px;
   }
-  .section-header__subtitle {
+  .section__header__subtitle {
     font-size: var(--fs-b3);
   }
 }

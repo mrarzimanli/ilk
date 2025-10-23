@@ -1,18 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oyunlar - Glob</title>
+    <title>Valyuta kalkulyatoru - Hesabla</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
+    <!-- Currency Selection Modal -->
+    <div class="currency-modal" id="currencyModal">
+        <div class="currency-modal__content">
+            <div class="currency-modal__header">
+                <h2 class="currency-modal__title">Valyuta Seçin</h2>
+                <button class="currency-modal__close" id="closeModal">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="currency-list" id="currencyList">
+                <!-- Currency options will be loaded here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
         <i class="ri-arrow-up-line"></i>
@@ -46,9 +60,6 @@
                         </li>
                         <li class="nav__item">
                             <a href="category.html" class="nav__link">Siyaset</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="category.html" class="nav__link">Ekonomi</a>
                         </li>
                         <li class="nav__item nav__item--has-submenu">
                             <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
@@ -125,35 +136,8 @@
                         <li class="nav__item">
                             <a href="category.html" class="nav__link">Magazin</a>
                         </li>
-                        <li class="nav__item nav__item--has-submenu">
-                            <a href="category.html" class="nav__link">Technology <i class="ri-arrow-down-s-line nav__arrow"></i></a>
-                            <div class="nav__submenu nav__submenu--multi-column">
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Yapay Zeka & Mobil</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="category.html" class="nav__submenu-link">ChatGPT</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Machine Learning</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">iOS</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Android</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Deep Learning</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Neural Networks</a></li>
-                                    </ul>
-                                </div>
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Gaming & Fintech</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="category.html" class="nav__submenu-link">PC Gaming</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Console</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Kripto</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Blockchain</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Startup</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Fintech</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Sağlık</a>
+                            <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
                         </li>
                     </ul>
                 </nav>
@@ -228,80 +212,174 @@
     </div>
 
     <!-- Main Content -->
-    <main class="main main--games">
+    <main class="main main--currency">
         <!-- Breadcrumbs -->
         <section class="breadcrumbs">
             <div class="container">
-                <nav class="breadcrumbs__nav" aria-label="Breadcrumb">
+                <nav class="breadcrumbs__nav">
                     <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
                     <i class="ri-arrow-right-s-line"></i>
-                    <span class="breadcrumbs__current">Oyunlar</span>
+                    <span class="breadcrumbs__current">Valyuta kalkulyatoru</span>
                 </nav>
             </div>
         </section>
 
-        <section class="section section--games">
+        <section class="section section--currency-converter">
             <div class="container">
-                <div class="section__header section__header--center section__header--lg">
+                <div class="section__header">
                     <div class="section__header__content">
-                        <h2 class="section__header__title">Oyunlar</h2>
-                        <p class="section__header__subtitle">Əyləncəli və maraqlı oyunlar ilə vaxtınızı keçirin. Reaksiya, yaddaş və məntiqi oyunlar.</p>
+                        <h2 class="section__header__title">Valyuta kalkulyatoru</h2>
+                        <p class="section__header__subtitle">Valyuta kalkulyatoru ilə valyutaların dəyərini hesablayın.</p>
+                    </div>
+                    <div class="section__header__actions">
+                        <button class="add-currency-btn" id="addCurrencyBtn">
+                            <span>Valyuta əlavə et</span>
+                            <i class="ri-add-line"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="games">
-                    <a href="snake.html" class="game-card">
-                        <img class="game-card__thumb" alt="İlan Oyunu Önizləmə" src="https://placehold.co/800x450?text=İlan+Oyunu&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-bug-line game-card__icon"></i>
-                            <h2 class="game-card__title">İlan Oyunu</h2>
-                        </div>
-                        <p class="game-card__description">Klassik ilan oyunu! Ox düymələri ilə ilanı idarə edin və almaları yeyin.</p>
-                    </a>
+                <div class="currency-converter">
+                    <!-- Currency cards will be loaded here -->
+                </div>
+            </div>
+        </section>
 
-                    <a href="memory.html" class="game-card">
-                        <img class="game-card__thumb" alt="Yaddaş Oyunu Önizləmə" src="https://placehold.co/800x450?text=Yaddaş+Oyunu&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-brain-line game-card__icon"></i>
-                            <h2 class="game-card__title">Yaddaş Oyunu</h2>
-                        </div>
-                        <p class="game-card__description">Uyğun kartları tapın! Bütün cütləri uyğunlaşdırmağa çalışın.</p>
-                    </a>
+        <!-- Complete Exchange Rates Table -->
+        <section class="section section--exchange-rates">
+            <div class="container">
+                <div class="section__header">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">AZN məzənnələrin tam siyahısı</h2>
+                        <p class="section__header__subtitle">Bütün valyutaların Azərbaycan manatına nisbətən məzənnələri</p>
+                    </div>
+                </div>
 
-                    <a href="guess-number.html" class="game-card">
-                        <img class="game-card__thumb" alt="Rəqəm Təxmin Önizləmə" src="https://placehold.co/800x450?text=Rəqəm+Təxmin&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-question-line game-card__icon"></i>
-                            <h2 class="game-card__title">Rəqəm Təxmin</h2>
-                        </div>
-                        <p class="game-card__description">1-100 arası bir rəqəm tutun! Təxmin etməyə çalışın.</p>
-                    </a>
+                <div class="exchange-rates-table">
+                    <div class="exchange-rates-table__header">
+                        <div class="exchange-rates-table__col exchange-rates-table__col--currency">Valyuta</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--code">Kod</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--rate">Kurs</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--change">Dəyişiklik</div>
+                    </div>
+                    <div class="exchange-rates-table__body" id="exchangeRatesTableBody">
+                        <!-- Exchange rates will be loaded here -->
+                    </div>
+                </div>
 
-                    <a href="word-guess.html" class="game-card">
-                        <img class="game-card__thumb" alt="Söz Təxmin Önizləmə" src="https://placehold.co/800x450?text=Söz+Təxmin&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-text game-card__icon"></i>
-                            <h2 class="game-card__title">Söz Təxmin</h2>
-                        </div>
-                        <p class="game-card__description">Gizli sözü tapmağa çalışın! 6 səhv hüququnuz var.</p>
-                    </a>
+                <div class="exchange-rates-info">
+                    <p class="exchange-rates-info__text">
+                        <i class="ri-information-line"></i>
+                        Məzənnələr AR Mərkəzi Bankı tərəfindən müəyyən edilir və günlük yenilənir.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-                    <a href="reaction.html" class="game-card">
-                        <img class="game-card__thumb" alt="Reaksiya Testi Önizləmə" src="https://placehold.co/800x450?text=Reaksiya+Testi&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-flashlight-line game-card__icon"></i>
-                            <h2 class="game-card__title">Reaksiya Testi</h2>
+        <!-- FAQ Section -->
+        <section class="section section--faqs">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">Frequently Asked Questions</h2>
+                        <p class="section__header__subtitle">Find answers to common questions about our news platform</p>
+                    </div>
+                </div>
+                <div class="faqs">
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How do I subscribe to your newsletter?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>You can subscribe to our newsletter by entering your email address in the newsletter signup form found in our footer or sidebar. We send daily updates with the most important news and exclusive content to our subscribers.</p>
+                            </div>
                         </div>
-                        <p class="game-card__description">Yaşıl olduqda klikləyin! Reaksiya müddətinizi test edin.</p>
-                    </a>
+                    </div>
 
-                    <a href="color-match.html" class="game-card">
-                        <img class="game-card__thumb" alt="Rəng Uyğunlaşdır Önizləmə" src="https://placehold.co/800x450?text=Rəng+Uyğunlaşdır&font=source-sans-pro">
-                        <div class="game-card__header">
-                            <i class="ri-palette-line game-card__icon"></i>
-                            <h2 class="game-card__title">Rəng Uyğunlaşdır</h2>
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Is your news content free to access?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, all our news content is completely free to access. We believe in providing quality journalism and information to everyone without any paywalls or subscription fees.</p>
+                            </div>
                         </div>
-                        <p class="game-card__description">Göstərilən rəngi düzgün söz ilə uyğunlaşdırın!</p>
-                    </a>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How often do you update your news content?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>We update our news content 24/7 to ensure you have access to the latest breaking news and developments. Our team works around the clock to bring you real-time updates on important events.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Can I share your articles on social media?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Absolutely! We encourage sharing our articles on social media platforms. Each article has social sharing buttons to make it easy for you to share with your network. Please make sure to credit NewsHub when sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How can I contact your editorial team?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>You can contact our editorial team through the contact information provided in our footer. We have dedicated email addresses for different departments including news tips, corrections, and general inquiries.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Do you have a mobile app?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, we have mobile apps available for both iOS and Android devices. You can download them from the App Store or Google Play Store. Our mobile app provides a seamless reading experience with offline capabilities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">How do you ensure the accuracy of your news?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>We have a rigorous fact-checking process in place. All our articles go through multiple layers of verification, including source confirmation, cross-referencing with multiple sources, and editorial review before publication.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq">
+                        <button class="faq__question" aria-expanded="false">
+                            <span class="faq__question__text">Can I submit news tips or story ideas?</span>
+                            <i class="faq__question__icon ri-add-line"></i>
+                        </button>
+                        <div class="faq__answer">
+                            <div class="faq__answer__content">
+                                <p>Yes, we welcome news tips and story ideas from our readers. You can submit them through our contact form or email us directly. We review all submissions and may follow up for more information if the story is of interest.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -319,8 +397,8 @@
                         </svg>
                     </a>
                     <p class="footer__description">
-                        Ən son xəbərlər, texnologiya yenilikləri və trend mövzular üçün etibarlı mənbəniz.
-                        Qlobal hadisələrin hərtərəfli əhatəsi ilə məlumatlı qalın.
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
                     </p>
                     <div class="footer__social">
                         <a href="category.html" class="footer__social-link" aria-label="Facebook">
@@ -343,67 +421,67 @@
 
                 <!-- Quick Links -->
                 <div class="footer__links">
-                    <h3 class="footer__title">Sürətli Keçidlər</h3>
+                    <h3 class="footer__title">Quick Links</h3>
                     <ul class="footer__list">
-                        <li><a href="category.html" class="footer__link">Ana Səhifə</a></li>
-                        <li><a href="category.html" class="footer__link">Texnologiya</a></li>
-                        <li><a href="category.html" class="footer__link">Biznes</a></li>
-                        <li><a href="category.html" class="footer__link">İdman</a></li>
-                        <li><a href="category.html" class="footer__link">Sağlamlıq</a></li>
-                        <li><a href="category.html" class="footer__link">Əyləncə</a></li>
-                        <li><a href="category.html" class="footer__link">Siyasət</a></li>
-                        <li><a href="category.html" class="footer__link">Dünya Xəbərləri</a></li>
+                        <li><a href="category.html" class="footer__link">Home</a></li>
+                        <li><a href="category.html" class="footer__link">Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">Sports</a></li>
+                        <li><a href="category.html" class="footer__link">Health</a></li>
+                        <li><a href="category.html" class="footer__link">Entertainment</a></li>
+                        <li><a href="category.html" class="footer__link">Politics</a></li>
+                        <li><a href="category.html" class="footer__link">World News</a></li>
                     </ul>
                 </div>
 
                 <!-- Categories -->
                 <div class="footer__links">
-                    <h3 class="footer__title">Kateqoriyalar</h3>
+                    <h3 class="footer__title">Categories</h3>
                     <ul class="footer__list">
-                        <li><a href="category.html" class="footer__link">Son Xəbərlər</a></li>
-                        <li><a href="category.html" class="footer__link">AI & Texnologiya</a></li>
-                        <li><a href="category.html" class="footer__link">Kripto Valyuta</a></li>
-                        <li><a href="category.html" class="footer__link">İqlim Dəyişikliyi</a></li>
-                        <li><a href="category.html" class="footer__link">Kosmos & Elm</a></li>
-                        <li><a href="category.html" class="footer__link">Oyunlar</a></li>
-                        <li><a href="category.html" class="footer__link">Rəylər</a></li>
-                        <li><a href="category.html" class="footer__link">Rəylər</a></li>
+                        <li><a href="category.html" class="footer__link">Breaking News</a></li>
+                        <li><a href="category.html" class="footer__link">AI & Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="category.html" class="footer__link">Climate Change</a></li>
+                        <li><a href="category.html" class="footer__link">Space & Science</a></li>
+                        <li><a href="category.html" class="footer__link">Gaming</a></li>
+                        <li><a href="category.html" class="footer__link">Reviews</a></li>
+                        <li><a href="category.html" class="footer__link">Opinions</a></li>
                     </ul>
                 </div>
 
                 <!-- Company Info -->
                 <div class="footer__links">
-                    <h3 class="footer__title">Şirkət</h3>
+                    <h3 class="footer__title">Company</h3>
                     <ul class="footer__list">
-                        <li><a href="category.html" class="footer__link">Haqqımızda</a></li>
-                        <li><a href="category.html" class="footer__link">Komandamız</a></li>
-                        <li><a href="category.html" class="footer__link">Karyera</a></li>
+                        <li><a href="category.html" class="footer__link">About Us</a></li>
+                        <li><a href="category.html" class="footer__link">Our Team</a></li>
+                        <li><a href="category.html" class="footer__link">Careers</a></li>
                         <li><a href="category.html" class="footer__link">Press Kit</a></li>
-                        <li><a href="category.html" class="footer__link">Reklam</a></li>
-                        <li><a href="category.html" class="footer__link">Tərəfdaşlıq</a></li>
-                        <li><a href="category.html" class="footer__link">Əlaqə</a></li>
-                        <li><a href="category.html" class="footer__link">Dəstək</a></li>
+                        <li><a href="category.html" class="footer__link">Advertise</a></li>
+                        <li><a href="category.html" class="footer__link">Partnership</a></li>
+                        <li><a href="category.html" class="footer__link">Contact</a></li>
+                        <li><a href="category.html" class="footer__link">Support</a></li>
                     </ul>
                 </div>
 
                 <!-- Contact Information -->
                 <div class="footer__contact">
-                    <h3 class="footer__title">Əlaqə Məlumatları</h3>
-                    <a href="https://maps.google.com/?q=123+Xəbər+Küçəsi,+Media+Rayonu,+Bakı,+AZ+1000" class="footer__contact-item" target="_blank">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
                         <i class="ri-map-pin-line"></i>
-                        <span>123 Xəbər Küçəsi, Media Rayonu<br>Bakı, AZ 1000</span>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
                     </a>
-                    <a href="tel:+994501234567" class="footer__contact-item">
+                    <a href="tel:+15551234567" class="footer__contact-item">
                         <i class="ri-phone-line"></i>
-                        <span>+994 50 123-45-67</span>
+                        <span>+1 (555) 123-4567</span>
                     </a>
-                    <a href="mailto:info@glob.az" class="footer__contact-item">
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
                         <i class="ri-mail-line"></i>
-                        <span>info@glob.az</span>
+                        <span>info@newshub.com</span>
                     </a>
                     <div class="footer__contact-item">
                         <i class="ri-time-line"></i>
-                        <span>24/7 Xəbər Örtüyü</span>
+                        <span>24/7 News Coverage</span>
                     </div>
                 </div>
             </div>
@@ -412,12 +490,12 @@
             <div class="footer__bottom">
                 <div class="footer__bottom-content">
                     <div class="footer__copyright">
-                        <p>&copy; 2024 Glob. Bütün hüquqlar qorunur.</p>
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
                     </div>
                     <div class="footer__legal">
-                        <a href="category.html" class="footer__legal-link">Məxfilik Siyasəti</a>
-                        <a href="category.html" class="footer__legal-link">Xidmət Şərtləri</a>
-                        <a href="category.html" class="footer__legal-link">Cookie Siyasəti</a>
+                        <a href="category.html" class="footer__legal-link">Privacy Policy</a>
+                        <a href="category.html" class="footer__legal-link">Terms of Service</a>
+                        <a href="category.html" class="footer__legal-link">Cookie Policy</a>
                         <a href="category.html" class="footer__legal-link">GDPR</a>
                     </div>
                 </div>
@@ -425,7 +503,8 @@
         </div>
     </footer>
 
-    <script src="./assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/currency-converter.js"></script>
 </body>
 </html>
