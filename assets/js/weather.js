@@ -732,31 +732,13 @@ class HeaderWeatherWidget {
 
 // ==================== GET LOCATION FROM IP ====================
 async function getLocationFromIP() {
-    try {
-        const response = await fetch('https://ipapi.co/json/', {
-            method: 'GET',
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (!response.ok) {
-            throw new Error('Failed to fetch location');
-        }
-
-        const data = await response.json();
-
-        return {
-            city: data.city || 'Bakı',
-            latitude: data.latitude || 40.4093,
-            longitude: data.longitude || 49.8671
-        };
-    } catch (error) {
-        console.error('Error fetching location from IP:', error);
-        return {
-            city: 'Bakı',
-            latitude: 40.4093,
-            longitude: 49.8671
-        };
-    }
+    // Return default location (Bakı) to avoid CORS issues
+    // when hosted on GitHub Pages
+    return {
+        city: 'Bakı',
+        latitude: 40.4093,
+        longitude: 49.8671
+    };
 }
 
 // ==================== GET CURRENT WEATHER ====================

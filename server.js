@@ -70,7 +70,7 @@ app.get('/api/currencies/:date', async (req, res) => {
 app.get('/api/geolocation', async (req, res) => {
     try {
         const url = 'https://ipapi.co/json/';
-        
+
         console.log('Fetching geolocation data');
 
         const response = await fetch(url);

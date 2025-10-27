@@ -503,27 +503,14 @@ class PrayerTimesPage {
     }
 
     async getUserLocation() {
-        try {
-            const response = await fetch('https://ipapi.co/json/', {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch location');
-            }
-
-            const data = await response.json();
-            return {
-                city: data.city || 'Bakı',
-                country: data.country_name || 'Azerbaijan',
-                latitude: data.latitude,
-                longitude: data.longitude
-            };
-        } catch (error) {
-            console.log('Using default location (Bakı)');
-            return { city: 'Bakı', country: 'Azerbaijan' };
-        }
+        // Return default location to avoid CORS issues when hosted on GitHub Pages
+        console.log('Using default location (Bakı)');
+        return {
+            city: 'Bakı',
+            country: 'Azerbaijan',
+            latitude: 40.4093,
+            longitude: 49.8671
+        };
     }
 
     updatePrayerTimes() {
