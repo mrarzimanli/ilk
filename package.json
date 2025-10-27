@@ -1,0 +1,22 @@
+{
+  "name": "currency-converter-api",
+  "version": "1.0.0",
+  "description": "Currency converter API server to handle CORS issues",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.7.0",
+    "xmldom": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": ["currency", "api", "cors", "cbar"],
+  "author": "",
+  "license": "MIT"
+}

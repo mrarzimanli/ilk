@@ -1,110 +1,8 @@
 'use strict';
 
 // ============================================================================
-// CLASSES - Component Definitions
+// SEARCH OVERLAY CLASS
 // ============================================================================
-
-// ==================== Weather Widget ====================
-class WeatherWidget {
-    constructor() {
-        this.cityElement = document.querySelector('.weather__city');
-        this.tempElement = document.querySelector('.weather__temp');
-        this.iconElement = document.querySelector('.weather__icon');
-
-        // Only initialize if elements exist
-        if (this.cityElement && this.tempElement && this.iconElement) {
-            this.init();
-        }
-    }
-
-    async init() {
-        try {
-            const locationData = await this.getLocation();
-
-            if (locationData) {
-                const { city, latitude, longitude } = locationData;
-                const weatherData = await this.getWeather(latitude, longitude);
-
-                if (weatherData) {
-                    this.updateWeatherDisplay(city, weatherData);
-                }
-            }
-        } catch (error) {
-            console.error('Weather widget error:', error);
-        }
-    }
-
-    async getLocation() {
-        try {
-            const response = await fetch('https://ipapi.co/json/', {
-                method: 'GET',
-                headers: { 'Accept': 'application/json' }
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch location');
-            }
-
-            const data = await response.json();
-
-            return {
-                city: data.city || 'Baku',
-                latitude: data.latitude || 40.4093,
-                longitude: data.longitude || 49.8671
-            };
-        } catch (error) {
-            console.log('Error fetching location');
-        }
-    }
-
-    async getWeather(lat, lon) {
-        try {
-            const response = await fetch(
-                `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=celsius`
-            );
-            const data = await response.json();
-
-            return {
-                temperature: Math.round(data.current_weather.temperature),
-                weatherCode: data.current_weather.weathercode,
-                isDay: data.current_weather.is_day
-            };
-        } catch (error) {
-            console.error('Weather fetch error:', error);
-            return null;
-        }
-    }
-
-    updateWeatherDisplay(city, weatherData) {
-        this.cityElement.textContent = city;
-        this.tempElement.textContent = `${weatherData.temperature}°C`;
-        this.updateWeatherIcon(weatherData.weatherCode, weatherData.isDay);
-    }
-
-    updateWeatherIcon(code, isDay) {
-        let iconClass = '';
-
-        if (code === 0) {
-            iconClass = isDay ? 'ri-sun-line' : 'ri-moon-line';
-        } else if (code >= 1 && code <= 3) {
-            iconClass = isDay ? 'ri-sun-cloudy-line' : 'ri-moon-cloudy-line';
-        } else if (code >= 45 && code <= 48) {
-            iconClass = 'ri-mist-line';
-        } else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) {
-            iconClass = 'ri-rainy-line';
-        } else if ((code >= 71 && code <= 77) || (code >= 85 && code <= 86)) {
-            iconClass = 'ri-snowy-line';
-        } else if (code >= 95 && code <= 99) {
-            iconClass = 'ri-thunderstorms-line';
-        } else {
-            iconClass = 'ri-cloud-line';
-        }
-
-        this.iconElement.className = `weather__icon ${iconClass}`;
-    }
-}
-
-// ==================== Search Overlay ====================
 class SearchOverlay {
     constructor() {
         this.searchBtn = document.querySelector('.search-btn');
@@ -156,7 +54,9 @@ class SearchOverlay {
     }
 }
 
-// ==================== Language Dropdown ====================
+// ============================================================================
+// LANGUAGE DROPDOWN CLASS
+// ============================================================================
 class LanguageDropdown {
     constructor() {
         this.toggle = document.querySelector('.language-dropdown__toggle');
@@ -236,7 +136,9 @@ class LanguageDropdown {
     }
 }
 
-// ==================== Navigation ====================
+// ============================================================================
+// NAVIGATION CLASS
+// ============================================================================
 class Navigation {
     constructor() {
         this.menuToggle = document.querySelector('.menu-toggle');
@@ -295,7 +197,9 @@ class Navigation {
     }
 }
 
-// ==================== Currency Constants ====================
+// ============================================================================
+// CURRENCY CONSTANTS
+// ============================================================================
 const CURRENCY_CONFIG = {
     BASE_CURRENCY: 'AZN',
     CURRENCIES: [
@@ -316,7 +220,9 @@ const CURRENCY_CONFIG = {
     ANIMATION_DURATION: 1000
 };
 
-// ==================== Currency Slider ====================
+// ============================================================================
+// CURRENCY SLIDER CLASS
+// ============================================================================
 class CurrencySlider {
     constructor() {
         this.sliderElement = document.querySelector('.swiper--currency');
@@ -570,7 +476,9 @@ class CurrencySlider {
     }
 }
 
-// ==================== Hot News Slider ====================
+// ============================================================================
+// HOT NEWS SLIDER CLASS
+// ============================================================================
 class HotNewsSlider {
     constructor() {
         this.sliderElement = document.querySelector('.swiper--hot-news');
@@ -601,7 +509,9 @@ class HotNewsSlider {
     }
 }
 
-// ==================== News Slider ====================
+// ============================================================================
+// NEWS SLIDER CLASS
+// ============================================================================
 class NewsSlider {
     constructor() {
         this.sliderElement = document.querySelector('.swiper--news');
@@ -649,7 +559,9 @@ class NewsSlider {
     }
 }
 
-// ==================== Sub-Categories Slider ====================
+// ============================================================================
+// SUB-CATEGORIES SLIDER CLASS
+// ============================================================================
 class SubCategoriesSlider {
     constructor() {
         this.sliderElement = document.querySelector('.swiper--subcategories');
@@ -698,9 +610,8 @@ class SubCategoriesSlider {
     }
 }
 
-
 // ============================================================================
-// INITIALIZATION
+// AUTO-INITIALIZATION
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -709,9 +620,6 @@ document.addEventListener('DOMContentLoaded', () => {
     new HotNewsSlider();
     new NewsSlider();
     new SubCategoriesSlider();
-
-    // Initialize widgets
-    new WeatherWidget();
 
     // Initialize UI components
     new SearchOverlay();
@@ -722,7 +630,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ============================================================================
 // SIMPLE EVENT HANDLERS
 // ============================================================================
-
 
 // ==================== FAQ Accordion ====================
 document.addEventListener('DOMContentLoaded', () => {

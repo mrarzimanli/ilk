@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafıza Oyunu - Glob</title>
+    <title>Hava vəziyyəti - Glob</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,22 +30,45 @@
                 </a>
 
                 <!-- Weather Widget -->
-                <a href="weather.html" class="header__weather weather">
+                <div class="header__weather weather">
                     <i class="weather__icon ri-sun-line"></i>
                     <div class="weather__info">
                         <span class="weather__city">Loading...</span>
                         <span class="weather__temp">--°C</span>
                     </div>
-                </a>
+                </div>
 
                 <!-- Navigation Menu -->
                 <nav class="header__nav nav">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriyalar</a>
+                            <a href="category.html" class="nav__link">Gündem</a>
                         </li>
                         <li class="nav__item">
-                            <a href="games.html" class="nav__link">Oyunlar</a>
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav__item nav__item--has-submenu">
                             <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
@@ -97,13 +120,10 @@
                             </div>
                         </li>
                         <li class="nav__item">
-                            <a href="weather.html" class="nav__link">Hava</a>
+                            <a href="weather.html" class="nav__link">Hava vəziyyəti</a>
                         </li>
                         <li class="nav__item">
                             <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="currency-converter.html" class="nav__link">Valyuta</a>
                         </li>
                     </ul>
                 </nav>
@@ -178,41 +198,238 @@
     </div>
 
     <!-- Main Content -->
-    <main class="main main--game">
+    <main class="main main--weather" id="weatherPage">
         <!-- Breadcrumbs -->
         <section class="breadcrumbs">
             <div class="container">
-                <nav class="breadcrumbs__nav" aria-label="Breadcrumb">
+                <nav class="breadcrumbs__nav">
                     <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
                     <i class="ri-arrow-right-s-line"></i>
-                    <a href="games.html" class="breadcrumbs__link">Oyunlar</a>
-                    <i class="ri-arrow-right-s-line"></i>
-                    <span class="breadcrumbs__current">Yaddaş Oyunu</span>
+                    <span class="breadcrumbs__current">Hava vəziyyəti</span>
                 </nav>
             </div>
         </section>
 
-        <section class="section section--game">
+        <!-- Weather Section -->
+        <section class="section section--weather">
             <div class="container">
-                <div class="game game--memory">
-                    <div class="game__header">
-                        <div class="game__header__content">
-                            <h1 class="game__header__title">
-                                <i class="ri-brain-line"></i>
-                                <span>Yaddaş Oyunu</span>
-                            </h1>
-                            <p class="game__header__description">Kartları uyğunlaşdıraraq yaddaşınızı test edin! Eyni kartları tapın və uyğunlaşdırın.</p>
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h1 class="section__header__title">Detallı Hava vəziyyəti</h1>
+                        <p class="section__header__subtitle">Azərbaycan və dünya üzrə dəqiq hava vəziyyəti</p>
+                    </div>
+                </div>
+
+                <!-- Location Selector -->
+                <div class="weather-location-selector">
+                    <div class="weather-location-selector__wrapper">
+                        <div class="weather-location-selector__icon">
+                            <i class="ri-map-pin-line"></i>
                         </div>
-                        <div class="game__header__actions">
-                            <span class="game__header__score">Gediş: <span id="memoryMoves">0</span></span>
+                        <input type="text" id="locationInput" class="weather-location-selector__input" placeholder="Şəhər adını daxil edin..." autocomplete="off">
+                        <button class="weather-location-selector__btn" id="searchLocationBtn">
+                            <i class="ri-search-line"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Current Weather Card -->
+                <div class="current-weather">
+                    <div class="current-weather__main">
+                        <div class="current-weather__info">
+                            <div class="current-weather__location-wrapper">
+                                <div class="current-weather__location-icon">
+                                    <i class="ri-map-pin-line"></i>
+                                </div>
+                                <div class="current-weather__location-info">
+                                    <h2 class="current-weather__location" id="currentLocation">Bakı</h2>
+                                    <p class="current-weather__date" id="currentDate">Loading...</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="current-weather__selectors">
+                            <div class="current-weather__selector">
+                                <label for="citySelector" class="current-weather__selector-label">Şəhər seçin:</label>
+                                <div class="current-weather__selector-wrapper">
+                                    <select id="citySelector" class="current-weather__selector-input">
+                                        <option value="40.0508,47.4614">Ağcabədi</option>
+                                        <option value="40.1486,46.9214">Ağdam</option>
+                                        <option value="40.6475,47.4864">Ağdaş</option>
+                                        <option value="40.2131,46.7883">Ağdərə</option>
+                                        <option value="41.1147,45.4547">Ağstafa</option>
+                                        <option value="40.5694,48.4014">Ağsu</option>
+                                        <option value="38.4558,48.8722">Astara</option>
+                                        <option value="39.3731,45.2192">Babək</option>
+                                        <option value="40.4093,49.8671" selected>Bakı</option>
+                                        <option value="41.7333,46.4097">Balakən</option>
+                                        <option value="39.7733,47.6217">Beyləqan</option>
+                                        <option value="40.3736,47.1278">Bərdə</option>
+                                        <option value="39.4583,48.5450">Biləsuvar</option>
+                                        <option value="39.4000,47.0261">Cəbrayıl</option>
+                                        <option value="39.1989,48.4908">Cəlilabad</option>
+                                        <option value="38.9561,45.6297">Culfa</option>
+                                        <option value="40.4694,46.0717">Daşkəsən</option>
+                                        <option value="39.9381,46.8261">Əsgəran</option>
+                                        <option value="39.6006,47.1453">Füzuli</option>
+                                        <option value="40.5656,45.8169">Gədəbəy</option>
+                                        <option value="40.6875,46.3619">Gəncə</option>
+                                        <option value="40.6103,46.7897">Goranboy</option>
+                                        <option value="40.6536,47.7408">Göyçay</option>
+                                        <option value="40.5869,46.3153">Göygöl</option>
+                                        <option value="39.1186,48.6036">Göytəpə</option>
+                                        <option value="40.0856,48.9047">Hacıqabul</option>
+                                        <option value="39.4467,47.3353">Horadiz</option>
+                                        <option value="41.4631,48.8050">Xaçmaz</option>
+                                        <option value="39.8150,46.7520">Xankəndi</option>
+                                        <option value="40.4483,49.7564">Xırdalan</option>
+                                        <option value="40.9058,49.0725">Xızı</option>
+                                        <option value="39.9125,46.7933">Xocalı</option>
+                                        <option value="39.7956,47.1139">Xocavənd</option>
+                                        <option value="41.6383,48.6853">Xudat</option>
+                                        <option value="39.8706,48.0647">İmişli</option>
+                                        <option value="40.7850,48.1519">İsmayıllı</option>
+                                        <option value="40.1025,46.0386">Kəlbəcər</option>
+                                        <option value="40.3419,48.1619">Kürdəmir</option>
+                                        <option value="41.4244,46.9167">Qax</option>
+                                        <option value="41.0911,45.3636">Qazax</option>
+                                        <option value="40.9778,47.8431">Qəbələ</option>
+                                        <option value="40.0847,48.9292">Qobustan</option>
+                                        <option value="41.3614,48.5097">Quba</option>
+                                        <option value="39.3431,46.5797">Qubadlı</option>
+                                        <option value="41.4264,48.4333">Qusar</option>
+                                        <option value="39.5981,46.5444">Laçın</option>
+                                        <option value="38.7736,48.4144">Lerik</option>
+                                        <option value="38.7547,48.8511">Lənkəran</option>
+                                        <option value="38.7061,48.8575">Liman</option>
+                                        <option value="39.0356,48.6656">Masallı</option>
+                                        <option value="40.7694,47.0539">Mingəçevir</option>
+                                        <option value="40.5067,46.8250">Naftalan</option>
+                                        <option value="39.2089,45.4158">Naxçıvan</option>
+                                        <option value="39.3764,49.2475">Neftçala</option>
+                                        <option value="41.0708,47.4583">Oğuz</option>
+                                        <option value="38.9064,46.0233">Ordubad</option>
+                                        <option value="39.9333,48.3697">Saatlı</option>
+                                        <option value="40.0067,48.4711">Sabirabad</option>
+                                        <option value="39.5931,49.1047">Salyan</option>
+                                        <option value="40.8144,46.4031">Samux</option>
+                                        <option value="39.7106,45.1203">Sədərək</option>
+                                        <option value="41.0733,49.1083">Siyəzən</option>
+                                        <option value="40.5897,50.0061">Sumqayıt</option>
+                                        <option value="41.1739,48.9942">Şabran</option>
+                                        <option value="39.4089,45.5736">Şahbuz</option>
+                                        <option value="40.6325,48.6439">Şamaxı</option>
+                                        <option value="41.1867,47.1711">Şəki</option>
+                                        <option value="40.8292,46.0194">Şəmkir</option>
+                                        <option value="39.5436,44.9436">Şərur</option>
+                                        <option value="39.9375,48.9283">Şirvan</option>
+                                        <option value="39.7603,46.7467">Şuşa</option>
+                                        <option value="40.3433,46.9208">Tərtər</option>
+                                        <option value="40.9925,45.6281">Tovuz</option>
+                                        <option value="40.5189,47.6522">Ucar</option>
+                                        <option value="38.9089,48.2075">Yardımlı</option>
+                                        <option value="40.6181,47.1492">Yevlax</option>
+                                        <option value="41.6306,46.6447">Zaqatala</option>
+                                        <option value="39.0811,46.6592">Zəngilan</option>
+                                        <option value="40.2106,47.7144">Zərdab</option>
+                                    </select>
+                                    <i class="ri-arrow-down-s-line current-weather__selector-arrow"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="game__body">
-                        <div class="game__overlay" id="memoryOverlay">
-                            <button id="memoryStartBtn" class="game__start-btn">Başla</button>
+                    <div class="current-weather__details">
+                        <div class="current-weather__temp-section">
+                            <div class="current-weather__temp">
+                                <span class="current-weather__temp-value" id="currentTemp">--</span>
+                                <span class="current-weather__temp-unit">°C</span>
+                            </div>
+                            <div class="current-weather__icon" id="currentIcon">
+                                <i class="ri-sun-line"></i>
+                            </div>
                         </div>
-                        <div class="game__display">
-                            <div id="memoryGame" class="memory-game"></div>
+                        <div class="current-weather__condition" id="currentCondition">Loading...</div>
+                        <div class="current-weather__feels">
+                            Hiss olunan: <span id="feelsLike">--</span>°C
+                        </div>
+                    </div>
+                    <div class="current-weather__stats">
+                        <div class="current-weather__stat">
+                            <i class="ri-arrow-down-line"></i>
+                            <span class="current-weather__stat-label">Min</span>
+                            <span class="current-weather__stat-value" id="minTemp">--</span>
+                        </div>
+                        <div class="current-weather__stat">
+                            <i class="ri-arrow-up-line"></i>
+                            <span class="current-weather__stat-label">Max</span>
+                            <span class="current-weather__stat-value" id="maxTemp">--</span>
+                        </div>
+                        <div class="current-weather__stat">
+                            <i class="ri-drop-line"></i>
+                            <span class="current-weather__stat-label">Rütubət</span>
+                            <span class="current-weather__stat-value" id="humidity">--</span>%
+                        </div>
+                        <div class="current-weather__stat">
+                            <i class="ri-windy-line"></i>
+                            <span class="current-weather__stat-label">Külək</span>
+                            <span class="current-weather__stat-value" id="windSpeed">--</span> km/h
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hourly Weather Forecast -->
+                <div class="section__header">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">Saatlıq proqnoz</h2>
+                    </div>
+                </div>
+                <div class="hourly-weather" id="hourlyWeather">
+                    <div class="hourly-weather__slider">
+                        <div class="swiper swiper--hourly-weather">
+                            <div class="swiper-wrapper" id="hourlyWeatherWrapper">
+                                <!-- Hourly items will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Weather Forecast -->
+                <div class="section__header">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">7 günlük proqnoz</h2>
+                    </div>
+                </div>
+                <div class="daily-weather" id="dailyWeather">
+                    <!-- Daily items will be loaded here -->
+                </div>
+
+                <!-- Additional Weather Details -->
+                <div class="weather-details" id="weatherDetails">
+                    <div class="weather-details__item">
+                        <i class="ri-eye-line"></i>
+                        <div class="weather-details__content">
+                            <span class="weather-details__label">Görüş uzaqlığı</span>
+                            <span class="weather-details__value" id="visibility">--</span>
+                        </div>
+                    </div>
+                    <div class="weather-details__item">
+                        <i class="ri-cloudy-2-line"></i>
+                        <div class="weather-details__content">
+                            <span class="weather-details__label">Buludluluq</span>
+                            <span class="weather-details__value" id="cloudiness">--</span>
+                        </div>
+                    </div>
+                    <div class="weather-details__item">
+                        <i class="ri-bar-chart-line"></i>
+                        <div class="weather-details__content">
+                            <span class="weather-details__label">Atmosfer təzyiqi</span>
+                            <span class="weather-details__value" id="pressure">--</span>
+                        </div>
+                    </div>
+                    <div class="weather-details__item">
+                        <i class="ri-sun-line"></i>
+                        <div class="weather-details__content">
+                            <span class="weather-details__label">UV indeksi</span>
+                            <span class="weather-details__value" id="uvIndex">--</span>
                         </div>
                     </div>
                 </div>
@@ -338,8 +555,9 @@
         </div>
     </footer>
 
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/games.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/cities.js"></script>
+    <script src="./assets/js/weather.js"></script>
 </body>
 </html>

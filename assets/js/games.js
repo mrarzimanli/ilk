@@ -1,4 +1,6 @@
-// ==================== Notification System ====================
+// ============================================================================
+// GAMES NOTIFICATION CLASS
+// ============================================================================
 class GameNotification {
     static show(message, type = 'info', duration = 4000, customTitle = null) {
         // Remove existing notifications
@@ -55,7 +57,9 @@ class GameNotification {
     }
 }
 
-// ==================== Snake Game ====================
+// ============================================================================
+// SNAKE GAME CLASS
+// ============================================================================
 class SnakeGame {
     constructor() {
         this.canvas = document.getElementById('snakeGame');
@@ -244,7 +248,9 @@ class SnakeGame {
     }
 }
 
-// ==================== Memory Game ====================
+// ============================================================================
+// MEMORY GAME CLASS
+// ============================================================================
 class MemoryGame {
     constructor() {
         this.grid = document.getElementById('memoryGame');
@@ -375,7 +381,9 @@ class MemoryGame {
     }
 }
 
-// ==================== Guess Number Game ====================
+// ============================================================================
+// GUESS NUMBER GAME CLASS
+// ============================================================================
 class GuessNumberGame {
     constructor() {
         this.secretNumber = 0;
@@ -456,27 +464,83 @@ class GuessNumberGame {
     }
 }
 
-// ==================== Word Guess Game ====================
+// ============================================================================
+// WORD GUESS GAME CLASS
+// ============================================================================
 class WordGuessGame {
     constructor() {
-        this.words = [
-            'JAVASCRIPT', 'OYUN', 'KOMPYUTER', 'TELEFON', 'INTERNET',
-            'PROQRAM', 'PROQRAMLAŞDIRMA', 'TEKNOLOGIYA', 'KLAVIATURA', 'SİÇAN'
+        // Base Azerbaijani word list (fallback)
+        this.baseWords = [
+            'JAVASCRIPT', 'KOMPÜTER', 'TELEFON', 'İNTERNET',
+            'PROQRAMLAŞDIRMA', 'TEXNOLOGİYA', 'KLAVİATURA', 'SİÇAN',
+            'BRAUZER', 'SİSTEM', 'PLANŞET',
+            'OYUN', 'KİTAB', 'MASA', 'STUL', 'PƏNCƏRƏ', 'QAPI',
+            'EV', 'BAĞ', 'AĞAC', 'GÜL', 'DƏNİZ', 'DAĞ', 'ÇAY',
+            'ŞƏHƏR', 'KƏND', 'MƏKTƏB', 'UNİVERSİTET',
+            'ƏL', 'AYAQ', 'BAŞ', 'GÖZ', 'QULAQ',
+            'ATA', 'ANA', 'QARDAŞ', 'BACI', 'DOST',
+            'BALACA', 'KİCİK', 'BÖYÜK', 'YAXŞI', 'TƏZƏ'
         ];
+
+        this.words = [...this.baseWords];
         this.word = '';
         this.guessedLetters = [];
         this.lives = 6;
+        this.isLoadingWords = false;
 
         this.createKeyboard();
+        this.loadWordsFromAPI();
         document.getElementById('wordStartBtn').addEventListener('click', () => this.start());
         this.reset();
     }
 
+    async loadWordsFromAPI() {
+        try {
+            // Fetch Azerbaijani words from GitHub repository
+            const response = await fetch('https://cdn.jsdelivr.net/gh/eymenefealtun/all-words-in-all-languages@latest/Azerbaijani/Azerbaijani.txt');
+
+            if (!response.ok) throw new Error('Failed to fetch word list');
+
+            const text = await response.text();
+
+            // Split by newlines and filter words
+            const allWords = text
+                .split(',')
+                .map(word => word.trim())
+                .filter(word => word.length > 0)
+                .map(word => word.toLocaleUpperCase());
+
+            // Filter for game-suitable words (4-12 chars, single words)
+            const filteredWords = allWords
+                .filter(word => word.length >= 4 && word.length <= 12)
+                .filter(word => !word.includes(' ') && !word.includes('_') && !word.includes('-'));
+
+            // Shuffle and take random words
+            const shuffled = this.shuffleArray([...filteredWords]);
+            const randomWords = shuffled.slice(0, 200); // Take first 200 random words
+
+            // Add to word list
+            this.words = [...this.baseWords, ...randomWords];
+
+        } catch (error) {
+            console.log('✗ Failed to load word list, using base words only:', error.message);
+        }
+    }
+
+    shuffleArray(array) {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    }
+
     createKeyboard() {
         const keyboard = document.getElementById('gameKeyboard');
-        const letters = 'ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ';
+        const letters = "A,B,C,Ç,D,E,Ə,F,G,Ğ,H,X,I,İ,J,K,Q,L,M,N,O,Ö,P,R,S,Ş,T,U,Ü,V,Y,Z";
 
-        letters.split('').forEach(letter => {
+        letters.split(',').forEach(letter => {
             const key = document.createElement('div');
             key.className = 'game__keyboard__key';
             key.textContent = letter;
@@ -570,7 +634,9 @@ class WordGuessGame {
     }
 }
 
-// ==================== Reaction Time Game ====================
+// ============================================================================
+// REACTION GAME CLASS
+// ============================================================================
 class ReactionGame {
     constructor() {
         this.box = document.getElementById('reactionGame');
@@ -660,7 +726,9 @@ class ReactionGame {
     }
 }
 
-// ==================== Color Match Game ====================
+// ============================================================================
+// COLOR MATCH GAME CLASS
+// ============================================================================
 class ColorMatchGame {
     constructor() {
         this.colors = [
@@ -789,11 +857,14 @@ class ColorMatchGame {
     }
 }
 
-// Initialize games only if their DOM exists (safe on any page)
+// ============================================================================
+// AUTO-INITIALIZATION
+// ============================================================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent page scroll with arrow keys/space while any game is on screen
+    // Initialize games only if their DOM exists (safe on any page)
     const gameSelectors = ['#snakeGame', '#memoryGame', '#guessInput', '#keyboard', '#reactionGame', '#colorGameButtons'];
     const gamePresent = gameSelectors.some(sel => document.querySelector(sel));
+
     if (gamePresent) {
         document.body.classList.add('no-scroll');
         window.addEventListener('beforeunload', () => {
@@ -804,22 +875,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (blocked.includes(e.key)) e.preventDefault();
         }, { passive: false });
     }
+
     if (document.getElementById('snakeGame')) {
         new SnakeGame();
     }
     if (document.getElementById('memoryGame')) {
         new MemoryGame();
     }
-    if (document.getElementById('guessInput') && document.getElementById('guessSubmit')) {
+    if (document.getElementById('guessGame')) {
         new GuessNumberGame();
     }
-    if (document.getElementById('gameKeyboard') && document.getElementById('wordStartBtn')) {
+    if (document.getElementById('wordGame')) {
         new WordGuessGame();
     }
-    if (document.getElementById('reactionGame') && document.getElementById('reactionStartBtn')) {
+    if (document.getElementById('reactionGame')) {
         new ReactionGame();
     }
-    if (document.getElementById('colorStartBtn') && document.getElementById('colorGameDisplay')) {
+    if (document.getElementById('colorGame')) {
         new ColorMatchGame();
     }
 });

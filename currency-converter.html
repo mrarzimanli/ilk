@@ -44,45 +44,22 @@
                 </a>
 
                 <!-- Weather Widget -->
-                <div class="header__weather weather">
+                <a href="weather.html" class="header__weather weather">
                     <i class="weather__icon ri-sun-line"></i>
                     <div class="weather__info">
                         <span class="weather__city">Loading...</span>
                         <span class="weather__temp">--°C</span>
                     </div>
-                </div>
+                </a>
 
                 <!-- Navigation Menu -->
                 <nav class="header__nav nav">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Gündem</a>
+                            <a href="category.html" class="nav__link">Kateqoriyalar</a>
                         </li>
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Siyaset</a>
-                        </li>
-                        <li class="nav__item nav__item--has-submenu">
-                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
-                            <div class="nav__submenu nav__submenu--multi-column">
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Futbol</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
-                                    </ul>
-                                </div>
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
-                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <a href="games.html" class="nav__link">Oyunlar</a>
                         </li>
                         <li class="nav__item nav__item--has-submenu">
                             <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
@@ -134,10 +111,13 @@
                             </div>
                         </li>
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Magazin</a>
+                            <a href="weather.html" class="nav__link">Hava</a>
                         </li>
                         <li class="nav__item">
                             <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="currency-converter.html" class="nav__link">Valyuta</a>
                         </li>
                     </ul>
                 </nav>
@@ -212,7 +192,7 @@
     </div>
 
     <!-- Main Content -->
-    <main class="main main--currency">
+    <main class="main main--currency" id="currencyConverterPage">
         <!-- Breadcrumbs -->
         <section class="breadcrumbs">
             <div class="container">
@@ -263,6 +243,30 @@
                     </div>
                     <div class="exchange-rates-table__body" id="exchangeRatesTableBody">
                         <!-- Exchange rates will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Commodities Section -->
+        <section class="section section--commodities">
+            <div class="container">
+                <div class="section__header">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">Əmtəə ($)</h2>
+                        <p class="section__header__subtitle">Qiymətli metalların və əmtəələrin dollar qiymətləri</p>
+                    </div>
+                </div>
+
+                <div class="exchange-rates-table">
+                    <div class="exchange-rates-table__header">
+                        <div class="exchange-rates-table__col exchange-rates-table__col--currency">Əmtəə</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--code">Kod</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--rate">Kurs</div>
+                        <div class="exchange-rates-table__col exchange-rates-table__col--change">Dəyişiklik</div>
+                    </div>
+                    <div class="exchange-rates-table__body" id="commoditiesTableBody">
+                        <!-- Commodities will be loaded here -->
                     </div>
                 </div>
 

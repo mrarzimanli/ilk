@@ -208,7 +208,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main main--prayer-times">
+    <main class="main main--prayer-times" id="prayerTimesPage">
         <!-- Breadcrumbs -->
         <section class="breadcrumbs">
             <div class="container">
@@ -249,36 +249,85 @@
                                 <label for="citySelect" class="prayer-times__selector-label">Şəhər seçin:</label>
                                 <div class="prayer-times__selector-wrapper">
                                     <select id="citySelect" class="prayer-times__selector-input">
+                                        <option value="agcabedi">Ağcabədi</option>
                                         <option value="agdam">Ağdam</option>
+                                        <option value="agdas">Ağdaş</option>
+                                        <option value="agdere">Ağdərə</option>
+                                        <option value="agstafa">Ağstafa</option>
+                                        <option value="agsu">Ağsu</option>
                                         <option value="astara">Astara</option>
-                                        <option value="baki">Bakı</option>
+                                        <option value="babek">Babək</option>
+                                        <option value="baki" selected>Bakı</option>
+                                        <option value="balaken">Balakən</option>
+                                        <option value="beylaqan">Beyləqan</option>
+                                        <option value="berde">Bərdə</option>
+                                        <option value="bilesuvar">Biləsuvar</option>
                                         <option value="cebrayil">Cəbrayıl</option>
+                                        <option value="celilabad">Cəlilabad</option>
+                                        <option value="culfa">Culfa</option>
+                                        <option value="daskesen">Daşkəsən</option>
+                                        <option value="asgeran">Əsgəran</option>
                                         <option value="fuzuli">Füzuli</option>
-                                        <option value="ganja">Gəncə</option>
+                                        <option value="gedebey">Gədəbəy</option>
+                                        <option value="gence">Gəncə</option>
+                                        <option value="goranboy">Goranboy</option>
                                         <option value="goycay">Göyçay</option>
+                                        <option value="goygol">Göygöl</option>
+                                        <option value="goytepe">Göytəpə</option>
+                                        <option value="haciqabul">Hacıqabul</option>
+                                        <option value="horadiz">Horadiz</option>
+                                        <option value="khachmaz">Xaçmaz</option>
+                                        <option value="khankendi">Xankəndi</option>
+                                        <option value="khirdalan">Xırdalan</option>
+                                        <option value="khizi">Xızı</option>
+                                        <option value="khocali">Xocalı</option>
+                                        <option value="khocavend">Xocavənd</option>
+                                        <option value="khudat">Xudat</option>
+                                        <option value="imishli">İmişli</option>
+                                        <option value="ismayilli">İsmayıllı</option>
                                         <option value="kalbacar">Kəlbəcər</option>
-                                        <option value="lacin">Laçın</option>
-                                        <option value="lankaran">Lənkəran</option>
-                                        <option value="masalli">Masallı</option>
-                                        <option value="nakhchivan">Naxçıvan</option>
-                                        <option value="neftcala">Neftçala</option>
+                                        <option value="kurdemir">Kürdəmir</option>
+                                        <option value="qax">Qax</option>
                                         <option value="qazax">Qazax</option>
+                                        <option value="qebele">Qəbələ</option>
+                                        <option value="qobustan">Qobustan</option>
                                         <option value="quba">Quba</option>
                                         <option value="qubadli">Qubadlı</option>
                                         <option value="qusar">Qusar</option>
+                                        <option value="lachin">Laçın</option>
+                                        <option value="lerik">Lerik</option>
+                                        <option value="lankaran">Lənkəran</option>
+                                        <option value="liman">Liman</option>
+                                        <option value="masalli">Masallı</option>
+                                        <option value="mingecevir">Mingəçevir</option>
+                                        <option value="naftalan">Naftalan</option>
+                                        <option value="nakhchivan">Naxçıvan</option>
+                                        <option value="neftcala">Neftçala</option>
+                                        <option value="oguz">Oğuz</option>
+                                        <option value="ordubad">Ordubad</option>
                                         <option value="saatli">Saatlı</option>
                                         <option value="sabirabad">Sabirabad</option>
                                         <option value="salyan">Salyan</option>
+                                        <option value="samux">Samux</option>
+                                        <option value="sederak">Sədərək</option>
+                                        <option value="siyezen">Siyəzən</option>
                                         <option value="sumqayit">Sumqayıt</option>
+                                        <option value="shabran">Şabran</option>
+                                        <option value="shahbuz">Şahbuz</option>
                                         <option value="shamakhi">Şamaxı</option>
                                         <option value="shaki">Şəki</option>
+                                        <option value="shamkir">Şəmkir</option>
+                                        <option value="sherur">Şərur</option>
+                                        <option value="shirvan">Şirvan</option>
                                         <option value="shusha">Şuşa</option>
-                                        <option value="khachmaz">Xaçmaz</option>
-                                        <option value="khankandi">Xankəndi</option>
-                                        <option value="khocali">Xocalı</option>
+                                        <option value="terter">Tərtər</option>
+                                        <option value="tovuz">Tovuz</option>
+                                        <option value="ucar">Ucar</option>
+                                        <option value="yardimli">Yardımlı</option>
                                         <option value="yevlakh">Yevlax</option>
                                         <option value="zaqatala">Zaqatala</option>
-                                        <option value="zangilan">Zəngilan</option>
+                                        <option value="zengilan">Zəngilan</option>
+                                        <option value="zerdab">Zərdab</option>
                                     </select>
                                     <i class="ri-arrow-down-s-line prayer-times__selector-arrow"></i>
                                 </div>
