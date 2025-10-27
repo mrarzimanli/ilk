@@ -508,7 +508,7 @@ class WordGuessGame {
                 .split(',')
                 .map(word => word.trim())
                 .filter(word => word.length > 0)
-                .map(word => word.toLocaleUpperCase());
+                .map(word => word.toLocaleUpperCase('az'));
 
             // Filter for game-suitable words (4-12 chars, single words)
             const filteredWords = allWords
@@ -518,6 +518,7 @@ class WordGuessGame {
             // Shuffle and take random words
             const shuffled = this.shuffleArray([...filteredWords]);
             const randomWords = shuffled.slice(0, 200); // Take first 200 random words
+            console.log(randomWords);
 
             // Add to word list
             this.words = [...this.baseWords, ...randomWords];
@@ -552,7 +553,7 @@ class WordGuessGame {
     start() {
         this.word = this.words[Math.floor(Math.random() * this.words.length)];
         this.guessedLetters = [];
-        this.lives = 6;
+        this.lives = 10;
         document.getElementById('wordLives').textContent = this.lives;
 
         // Reset keyboard
