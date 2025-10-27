@@ -6381,4 +6381,345 @@ body {
     flex-direction: row;
     padding: 10px 12px;
   }
+
+  // Credit Calculator Responsive
+  .credit-calculator__inputs {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .credit-calculator__results {
+    grid-template-columns: 1fr;
+  }
+
+  .credit-calculator-card {
+    padding: 32px 24px;
+  }
+
+  .credit-table__header,
+  .credit-table__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .credit-table__col:last-child {
+    display: none;
+  }
+}
+
+// Credit Calculator
+.section--credit-calculator {
+  .section__header {
+    margin-bottom: 48px;
+  }
+}
+
+.credit-calculator-card {
+  background: var(--base-1);
+  border: 2px solid var(--base-3);
+  border-radius: 24px;
+  padding: 48px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+}
+
+.credit-calculator__inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.credit-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.credit-input-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-b1);
+  line-height: var(--lh-b1);
+  font-weight: var(--fw-semi-bold);
+  color: var(--base-13);
+  margin-bottom: 8px;
+
+  i {
+    font-size: 20px;
+    color: var(--red-500);
+  }
+}
+
+.credit-input-wrapper {
+  position: relative;
+}
+
+.credit-input {
+  width: 100%;
+  padding: 16px 80px 16px 20px;
+  border: 2px solid var(--base-4);
+  border-radius: 12px;
+  font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
+  font-weight: var(--fw-bold);
+  color: var(--base-13);
+  background: var(--base-2);
+  transition: all 0.3s ease;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+    border-color: var(--red-500);
+    background: var(--base-1);
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.1);
+  }
+
+  &:hover {
+    border-color: var(--base-6);
+  }
+}
+
+.credit-input-suffix {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-b2);
+  line-height: var(--lh-b2);
+  font-weight: var(--fw-medium);
+  color: var(--base-9);
+  pointer-events: none;
+}
+
+.credit-range-wrapper {
+  margin-top: 8px;
+}
+
+.credit-range {
+  width: 100%;
+  height: 8px;
+  background: var(--base-3);
+  border-radius: 4px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: var(--red-500);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+    margin-top: -8px; // Center the thumb vertically (half of thumb height minus half of track height)
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+    }
+  }
+
+  &::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: var(--red-500);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
+
+    &:hover {
+      transform: scale(1.2);
+      box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 8px;
+    background: var(--base-3);
+    border-radius: 4px;
+  }
+
+  &::-moz-range-track {
+    height: 8px;
+    background: var(--base-3);
+    border-radius: 4px;
+  }
+
+  &:hover::-webkit-slider-thumb,
+  &:hover::-moz-range-thumb {
+    transform: scale(1.2);
+  }
+}
+
+.credit-calculator__results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 48px;
+  border-top: 2px solid var(--base-3);
+}
+
+.credit-result-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: var(--base-2);
+  border: 2px solid var(--base-4);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--red-400);
+  }
+}
+
+.credit-result-card__icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--red-500) 0%, var(--pink-500) 100%);
+  border-radius: 50%;
+  font-size: 28px;
+  color: var(--base-1);
+  flex-shrink: 0;
+}
+
+.credit-result-card__content {
+  flex: 1;
+}
+
+.credit-result-card__label {
+  font-size: var(--fs-b3);
+  line-height: var(--lh-b3);
+  color: var(--base-9);
+  margin: 0 0 8px 0;
+}
+
+.credit-result-card__value {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
+  font-weight: var(--fw-bold);
+  color: var(--base-13);
+  margin: 0;
+}
+
+.credit-schedule {
+  margin-top: 64px;
+}
+
+.credit-table {
+  background: var(--base-1);
+  border: 2px solid var(--base-3);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.credit-table__header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px 24px;
+  background: var(--base-3);
+  border-bottom: 2px solid var(--base-4);
+  gap: 16px;
+}
+
+.credit-table__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--base-3);
+  gap: 16px;
+  transition: all 0.2s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--base-2);
+  }
+
+  &--even {
+    background: var(--base-2);
+  }
+}
+
+.credit-table__col {
+  font-size: var(--fs-b2);
+  line-height: var(--lh-b2);
+  color: var(--base-11);
+  font-weight: var(--fw-medium);
+
+  .credit-table__header & {
+    font-size: var(--fs-b1);
+    line-height: var(--lh-b1);
+    color: var(--base-13);
+    font-weight: var(--fw-bold);
+  }
+}
+
+.credit-table__body {
+  max-height: 660px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  /* Custom scrollbar styling */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--base-2);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--base-4);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--base-5);
+    }
+  }
+}
+
+.credit-info {
+  margin-top: 48px;
+  padding: 24px;
+  background: var(--blue-50);
+  border: 2px solid var(--blue-200);
+  border-radius: 16px;
+}
+
+.credit-info__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  i {
+    font-size: 24px;
+    color: var(--blue-600);
+    flex-shrink: 0;
+  }
+
+  p {
+    font-size: var(--fs-b2);
+    line-height: var(--lh-b2);
+    color: var(--base-11);
+    margin: 0;
+  }
+}
+
+.section__header__title--small {
+  font-size: var(--fs-h5);
+  line-height: var(--lh-h5);
 }

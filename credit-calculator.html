@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kredit kalkulyatoru - Hesabla</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Top Ads Above Header -->
+    <section class="ads-section">
+        <div class="container">
+            <div class="ads">
+                <!-- Top Banner Ad 1 - Image/GIF -->
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <!-- Top Banner Ad 2 - Iframe -->
+                <!-- <div class="ad">
+                    <iframe src="https://example.com" width="100%" height="90" frameborder="0"></iframe>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <a href="weather.html" class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Kateqoriyalar</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="games.html" class="nav__link">Oyunlar</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Avrupa & Amerika</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Almanya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Fransa</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İngiltere</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">ABD</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Kanada</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Brezilya</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Asya & Diğer</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Çin</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Japonya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Afrika</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Ortadoğu</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">İtalya</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Meksika</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav__item">
+                            <a href="weather.html" class="nav__link">Hava</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="currency-converter.html" class="nav__link">Valyuta</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Kapat">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <h2 class="search-overlay__title">Arama</h2>
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main main--credit" id="creditCalculatorPage">
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Kredit kalkulyatoru</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Credit Calculator Section -->
+        <section class="section section--credit-calculator">
+            <div class="container">
+                <div class="section__header">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title">Kredit kalkulyatoru</h2>
+                        <p class="section__header__subtitle">Məhsulların ödənişini və faiz dərəcələrini hesablayın</p>
+                    </div>
+                </div>
+
+                <!-- Calculator Card -->
+                <div class="credit-calculator-card">
+                    <div class="credit-calculator__inputs">
+                        <!-- Loan Amount -->
+                        <div class="credit-input-group">
+                            <label for="loanAmount" class="credit-input-label">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                Kredit məbləği
+                            </label>
+                            <div class="credit-input-wrapper">
+                                <input type="number" id="loanAmount" class="credit-input" value="10000" min="1000" max="500000" step="100">
+                                <span class="credit-input-suffix">AZN</span>
+                            </div>
+                            <div class="credit-range-wrapper">
+                                <input type="range" id="loanAmountRange" class="credit-range" min="1000" max="500000" value="10000" step="1000">
+                            </div>
+                        </div>
+
+                        <!-- Interest Rate -->
+                        <div class="credit-input-group">
+                            <label for="interestRate" class="credit-input-label">
+                                <i class="ri-percent-line"></i>
+                                Faiz dərəcəsi
+                            </label>
+                            <div class="credit-input-wrapper">
+                                <input type="number" id="interestRate" class="credit-input" value="12" min="1" max="50" step="0.1">
+                                <span class="credit-input-suffix">%</span>
+                            </div>
+                            <div class="credit-range-wrapper">
+                                <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" value="12" step="0.1">
+                            </div>
+                        </div>
+
+                        <!-- Loan Term -->
+                        <div class="credit-input-group">
+                            <label for="loanTerm" class="credit-input-label">
+                                <i class="ri-calendar-line"></i>
+                                Kredit müddəti
+                            </label>
+                            <div class="credit-input-wrapper">
+                                <input type="number" id="loanTerm" class="credit-input" value="12" min="1" max="84" step="1">
+                                <span class="credit-input-suffix">ay</span>
+                            </div>
+                            <div class="credit-range-wrapper">
+                                <input type="range" id="loanTermRange" class="credit-range" min="1" max="84" value="12" step="1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="credit-calculator__results">
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon">
+                                <i class="ri-money-dollar-circle-fill"></i>
+                            </div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Aylıq ödəniş</h4>
+                                <p class="credit-result-card__value" id="monthlyPayment">0 AZN</p>
+                            </div>
+                        </div>
+
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon">
+                                <i class="ri-bank-card-line"></i>
+                            </div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Ümumi ödəniş</h4>
+                                <p class="credit-result-card__value" id="totalPayment">0 AZN</p>
+                            </div>
+                        </div>
+
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon">
+                                <i class="ri-calculator-line"></i>
+                            </div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Ümumi faiz</h4>
+                                <p class="credit-result-card__value" id="totalInterest">0 AZN</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Schedule Table -->
+                <div class="credit-schedule">
+                    <div class="section__header">
+                        <div class="section__header__content">
+                            <h3 class="section__header__title section__header__title--small">Ödəniş cədvəli</h3>
+                        </div>
+                    </div>
+                    <div class="credit-table">
+                        <div class="credit-table__header">
+                            <div class="credit-table__col">Aylar</div>
+                            <div class="credit-table__col">Əsas məbləğ</div>
+                            <div class="credit-table__col">Faiz</div>
+                            <div class="credit-table__col">Qalıq borc</div>
+                        </div>
+                        <div class="credit-table__body" id="paymentSchedule">
+                            <!-- Payment schedule will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div class="credit-info">
+                    <div class="credit-info__item">
+                        <i class="ri-information-line"></i>
+                        <p>Kalkulyator təxmini hesablamalar göstərir. Faktiki faiz dərəcələri bank tərəfindən müəyyən edilir.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <!-- Footer Logo and Description -->
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
+                    </p>
+                    <div class="footer__social">
+                        <a href="category.html" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Home</a></li>
+                        <li><a href="category.html" class="footer__link">Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">Sports</a></li>
+                        <li><a href="category.html" class="footer__link">Health</a></li>
+                        <li><a href="category.html" class="footer__link">Entertainment</a></li>
+                        <li><a href="category.html" class="footer__link">Politics</a></li>
+                        <li><a href="category.html" class="footer__link">World News</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Breaking News</a></li>
+                        <li><a href="category.html" class="footer__link">AI & Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="category.html" class="footer__link">Climate Change</a></li>
+                        <li><a href="category.html" class="footer__link">Space & Science</a></li>
+                        <li><a href="category.html" class="footer__link">Gaming</a></li>
+                        <li><a href="category.html" class="footer__link">Reviews</a></li>
+                        <li><a href="category.html" class="footer__link">Opinions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">About Us</a></li>
+                        <li><a href="category.html" class="footer__link">Our Team</a></li>
+                        <li><a href="category.html" class="footer__link">Careers</a></li>
+                        <li><a href="category.html" class="footer__link">Press Kit</a></li>
+                        <li><a href="category.html" class="footer__link">Advertise</a></li>
+                        <li><a href="category.html" class="footer__link">Partnership</a></li>
+                        <li><a href="category.html" class="footer__link">Contact</a></li>
+                        <li><a href="category.html" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
+                        <i class="ri-map-pin-line"></i>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
+                    </a>
+                    <a href="tel:+15551234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </a>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                    <div class="footer__contact-item">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 News Coverage</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="category.html" class="footer__legal-link">Privacy Policy</a>
+                        <a href="category.html" class="footer__legal-link">Terms of Service</a>
+                        <a href="category.html" class="footer__legal-link">Cookie Policy</a>
+                        <a href="category.html" class="footer__legal-link">GDPR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/weather.js"></script>
+</body>
+</html>

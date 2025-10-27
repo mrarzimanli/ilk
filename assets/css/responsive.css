@@ -17,41 +17,6 @@
 }
 /* Small Tablet - 768px and below */
 @media screen and (max-width: 768px) {
-  .newsletter-content {
-    flex-direction: column;
-    gap: 24px;
-    text-align: center;
-  }
-
-  .newsletter-text {
-    text-align: center;
-  }
-
-  .newsletter-section .newsletter-form {
-    flex-direction: column;
-    max-width: 100%;
-  }
-
-  .subscription-content {
-    flex-direction: column;
-    gap: 40px;
-    text-align: center;
-    padding: 40px 30px;
-  }
-
-  .subscription-text {
-    text-align: center;
-  }
-
-  .subscription-form {
-    flex-direction: column;
-    min-width: auto;
-    max-width: 100%;
-  }
-
-  .subscription-title {
-    font-size: var(--fs-h3);
-  }
   .currency-section {
     padding: 16px 0;
   }
