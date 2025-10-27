@@ -66,6 +66,35 @@ app.get('/api/currencies/:date', async (req, res) => {
     }
 });
 
+// Route to proxy IP geolocation API
+app.get('/api/geolocation', async (req, res) => {
+    try {
+        const url = 'https://ipapi.co/json/';
+        
+        console.log('Fetching geolocation data');
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        res.json({
+            success: true,
+            data: data
+        });
+
+    } catch (error) {
+        console.error('Error fetching geolocation data:', error);
+        res.status(500).json({
+            success: false,
+            error: error.message
+        });
+    }
+});
+
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.json({ status: 'OK', message: 'Currency API server is running' });
