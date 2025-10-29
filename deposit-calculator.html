@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kredit kalkulyatoru - Hesabla</title>
+    <title>Depozit kalkulyatoru - Hesabla</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -203,128 +203,90 @@
     </div>
 
     <!-- Main Content -->
-    <main class="main main--credit-calculator" id="creditCalculatorPage">
-        <!-- Breadcrumbs -->
+    <main class="main main--deposit-calculator" id="depositCalculatorPage">
         <section class="breadcrumbs">
             <div class="container">
                 <nav class="breadcrumbs__nav">
                     <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
                     <i class="ri-arrow-right-s-line"></i>
-                    <span class="breadcrumbs__current">Kredit kalkulyatoru</span>
+                    <span class="breadcrumbs__current">Depozit Kalkulyatoru</span>
                 </nav>
             </div>
         </section>
 
-        <!-- Credit Calculator Section -->
-        <section class="section section--credit-calculator">
+        <section class="section section--deposit">
             <div class="container">
-                <!-- Page Header -->
                 <div class="section__header">
                     <div class="section__header__content">
-                        <h2 class="section__header__title">Kredit kalkulyatoru</h2>
-                        <p class="section__header__subtitle">Məhsulların ödənişini və faiz dərəcələrini hesablayın</p>
+                        <h2 class="section__header__title">Depozit Kalkulyatoru</h2>
+                        <p class="section__header__subtitle">Depozit məbləğinizi və müddətini daxil edin, gəlirinizi hesablayın</p>
                     </div>
                 </div>
 
                 <!-- Calculator Card -->
-                <div class="credit-calculator-card">
+                <div class="credit-calculator-card deposit-calculator">
                     <div class="credit-calculator__inputs">
-                        <!-- Loan Amount -->
                         <div class="credit-input-group">
-                            <label for="loanAmount" class="credit-input-label">
-                                <i class="ri-money-dollar-circle-line"></i>
-                                Kredit məbləği
-                            </label>
+                            <label class="credit-input-label" for="depositAmount"><i class="ri-money-dollar-circle-line"></i> Depozit məbləği</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="loanAmount" class="credit-input" value="10000" min="1000" max="500000" step="100">
+                                <input type="number" id="depositAmount" class="credit-input" min="100" max="1000000" step="100">
                                 <span class="credit-input-suffix">AZN</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanAmountRange" class="credit-range" min="1000" max="500000" value="10000" step="1000">
-                            </div>
+                            <input type="range" id="depositAmountRange" class="credit-range" min="100" max="1000000" step="100">
                         </div>
-
-                        <!-- Interest Rate -->
                         <div class="credit-input-group">
-                            <label for="interestRate" class="credit-input-label">
-                                <i class="ri-percent-line"></i>
-                                Faiz dərəcəsi
-                            </label>
+                            <label class="credit-input-label" for="interestRate"><i class="ri-percent-line"></i> İllik faiz dərəcəsi</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="interestRate" class="credit-input" value="12" min="1" max="50" step="0.1">
+                                <input type="number" id="interestRate" class="credit-input" min="1" max="50" step="0.1">
                                 <span class="credit-input-suffix">%</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" value="12" step="0.1">
-                            </div>
+                            <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" step="0.1">
                         </div>
-
-                        <!-- Loan Term -->
                         <div class="credit-input-group">
-                            <label for="loanTerm" class="credit-input-label">
-                                <i class="ri-calendar-line"></i>
-                                Kredit müddəti
-                            </label>
+                            <label class="credit-input-label" for="depositTerm"><i class="ri-calendar-todo-line"></i> Depozit müddəti</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="loanTerm" class="credit-input" value="12" min="1" max="84" step="1">
+                                <input type="number" id="depositTerm" class="credit-input" min="1" max="36" step="1">
                                 <span class="credit-input-suffix">ay</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanTermRange" class="credit-range" min="1" max="84" value="12" step="1">
-                            </div>
+                            <input type="range" id="depositTermRange" class="credit-range" min="1" max="36" step="1">
                         </div>
                     </div>
 
-                    <!-- Results -->
-                    <div class="credit-calculator__results">
+                    <div class="credit-calculator__results" id="depositResults">
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-money-dollar-circle-fill"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-money-dollar-circle-fill"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Aylıq ödəniş</h4>
-                                <p class="credit-result-card__value" id="monthlyPayment">0 AZN</p>
+                                <h4 class="credit-result-card__label">Depozit məbləği</h4>
+                                <p class="credit-result-card__value" id="depositAmountResult">-</p>
                             </div>
                         </div>
-
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-bank-card-line"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-calculator-line"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi ödəniş</h4>
-                                <p class="credit-result-card__value" id="totalPayment">0 AZN</p>
+                                <h4 class="credit-result-card__label">Faiz gəliri</h4>
+                                <p class="credit-result-card__value" id="interestEarned">-</p>
                             </div>
                         </div>
-
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-calculator-line"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-wallet-3-fill"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi faiz</h4>
-                                <p class="credit-result-card__value" id="totalInterest">0 AZN</p>
+                                <h4 class="credit-result-card__label">Ümumi məbləğ</h4>
+                                <p class="credit-result-card__value" id="totalAmount">-</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Payment Schedule Table -->
-                <div class="credit-schedule">
-                    <div class="section__header">
-                        <div class="section__header__content">
-                            <h3 class="section__header__title">Ödəniş cədvəli</h3>
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon"><i class="ri-calendar-check-fill"></i></div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Müddət</h4>
+                                <p class="credit-result-card__value" id="depositTermResult">-</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="credit-table">
-                        <div class="credit-table__header">
-                            <div class="credit-table__col">Aylar</div>
-                            <div class="credit-table__col">Əsas məbləğ</div>
-                            <div class="credit-table__col">Faiz</div>
-                            <div class="credit-table__col">Qalıq borc</div>
-                        </div>
-                        <div class="credit-table__body" id="paymentSchedule">
-                            <!-- Payment schedule will be loaded here -->
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon"><i class="ri-percent-line"></i></div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">İllik faiz dərəcəsi</h4>
+                                <p class="credit-result-card__value" id="interestRateResult">-</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -668,7 +630,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/credit-calculator.js"></script>
+    <script src="./assets/js/deposit-calculator.js"></script>
     <script src="./assets/js/weather.js"></script>
 </body>
 </html>

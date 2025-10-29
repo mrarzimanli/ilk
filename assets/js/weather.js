@@ -3,7 +3,6 @@
 // ============================================================================
 // WEATHER PAGE CLASS
 // ============================================================================
-
 class Weather {
     constructor() {
         this.currentLocation = 'Baku';
@@ -12,12 +11,36 @@ class Weather {
         this.openMeteoUrl = 'https://api.open-meteo.com/v1/forecast';
         this.geocodingUrl = 'https://geocoding-api.open-meteo.com/v1/search';
 
+        // DOM Elements
+        this.searchBtn = document.getElementById('searchLocationBtn');
+        this.locationInput = document.getElementById('locationInput');
+        this.citySelect = document.getElementById('citySelector');
+        this.currentLocationEl = document.getElementById('currentLocation');
+        this.currentDateEl = document.getElementById('currentDate');
+        this.currentTempEl = document.getElementById('currentTemp');
+        this.feelsLikeEl = document.getElementById('feelsLike');
+        this.currentConditionEl = document.getElementById('currentCondition');
+        this.currentIconEl = document.getElementById('currentIcon');
+        this.humidityEl = document.getElementById('humidity');
+        this.windSpeedEl = document.getElementById('windSpeed');
+        this.minTempEl = document.getElementById('minTemp');
+        this.maxTempEl = document.getElementById('maxTemp');
+        this.visibilityEl = document.getElementById('visibility');
+        this.cloudinessEl = document.getElementById('cloudiness');
+        this.pressureEl = document.getElementById('pressure');
+        this.uvIndexEl = document.getElementById('uvIndex');
+        this.hourlyWeatherWrapper = document.getElementById('hourlyWeatherWrapper');
+        this.dailyWeatherEl = document.getElementById('dailyWeather');
+
         this.init();
     }
 
     async init() {
         // Get user's current location
         await this.getCurrentLocation();
+
+        // Populate city dropdown from AZERBAIJAN_CITIES
+        this.populateCitySelect();
 
         // Setup event listeners
         this.setupEventListeners();
@@ -26,24 +49,51 @@ class Weather {
         await this.loadWeatherData();
     }
 
+    populateCitySelect() {
+        if (!this.citySelect) return;
+
+        const frag = document.createDocumentFragment();
+
+        AZERBAIJAN_CITIES.forEach(city => {
+            const opt = document.createElement('option');
+            opt.value = `${city.lat},${city.lng}`;
+            opt.textContent = city.name;
+            frag.appendChild(opt);
+        });
+
+        this.citySelect.appendChild(frag);
+
+        // Set dropdown to current location if available
+        if (this.currentCoords) {
+            this.citySelect.value = `${this.currentCoords.latitude},${this.currentCoords.longitude}`;
+        }
+        this.updateSelectStyle(this.citySelect);
+    }
+
+    updateSelectStyle(select) {
+        if (!select) return;
+        const hasValue = select.value && select.value !== '' && !select.options[select.selectedIndex]?.disabled;
+        if (hasValue) {
+            select.classList.add('has-value');
+        } else {
+            select.classList.remove('has-value');
+        }
+    }
+
     setupEventListeners() {
         // Location search
-        const searchBtn = document.getElementById('searchLocationBtn');
-        const locationInput = document.getElementById('locationInput');
-        const citySelector = document.getElementById('citySelector');
-
-        if (searchBtn) {
-            searchBtn.addEventListener('click', () => this.searchLocation());
+        if (this.searchBtn) {
+            this.searchBtn.addEventListener('click', () => this.searchLocation());
         }
 
-        if (locationInput) {
+        if (this.locationInput) {
             // Debounced input for suggestions
             const debouncedHandler = this.debounce((e) => {
                 this.handleSearchInput(e);
             }, 300);
-            locationInput.addEventListener('input', debouncedHandler);
+            this.locationInput.addEventListener('input', debouncedHandler);
 
-            locationInput.addEventListener('keypress', (e) => {
+            this.locationInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     this.hideSuggestions();
                     this.searchLocation();
@@ -59,8 +109,8 @@ class Weather {
         }
 
         // City dropdown change
-        if (citySelector) {
-            citySelector.addEventListener('change', () => this.handleCityChange());
+        if (this.citySelect) {
+            this.citySelect.addEventListener('change', () => this.handleCityChange());
         }
     }
 
@@ -172,18 +222,19 @@ class Weather {
     }
 
     selectCity(city) {
-        const locationInput = document.getElementById('locationInput');
-        if (locationInput) {
-            locationInput.value = city.name;
+        if (this.locationInput) {
+            this.locationInput.value = city.name;
         }
 
         this.currentLocation = city.name;
         this.currentCoords = {
             latitude: city.lat,
-            longitude: city.lon
+            longitude: city.lng
         };
 
-        document.getElementById('currentLocation').textContent = city.name;
+        if (this.currentLocationEl) {
+            this.currentLocationEl.textContent = city.name;
+        }
 
         // Update dropdown to match selected city
         this.updateDropdownToCity(city);
@@ -193,29 +244,32 @@ class Weather {
     }
 
     updateDropdownToCity(city) {
-        const citySelector = document.getElementById('citySelector');
-        if (!citySelector) return;
+        if (!this.citySelect) return;
 
         // Find the option that matches this city
-        for (let i = 0; i < citySelector.options.length; i++) {
-            const option = citySelector.options[i];
-            const [lat, lon] = option.value.split(',');
+        for (let i = 0; i < this.citySelect.options.length; i++) {
+            const option = this.citySelect.options[i];
+            const [lat, lng] = option.value.split(',');
 
             // Check if coordinates match (with tolerance for floating point)
             const latMatch = Math.abs(parseFloat(lat) - city.lat) < 0.001;
-            const lonMatch = Math.abs(parseFloat(lon) - city.lon) < 0.001;
+            const lonMatch = Math.abs(parseFloat(lng) - city.lng) < 0.001;
 
             if (latMatch && lonMatch) {
-                citySelector.value = option.value;
+                this.citySelect.value = option.value;
+                this.updateSelectStyle(this.citySelect);
                 break;
             }
         }
     }
 
     handleCityChange() {
-        const citySelector = document.getElementById('citySelector');
-        const selectedValue = citySelector.value;
-        const selectedText = citySelector.options[citySelector.selectedIndex].text;
+        if (!this.citySelect) return;
+
+        this.updateSelectStyle(this.citySelect);
+
+        const selectedValue = this.citySelect.value;
+        const selectedText = this.citySelect.options[this.citySelect.selectedIndex].text;
 
         if (selectedValue) {
             const [latitude, longitude] = selectedValue.split(',');
@@ -226,7 +280,9 @@ class Weather {
             };
 
             // Update location display
-            document.getElementById('currentLocation').textContent = selectedText;
+            if (this.currentLocationEl) {
+                this.currentLocationEl.textContent = selectedText;
+            }
 
             // Load weather data for selected city
             this.loadWeatherData();
@@ -240,21 +296,16 @@ class Weather {
 
             if (locationData && locationData.city) {
                 // Try to find the city in AZERBAIJAN_CITIES
-                let foundCity = null;
-                if (typeof AZERBAIJAN_CITIES !== 'undefined') {
-                    foundCity = AZERBAIJAN_CITIES.find(city =>
-                        city.name.toLowerCase() === locationData.city.toLowerCase()
-                    );
-                }
+                const foundCity = AZERBAIJAN_CITIES.find(city =>
+                    city.name.toLowerCase() === locationData.city.toLowerCase()
+                );
 
                 if (foundCity) {
                     this.currentLocation = foundCity.name;
                     this.currentCoords = {
                         latitude: foundCity.lat,
-                        longitude: foundCity.lon
+                        longitude: foundCity.lng
                     };
-                    // Update dropdown to this city
-                    this.updateDropdownToCity(foundCity);
                 } else {
                     this.currentLocation = locationData.city;
                     this.currentCoords = {
@@ -271,19 +322,13 @@ class Weather {
                 latitude: 40.4093,
                 longitude: 49.8671
             };
-            // Update dropdown to Baku
-            if (typeof AZERBAIJAN_CITIES !== 'undefined') {
-                const bakuCity = AZERBAIJAN_CITIES.find(city => city.value === 'baki');
-                if (bakuCity) {
-                    this.updateDropdownToCity(bakuCity);
-                }
-            }
         }
     }
 
     async searchLocation() {
-        const input = document.getElementById('locationInput');
-        const cityName = input.value.trim();
+        if (!this.locationInput) return;
+
+        const cityName = this.locationInput.value.trim();
 
         if (!cityName) {
             return;
@@ -320,7 +365,9 @@ class Weather {
 
         try {
             // Update current location display
-            document.getElementById('currentLocation').textContent = this.currentLocation;
+            if (this.currentLocationEl) {
+                this.currentLocationEl.textContent = this.currentLocation;
+            }
 
             // Fetch current weather
             await this.loadCurrentWeather();
@@ -395,23 +442,25 @@ class Weather {
         const isDay = current.is_day;
 
         // Update main temperature
-        document.getElementById('currentTemp').textContent = temp;
-        document.getElementById('feelsLike').textContent = temp;
+        if (this.currentTempEl) this.currentTempEl.textContent = temp;
+        if (this.feelsLikeEl) this.feelsLikeEl.textContent = temp;
 
         // Update condition
         const condition = this.getWeatherCondition(weatherCode);
-        document.getElementById('currentCondition').textContent = condition;
+        if (this.currentConditionEl) this.currentConditionEl.textContent = condition;
 
         // Update icon
-        this.updateWeatherIcon(document.getElementById('currentIcon'), weatherCode, isDay);
+        if (this.currentIconEl) {
+            this.updateWeatherIcon(this.currentIconEl, weatherCode, isDay);
+        }
 
         // Update stats
-        document.getElementById('humidity').textContent = Math.round(humidity);
-        document.getElementById('windSpeed').textContent = Math.round(windSpeed);
+        if (this.humidityEl) this.humidityEl.textContent = Math.round(humidity);
+        if (this.windSpeedEl) this.windSpeedEl.textContent = Math.round(windSpeed);
 
         // Mock additional data
-        document.getElementById('minTemp').textContent = temp - 5;
-        document.getElementById('maxTemp').textContent = temp + 5;
+        if (this.minTempEl) this.minTempEl.textContent = temp - 5;
+        if (this.maxTempEl) this.maxTempEl.textContent = temp + 5;
 
         // Update date
         const now = new Date();
@@ -421,20 +470,19 @@ class Weather {
             month: 'long',
             day: 'numeric'
         });
-        document.getElementById('currentDate').textContent = dateStr;
+        if (this.currentDateEl) this.currentDateEl.textContent = dateStr;
 
         // Mock additional details
-        document.getElementById('visibility').textContent = '10 km';
-        document.getElementById('cloudiness').textContent = '45%';
-        document.getElementById('pressure').textContent = '1013 hPa';
-        document.getElementById('uvIndex').textContent = '4';
+        if (this.visibilityEl) this.visibilityEl.textContent = '10 km';
+        if (this.cloudinessEl) this.cloudinessEl.textContent = '45%';
+        if (this.pressureEl) this.pressureEl.textContent = '1013 hPa';
+        if (this.uvIndexEl) this.uvIndexEl.textContent = '4';
     }
 
     displayHourlyForecast(hourly) {
-        const wrapper = document.getElementById('hourlyWeatherWrapper');
-        if (!wrapper) return;
+        if (!this.hourlyWeatherWrapper) return;
 
-        wrapper.innerHTML = '';
+        this.hourlyWeatherWrapper.innerHTML = '';
 
         const now = new Date();
         const currentHour = now.getHours();
@@ -468,7 +516,7 @@ class Weather {
                 </div>
             `;
 
-            wrapper.appendChild(hourCard);
+            this.hourlyWeatherWrapper.appendChild(hourCard);
         }
 
         // Initialize Swiper and scroll to current hour
@@ -476,10 +524,9 @@ class Weather {
     }
 
     displayDailyForecast(daily) {
-        const container = document.getElementById('dailyWeather');
-        if (!container) return;
+        if (!this.dailyWeatherEl) return;
 
-        container.innerHTML = '';
+        this.dailyWeatherEl.innerHTML = '';
 
         for (let i = 0; i < daily.time.length; i++) {
             const dayData = this.getDayData(daily, i);
@@ -506,7 +553,7 @@ class Weather {
                 </div>
             `;
 
-            container.appendChild(dayCard);
+            this.dailyWeatherEl.appendChild(dayCard);
         }
     }
 
@@ -609,20 +656,19 @@ class Weather {
 
     displayMockData() {
         // Display mock data if API fails
-        document.getElementById('currentTemp').textContent = '22';
-        document.getElementById('feelsLike').textContent = '23';
-        document.getElementById('currentCondition').textContent = 'Açıq';
-        document.getElementById('humidity').textContent = '65';
-        document.getElementById('windSpeed').textContent = '15';
-        document.getElementById('minTemp').textContent = '18';
-        document.getElementById('maxTemp').textContent = '26';
+        if (this.currentTempEl) this.currentTempEl.textContent = '22';
+        if (this.feelsLikeEl) this.feelsLikeEl.textContent = '23';
+        if (this.currentConditionEl) this.currentConditionEl.textContent = 'Açıq';
+        if (this.humidityEl) this.humidityEl.textContent = '65';
+        if (this.windSpeedEl) this.windSpeedEl.textContent = '15';
+        if (this.minTempEl) this.minTempEl.textContent = '18';
+        if (this.maxTempEl) this.maxTempEl.textContent = '26';
     }
 
     displayMockHourlyData() {
-        const wrapper = document.getElementById('hourlyWeatherWrapper');
-        if (!wrapper) return;
+        if (!this.hourlyWeatherWrapper) return;
 
-        wrapper.innerHTML = '';
+        this.hourlyWeatherWrapper.innerHTML = '';
 
         for (let i = 0; i < 12; i++) {
             const hour = new Date();
@@ -640,17 +686,16 @@ class Weather {
                 </div>
             `;
 
-            wrapper.appendChild(hourCard);
+            this.hourlyWeatherWrapper.appendChild(hourCard);
         }
 
         this.initHourlySwiper();
     }
 
     displayMockDailyData() {
-        const container = document.getElementById('dailyWeather');
-        if (!container) return;
+        if (!this.dailyWeatherEl) return;
 
-        container.innerHTML = '';
+        this.dailyWeatherEl.innerHTML = '';
 
         const days = ['Bugün', 'Bazar', 'Bazar ertəsi', 'Çərşənbə', 'Cümə axşamı', 'Cümə', 'Şənbə'];
 
@@ -676,7 +721,7 @@ class Weather {
                 </div>
             `;
 
-            container.appendChild(dayCard);
+            this.dailyWeatherEl.appendChild(dayCard);
         }
     }
 }
@@ -684,7 +729,6 @@ class Weather {
 // ============================================================================
 // HEADER WEATHER WIDGET CLASS
 // ============================================================================
-
 class HeaderWeatherWidget {
     constructor() {
         this.cityElement = document.querySelector('.weather__city');
@@ -731,7 +775,7 @@ class HeaderWeatherWidget {
 // ============================================================================
 
 // ==================== GET LOCATION FROM IP ====================
-async function getLocationFromIP() {
+const getLocationFromIP = async () => {
     // Return default location (Bakı) to avoid CORS issues
     // when hosted on GitHub Pages
     return {
@@ -742,10 +786,10 @@ async function getLocationFromIP() {
 }
 
 // ==================== GET CURRENT WEATHER ====================
-async function getCurrentWeather(lat, lon) {
+const getCurrentWeather = async (lat, lng) => {
     try {
         const response = await fetch(
-            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true&temperature_unit=celsius`
+            `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&current_weather=true&temperature_unit=celsius`
         );
         const data = await response.json();
 
@@ -761,7 +805,7 @@ async function getCurrentWeather(lat, lon) {
 }
 
 // ==================== GET WEATHER ICON CLASS ====================
-function getWeatherIconClass(code, isDay) {
+const getWeatherIconClass = (code, isDay) => {
     if (code === 0) {
         return isDay ? 'ri-sun-line' : 'ri-moon-line';
     } else if (code >= 1 && code <= 3) {
@@ -782,7 +826,6 @@ function getWeatherIconClass(code, isDay) {
 // ============================================================================
 // AUTO-INITIALIZATION
 // ============================================================================
-
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize weather page (only if on weather page)
     if (document.getElementById('weatherPage')) {

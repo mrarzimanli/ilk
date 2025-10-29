@@ -765,30 +765,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// ==================== Related Posts Slider ====================
-document.addEventListener('DOMContentLoaded', () => {
-    const relatedSlider = document.querySelector('.swiper--related');
-
-    if (relatedSlider) {
-        new Swiper('.swiper--related', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: false,
-            grabCursor: true,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 24,
-                },
-            },
-        });
-    }
-});
-
 // ==================== Navigation Submenus ====================
 document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll('.nav__item--has-submenu');

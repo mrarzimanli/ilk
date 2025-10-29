@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kredit kalkulyatoru - Hesabla</title>
+    <title>Burç Hesaplama Aracı</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,31 +18,6 @@
         <i class="ri-arrow-up-line"></i>
     </button>
 
-    <!-- Top Ads Above Header -->
-    <section class="ads-section">
-        <div class="container">
-            <div class="ads">
-                <!-- Top Banner Ad 1 - Image/GIF -->
-                <div class="ad">
-                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
-                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
-                    </a>
-                </div>
-
-                <div class="ad">
-                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
-                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
-                    </a>
-                </div>
-
-                <!-- Top Banner Ad 2 - Iframe -->
-                <!-- <div class="ad">
-                    <iframe src="https://example.com" width="100%" height="90" frameborder="0"></iframe>
-                </div> -->
-            </div>
-        </div>
-    </section>
-
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -55,22 +30,45 @@
                 </a>
 
                 <!-- Weather Widget -->
-                <a href="weather.html" class="header__weather weather">
+                <div class="header__weather weather">
                     <i class="weather__icon ri-sun-line"></i>
                     <div class="weather__info">
                         <span class="weather__city">Loading...</span>
                         <span class="weather__temp">--°C</span>
                     </div>
-                </a>
+                </div>
 
                 <!-- Navigation Menu -->
                 <nav class="header__nav nav">
                     <ul class="nav__list">
                         <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriyalar</a>
+                            <a href="category.html" class="nav__link">Gündem</a>
                         </li>
                         <li class="nav__item">
-                            <a href="games.html" class="nav__link">Oyunlar</a>
+                            <a href="category.html" class="nav__link">Siyaset</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Spor <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Futbol</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Süper Lig</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Champions League</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Milli Takım</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Transfer Haberleri</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Diğer Sporlar</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Basketbol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Voleybol</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Tenis</a></li>
+                                        <li><a href="category.html" class="nav__submenu-link">Olimpiyat</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
                         <li class="nav__item nav__item--has-submenu">
                             <a href="category.html" class="nav__link">Dünya <i class="ri-arrow-down-s-line nav__arrow"></i></a>
@@ -122,13 +120,10 @@
                             </div>
                         </li>
                         <li class="nav__item">
-                            <a href="weather.html" class="nav__link">Hava</a>
+                            <a href="weather.html" class="nav__link">Hava vəziyyəti</a>
                         </li>
                         <li class="nav__item">
                             <a href="prayer-times.html" class="nav__link">Namaz vaxtları</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="currency-converter.html" class="nav__link">Valyuta</a>
                         </li>
                     </ul>
                 </nav>
@@ -203,137 +198,119 @@
     </div>
 
     <!-- Main Content -->
-    <main class="main main--credit-calculator" id="creditCalculatorPage">
-        <!-- Breadcrumbs -->
+    <main class="main main--zodiacs" id="zodiacsPage">
         <section class="breadcrumbs">
             <div class="container">
                 <nav class="breadcrumbs__nav">
                     <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
                     <i class="ri-arrow-right-s-line"></i>
-                    <span class="breadcrumbs__current">Kredit kalkulyatoru</span>
+                    <span class="breadcrumbs__current">Burç Hesaplama</span>
                 </nav>
             </div>
         </section>
 
-        <!-- Credit Calculator Section -->
-        <section class="section section--credit-calculator">
+        <!-- Zodiacs Calculator Section -->
+        <section class="section section--zodiacs">
             <div class="container">
-                <!-- Page Header -->
                 <div class="section__header">
                     <div class="section__header__content">
-                        <h2 class="section__header__title">Kredit kalkulyatoru</h2>
-                        <p class="section__header__subtitle">Məhsulların ödənişini və faiz dərəcələrini hesablayın</p>
+                        <h2 class="section__header__title">Burç Hesaplama Aracı</h2>
+                        <p class="section__header__subtitle">Doğum tarixinizi daxil edin, burcunuzu və faydalı məlumatları öyrənin</p>
                     </div>
                 </div>
 
-                <!-- Calculator Card -->
-                <div class="credit-calculator-card">
+                <div class="credit-calculator-card zodiacs-calculator">
                     <div class="credit-calculator__inputs">
-                        <!-- Loan Amount -->
                         <div class="credit-input-group">
-                            <label for="loanAmount" class="credit-input-label">
-                                <i class="ri-money-dollar-circle-line"></i>
-                                Kredit məbləği
-                            </label>
+                            <label class="credit-input-label" for="birthDay"><i class="ri-calendar-event-line"></i> Gün</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="loanAmount" class="credit-input" value="10000" min="1000" max="500000" step="100">
-                                <span class="credit-input-suffix">AZN</span>
-                            </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanAmountRange" class="credit-range" min="1000" max="500000" value="10000" step="1000">
+                                <select id="birthDay" class="credit-input credit-input--select">
+                                    <option disabled selected>Gün seçin</option>
+                                </select>
+                                <span class="credit-input-suffix">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </span>
                             </div>
                         </div>
-
-                        <!-- Interest Rate -->
                         <div class="credit-input-group">
-                            <label for="interestRate" class="credit-input-label">
-                                <i class="ri-percent-line"></i>
-                                Faiz dərəcəsi
-                            </label>
+                            <label class="credit-input-label" for="birthMonth"><i class="ri-calendar-2-line"></i> Ay</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="interestRate" class="credit-input" value="12" min="1" max="50" step="0.1">
-                                <span class="credit-input-suffix">%</span>
-                            </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" value="12" step="0.1">
+                                <select id="birthMonth" class="credit-input credit-input--select">
+                                    <option disabled selected>Ay seçin</option>
+                                    <option value="1">Yanvar</option>
+                                    <option value="2">Fevral</option>
+                                    <option value="3">Mart</option>
+                                    <option value="4">Aprel</option>
+                                    <option value="5">May</option>
+                                    <option value="6">İyun</option>
+                                    <option value="7">İyul</option>
+                                    <option value="8">Avqust</option>
+                                    <option value="9">Sentyabr</option>
+                                    <option value="10">Oktyabr</option>
+                                    <option value="11">Noyabr</option>
+                                    <option value="12">Dekabr</option>
+                                </select>
+                                <span class="credit-input-suffix">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </span>
                             </div>
                         </div>
-
-                        <!-- Loan Term -->
                         <div class="credit-input-group">
-                            <label for="loanTerm" class="credit-input-label">
-                                <i class="ri-calendar-line"></i>
-                                Kredit müddəti
-                            </label>
+                            <label class="credit-input-label" for="birthYear"><i class="ri-calendar-todo-line"></i> İl</label>
                             <div class="credit-input-wrapper">
-                                <input type="number" id="loanTerm" class="credit-input" value="12" min="1" max="84" step="1">
-                                <span class="credit-input-suffix">ay</span>
-                            </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanTermRange" class="credit-range" min="1" max="84" value="12" step="1">
+                                <select id="birthYear" class="credit-input credit-input--select">
+                                    <option disabled selected>İl seçin</option>
+                                </select>
+                                <span class="credit-input-suffix">
+                                    <i class="ri-arrow-down-s-line"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Results -->
-                    <div class="credit-calculator__results">
+                    <div class="credit-calculator__results" id="zodiacResults">
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-money-dollar-circle-fill"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-star-smile-line"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Aylıq ödəniş</h4>
-                                <p class="credit-result-card__value" id="monthlyPayment">0 AZN</p>
+                                <h4 class="credit-result-card__label">Burcunuz</h4>
+                                <p class="credit-result-card__value" id="zodiacName">-</p>
                             </div>
                         </div>
-
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-bank-card-line"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-drop-line"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi ödəniş</h4>
-                                <p class="credit-result-card__value" id="totalPayment">0 AZN</p>
+                                <h4 class="credit-result-card__label">Qrup</h4>
+                                <p class="credit-result-card__value" id="zodiacGroup">-</p>
                             </div>
                         </div>
-
                         <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
-                                <i class="ri-calculator-line"></i>
-                            </div>
+                            <div class="credit-result-card__icon"><i class="ri-planet-line"></i></div>
                             <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi faiz</h4>
-                                <p class="credit-result-card__value" id="totalInterest">0 AZN</p>
+                                <h4 class="credit-result-card__label">Yönəldici planet</h4>
+                                <p class="credit-result-card__value" id="zodiacRuler">-</p>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Payment Schedule Table -->
-                <div class="credit-schedule">
-                    <div class="section__header">
-                        <div class="section__header__content">
-                            <h3 class="section__header__title">Ödəniş cədvəli</h3>
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon"><i class="ri-user-2-line"></i></div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Yaşınız</h4>
+                                <p class="credit-result-card__value" id="zodiacAge">-</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="credit-table">
-                        <div class="credit-table__header">
-                            <div class="credit-table__col">Aylar</div>
-                            <div class="credit-table__col">Əsas məbləğ</div>
-                            <div class="credit-table__col">Faiz</div>
-                            <div class="credit-table__col">Qalıq borc</div>
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon"><i class="ri-calendar-check-line"></i></div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Doğum günü</h4>
+                                <p class="credit-result-card__value" id="zodiacWeekday">-</p>
+                            </div>
                         </div>
-                        <div class="credit-table__body" id="paymentSchedule">
-                            <!-- Payment schedule will be loaded here -->
+                        <div class="credit-result-card">
+                            <div class="credit-result-card__icon"><i class="ri-timer-line"></i></div>
+                            <div class="credit-result-card__content">
+                                <h4 class="credit-result-card__label">Növbəti ad gününə</h4>
+                                <p class="credit-result-card__value" id="zodiacDaysLeft">-</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Info Section -->
-                <div class="credit-info">
-                    <div class="credit-info__item">
-                        <i class="ri-information-line"></i>
-                        <p>Kalkulyator təxmini hesablamalar göstərir. Faktiki faiz dərəcələri bank tərəfindən müəyyən edilir.</p>
                     </div>
                 </div>
             </div>
@@ -668,7 +645,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/credit-calculator.js"></script>
     <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/astrology-calculators.js"></script>
+
 </body>
 </html>
