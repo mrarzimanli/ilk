@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İmtahan ballarını hesablama</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Top Ads Above Header -->
+    <section class="ads-section">
+        <div class="container">
+            <div class="ads">
+                <!-- Top Banner Ad 1 - Image/GIF -->
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <!-- Top Banner Ad 2 - Iframe -->
+                <!-- <div class="ad">
+                    <iframe src="https://example.com" width="100%" height="90" frameborder="0"></iframe>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!-- Logo -->
+                <a href="index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+
+                <!-- Weather Widget -->
+                <a href="weather.html" class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </a>
+
+                <!-- Navigation Menu -->
+                <nav class="header__nav nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Kateqoriya 1</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Kateqoriya 2</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Kateqoriya 3</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="category.html" class="nav__link">Kateqoriya 4</a>
+                        </li>
+                        <li class="nav__item nav__item--has-submenu">
+                            <a href="category.html" class="nav__link">Səhifələr <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                            <div class="nav__submenu nav__submenu--multi-column">
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Oyun səhifələri</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="games.html" class="nav__submenu-link">Bütün oyunlar</a></li>
+                                        <li><a href="snake.html" class="nav__submenu-link">Snake</a></li>
+                                        <li><a href="memory.html" class="nav__submenu-link">Memory</a></li>
+                                        <li><a href="guess-number.html" class="nav__submenu-link">Guess the Number</a></li>
+                                        <li><a href="word-guess.html" class="nav__submenu-link">Word Guess</a></li>
+                                        <li><a href="reaction.html" class="nav__submenu-link">Reaction</a></li>
+                                        <li><a href="color-match.html" class="nav__submenu-link">Color Match</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">Kalkulyator səhifələri</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="currency-converter.html" class="nav__submenu-link">Valyuta kalkulyatoru</a></li>
+                                        <li><a href="credit-calculator.html" class="nav__submenu-link">Kredit kalkulyatoru</a></li>
+                                        <li><a href="mortgage-calculator.html" class="nav__submenu-link">İpoteka kalkulyatoru</a></li>
+                                        <li><a href="deposit-calculator.html" class="nav__submenu-link">Depozit kalkulyatoru</a></li>
+                                        <li><a href="zodiacs.html" class="nav__submenu-link">Bürc kalkulyatoru</a></li>
+                                        <li><a href="ascendant.html" class="nav__submenu-link">Detallı bürc kalkulyatoru</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav__submenu-column">
+                                    <h4 class="nav__submenu-title">İnformativ səhifələr</h4>
+                                    <ul class="nav__submenu-list">
+                                        <li><a href="category.html" class="nav__submenu-link">Kateqoriyalar</a></li>
+                                        <li><a href="posts.html" class="nav__submenu-link">Bloq</a></li>
+                                        <li><a href="weather.html" class="nav__submenu-link">Hava durumu</a></li>
+                                        <li><a href="prayer-times.html" class="nav__submenu-link">Namaz vaxtları</a></li>
+                                        <li><a href="privacy-policy.html" class="nav__submenu-link">Statik səhifə</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Language Dropdown -->
+                    <div class="header__language language-dropdown">
+                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="language-dropdown__flag">🇦🇿</span>
+                            <span class="language-dropdown__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="ru" data-code="RU">
+                                    <span class="language-dropdown__flag">🇷🇺</span>
+                                    <span class="language-dropdown__name">Русский</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="category.html" class="language-dropdown__link" data-lang="tr" data-code="TR">
+                                    <span class="language-dropdown__flag">🇹🇷</span>
+                                    <span class="language-dropdown__name">Türkçe</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game game-btn">
+                        <i class="ri-star-line"></i>
+                        <span class="game-btn__text">Eğlence</span>
+                    </a>
+
+                    <!-- Search Button -->
+                    <button class="header__search search-btn" aria-label="Arama">
+                        <i class="search-btn__icon ri-search-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Kapat">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <h2 class="search-overlay__title">Arama</h2>
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <main class="main main--exam-calculator" id="examCalculatorPage">
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">İmtahan ballarını hesablama</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Exam Calculator Section -->
+        <section class="section section--exam-calculator">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h2 class="section__header__title title">İmtahan Ballarını Hesabla</h2>
+                        <p class="section__header__subtitle description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
+                    </div>
+                </div>
+
+                <button class="btn btn--primary">Button</button>
+                <button class="btn btn--secondary">Button</button>
+                <button class="btn btn--tertiary">Button</button>
+                <button class="btn btn--icon">Button</button>
+                <button class="btn btn--text">Button</button>
+
+                <!-- Countdown -->
+                <div class="countdown">
+                    <div class="countdown__item">
+                        <span class="countdown__item__value" id="days">00</span>
+                        <small class="countdown__item__label">Gün</small>
+                    </div>
+                    <div class="countdown__item">
+                        <span class="countdown__item__value" id="hours">00</span>
+                        <small class="countdown__item__label">Saat</small>
+                    </div>
+                    <div class="countdown__item">
+                        <span class="countdown__item__value" id="minutes">00</span>
+                        <small class="countdown__item__label">Dəqiqə</small>
+                    </div>
+                    <div class="countdown__item">
+                        <span class="countdown__item__value" id="seconds">00</span>
+                        <small class="countdown__item__label">Saniyə</small>
+                    </div>
+                </div>
+
+                <div class="calculator calculator--exam-calculator">
+                    <div class="calculator__header">
+                        <h3 class="calculator__header__title">I Qrup</h3>
+                        <p class="calculator__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
+                        <div class="tabs tabs--exam-calculator" id="examCalculatorTabs"></div>
+                    </div>
+                    <div class="calculator__body">
+                        <div class="form form--calculator is-hidden" id="examCalculatorForm">
+                            <div class="form__header">
+                                <h3 class="form__header__title">I Qrup</h3>
+                                <p class="form__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
+                            </div>
+                            <div class="form__body">
+                                <form class="form__fields">
+                                    <!-- Form fields will be added here -->
+                                </form>
+                                <div class="form__results is-hidden" id="examCalculatorResults">
+                                    <div class="results__header">
+                                        <h3 class="results__header__title">Nəticələr</h3>
+                                        <p class="results__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
+                                    </div>
+                                    <div class="results__body">
+                                        <!-- Results content will be added here -->
+                                    </div>
+                                    <div class="results__footer">
+                                        <div class="results__actions">
+                                            <button class="btn btn--secondary" id="btnRecalculate">Yenidən hesabla</button>
+                                            <button class="btn btn--primary" id="btnDownload">Nəticələri yüklə</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form__footer">
+                                <div class="form__actions">
+                                    <button class="btn btn--primary" id="btnCalculate">Hesabla</button>
+                                </div>
+                            </div>
+
+                            <!-- Form Info -->
+                            <div class="form__info">
+                                <div class="form__info__icon">
+                                    <i class="ri-information-line"></i>
+                                </div>
+                                <div class="form__info__text">
+                                    <p>Kalkulyator təxmini hesablamalar göstərir. Ballar nümunəvi qaydalara əsasən hesablanır.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">Your trusted source for the latest news, technology updates, and trending topics.</p>
+                </div>
+
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Home</a></li>
+                        <li><a href="category.html" class="footer__link">Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">World News</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item"><i class="ri-mail-line"></i><span>info@newshub.com</span></a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/exam-calculator.js"></script>
+    <script src="./assets/js/weather.js"></script>
+</body>
+</html>
