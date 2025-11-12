@@ -94,49 +94,17 @@ const scoreRanges = {
     }
 };
 
-const resultMessages = {
-    excellent: {
-        az: {
-            'I Qrup': { text: 'Siz bunu bacardınız! 🎉', gif: 'https://i.ibb.co/MGtjf0b/4giphy.gif' },
-            'II Qrup': { text: 'Siz bunu bacardınız! 🎉', gif: 'https://i.ibb.co/MGtjf0b/4giphy.gif' },
-            'III Qrup': { text: 'Siz bunu bacardınız! 🎉', gif: 'https://i.ibb.co/MGtjf0b/4giphy.gif' },
-            'IV Qrup': { text: 'Siz bunu bacardınız! 🎉', gif: 'https://i.ibb.co/MGtjf0b/4giphy.gif' },
-            'Buraxılış İmtahanı': { text: 'Siz bunu bacardınız! 🎉', gif: 'https://i.ibb.co/MGtjf0b/4giphy.gif' }
-        }
-    },
-    good: {
-        az: {
-            'I Qrup': { text: 'Potensialınız var! 📈', gif: 'https://i.ibb.co/PZ6L2ZV/3giphy.gif' },
-            'II Qrup': { text: 'Potensialınız var! 📈', gif: 'https://i.ibb.co/PZ6L2ZV/3giphy.gif' },
-            'III Qrup': { text: 'Potensialınız var! 📈', gif: 'https://i.ibb.co/PZ6L2ZV/3giphy.gif' },
-            'IV Qrup': { text: 'Potensialınız var! 📈', gif: 'https://i.ibb.co/PZ6L2ZV/3giphy.gif' },
-            'Buraxılış İmtahanı': { text: 'Potensialınız var! 📈', gif: 'https://i.ibb.co/PZ6L2ZV/3giphy.gif' }
-        }
-    },
-    average: {
-        az: {
-            'I Qrup': { text: 'Daha yaxşı nəticə göstərə bilərsiniz! 💪', gif: 'https://i.ibb.co/SdJMfcj/2giphy.gif' },
-            'II Qrup': { text: 'Daha yaxşı nəticə göstərə bilərsiniz! 💪', gif: 'https://i.ibb.co/SdJMfcj/2giphy.gif' },
-            'III Qrup': { text: 'Daha yaxşı nəticə göstərə bilərsiniz! 💪', gif: 'https://i.ibb.co/SdJMfcj/2giphy.gif' },
-            'IV Qrup': { text: 'Daha yaxşı nəticə göstərə bilərsiniz! 💪', gif: 'https://i.ibb.co/SdJMfcj/2giphy.gif' },
-            'Buraxılış İmtahanı': { text: 'Daha yaxşı nəticə göstərə bilərsiniz! 💪', gif: 'https://i.ibb.co/SdJMfcj/2giphy.gif' }
-        }
-    },
-    low: {
-        az: {
-            'I Qrup': { text: 'Əlavə hazırlıq lazımdır! 📈', gif: 'https://i.ibb.co/p0JJNY7/low.gif' },
-            'II Qrup': { text: 'Əlavə hazırlıq lazımdır! 📈', gif: 'https://i.ibb.co/p0JJNY7/low.gif' },
-            'III Qrup': { text: 'Əlavə hazırlıq lazımdır! 📈', gif: 'https://i.ibb.co/p0JJNY7/low.gif' },
-            'IV Qrup': { text: 'Əlavə hazırlıq lazımdır! 📈', gif: 'https://i.ibb.co/p0JJNY7/low.gif' },
-            'Buraxılış İmtahanı': { text: 'Əlavə hazırlıq lazımdır! 📈', gif: 'https://i.ibb.co/p0JJNY7/low.gif' }
-        }
-    }
-};
-
 function handleGroupClick(groupName) {
     activeGroup = groups.find(g => g.name === groupName);
     document.querySelectorAll('#examCalculatorTabs .btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent === translations[language].groups[groupName]);
+        const isActive = btn.textContent === translations[language].groups[groupName];
+        if (isActive) {
+            btn.classList.remove('btn--stroked');
+            btn.classList.add('btn--filled');
+        } else {
+            btn.classList.remove('btn--filled');
+            btn.classList.add('btn--stroked');
+        }
     });
 
     const formWrapper = document.getElementById('examCalculatorForm');
@@ -163,29 +131,29 @@ function generateForm() {
             const maxOpen = subject === 'İngilis dili' ? 7 : (subject === 'Azərbaycan dili' ? 10 : 7);
             inputFields = `
                 <div class="input-group">
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-checkbox-circle-line"></i>${translations[language].closed}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-closed" min="0" max="${maxClosed}" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-checkbox-circle-line"></i>${translations[language].closed}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-closed" min="0" max="${maxClosed}" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-open" min="0" max="${maxOpen}" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-open" min="0" max="${maxOpen}" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>`;
             if (subject === 'Riyaziyyat') {
                 inputFields += `
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-coding" min="0" max="5" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-coding" min="0" max="5" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>`;
@@ -194,35 +162,35 @@ function generateForm() {
         } else {
             inputFields = `
                 <div class="input-group">
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-check-line"></i>${translations[language].correct}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-correct" min="0" max="22" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-check-line"></i>${translations[language].correct}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-correct" min="0" max="22" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-close-line"></i>${translations[language].incorrect}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-incorrect" min="0" max="22" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-close-line"></i>${translations[language].incorrect}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-incorrect" min="0" max="22" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-coding" min="0" max="5" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-coding" min="0" max="5" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>
-                    <label class="credit-input-group">
-                        <span class="credit-input-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
-                        <div class="credit-input-wrapper">
-                            <input type="number" name="${subject}-open" min="0" max="3" class="credit-input" placeholder="0">
-                            <span class="credit-input-suffix">ədəd</span>
+                    <label class="form-control-group">
+                        <span class="form-control-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
+                        <div class="form-control-wrapper">
+                            <input type="number" name="${subject}-open" min="0" max="3" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
+                            <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
                         <span class="error-message"></span>
                     </label>
@@ -234,7 +202,7 @@ function generateForm() {
         form.appendChild(subjectDiv);
     });
 
-    document.querySelectorAll('.credit-input').forEach(input => {
+    document.querySelectorAll('.form-control').forEach(input => {
         input.addEventListener('input', validateInput);
         input.addEventListener('blur', validateInput);
     });
@@ -383,25 +351,15 @@ function getResultLevel(score, groupName) {
     return 'low';
 }
 
-function displayResultMessage(totalScore) {
-    const messageContainer = document.getElementById('resultMessage');
-    const level = getResultLevel(totalScore, activeGroup.name);
-    const message = resultMessages[level].az[activeGroup.name];
-    if (message) {
-        messageContainer.innerHTML = `
-            <iframe src="${message.gif}" width="200" height="200" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-            <p>${message.text}</p>`;
-        messageContainer.classList.add('show');
-    } else {
-        messageContainer.classList.remove('show');
-    }
-}
 
 function displayResults(preventScroll = false) {
     const resultsWrapper = document.getElementById('examCalculatorResults');
     const body = resultsWrapper?.querySelector('.results__body');
     if (!body) return;
     body.innerHTML = '';
+
+    const tableWrapper = document.createElement('div');
+    tableWrapper.className = 'table-wrapper';
 
     const table = document.createElement('table');
     table.className = 'table';
@@ -419,10 +377,11 @@ function displayResults(preventScroll = false) {
         c2.textContent = score.toFixed(1);
         row.appendChild(c1);
         row.appendChild(c2);
-        if (subject === 'Ümumi bal') row.classList.add('total');
+        if (subject === 'Ümumi bal') row.classList.add('table-row--danger');
         tbody.appendChild(row);
     }
-    body.appendChild(table);
+    tableWrapper.appendChild(table);
+    body.appendChild(tableWrapper);
     const formWrapper = document.getElementById('examCalculatorForm');
     resultsWrapper?.classList.remove('is-hidden');
     formWrapper?.classList.remove('is-hidden');
@@ -478,7 +437,7 @@ function init() {
     if (buttonContainer) buttonContainer.innerHTML = '';
     groups.forEach(group => {
         const button = document.createElement('button');
-        button.className = 'btn';
+        button.className = 'btn btn--stroked btn--lg btn--blue';
         button.textContent = translations.az.groups[group.name];
         button.addEventListener('click', () => handleGroupClick(group.name));
         buttonContainer?.appendChild(button);

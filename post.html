@@ -306,25 +306,25 @@
                         <div class="reactions">
                             <h3 class="reactions__title">Bu yazıya tepkiniz nedir?</h3>
                             <div class="reactions__list">
-                                <button class="reaction-btn" data-reaction="like" aria-label="Beğen">
+                                <button class="btn btn--stroked btn--sm btn--blue reaction-btn" data-reaction="like" aria-label="Beğen">
                                     <i class="ri-thumb-up-line"></i>
-                                    <span class="reaction-btn__count">234</span>
+                                    <span>234</span>
                                 </button>
-                                <button class="reaction-btn" data-reaction="love" aria-label="Sevdim">
+                                <button class="btn btn--stroked btn--sm btn--pink reaction-btn" data-reaction="love" aria-label="Sevdim">
                                     <i class="ri-heart-line"></i>
-                                    <span class="reaction-btn__count">189</span>
+                                    <span>189</span>
                                 </button>
-                                <button class="reaction-btn" data-reaction="wow" aria-label="Şaşırdım">
+                                <button class="btn btn--stroked btn--sm btn--orange reaction-btn" data-reaction="wow" aria-label="Şaşırdım">
                                     <i class="ri-emotion-line"></i>
-                                    <span class="reaction-btn__count">56</span>
+                                    <span>56</span>
                                 </button>
-                                <button class="reaction-btn" data-reaction="think" aria-label="Düşündürücü">
+                                <button class="btn btn--stroked btn--sm btn--yellow reaction-btn" data-reaction="think" aria-label="Düşündürücü">
                                     <i class="ri-lightbulb-line"></i>
-                                    <span class="reaction-btn__count">92</span>
+                                    <span>92</span>
                                 </button>
-                                <button class="reaction-btn" data-reaction="sad" aria-label="Üzücü">
+                                <button class="btn btn--stroked btn--sm btn--black reaction-btn" data-reaction="sad" aria-label="Üzücü">
                                     <i class="ri-emotion-unhappy-line"></i>
-                                    <span class="reaction-btn__count">12</span>
+                                    <span>12</span>
                                 </button>
                             </div>
                         </div>
@@ -340,10 +340,15 @@
                                 <div class="comment-form__avatar">
                                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=60&h=60&fit=crop&crop=face" alt="User">
                                 </div>
-                                <form class="comment-form__form">
-                                    <textarea class="comment-form__textarea" placeholder="Yorumunuzu yazın..." rows="3" required></textarea>
+                                <form class="comment-form__form form">
+                                    <div class="form-group">
+                                        <textarea class="form-control form-control--textarea" placeholder="Yorumunuzu yazın..." rows="3" required></textarea>
+                                    </div>
                                     <div class="comment-form__actions">
-                                        <button type="submit" class="comment-form__submit">Yorum Yap</button>
+                                        <button type="submit" class="btn btn--filled btn--md btn--blue">
+                                            <i class="ri-send-plane-fill"></i>
+                                            Yorum Yap
+                                        </button>
                                     </div>
                                 </form>
                             </div>
@@ -500,7 +505,7 @@
 
                                 <!-- Load More Comments -->
                                 <div class="comments__load-more">
-                                    <button class="load-more-comments-btn">
+                                    <button class="btn btn--stroked btn--md btn--blue">
                                         <i class="ri-arrow-down-s-line"></i>
                                         <span>Daha fazla yorum göster (43)</span>
                                     </button>
@@ -566,9 +571,17 @@
                         <div class="sidebar-widget__content">
                             <div class="newsletter">
                                 <p class="newsletter__text">En son haberleri e-posta adresinize alın.</p>
-                                <form class="newsletter__form">
-                                    <input type="email" class="newsletter__input" placeholder="E-posta adresiniz" required>
-                                    <button type="submit" class="newsletter__btn">Abone Ol</button>
+                                <form class="newsletter__form form">
+                                    <div class="form-control-wrapper">
+                                        <input type="email" class="form-control form-control--md form-control--with-prefix" placeholder="E-posta adresiniz" required>
+                                        <span class="form-control-prefix">
+                                            <i class="ri-mail-line"></i>
+                                        </span>
+                                    </div>
+                                    <button type="submit" class="btn btn--filled btn--md btn--blue">
+                                        <i class="ri-mail-send-line"></i>
+                                        Abone Ol
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -611,31 +624,31 @@
                         <p class="follow-us__description">Ən son xəbərləri və yenilikləri birbaşa sosial media hesablarımızdan izləyin</p>
                     </div>
                     <div class="follow-us__buttons">
-                        <a href="#" class="follow-us__btn follow-us__btn--telegram">
+                        <a href="#" class="btn btn--filled btn--sky-blue btn--md">
                             <i class="ri-telegram-line"></i>
                             <span>Telegram</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--instagram">
+                        <a href="#" class="btn btn--filled btn--pink btn--md">
                             <i class="ri-instagram-line"></i>
                             <span>Instagram</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--tiktok">
+                        <a href="#" class="btn btn--filled btn--black btn--md">
                             <i class="ri-tiktok-line"></i>
                             <span>TikTok</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--facebook">
+                        <a href="#" class="btn btn--filled btn--blue btn--md">
                             <i class="ri-facebook-line"></i>
                             <span>Facebook</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--twitter">
+                        <a href="#" class="btn btn--filled btn--black btn--md">
                             <i class="ri-twitter-x-line"></i>
                             <span>X</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--linkedin">
+                        <a href="#" class="btn btn--filled btn--blue btn--md">
                             <i class="ri-linkedin-line"></i>
                             <span>LinkedIn</span>
                         </a>
-                        <a href="#" class="follow-us__btn follow-us__btn--youtube">
+                        <a href="#" class="btn btn--filled btn--red btn--md">
                             <i class="ri-youtube-line"></i>
                             <span>YouTube</span>
                         </a>

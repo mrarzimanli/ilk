@@ -5,7 +5,7 @@
 // ============================================================================
 class SearchOverlay {
     constructor() {
-        this.searchBtn = document.querySelector('.search-btn');
+        this.searchBtn = document.querySelector('.header__search');
         this.searchOverlay = document.querySelector('.search-overlay');
         this.searchClose = document.querySelector('.search-overlay__close');
         this.searchInput = document.querySelector('.search-overlay__input');
@@ -59,7 +59,7 @@ class SearchOverlay {
 // ============================================================================
 class LanguageDropdown {
     constructor() {
-        this.toggle = document.querySelector('.language-dropdown__toggle');
+        this.toggle = document.querySelector('.header__language .header__actions__btn');
         this.menu = document.querySelector('.language-dropdown__menu');
         this.links = document.querySelectorAll('.language-dropdown__link');
 
@@ -122,8 +122,8 @@ class LanguageDropdown {
         const code = link.querySelector('.language-dropdown__name').textContent;
 
         // Update toggle button
-        this.toggle.querySelector('.language-dropdown__flag').textContent = flag;
-        this.toggle.querySelector('.language-dropdown__code').textContent = link.dataset.code;
+        this.toggle.querySelector('.header__actions__btn__flag').textContent = flag;
+        this.toggle.querySelector('.header__actions__btn__code').textContent = link.dataset.code;
 
         // Close dropdown
         this.closeDropdown();
@@ -906,7 +906,7 @@ document.addEventListener('DOMContentLoaded', () => {
     reactionBtns.forEach(btn => {
         btn.addEventListener('click', function () {
             const isActive = this.classList.contains('active');
-            const countElement = this.querySelector('.reaction-btn__count');
+            const countElement = this.querySelector('span');
             let count = parseInt(countElement.textContent);
 
             if (isActive) {
@@ -932,7 +932,7 @@ document.addEventListener('DOMContentLoaded', () => {
         commentForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const textarea = this.querySelector('.comment-form__textarea');
+            const textarea = this.querySelector('textarea.form-control');
             const commentText = textarea.value.trim();
 
             if (commentText) {

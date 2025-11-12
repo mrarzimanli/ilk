@@ -224,68 +224,74 @@
                 </div>
 
                 <!-- Calculator Card -->
-                <div class="credit-calculator-card deposit-calculator">
-                    <div class="credit-calculator__inputs">
-                        <div class="credit-input-group">
-                            <label class="credit-input-label" for="depositAmount"><i class="ri-money-dollar-circle-line"></i> Depozit məbləği</label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="depositAmount" class="credit-input" min="100" max="1000000" step="100">
-                                <span class="credit-input-suffix">AZN</span>
+                <div class="calculator-card deposit-calculator">
+                    <div class="calculator__inputs">
+                        <div class="form-group">
+                            <label class="form-label" for="depositAmount"><i class="ri-money-dollar-circle-line"></i> Depozit məbləği</label>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="depositAmount" class="form-control form-control--lg form-control--with-suffix" min="100" max="1000000" step="100">
+                                <span class="form-control-suffix form-control-suffix--text">AZN</span>
                             </div>
-                            <input type="range" id="depositAmountRange" class="credit-range" min="100" max="1000000" step="100">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="depositAmountRange" class="form-range form-range--blue" min="100" max="1000000" step="100">
+                            </div>
                         </div>
-                        <div class="credit-input-group">
-                            <label class="credit-input-label" for="interestRate"><i class="ri-percent-line"></i> İllik faiz dərəcəsi</label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="interestRate" class="credit-input" min="1" max="50" step="0.1">
-                                <span class="credit-input-suffix">%</span>
+                        <div class="form-group">
+                            <label class="form-label" for="interestRate"><i class="ri-percent-line"></i> İllik faiz dərəcəsi</label>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="interestRate" class="form-control form-control--lg form-control--with-suffix" min="1" max="50" step="0.1">
+                                <span class="form-control-suffix form-control-suffix--text">%</span>
                             </div>
-                            <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" step="0.1">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="interestRateRange" class="form-range form-range--blue" min="1" max="50" step="0.1">
+                            </div>
                         </div>
-                        <div class="credit-input-group">
-                            <label class="credit-input-label" for="depositTerm"><i class="ri-calendar-todo-line"></i> Depozit müddəti</label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="depositTerm" class="credit-input" min="1" max="36" step="1">
-                                <span class="credit-input-suffix">ay</span>
+                        <div class="form-group">
+                            <label class="form-label" for="depositTerm"><i class="ri-calendar-todo-line"></i> Depozit müddəti</label>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="depositTerm" class="form-control form-control--lg form-control--with-suffix" min="1" max="36" step="1">
+                                <span class="form-control-suffix form-control-suffix--text">ay</span>
                             </div>
-                            <input type="range" id="depositTermRange" class="credit-range" min="1" max="36" step="1">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="depositTermRange" class="form-range form-range--blue" min="1" max="36" step="1">
+                            </div>
                         </div>
                     </div>
 
-                    <div class="credit-calculator__results" id="depositResults">
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon"><i class="ri-money-dollar-circle-fill"></i></div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Depozit məbləği</h4>
-                                <p class="credit-result-card__value" id="depositAmountResult">-</p>
+                    <div class="calculator__results" id="depositResults">
+                        <div class="result-card">
+                            <div class="result-card__icon"><i class="ri-money-dollar-circle-fill"></i></div>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Depozit məbləği</h4>
+                                <p class="result-card__value" id="depositAmountResult">-</p>
                             </div>
                         </div>
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon"><i class="ri-calculator-line"></i></div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Faiz gəliri</h4>
-                                <p class="credit-result-card__value" id="interestEarned">-</p>
+                        <div class="result-card">
+                            <div class="result-card__icon"><i class="ri-calculator-line"></i></div>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Faiz gəliri</h4>
+                                <p class="result-card__value" id="interestEarned">-</p>
                             </div>
                         </div>
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon"><i class="ri-wallet-3-fill"></i></div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi məbləğ</h4>
-                                <p class="credit-result-card__value" id="totalAmount">-</p>
+                        <div class="result-card">
+                            <div class="result-card__icon"><i class="ri-wallet-3-fill"></i></div>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Ümumi məbləğ</h4>
+                                <p class="result-card__value" id="totalAmount">-</p>
                             </div>
                         </div>
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon"><i class="ri-calendar-check-fill"></i></div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Müddət</h4>
-                                <p class="credit-result-card__value" id="depositTermResult">-</p>
+                        <div class="result-card">
+                            <div class="result-card__icon"><i class="ri-calendar-check-fill"></i></div>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Müddət</h4>
+                                <p class="result-card__value" id="depositTermResult">-</p>
                             </div>
                         </div>
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon"><i class="ri-percent-line"></i></div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">İllik faiz dərəcəsi</h4>
-                                <p class="credit-result-card__value" id="interestRateResult">-</p>
+                        <div class="result-card">
+                            <div class="result-card__icon"><i class="ri-percent-line"></i></div>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">İllik faiz dərəcəsi</h4>
+                                <p class="result-card__value" id="interestRateResult">-</p>
                             </div>
                         </div>
                     </div>

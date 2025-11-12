@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Component Demo - Glob</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .demo-section {
+            padding: 48px 0;
+            border-bottom: 2px solid var(--base-3);
+        }
+
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+
+        .demo-title {
+            font-size: var(--fs-h4);
+            line-height: var(--lh-h4);
+            font-weight: var(--fw-bold);
+            color: var(--base-13);
+            margin-bottom: 24px;
+        }
+
+        .demo-subtitle {
+            font-size: var(--fs-b2);
+            line-height: var(--lh-b2);
+            color: var(--base-9);
+            margin-bottom: 32px;
+        }
+
+        .demo-group {
+            margin-bottom: 32px;
+        }
+
+        .demo-group-title {
+            font-size: var(--fs-b1);
+            line-height: var(--lh-b1);
+            font-weight: var(--fw-semi-bold);
+            color: var(--base-13);
+            margin-bottom: 16px;
+        }
+
+        .demo-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .demo-code {
+            background: var(--base-2);
+            border: 1px solid var(--base-3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--base-11);
+            margin-top: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="../index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <a href="index.html" class="breadcrumbs__link">Components</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Buttons</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h1 class="section__header__title">Button Component Demo</h1>
+                        <p class="section__header__subtitle">Reusable button component with variants, sizes, and colors</p>
+                    </div>
+                </div>
+
+                <!-- Size Variants -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Size Variants</h2>
+                    <p class="demo-subtitle">Available sizes: sm, md (default), lg, xl</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Filled Buttons</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue btn--sm">Small Button</button>
+                            <button class="btn btn--filled btn--blue btn--md">Medium Button</button>
+                            <button class="btn btn--filled btn--blue btn--lg">Large Button</button>
+                            <button class="btn btn--filled btn--blue btn--xl">Extra Large Button</button>
+                        </div>
+                        <div class="demo-code">&lt;button class="btn btn--filled btn--blue btn--sm"&gt;Small Button&lt;/button&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Stroked Buttons</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--stroked btn--blue btn--sm">Small Button</button>
+                            <button class="btn btn--stroked btn--blue btn--md">Medium Button</button>
+                            <button class="btn btn--stroked btn--blue btn--lg">Large Button</button>
+                            <button class="btn btn--stroked btn--blue btn--xl">Extra Large Button</button>
+                        </div>
+                        <div class="demo-code">&lt;button class="btn btn--stroked btn--blue btn--md"&gt;Medium Button&lt;/button&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Color Variants - Filled -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Filled Buttons - Color Variants</h2>
+                    <p class="demo-subtitle">All available colors with filled variant</p>
+
+                    <div class="demo-buttons">
+                        <button class="btn btn--filled btn--blue">Blue</button>
+                        <button class="btn btn--filled btn--sky-blue">Sky Blue</button>
+                        <button class="btn btn--filled btn--green">Green</button>
+                        <button class="btn btn--filled btn--yellow">Yellow</button>
+                        <button class="btn btn--filled btn--orange">Orange</button>
+                        <button class="btn btn--filled btn--red">Red</button>
+                        <button class="btn btn--filled btn--pink">Pink</button>
+                        <button class="btn btn--filled btn--black">Black</button>
+                    </div>
+                    <div class="demo-code">&lt;button class="btn btn--filled btn--blue"&gt;Blue&lt;/button&gt;</div>
+                </div>
+
+                <!-- Color Variants - Stroked -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Stroked Buttons - Color Variants</h2>
+                    <p class="demo-subtitle">All available colors with outline variant</p>
+
+                    <div class="demo-buttons">
+                        <button class="btn btn--stroked btn--blue">Blue</button>
+                        <button class="btn btn--stroked btn--sky-blue">Sky Blue</button>
+                        <button class="btn btn--stroked btn--green">Green</button>
+                        <button class="btn btn--stroked btn--yellow">Yellow</button>
+                        <button class="btn btn--stroked btn--orange">Orange</button>
+                        <button class="btn btn--stroked btn--red">Red</button>
+                        <button class="btn btn--stroked btn--pink">Pink</button>
+                        <button class="btn btn--stroked btn--black">Black</button>
+                    </div>
+                    <div class="demo-code">&lt;button class="btn btn--stroked btn--red"&gt;Red&lt;/button&gt;</div>
+                </div>
+
+                <!-- With Icons -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Buttons with Icons</h2>
+                    <p class="demo-subtitle">Buttons support icons with RemixIcon</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Filled with Icons</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue">
+                                <i class="ri-download-line"></i>
+                                Download
+                            </button>
+                            <button class="btn btn--filled btn--green">
+                                <i class="ri-check-line"></i>
+                                Success
+                            </button>
+                            <button class="btn btn--filled btn--red">
+                                <i class="ri-delete-bin-line"></i>
+                                Delete
+                            </button>
+                            <button class="btn btn--filled btn--orange">
+                                <i class="ri-edit-line"></i>
+                                Edit
+                            </button>
+                        </div>
+                        <div class="demo-code">&lt;button class="btn btn--filled btn--blue"&gt;&lt;i class="ri-download-line"&gt;&lt;/i&gt; Download&lt;/button&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Stroked with Icons</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--stroked btn--blue">
+                                <i class="ri-search-line"></i>
+                                Search
+                            </button>
+                            <button class="btn btn--stroked btn--green">
+                                <i class="ri-add-line"></i>
+                                Add New
+                            </button>
+                            <button class="btn btn--stroked btn--orange">
+                                <i class="ri-settings-line"></i>
+                                Settings
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Only -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Icon-Only Buttons</h2>
+                    <p class="demo-subtitle">Buttons with only icons using btn--icon modifier</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Filled Icon Buttons - All Sizes</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue btn--icon btn--sm"><i class="ri-heart-line"></i></button>
+                            <button class="btn btn--filled btn--blue btn--icon btn--md"><i class="ri-heart-line"></i></button>
+                            <button class="btn btn--filled btn--blue btn--icon btn--lg"><i class="ri-heart-line"></i></button>
+                            <button class="btn btn--filled btn--blue btn--icon btn--xl"><i class="ri-heart-line"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Stroked Icon Buttons - Various Colors</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--stroked btn--blue btn--icon"><i class="ri-share-line"></i></button>
+                            <button class="btn btn--stroked btn--green btn--icon"><i class="ri-check-line"></i></button>
+                            <button class="btn btn--stroked btn--red btn--icon"><i class="ri-close-line"></i></button>
+                            <button class="btn btn--stroked btn--orange btn--icon"><i class="ri-edit-line"></i></button>
+                            <button class="btn btn--stroked btn--pink btn--icon"><i class="ri-heart-line"></i></button>
+                        </div>
+                        <div class="demo-code">&lt;button class="btn btn--stroked btn--blue btn--icon"&gt;&lt;i class="ri-share-line"&gt;&lt;/i&gt;&lt;/button&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Button States -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Button States</h2>
+                    <p class="demo-subtitle">Disabled and active states</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Disabled Buttons</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue" disabled>Disabled Filled</button>
+                            <button class="btn btn--stroked btn--blue" disabled>Disabled Stroked</button>
+                            <button class="btn btn--filled btn--red btn--disabled">Using --disabled Class</button>
+                        </div>
+                        <div class="demo-code">&lt;button class="btn btn--filled btn--blue" disabled&gt;Disabled&lt;/button&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Button Groups -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Button Groups</h2>
+                    <p class="demo-subtitle">Grouped buttons with spacing or attached</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Normal Group (with gap)</h3>
+                        <div class="btn-group">
+                            <button class="btn btn--filled btn--blue">Option 1</button>
+                            <button class="btn btn--filled btn--blue">Option 2</button>
+                            <button class="btn btn--filled btn--blue">Option 3</button>
+                        </div>
+                        <div class="demo-code">&lt;div class="btn-group"&gt;...&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Attached Group</h3>
+                        <div class="btn-group btn-group--attached">
+                            <button class="btn btn--stroked btn--blue">Left</button>
+                            <button class="btn btn--stroked btn--blue">Center</button>
+                            <button class="btn btn--stroked btn--blue">Right</button>
+                        </div>
+                        <div class="demo-code">&lt;div class="btn-group btn-group--attached"&gt;...&lt;/div&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Mixed Examples -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Real-World Examples</h2>
+                    <p class="demo-subtitle">Common button combinations</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Form Actions</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue btn--lg">
+                                <i class="ri-check-line"></i>
+                                Submit
+                            </button>
+                            <button class="btn btn--stroked btn--black btn--lg">Cancel</button>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Calculator Actions</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--green">
+                                <i class="ri-calculator-line"></i>
+                                Hesabla
+                            </button>
+                            <button class="btn btn--stroked btn--orange">
+                                <i class="ri-refresh-line"></i>
+                                Yenidən hesabla
+                            </button>
+                            <button class="btn btn--stroked btn--blue">
+                                <i class="ri-download-line"></i>
+                                Nəticələri yüklə
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Social Actions</h3>
+                        <div class="demo-buttons">
+                            <button class="btn btn--filled btn--blue btn--sm">
+                                <i class="ri-facebook-fill"></i>
+                                Share
+                            </button>
+                            <button class="btn btn--filled btn--sky-blue btn--sm">
+                                <i class="ri-twitter-fill"></i>
+                                Tweet
+                            </button>
+                            <button class="btn btn--filled btn--pink btn--sm">
+                                <i class="ri-instagram-line"></i>
+                                Post
+                            </button>
+                            <button class="btn btn--filled btn--red btn--sm">
+                                <i class="ri-youtube-fill"></i>
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Guide -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Usage Guide</h2>
+                    <p class="demo-subtitle">How to use the button component</p>
+
+                    <div style="background: var(--base-2); padding: 24px; border-radius: 12px;">
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Base Class</h4>
+                        <p style="margin-bottom: 16px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn</code> - Required base class</p>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Variant Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--filled</code> - Solid background (default)</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--stroked</code> - Outline style</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Size Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--sm</code> - 36px height</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--md</code> - 44px height (default)</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--lg</code> - 52px height</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--xl</code> - 60px height</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Color Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--blue</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--sky-blue</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--green</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--yellow</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--orange</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--red</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--pink</code></li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--black</code></li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Special Modifiers</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--icon</code> - Icon-only square button</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.btn--disabled</code> or <code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">disabled</code> - Disabled state</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">Button Component Documentation</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 Glob. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

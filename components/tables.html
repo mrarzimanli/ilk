@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Component Demo - Glob</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .demo-section {
+            padding: 48px 0;
+            border-bottom: 2px solid var(--base-3);
+        }
+
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+
+        .demo-title {
+            font-size: var(--fs-h4);
+            line-height: var(--lh-h4);
+            font-weight: var(--fw-bold);
+            color: var(--base-13);
+            margin-bottom: 24px;
+        }
+
+        .demo-subtitle {
+            font-size: var(--fs-b2);
+            line-height: var(--lh-b2);
+            color: var(--base-9);
+            margin-bottom: 32px;
+        }
+
+        .demo-group {
+            margin-bottom: 32px;
+        }
+
+        .demo-group-title {
+            font-size: var(--fs-b1);
+            line-height: var(--lh-b1);
+            font-weight: var(--fw-semi-bold);
+            color: var(--base-13);
+            margin-bottom: 16px;
+        }
+
+        .demo-code {
+            background: var(--base-2);
+            border: 1px solid var(--base-3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--base-11);
+            margin-top: 16px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }
+
+        .info-box {
+            background: var(--blue-50);
+            border-left: 4px solid var(--blue-500);
+            padding: 16px 20px;
+            border-radius: 8px;
+            margin: 24px 0;
+        }
+
+        .info-box__title {
+            font-weight: var(--fw-semi-bold);
+            color: var(--blue-600);
+            margin-bottom: 8px;
+        }
+
+        .info-box__content {
+            color: var(--base-11);
+            font-size: var(--fs-b3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="../index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <a href="index.html" class="breadcrumbs__link">Components</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Tables</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h1 class="section__header__title">Table Component</h1>
+                        <p class="section__header__subtitle">Reusable data table component with multiple variants, row highlighting, and responsive design</p>
+                    </div>
+                </div>
+
+                <!-- Basic Table -->
+                <div class="demo-section">
+                    <h2 class="demo-title">1. Basic Table</h2>
+                    <p class="demo-subtitle">The default table with clean styling, hover effects, and proper spacing.</p>
+
+                    <div class="demo-group">
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Position</th>
+                                        <th>Office</th>
+                                        <th>Age</th>
+                                        <th>Salary</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Tiger Nixon</td>
+                                        <td>System Architect</td>
+                                        <td>Edinburgh</td>
+                                        <td>61</td>
+                                        <td>$320,800</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Garrett Winters</td>
+                                        <td>Accountant</td>
+                                        <td>Tokyo</td>
+                                        <td>63</td>
+                                        <td>$170,750</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ashton Cox</td>
+                                        <td>Junior Technical Author</td>
+                                        <td>San Francisco</td>
+                                        <td>66</td>
+                                        <td>$86,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedric Kelly</td>
+                                        <td>Senior Javascript Developer</td>
+                                        <td>Edinburgh</td>
+                                        <td>22</td>
+                                        <td>$433,060</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="demo-code">&lt;div class="table-wrapper"&gt;
+                            &lt;table class="table"&gt;
+                            &lt;thead&gt;
+                            &lt;tr&gt;
+                            &lt;th&gt;Name&lt;/th&gt;
+                            &lt;th&gt;Position&lt;/th&gt;
+                            &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                            &lt;tr&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;/tbody&gt;
+                            &lt;/table&gt;
+                            &lt;/div&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Striped Table -->
+                <div class="demo-section">
+                    <h2 class="demo-title">2. Striped Table</h2>
+                    <p class="demo-subtitle">Alternating row colors for better readability with large datasets.</p>
+
+                    <div class="demo-group">
+                        <div class="table-wrapper">
+                            <table class="table table--striped">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Fajr</th>
+                                        <th>Sunrise</th>
+                                        <th>Dhuhr</th>
+                                        <th>Asr</th>
+                                        <th>Maghrib</th>
+                                        <th>Isha</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1 Noyabr</td>
+                                        <td>06:15</td>
+                                        <td>07:45</td>
+                                        <td>12:30</td>
+                                        <td>15:20</td>
+                                        <td>17:45</td>
+                                        <td>19:10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2 Noyabr</td>
+                                        <td>06:16</td>
+                                        <td>07:46</td>
+                                        <td>12:30</td>
+                                        <td>15:19</td>
+                                        <td>17:44</td>
+                                        <td>19:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3 Noyabr</td>
+                                        <td>06:17</td>
+                                        <td>07:47</td>
+                                        <td>12:30</td>
+                                        <td>15:18</td>
+                                        <td>17:43</td>
+                                        <td>19:08</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4 Noyabr</td>
+                                        <td>06:18</td>
+                                        <td>07:48</td>
+                                        <td>12:30</td>
+                                        <td>15:17</td>
+                                        <td>17:42</td>
+                                        <td>19:07</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5 Noyabr</td>
+                                        <td>06:19</td>
+                                        <td>07:49</td>
+                                        <td>12:30</td>
+                                        <td>15:16</td>
+                                        <td>17:41</td>
+                                        <td>19:06</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="demo-code">&lt;table class="table table--striped"&gt;
+                            &lt;!-- table content --&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Row Variants -->
+                <div class="demo-section">
+                    <h2 class="demo-title">3. Row Variants</h2>
+                    <p class="demo-subtitle">Highlight specific rows with color variants for status, active items, or important data.</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Highlighted Row (Blue)</h3>
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Event</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nov 10</td>
+                                        <td>Meeting with team</td>
+                                        <td>Completed</td>
+                                    </tr>
+                                    <tr class="table-row--highlight">
+                                        <td>Nov 11</td>
+                                        <td>Project deadline</td>
+                                        <td>Today</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nov 12</td>
+                                        <td>Client presentation</td>
+                                        <td>Upcoming</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;tr class="table-row--highlight"&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;/tr&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Success Row (Green)</h3>
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Task</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row--success">
+                                        <td>Deploy to production</td>
+                                        <td>Completed</td>
+                                        <td>2024-11-10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Code review</td>
+                                        <td>Pending</td>
+                                        <td>2024-11-11</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;tr class="table-row--success"&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;/tr&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Warning Row (Yellow)</h3>
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Server</th>
+                                        <th>CPU Usage</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Server 1</td>
+                                        <td>45%</td>
+                                        <td>Normal</td>
+                                    </tr>
+                                    <tr class="table-row--warning">
+                                        <td>Server 2</td>
+                                        <td>78%</td>
+                                        <td>Warning</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;tr class="table-row--warning"&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;/tr&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Danger Row (Red)</h3>
+                        <div class="table-wrapper">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Transaction</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Payment #1234</td>
+                                        <td>$150.00</td>
+                                        <td>Success</td>
+                                    </tr>
+                                    <tr class="table-row--danger">
+                                        <td>Payment #1235</td>
+                                        <td>$89.99</td>
+                                        <td>Failed</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;tr class="table-row--danger"&gt;
+                            &lt;td&gt;Data&lt;/td&gt;
+                            &lt;/tr&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Bordered Table -->
+                <div class="demo-section">
+                    <h2 class="demo-title">4. Bordered Table</h2>
+                    <p class="demo-subtitle">All cells have borders for a grid-like appearance.</p>
+
+                    <div class="demo-group">
+                        <div class="table-wrapper">
+                            <table class="table table--bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Stock</th>
+                                        <th>Category</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Laptop</td>
+                                        <td>$999</td>
+                                        <td>15</td>
+                                        <td>Electronics</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mouse</td>
+                                        <td>$29</td>
+                                        <td>45</td>
+                                        <td>Accessories</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keyboard</td>
+                                        <td>$79</td>
+                                        <td>30</td>
+                                        <td>Accessories</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="demo-code">&lt;table class="table table--bordered"&gt;
+                            &lt;!-- table content --&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Size Variants -->
+                <div class="demo-section">
+                    <h2 class="demo-title">5. Size Variants</h2>
+                    <p class="demo-subtitle">Adjust table density with compact or large size modifiers.</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Compact Table</h3>
+                        <p class="demo-subtitle">Reduced padding for more data in less space.</p>
+                        <div class="table-wrapper">
+                            <table class="table table--compact">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Currency</th>
+                                        <th>Rate</th>
+                                        <th>Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>USD</td>
+                                        <td>US Dollar</td>
+                                        <td>1.7000</td>
+                                        <td>+0.02%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>EUR</td>
+                                        <td>Euro</td>
+                                        <td>1.8500</td>
+                                        <td>-0.15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GBP</td>
+                                        <td>British Pound</td>
+                                        <td>2.1500</td>
+                                        <td>+0.08%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TRY</td>
+                                        <td>Turkish Lira</td>
+                                        <td>0.0550</td>
+                                        <td>-0.32%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;table class="table table--compact"&gt;
+                            &lt;!-- table content --&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Large Table</h3>
+                        <p class="demo-subtitle">Increased padding and font size for better readability.</p>
+                        <div class="table-wrapper">
+                            <table class="table table--large">
+                                <thead>
+                                    <tr>
+                                        <th>Month</th>
+                                        <th>Revenue</th>
+                                        <th>Growth</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>January</td>
+                                        <td>$125,000</td>
+                                        <td>+12.5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>February</td>
+                                        <td>$138,500</td>
+                                        <td>+10.8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>March</td>
+                                        <td>$152,300</td>
+                                        <td>+10.0%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;table class="table table--large"&gt;
+                            &lt;!-- table content --&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Combined Variants -->
+                <div class="demo-section">
+                    <h2 class="demo-title">6. Combined Variants</h2>
+                    <p class="demo-subtitle">Mix multiple modifiers for custom styling.</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Striped + Bordered</h3>
+                        <div class="table-wrapper">
+                            <table class="table table--striped table--bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>John Doe</td>
+                                        <td>john@example.com</td>
+                                        <td>Admin</td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>Jane Smith</td>
+                                        <td>jane@example.com</td>
+                                        <td>Editor</td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>Bob Johnson</td>
+                                        <td>bob@example.com</td>
+                                        <td>Viewer</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;table class="table table--striped table--bordered"&gt;
+                            &lt;!-- table content --&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Compact + Striped + Row Highlights</h3>
+                        <div class="table-wrapper">
+                            <table class="table table--compact table--striped">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row--success">
+                                        <td>#1001</td>
+                                        <td>Alice Brown</td>
+                                        <td>$245.00</td>
+                                        <td>Delivered</td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1002</td>
+                                        <td>Charlie Davis</td>
+                                        <td>$89.50</td>
+                                        <td>Processing</td>
+                                    </tr>
+                                    <tr class="table-row--warning">
+                                        <td>#1003</td>
+                                        <td>Diana Evans</td>
+                                        <td>$156.75</td>
+                                        <td>Pending</td>
+                                    </tr>
+                                    <tr class="table-row--danger">
+                                        <td>#1004</td>
+                                        <td>Frank Green</td>
+                                        <td>$320.00</td>
+                                        <td>Cancelled</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="demo-code">&lt;table class="table table--compact table--striped"&gt;
+                            &lt;tbody&gt;
+                            &lt;tr class="table-row--success"&gt;&lt;!-- row --&gt;&lt;/tr&gt;
+                            &lt;tr class="table-row--warning"&gt;&lt;!-- row --&gt;&lt;/tr&gt;
+                            &lt;tr class="table-row--danger"&gt;&lt;!-- row --&gt;&lt;/tr&gt;
+                            &lt;/tbody&gt;
+                            &lt;/table&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Usage Guide -->
+                <div class="demo-section">
+                    <h2 class="demo-title">7. Usage Guide</h2>
+
+                    <div class="info-box">
+                        <div class="info-box__title">📦 Basic Structure</div>
+                        <div class="info-box__content">
+                            Always wrap your table in a <code>.table-wrapper</code> div for proper overflow handling and styling. The table itself uses the <code>.table</code> class.
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">🎨 Table Modifiers</div>
+                        <div class="info-box__content">
+                            <ul style="margin: 8px 0; padding-left: 20px;">
+                                <li><strong>.table--striped</strong> - Alternating row colors</li>
+                                <li><strong>.table--bordered</strong> - Borders on all cells</li>
+                                <li><strong>.table--compact</strong> - Reduced padding</li>
+                                <li><strong>.table--large</strong> - Increased padding and font size</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">🎯 Row Variants</div>
+                        <div class="info-box__content">
+                            <ul style="margin: 8px 0; padding-left: 20px;">
+                                <li><strong>.table-row--highlight</strong> - Blue background (current/active)</li>
+                                <li><strong>.table-row--success</strong> - Green background</li>
+                                <li><strong>.table-row--warning</strong> - Yellow background</li>
+                                <li><strong>.table-row--danger</strong> - Red background</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">📱 Responsive Design</div>
+                        <div class="info-box__content">
+                            Tables automatically adapt to mobile screens with horizontal scrolling, reduced padding, and smaller fonts on devices below 768px width.
+                        </div>
+                    </div>
+
+                    <div class="info-box">
+                        <div class="info-box__title">🔄 Compatibility</div>
+                        <div class="info-box__content">
+                            The table component uses <code>@extend</code> in SCSS, so existing classes like <code>.prayer-times__table</code> automatically inherit all these styles and features.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Reusable component library built with design tokens and BEM methodology
+                    </p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 Glob. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

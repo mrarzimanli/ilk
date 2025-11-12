@@ -529,26 +529,17 @@ class CurrencyConverter {
     }
 
     createExchangeRateRow(currency) {
-        const row = document.createElement('div');
-        row.className = 'exchange-rates-table__row';
+        const row = document.createElement('tr');
 
         // Calculate real change indicator using value for comparison
         const changeType = this.calculateRealChange(currency.code, currency.value);
         const changeIndicator = this.getChangeIndicator(changeType);
 
         row.innerHTML = `
-            <div class="exchange-rates-table__col exchange-rates-table__col--currency">
-                ${currency.nominal} ${currency.name}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--code">
-                ${currency.code}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--rate">
-                ${currency.value}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--change">
-                ${changeIndicator}
-            </div>
+            <td>${currency.nominal} ${currency.name}</td>
+            <td>${currency.code}</td>
+            <td>${currency.value}</td>
+            <td style="text-align: center;">${changeIndicator}</td>
         `;
 
         return row;
@@ -671,26 +662,17 @@ class CurrencyConverter {
     }
 
     createCommodityRow(commodity) {
-        const row = document.createElement('div');
-        row.className = 'exchange-rates-table__row';
+        const row = document.createElement('tr');
 
         // Calculate real change indicator
         const changeType = this.calculateRealChange(commodity.code, commodity.price);
         const changeIndicator = this.getChangeIndicator(changeType);
 
         row.innerHTML = `
-            <div class="exchange-rates-table__col exchange-rates-table__col--currency">
-                (${commodity.symbol}) ${commodity.name}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--code">
-                ${commodity.code}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--rate">
-                $${commodity.price.toFixed(4)}
-            </div>
-            <div class="exchange-rates-table__col exchange-rates-table__col--change">
-                ${changeIndicator}
-            </div>
+            <td>(${commodity.symbol}) ${commodity.name}</td>
+            <td>${commodity.code}</td>
+            <td>$${commodity.price.toFixed(4)}</td>
+            <td style="text-align: center;">${changeIndicator}</td>
         `;
 
         return row;

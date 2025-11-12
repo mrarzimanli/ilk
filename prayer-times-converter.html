@@ -501,12 +501,18 @@ və ya sadəcə vaxtlar:
                 </div>
             </div>
 
-            <button class="btn" id="generateBtn" onclick="generateCode()">🚀 Kodu Yarat</button>
+            <button class="btn btn--filled btn--lg btn--blue" id="generateBtn" onclick="generateCode()">
+                <i class="ri-code-line"></i>
+                Kodu Yarat
+            </button>
 
             <div id="output" class="output">
                 <div class="output-header">
                     <span class="output-title">Generated JavaScript Code:</span>
-                    <button class="copy-btn" onclick="copyCode()">📋 Kopyala</button>
+                    <button class="btn btn--filled btn--sm btn--green copy-btn" onclick="copyCode()">
+                        <i class="ri-file-copy-line"></i>
+                        Kopyala
+                    </button>
                 </div>
                 <pre id="codeOutput"></pre>
             </div>
@@ -897,13 +903,15 @@ YALNIZ JSON ver, heç bir əlavə mətn yox!`
             const code = document.getElementById('codeOutput').textContent;
             navigator.clipboard.writeText(code).then(() => {
                 const btn = document.querySelector('.copy-btn');
-                const originalText = btn.textContent;
-                btn.textContent = '✅ Kopyalandı!';
-                btn.style.background = '#27ae60';
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="ri-check-line"></i> Kopyalandı!';
+                btn.classList.remove('btn--green');
+                btn.classList.add('btn--sky-blue');
 
                 setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '#4ec9b0';
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('btn--sky-blue');
+                    btn.classList.add('btn--green');
                 }, 2000);
             });
         }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İmtahan ballarını hesablama</title>
+    <title>DİM bal hesablayıcı</title>
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,6 +102,7 @@
                                         <li><a href="deposit-calculator.html" class="nav__submenu-link">Depozit kalkulyatoru</a></li>
                                         <li><a href="zodiacs.html" class="nav__submenu-link">Bürc kalkulyatoru</a></li>
                                         <li><a href="ascendant.html" class="nav__submenu-link">Detallı bürc kalkulyatoru</a></li>
+                                        <li><a href="exam-calculator.html" class="nav__submenu-link">DİM bal hesablayıcı</a></li>
                                     </ul>
                                 </div>
                                 <div class="nav__submenu-column">
@@ -123,9 +124,9 @@
                 <div class="header__actions">
                     <!-- Language Dropdown -->
                     <div class="header__language language-dropdown">
-                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
-                            <span class="language-dropdown__flag">🇦🇿</span>
-                            <span class="language-dropdown__code">AZ</span>
+                        <button class="header__actions__btn header__actions__btn--language" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="header__actions__btn__flag">🇦🇿</span>
+                            <span class="header__actions__btn__code">AZ</span>
                         </button>
                         <ul class="language-dropdown__menu">
                             <li class="language-dropdown__item">
@@ -156,14 +157,14 @@
                     </div>
 
                     <!-- Game Button -->
-                    <a href="games.html" class="header__game game-btn">
+                    <a href="games.html" class="header__game header__actions__btn header__actions__btn--with-text header__actions__btn--game">
                         <i class="ri-star-line"></i>
-                        <span class="game-btn__text">Eğlence</span>
+                        <span class="header__actions__btn__text">Eğlence</span>
                     </a>
 
                     <!-- Search Button -->
-                    <button class="header__search search-btn" aria-label="Arama">
-                        <i class="search-btn__icon ri-search-line"></i>
+                    <button class="header__search header__actions__btn header__actions__btn--icon-only" aria-label="Arama">
+                        <i class="ri-search-line"></i>
                     </button>
                 </div>
             </div>
@@ -188,14 +189,15 @@
         </div>
     </div>
 
-    <main class="main main--exam-calculator" id="examCalculatorPage">
+    <!-- Main Content -->
+    <main class="main main--exam-calculator">
         <!-- Breadcrumbs -->
         <section class="breadcrumbs">
             <div class="container">
-                <nav class="breadcrumbs__nav">
+                <nav class="breadcrumbs__nav" aria-label="Breadcrumb">
                     <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
                     <i class="ri-arrow-right-s-line"></i>
-                    <span class="breadcrumbs__current">İmtahan ballarını hesablama</span>
+                    <span class="breadcrumbs__current">DİM bal hesablayıcı</span>
                 </nav>
             </div>
         </section>
@@ -203,86 +205,79 @@
         <!-- Exam Calculator Section -->
         <section class="section section--exam-calculator">
             <div class="container">
-                <div class="section__header section__header--center">
+                <!-- Section Header -->
+                <div class="section__header section__header--center section__header--lg">
                     <div class="section__header__content">
-                        <h2 class="section__header__title title">İmtahan Ballarını Hesabla</h2>
-                        <p class="section__header__subtitle description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
+                        <h2 class="section__header__title">İmtahan ballarını hesablayın</h2>
+                        <p class="section__header__subtitle">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
                     </div>
                 </div>
 
-                <button class="btn btn--primary">Button</button>
-                <button class="btn btn--secondary">Button</button>
-                <button class="btn btn--tertiary">Button</button>
-                <button class="btn btn--icon">Button</button>
-                <button class="btn btn--text">Button</button>
+                <div class="exam-shortcuts">
+                    <!-- Countdown -->
+                    <div class="countdown">
+                        <div class="countdown__item">
+                            <div class="countdown__item__number" id="days">00</div>
+                            <div class="countdown__item__label">GÜN</div>
+                        </div>
+                        <div class="countdown__item">
+                            <div class="countdown__item__number" id="hours">00</div>
+                            <div class="countdown__item__label">SAAT</div>
+                        </div>
+                        <div class="countdown__item">
+                            <div class="countdown__item__number" id="minutes">00</div>
+                            <div class="countdown__item__label">DƏQİQƏ</div>
+                        </div>
+                        <div class="countdown__item">
+                            <div class="countdown__item__number" id="seconds">00</div>
+                            <div class="countdown__item__label">SANİYƏ</div>
+                        </div>
+                    </div>
 
-                <!-- Countdown -->
-                <div class="countdown">
-                    <div class="countdown__item">
-                        <span class="countdown__item__value" id="days">00</span>
-                        <small class="countdown__item__label">Gün</small>
-                    </div>
-                    <div class="countdown__item">
-                        <span class="countdown__item__value" id="hours">00</span>
-                        <small class="countdown__item__label">Saat</small>
-                    </div>
-                    <div class="countdown__item">
-                        <span class="countdown__item__value" id="minutes">00</span>
-                        <small class="countdown__item__label">Dəqiqə</small>
-                    </div>
-                    <div class="countdown__item">
-                        <span class="countdown__item__value" id="seconds">00</span>
-                        <small class="countdown__item__label">Saniyə</small>
+                    <!-- Group Tabs -->
+                    <div class="exam-calculator__groups" id="examCalculatorTabs">
+                        <!-- Buttons will be generated by JS -->
                     </div>
                 </div>
 
-                <div class="calculator calculator--exam-calculator">
-                    <div class="calculator__header">
-                        <h3 class="calculator__header__title">I Qrup</h3>
-                        <p class="calculator__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
-                        <div class="tabs tabs--exam-calculator" id="examCalculatorTabs"></div>
+                <!-- Exam Form -->
+                <div id="examCalculatorForm" class="exam-form is-hidden">
+                    <div class="exam-form__card">
+                        <div class="form__header">
+                            <h2 class="form__header__title">I Qrup</h2>
+                        </div>
+                        <div class="form form__fields">
+                            <!-- Form fields will be generated by JS -->
+                        </div>
+                        <div class="form__actions">
+                            <button type="button" id="btnCalculate" class="btn btn--filled btn--lg btn--blue">
+                                <i class="ri-calculator-line"></i>
+                                HESABLA
+                            </button>
+                        </div>
                     </div>
-                    <div class="calculator__body">
-                        <div class="form form--calculator is-hidden" id="examCalculatorForm">
-                            <div class="form__header">
-                                <h3 class="form__header__title">I Qrup</h3>
-                                <p class="form__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
-                            </div>
-                            <div class="form__body">
-                                <form class="form__fields">
-                                    <!-- Form fields will be added here -->
-                                </form>
-                                <div class="form__results is-hidden" id="examCalculatorResults">
-                                    <div class="results__header">
-                                        <h3 class="results__header__title">Nəticələr</h3>
-                                        <p class="results__header__description">Doğru, yanlış, açıq və qapalı suallar haqqında məlumat daxil edərək ballarınızı hesablaya bilərsiniz.</p>
-                                    </div>
-                                    <div class="results__body">
-                                        <!-- Results content will be added here -->
-                                    </div>
-                                    <div class="results__footer">
-                                        <div class="results__actions">
-                                            <button class="btn btn--secondary" id="btnRecalculate">Yenidən hesabla</button>
-                                            <button class="btn btn--primary" id="btnDownload">Nəticələri yüklə</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form__footer">
-                                <div class="form__actions">
-                                    <button class="btn btn--primary" id="btnCalculate">Hesabla</button>
-                                </div>
-                            </div>
+                </div>
 
-                            <!-- Form Info -->
-                            <div class="form__info">
-                                <div class="form__info__icon">
-                                    <i class="ri-information-line"></i>
-                                </div>
-                                <div class="form__info__text">
-                                    <p>Kalkulyator təxmini hesablamalar göstərir. Ballar nümunəvi qaydalara əsasən hesablanır.</p>
-                                </div>
+                <!-- Results Section -->
+                <div id="examCalculatorResults" class="exam-results is-hidden">
+                    <div class="exam-results__card">
+                        <div class="exam-results__header">
+                            <h2 class="exam-results__title">Nəticələr</h2>
+                        </div>
+                        <div class="results__body">
+                            <div class="table-wrapper">
+                                <!-- Results table will be generated by JS -->
                             </div>
+                        </div>
+                        <div class="exam-results__actions">
+                            <button type="button" id="btnRecalculate" class="btn btn--stroked btn--lg btn--blue">
+                                <i class="ri-refresh-line"></i>
+                                YENİDƏN HESABLA
+                            </button>
+                            <button type="button" id="btnDownload" class="btn btn--filled btn--lg btn--blue">
+                                <i class="ri-download-line"></i>
+                                NƏTİCƏLƏRİ YÜKLƏ
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -290,37 +285,118 @@
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
+                <!-- Footer Logo and Description -->
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
                         <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
                         </svg>
                     </a>
-                    <p class="footer__description">Your trusted source for the latest news, technology updates, and trending topics.</p>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                        Stay informed with our comprehensive coverage of global events.
+                    </p>
+                    <div class="footer__social">
+                        <a href="category.html" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="LinkedIn">
+                            <i class="ri-linkedin-fill"></i>
+                        </a>
+                        <a href="category.html" class="footer__social-link" aria-label="YouTube">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
                 </div>
 
+                <!-- Quick Links -->
                 <div class="footer__links">
                     <h3 class="footer__title">Quick Links</h3>
                     <ul class="footer__list">
                         <li><a href="category.html" class="footer__link">Home</a></li>
                         <li><a href="category.html" class="footer__link">Technology</a></li>
                         <li><a href="category.html" class="footer__link">Business</a></li>
+                        <li><a href="category.html" class="footer__link">Sports</a></li>
+                        <li><a href="category.html" class="footer__link">Health</a></li>
+                        <li><a href="category.html" class="footer__link">Entertainment</a></li>
+                        <li><a href="category.html" class="footer__link">Politics</a></li>
                         <li><a href="category.html" class="footer__link">World News</a></li>
                     </ul>
                 </div>
 
+                <!-- Categories -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Categories</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">Breaking News</a></li>
+                        <li><a href="category.html" class="footer__link">AI & Technology</a></li>
+                        <li><a href="category.html" class="footer__link">Cryptocurrency</a></li>
+                        <li><a href="category.html" class="footer__link">Climate Change</a></li>
+                        <li><a href="category.html" class="footer__link">Space & Science</a></li>
+                        <li><a href="category.html" class="footer__link">Gaming</a></li>
+                        <li><a href="category.html" class="footer__link">Reviews</a></li>
+                        <li><a href="category.html" class="footer__link">Opinions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="footer__links">
+                    <h3 class="footer__title">Company</h3>
+                    <ul class="footer__list">
+                        <li><a href="category.html" class="footer__link">About Us</a></li>
+                        <li><a href="category.html" class="footer__link">Our Team</a></li>
+                        <li><a href="category.html" class="footer__link">Careers</a></li>
+                        <li><a href="category.html" class="footer__link">Press Kit</a></li>
+                        <li><a href="category.html" class="footer__link">Advertise</a></li>
+                        <li><a href="category.html" class="footer__link">Partnership</a></li>
+                        <li><a href="category.html" class="footer__link">Contact</a></li>
+                        <li><a href="category.html" class="footer__link">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
                 <div class="footer__contact">
                     <h3 class="footer__title">Contact Info</h3>
-                    <a href="mailto:info@newshub.com" class="footer__contact-item"><i class="ri-mail-line"></i><span>info@newshub.com</span></a>
+                    <a href="https://maps.google.com/?q=123+News+Street,+Media+District,+New+York,+NY+10001" class="footer__contact-item" target="_blank">
+                        <i class="ri-map-pin-line"></i>
+                        <span>123 News Street, Media District<br>New York, NY 10001</span>
+                    </a>
+                    <a href="tel:+15551234567" class="footer__contact-item">
+                        <i class="ri-phone-line"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </a>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                    <div class="footer__contact-item">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 News Coverage</span>
+                    </div>
                 </div>
             </div>
+
+            <!-- Footer Bottom -->
             <div class="footer__bottom">
                 <div class="footer__bottom-content">
                     <div class="footer__copyright">
                         <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                    <div class="footer__legal">
+                        <a href="category.html" class="footer__legal-link">Privacy Policy</a>
+                        <a href="category.html" class="footer__legal-link">Terms of Service</a>
+                        <a href="category.html" class="footer__legal-link">Cookie Policy</a>
+                        <a href="category.html" class="footer__legal-link">GDPR</a>
                     </div>
                 </div>
             </div>
@@ -328,8 +404,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-    <script src="./assets/js/exam-calculator.js"></script>
     <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/exam-calculator.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

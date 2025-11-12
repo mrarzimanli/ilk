@@ -102,6 +102,7 @@
                                         <li><a href="deposit-calculator.html" class="nav__submenu-link">Depozit kalkulyatoru</a></li>
                                         <li><a href="zodiacs.html" class="nav__submenu-link">Bürc kalkulyatoru</a></li>
                                         <li><a href="ascendant.html" class="nav__submenu-link">Detallı bürc kalkulyatoru</a></li>
+                                        <li><a href="exam-calculator.html" class="nav__submenu-link">DİM bal hesablayıcı</a></li>
                                     </ul>
                                 </div>
                                 <div class="nav__submenu-column">
@@ -123,9 +124,9 @@
                 <div class="header__actions">
                     <!-- Language Dropdown -->
                     <div class="header__language language-dropdown">
-                        <button class="language-dropdown__toggle" aria-label="Dil Seçimi" aria-expanded="false">
-                            <span class="language-dropdown__flag">🇦🇿</span>
-                            <span class="language-dropdown__code">AZ</span>
+                        <button class="header__actions__btn header__actions__btn--language" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="header__actions__btn__flag">🇦🇿</span>
+                            <span class="header__actions__btn__code">AZ</span>
                         </button>
                         <ul class="language-dropdown__menu">
                             <li class="language-dropdown__item">
@@ -156,14 +157,14 @@
                     </div>
 
                     <!-- Game Button -->
-                    <a href="games.html" class="header__game game-btn">
+                    <a href="games.html" class="header__game header__actions__btn header__actions__btn--with-text header__actions__btn--game">
                         <i class="ri-star-line"></i>
-                        <span class="game-btn__text">Eğlence</span>
+                        <span class="header__actions__btn__text">Eğlence</span>
                     </a>
 
                     <!-- Search Button -->
-                    <button class="header__search search-btn" aria-label="Arama">
-                        <i class="search-btn__icon ri-search-line"></i>
+                    <button class="header__search header__actions__btn header__actions__btn--icon-only" aria-label="Arama">
+                        <i class="ri-search-line"></i>
                     </button>
                 </div>
             </div>
@@ -1248,9 +1249,17 @@
                         <h2 class="subscription__title">Bülten Aboneliği</h2>
                         <p class="subscription__description">En son haberleri e-posta adresinize alın.</p>
                     </div>
-                    <form class="subscription__form">
-                        <input type="email" class="subscription__input" placeholder="E-posta adresiniz" required>
-                        <button type="submit" class="subscription__btn">Abone Ol</button>
+                    <form class="subscription__form form">
+                        <div class="form-control-wrapper">
+                            <input type="email" class="form-control form-control--lg form-control--with-prefix" placeholder="E-posta adresiniz" required>
+                            <span class="form-control-prefix">
+                                <i class="ri-mail-line"></i>
+                            </span>
+                        </div>
+                        <button type="submit" class="btn btn--filled btn--lg btn--blue">
+                            <i class="ri-mail-send-line"></i>
+                            Abone Ol
+                        </button>
                     </form>
                 </div>
             </div>

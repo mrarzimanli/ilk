@@ -32,7 +32,7 @@ const CREDIT_CONSTANTS = {
     LOCALE: 'az-AZ',
     DECIMAL_PLACES: 2,
 
-    // CSS classes
+    // CSS classes (not used anymore with new table component)
     CSS_CLASSES: {
         TABLE_ROW: 'credit-table__row',
         TABLE_ROW_EVEN: 'credit-table__row--even',
@@ -261,16 +261,14 @@ class CreditCalculator {
     displayPaymentSchedule(schedule) {
         this.paymentScheduleEl.innerHTML = '';
 
-        schedule.forEach((payment, index) => {
-            const isEven = index % 2 === 0;
-            const row = document.createElement('div');
-            row.className = `${CREDIT_CONSTANTS.CSS_CLASSES.TABLE_ROW} ${isEven ? CREDIT_CONSTANTS.CSS_CLASSES.TABLE_ROW_EVEN : ''}`;
+        schedule.forEach((payment) => {
+            const row = document.createElement('tr');
 
             row.innerHTML = `
-                <div class="${CREDIT_CONSTANTS.CSS_CLASSES.TABLE_COL}">${payment.month}</div>
-                <div class="${CREDIT_CONSTANTS.CSS_CLASSES.TABLE_COL}">${this.formatCurrency(payment.principal)}</div>
-                <div class="${CREDIT_CONSTANTS.CSS_CLASSES.TABLE_COL}">${this.formatCurrency(payment.interest)}</div>
-                <div class="${CREDIT_CONSTANTS.CSS_CLASSES.TABLE_COL}">${this.formatCurrency(payment.balance)}</div>
+                <td>${payment.month}</td>
+                <td>${this.formatCurrency(payment.principal)}</td>
+                <td>${this.formatCurrency(payment.interest)}</td>
+                <td>${this.formatCurrency(payment.balance)}</td>
             `;
 
             this.paymentScheduleEl.appendChild(row);

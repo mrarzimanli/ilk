@@ -227,83 +227,83 @@
                 </div>
 
                 <!-- Calculator Card -->
-                <div class="credit-calculator-card">
-                    <div class="credit-calculator__inputs">
+                <div class="calculator-card">
+                    <div class="calculator__inputs">
                         <!-- Loan Amount -->
-                        <div class="credit-input-group">
-                            <label for="loanAmount" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="loanAmount" class="form-label">
                                 <i class="ri-money-dollar-circle-line"></i>
                                 Kredit məbləği
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="loanAmount" class="credit-input" value="10000" min="1000" max="500000" step="100">
-                                <span class="credit-input-suffix">AZN</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="loanAmount" class="form-control form-control--lg form-control--with-suffix" value="10000" min="1000" max="500000" step="100">
+                                <span class="form-control-suffix form-control-suffix--text">AZN</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanAmountRange" class="credit-range" min="1000" max="500000" value="10000" step="1000">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="loanAmountRange" class="form-range form-range--blue" min="1000" max="500000" value="10000" step="1000">
                             </div>
                         </div>
 
                         <!-- Interest Rate -->
-                        <div class="credit-input-group">
-                            <label for="interestRate" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="interestRate" class="form-label">
                                 <i class="ri-percent-line"></i>
                                 Faiz dərəcəsi
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="interestRate" class="credit-input" value="12" min="1" max="50" step="0.1">
-                                <span class="credit-input-suffix">%</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="interestRate" class="form-control form-control--lg form-control--with-suffix" value="12" min="1" max="50" step="0.1">
+                                <span class="form-control-suffix form-control-suffix--text">%</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="interestRateRange" class="credit-range" min="1" max="50" value="12" step="0.1">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="interestRateRange" class="form-range form-range--blue" min="1" max="50" value="12" step="0.1">
                             </div>
                         </div>
 
                         <!-- Loan Term -->
-                        <div class="credit-input-group">
-                            <label for="loanTerm" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="loanTerm" class="form-label">
                                 <i class="ri-calendar-line"></i>
                                 Kredit müddəti
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="loanTerm" class="credit-input" value="12" min="1" max="84" step="1">
-                                <span class="credit-input-suffix">ay</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="loanTerm" class="form-control form-control--lg form-control--with-suffix" value="12" min="1" max="84" step="1">
+                                <span class="form-control-suffix form-control-suffix--text">ay</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanTermRange" class="credit-range" min="1" max="84" value="12" step="1">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="loanTermRange" class="form-range form-range--blue" min="1" max="84" value="12" step="1">
                             </div>
                         </div>
                     </div>
 
                     <!-- Results -->
-                    <div class="credit-calculator__results">
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                    <div class="calculator__results">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-money-dollar-circle-fill"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Aylıq ödəniş</h4>
-                                <p class="credit-result-card__value" id="monthlyPayment">0 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Aylıq ödəniş</h4>
+                                <p class="result-card__value" id="monthlyPayment">0 AZN</p>
                             </div>
                         </div>
 
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-bank-card-line"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi ödəniş</h4>
-                                <p class="credit-result-card__value" id="totalPayment">0 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Ümumi ödəniş</h4>
+                                <p class="result-card__value" id="totalPayment">0 AZN</p>
                             </div>
                         </div>
 
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-calculator-line"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Ümumi faiz</h4>
-                                <p class="credit-result-card__value" id="totalInterest">0 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Ümumi faiz</h4>
+                                <p class="result-card__value" id="totalInterest">0 AZN</p>
                             </div>
                         </div>
                     </div>
@@ -316,16 +316,20 @@
                             <h3 class="section__header__title">Ödəniş cədvəli</h3>
                         </div>
                     </div>
-                    <div class="credit-table">
-                        <div class="credit-table__header">
-                            <div class="credit-table__col">Aylar</div>
-                            <div class="credit-table__col">Əsas məbləğ</div>
-                            <div class="credit-table__col">Faiz</div>
-                            <div class="credit-table__col">Qalıq borc</div>
-                        </div>
-                        <div class="credit-table__body" id="paymentSchedule">
+                    <div class="table-wrapper">
+                        <table class="table table--striped">
+                            <thead>
+                                <tr>
+                                    <th>Aylar</th>
+                                    <th>Əsas məbləğ</th>
+                                    <th>Faiz</th>
+                                    <th>Qalıq borc</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentSchedule">
                             <!-- Payment schedule will be loaded here -->
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

@@ -539,7 +539,7 @@ class PrayerTimesPage {
         monthData.forEach((day, index) => {
             const row = document.createElement('tr');
             if (isCurrentMonth && index === currentDay - 1) {
-                row.classList.add('current-day');
+                row.classList.add('table-row--highlight');
             }
 
             row.innerHTML = `

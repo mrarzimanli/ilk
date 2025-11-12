@@ -226,93 +226,93 @@
                 </div>
 
                 <!-- Calculator Card -->
-                <div class="credit-calculator-card">
-                    <div class="credit-calculator__inputs">
+                <div class="calculator-card">
+                    <div class="calculator__inputs">
                         <!-- Down Payment Percentage -->
-                        <div class="credit-input-group">
-                            <label for="downPaymentRate" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="downPaymentRate" class="form-label">
                                 <i class="ri-percent-line"></i>
                                 İlkin ödəniş faizi
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="downPaymentRate" class="credit-input" value="15" min="0" max="50" step="0.5">
-                                <span class="credit-input-suffix">%</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="downPaymentRate" class="form-control form-control--lg form-control--with-suffix" value="15" min="0" max="50" step="0.5">
+                                <span class="form-control-suffix form-control-suffix--text">%</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="downPaymentRateRange" class="credit-range" min="0" max="50" value="15" step="0.5">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="downPaymentRateRange" class="form-range form-range--blue" min="0" max="50" value="15" step="0.5">
                             </div>
                         </div>
 
                         <!-- Property Value -->
-                        <div class="credit-input-group">
-                            <label for="propertyValue" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="propertyValue" class="form-label">
                                 <i class="ri-home-3-line"></i>
                                 Mənzilin dəyəri
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="propertyValue" class="credit-input" value="210000" min="50000" max="1000000" step="1000">
-                                <span class="credit-input-suffix">AZN</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="propertyValue" class="form-control form-control--lg form-control--with-suffix" value="210000" min="50000" max="1000000" step="1000">
+                                <span class="form-control-suffix form-control-suffix--text">AZN</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="propertyValueRange" class="credit-range" min="50000" max="1000000" value="210000" step="1000">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="propertyValueRange" class="form-range form-range--blue" min="50000" max="1000000" value="210000" step="1000">
                             </div>
                         </div>
 
                         <!-- Loan Term -->
-                        <div class="credit-input-group">
-                            <label for="loanTerm" class="credit-input-label">
+                        <div class="form-group">
+                            <label for="loanTerm" class="form-label">
                                 <i class="ri-calendar-line"></i>
                                 Kredit müddəti
                             </label>
-                            <div class="credit-input-wrapper">
-                                <input type="number" id="loanTerm" class="credit-input" value="20" min="1" max="30" step="1">
-                                <span class="credit-input-suffix">il</span>
+                            <div class="form-control-wrapper">
+                                <input type="number" id="loanTerm" class="form-control form-control--lg form-control--with-suffix" value="20" min="1" max="30" step="1">
+                                <span class="form-control-suffix form-control-suffix--text">il</span>
                             </div>
-                            <div class="credit-range-wrapper">
-                                <input type="range" id="loanTermRange" class="credit-range" min="1" max="30" value="20" step="1">
+                            <div class="form-range-wrapper">
+                                <input type="range" id="loanTermRange" class="form-range form-range--blue" min="1" max="30" value="20" step="1">
                             </div>
                         </div>
                     </div>
 
                     <!-- Results -->
-                    <div class="credit-calculator__results">
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                    <div class="calculator__results">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-money-dollar-circle-fill"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Minimal ilkin ödəniş</h4>
-                                <p class="credit-result-card__value" id="minDownPayment">35 000 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Minimal ilkin ödəniş</h4>
+                                <p class="result-card__value" id="minDownPayment">35 000 AZN</p>
                             </div>
                         </div>
 
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-bank-card-line"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Aylıq ödəniş</h4>
-                                <p class="credit-result-card__value" id="monthlyPayment">893 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Aylıq ödəniş</h4>
+                                <p class="result-card__value" id="monthlyPayment">893 AZN</p>
                             </div>
                         </div>
 
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-calculator-line"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">Kredit məbləği</h4>
-                                <p class="credit-result-card__value" id="loanAmount">120 000 AZN</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">Kredit məbləği</h4>
+                                <p class="result-card__value" id="loanAmount">120 000 AZN</p>
                             </div>
                         </div>
 
-                        <div class="credit-result-card">
-                            <div class="credit-result-card__icon">
+                        <div class="result-card">
+                            <div class="result-card__icon">
                                 <i class="ri-percent-line"></i>
                             </div>
-                            <div class="credit-result-card__content">
-                                <h4 class="credit-result-card__label">İllik % dərəcəsi</h4>
-                                <p class="credit-result-card__value" id="annualRate">25%</p>
+                            <div class="result-card__content">
+                                <h4 class="result-card__label">İllik % dərəcəsi</h4>
+                                <p class="result-card__value" id="annualRate">25%</p>
                             </div>
                         </div>
                     </div>
@@ -325,16 +325,20 @@
                             <h3 class="section__header__title">Ödəniş cədvəli</h3>
                         </div>
                     </div>
-                    <div class="credit-table">
-                        <div class="credit-table__header">
-                            <div class="credit-table__col">Aylar</div>
-                            <div class="credit-table__col">Əsas məbləğ</div>
-                            <div class="credit-table__col">Faiz</div>
-                            <div class="credit-table__col">Qalıq borc</div>
-                        </div>
-                        <div class="credit-table__body" id="paymentSchedule">
+                    <div class="table-wrapper">
+                        <table class="table table--striped">
+                            <thead>
+                                <tr>
+                                    <th>Aylar</th>
+                                    <th>Əsas məbləğ</th>
+                                    <th>Faiz</th>
+                                    <th>Qalıq borc</th>
+                                </tr>
+                            </thead>
+                            <tbody id="paymentSchedule">
                             <!-- Payment schedule will be loaded here -->
-                        </div>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 

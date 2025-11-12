@@ -212,9 +212,9 @@
                         <p class="section__header__subtitle">Valyuta kalkulyatoru ilə valyutaların dəyərini hesablayın.</p>
                     </div>
                     <div class="section__header__actions">
-                        <button class="add-currency-btn" id="addCurrencyBtn">
-                            <span>Valyuta əlavə et</span>
+                        <button class="btn btn--filled btn--md btn--green add-currency-btn" id="addCurrencyBtn">
                             <i class="ri-add-line"></i>
+                            Valyuta əlavə et
                         </button>
                     </div>
                 </div>
@@ -234,16 +234,20 @@
                     </div>
                 </div>
 
-                <div class="exchange-rates-table">
-                    <div class="exchange-rates-table__header">
-                        <div class="exchange-rates-table__col exchange-rates-table__col--currency">Valyuta</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--code">Kod</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--rate">Kurs</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--change">Dəyişiklik</div>
-                    </div>
-                    <div class="exchange-rates-table__body" id="exchangeRatesTableBody">
-                        <!-- Exchange rates will be loaded here -->
-                    </div>
+                <div class="table-wrapper">
+                    <table class="table table--striped">
+                        <thead>
+                            <tr>
+                                <th>Valyuta</th>
+                                <th>Kod</th>
+                                <th>Kurs</th>
+                                <th>Dəyişiklik</th>
+                            </tr>
+                        </thead>
+                        <tbody id="exchangeRatesTableBody">
+                            <!-- Exchange rates will be loaded here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>
@@ -258,16 +262,20 @@
                     </div>
                 </div>
 
-                <div class="exchange-rates-table">
-                    <div class="exchange-rates-table__header">
-                        <div class="exchange-rates-table__col exchange-rates-table__col--currency">Əmtəə</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--code">Kod</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--rate">Kurs</div>
-                        <div class="exchange-rates-table__col exchange-rates-table__col--change">Dəyişiklik</div>
-                    </div>
-                    <div class="exchange-rates-table__body" id="commoditiesTableBody">
-                        <!-- Commodities will be loaded here -->
-                    </div>
+                <div class="table-wrapper">
+                    <table class="table table--striped">
+                        <thead>
+                            <tr>
+                                <th>Əmtəə</th>
+                                <th>Kod</th>
+                                <th>Kurs</th>
+                                <th>Dəyişiklik</th>
+                            </tr>
+                        </thead>
+                        <tbody id="commoditiesTableBody">
+                            <!-- Commodities will be loaded here -->
+                        </tbody>
+                    </table>
                 </div>
 
                 <div class="exchange-rates-info">

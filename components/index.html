@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components Preview - Glob</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .component-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: var(--base-1);
+            border: 2px solid var(--base-3);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .component-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red-500), var(--pink-500), var(--blue-500));
+        }
+
+        .component-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--blue-500);
+        }
+
+        .component-card__icon {
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--blue-50);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .component-card__icon i {
+            font-size: 32px;
+            color: var(--blue-500);
+        }
+
+        .component-card__title {
+            font-size: var(--fs-h5);
+            line-height: var(--lh-h5);
+            font-weight: var(--fw-bold);
+            color: var(--base-13);
+            margin-bottom: 8px;
+        }
+
+        .component-card__description {
+            font-size: var(--fs-b3);
+            line-height: var(--lh-b3);
+            color: var(--base-9);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .component-card__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: var(--green-50, rgba(34, 197, 94, 0.1));
+            color: var(--green-600, #16a34a);
+            border-radius: 6px;
+            font-size: var(--fs-b4);
+            line-height: var(--lh-b4);
+            font-weight: var(--fw-semi-bold);
+        }
+
+        .component-card__badge--coming-soon {
+            background: var(--orange-50, rgba(249, 115, 22, 0.1));
+            color: var(--orange-600, #ea580c);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+
+        .stat-card {
+            background: var(--base-1);
+            border: 2px solid var(--base-3);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card__value {
+            font-size: var(--fs-h3);
+            line-height: var(--lh-h3);
+            font-weight: var(--fw-bold);
+            color: var(--blue-500);
+            margin-bottom: 8px;
+        }
+
+        .stat-card__label {
+            font-size: var(--fs-b2);
+            line-height: var(--lh-b2);
+            color: var(--base-9);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="../index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Components Preview</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h1 class="section__header__title">Components Library</h1>
+                        <p class="section__header__subtitle">Reusable UI components built with design tokens and BEM methodology</p>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card__value">4</div>
+                        <div class="stat-card__label">Total Components</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__value">8</div>
+                        <div class="stat-card__label">Color Variants</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__value">5</div>
+                        <div class="stat-card__label">Table Variants</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-card__value">5</div>
+                        <div class="stat-card__label">Calculator Parts</div>
+                    </div>
+                </div>
+
+                <!-- Components Grid -->
+                <div class="component-grid">
+                    <!-- Button Component -->
+                    <a href="buttons.html" class="component-card">
+                        <div class="component-card__icon">
+                            <i class="ri-cursor-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Buttons</h3>
+                        <p class="component-card__description">
+                            Versatile button component with filled/stroked variants, 8 colors, and 4 size options. Supports icons and groups.
+                        </p>
+                        <span class="component-card__badge">
+                            <i class="ri-check-line"></i>
+                            Ready
+                        </span>
+                    </a>
+
+                    <!-- Form Inputs -->
+                    <a href="forms.html" class="component-card">
+                        <div class="component-card__icon">
+                            <i class="ri-input-field"></i>
+                        </div>
+                        <h3 class="component-card__title">Form Controls</h3>
+                        <p class="component-card__description">
+                            Complete form components: inputs, textareas, selects, checkboxes, radios with validation states, sizes, and colors.
+                        </p>
+                        <span class="component-card__badge">
+                            <i class="ri-check-line"></i>
+                            Ready
+                        </span>
+                    </a>
+
+                    <!-- Calculator Components -->
+                    <a href="calculator.html" class="component-card">
+                        <div class="component-card__icon">
+                            <i class="ri-calculator-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Calculator Components</h3>
+                        <p class="component-card__description">
+                            Reusable calculator building blocks: card containers, input grids, result cards with responsive layouts.
+                        </p>
+                        <span class="component-card__badge">
+                            <i class="ri-check-line"></i>
+                            Ready
+                        </span>
+                    </a>
+
+                    <!-- Table Component -->
+                    <a href="tables.html" class="component-card">
+                        <div class="component-card__icon">
+                            <i class="ri-table-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Tables</h3>
+                        <p class="component-card__description">
+                            Data table component with variants: striped, bordered, compact, large. Includes row highlighting and responsive design.
+                        </p>
+                        <span class="component-card__badge">
+                            <i class="ri-check-line"></i>
+                            Ready
+                        </span>
+                    </a>
+
+                    <!-- Cards - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-layout-masonry-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Cards</h3>
+                        <p class="component-card__description">
+                            Content cards with various styles, shadows, and interactive states for displaying information.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Modals - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-window-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Modals</h3>
+                        <p class="component-card__description">
+                            Dialog boxes and modal windows with customizable sizes, animations, and overlay options.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Alerts - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-alert-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Alerts</h3>
+                        <p class="component-card__description">
+                            Notification alerts with success, warning, error, and info variants. Dismissible with icons.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Badges - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-price-tag-3-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Badges</h3>
+                        <p class="component-card__description">
+                            Small count and labeling components with multiple color and size variations.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Tabs - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-layout-row-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Tabs</h3>
+                        <p class="component-card__description">
+                            Tab navigation with horizontal and vertical layouts, icons, and smooth transitions.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Tooltips - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-chat-quote-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Tooltips</h3>
+                        <p class="component-card__description">
+                            Contextual popover tooltips with multiple placement options and trigger methods.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+
+                    <!-- Loading Spinners - Coming Soon -->
+                    <div class="component-card" style="opacity: 0.6; pointer-events: none;">
+                        <div class="component-card__icon">
+                            <i class="ri-loader-4-line"></i>
+                        </div>
+                        <h3 class="component-card__title">Loading Spinners</h3>
+                        <p class="component-card__description">
+                            Animated loading indicators with various styles, sizes, and color options.
+                        </p>
+                        <span class="component-card__badge component-card__badge--coming-soon">
+                            <i class="ri-time-line"></i>
+                            Coming Soon
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Info Section -->
+                <div style="margin-top: 64px; padding: 32px; background: var(--blue-50); border-radius: 16px; border: 2px solid var(--blue-200);">
+                    <div style="display: flex; align-items: flex-start; gap: 16px;">
+                        <div style="flex-shrink: 0;">
+                            <i class="ri-information-line" style="font-size: 32px; color: var(--blue-500);"></i>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0 0 12px 0; font-size: var(--fs-h5); font-weight: var(--fw-bold); color: var(--base-13);">
+                                About This Library
+                            </h3>
+                            <p style="margin: 0 0 12px 0; font-size: var(--fs-b2); line-height: var(--lh-b2); color: var(--base-11);">
+                                This component library is built using <strong>BEM methodology</strong> and <strong>design tokens</strong> to ensure consistency, scalability, and maintainability across the project.
+                            </p>
+                            <p style="margin: 0; font-size: var(--fs-b2); line-height: var(--lh-b2); color: var(--base-11);">
+                                All components are fully responsive, accessible, and optimized for performance. They use CSS custom properties (variables) for easy theming and customization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">Components Library - Built with care</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 Glob. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
