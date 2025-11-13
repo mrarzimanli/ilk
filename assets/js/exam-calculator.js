@@ -123,83 +123,107 @@ function generateForm() {
     if (titleEl) titleEl.textContent = translations[language].groups[activeGroup.name];
 
     activeGroup.subjects.forEach((subject, index) => {
-        const subjectDiv = document.createElement('div');
-        subjectDiv.className = 'subject';
+        const group = document.createElement('div');
+        group.className = 'form__fields__group';
+
         let inputFields = '';
         if (activeGroup.name === 'Buraxılış İmtahanı') {
             const maxClosed = subject === 'İngilis dili' ? 23 : (subject === 'Azərbaycan dili' ? 20 : 13);
             const maxOpen = subject === 'İngilis dili' ? 7 : (subject === 'Azərbaycan dili' ? 10 : 7);
             inputFields = `
-                <div class="input-group">
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-checkbox-circle-line"></i>${translations[language].closed}</span>
+                <div class="form-row form-row--4">
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-checkbox-circle-line"></i>
+                            ${translations[language].closed}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-closed" min="0" max="${maxClosed}" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-edit-2-line"></i>
+                            ${translations[language].open}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-open" min="0" max="${maxOpen}" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>`;
+                        <div class="form-error"></div>
+                    </div>`;
             if (subject === 'Riyaziyyat') {
                 inputFields += `
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-code-line"></i>
+                            ${translations[language].coding}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-coding" min="0" max="5" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>`;
+                        <div class="form-error"></div>
+                    </div>`;
             }
             inputFields += `</div>`;
         } else {
             inputFields = `
-                <div class="input-group">
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-check-line"></i>${translations[language].correct}</span>
+                <div class="form-row form-row--4">
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-check-line"></i>
+                            ${translations[language].correct}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-correct" min="0" max="22" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-close-line"></i>${translations[language].incorrect}</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-close-line"></i>
+                            ${translations[language].incorrect}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-incorrect" min="0" max="22" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-code-line"></i>${translations[language].coding}</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-code-line"></i>
+                            ${translations[language].coding}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-coding" min="0" max="5" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>
-                    <label class="form-control-group">
-                        <span class="form-control-label"><i class="ri-edit-2-line"></i>${translations[language].open}</span>
+                        <div class="form-error"></div>
+                    </div>
+                    <div class="form-group form-group--lg">
+                        <label class="form-label form-label--lg">
+                            <i class="ri-edit-2-line"></i>
+                            ${translations[language].open}
+                        </label>
                         <div class="form-control-wrapper">
                             <input type="number" name="${subject}-open" min="0" max="3" class="form-control form-control--lg form-control--with-suffix" placeholder="0">
                             <span class="form-control-suffix form-control-suffix--text">ədəd</span>
                         </div>
-                        <span class="error-message"></span>
-                    </label>
+                        <div class="form-error"></div>
+                    </div>
                 </div>`;
         }
-        subjectDiv.innerHTML = `
-            <h3>${translations[language].subjects[subject]} (${activeGroup.maxScores[index]} ${translations[language].score})</h3>
+        group.innerHTML = `
+            <div class="form__fields__group__header">
+                <h3 class="form__fields__group__title">${translations[language].subjects[subject]} (${activeGroup.maxScores[index]} ${translations[language].score})</h3>
+            </div>
             ${inputFields}`;
-        form.appendChild(subjectDiv);
+        form.appendChild(group);
     });
 
     document.querySelectorAll('.form-control').forEach(input => {
@@ -214,7 +238,7 @@ function validateInput(event) {
     const min = Number(input.min || 0);
     const max = Number(input.max || Infinity);
     let value = input.value === '' ? '' : Number(input.value);
-    const errorEl = input.closest('label')?.querySelector('.error-message');
+    const errorEl = input.closest('.form-group')?.querySelector('.form-error');
 
     if (!errorEl) return;
 
@@ -258,8 +282,8 @@ function validateInput(event) {
             const incorrect = document.querySelector(`[name="${subject}-incorrect"]`);
             const cVal = Number(correct?.value || 0);
             const iVal = Number(incorrect?.value || 0);
-            const correctErr = (correct?.closest('label')?.querySelector('.error-message'));
-            const incorrectErr = (incorrect?.closest('label')?.querySelector('.error-message'));
+            const correctErr = (correct?.closest('.form-group')?.querySelector('.form-error'));
+            const incorrectErr = (incorrect?.closest('.form-group')?.querySelector('.form-error'));
             const msg = 'Doğru və yanlış cəmi 22-dən çox ola bilməz.';
             const sum = (Number.isFinite(cVal) ? cVal : 0) + (Number.isFinite(iVal) ? iVal : 0);
             if (sum > 22) {
@@ -283,7 +307,7 @@ function validateInput(event) {
 }
 
 function updateCalculateState() {
-    const hasError = Array.from(document.querySelectorAll('#examCalculatorForm .error-message'))
+    const hasError = Array.from(document.querySelectorAll('#examCalculatorForm .form-error'))
         .some(el => el.textContent && el.textContent.trim().length > 0);
     const calcBtn = document.getElementById('btnCalculate');
     if (calcBtn) calcBtn.disabled = hasError;
@@ -354,7 +378,7 @@ function getResultLevel(score, groupName) {
 
 function displayResults(preventScroll = false) {
     const resultsWrapper = document.getElementById('examCalculatorResults');
-    const body = resultsWrapper?.querySelector('.results__body');
+    const body = resultsWrapper?.querySelector('.form__fields');
     if (!body) return;
     body.innerHTML = '';
 

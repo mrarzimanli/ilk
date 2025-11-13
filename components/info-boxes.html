@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info Box Component Demo - Glob</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        .demo-section {
+            padding: 48px 0;
+            border-bottom: 2px solid var(--base-3);
+        }
+
+        .demo-section:last-child {
+            border-bottom: none;
+        }
+
+        .demo-title {
+            font-size: var(--fs-h4);
+            line-height: var(--lh-h4);
+            font-weight: var(--fw-bold);
+            color: var(--base-13);
+            margin-bottom: 24px;
+        }
+
+        .demo-subtitle {
+            font-size: var(--fs-b2);
+            line-height: var(--lh-b2);
+            color: var(--base-9);
+            margin-bottom: 32px;
+        }
+
+        .demo-group {
+            margin-bottom: 32px;
+        }
+
+        .demo-group-title {
+            font-size: var(--fs-b1);
+            line-height: var(--lh-b1);
+            font-weight: var(--fw-semi-bold);
+            color: var(--base-13);
+            margin-bottom: 16px;
+        }
+
+        .demo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .demo-code {
+            background: var(--base-2);
+            border: 1px solid var(--base-3);
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--base-11);
+            margin-top: 8px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo logo">
+                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="../index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <a href="index.html" class="breadcrumbs__link">Components</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Info Boxes</span>
+                </nav>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section__header section__header--center">
+                    <div class="section__header__content">
+                        <h1 class="section__header__title">Info Box Component Demo</h1>
+                        <p class="section__header__subtitle">Reusable info box component with variants, sizes, and colors</p>
+                    </div>
+                </div>
+
+                <!-- Color Variants - Filled -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Filled Info Boxes - Color Variants</h2>
+                    <p class="demo-subtitle">All available colors with filled background</p>
+
+                    <div class="demo-grid">
+                        <div class="info-box info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Məlumat</div>
+                                <div class="info-box__text">Kalkulyator təxmini hesablamalar göstərir. Faktiki faiz dərəcələri bank tərəfindən müəyyən edilir.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--sky-blue">
+                            <div class="info-box__icon">
+                                <i class="ri-lightbulb-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">İpucu</div>
+                                <div class="info-box__text">Daha yaxşı nəticələr üçün bütün məlumatları düzgün daxil edin.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--green">
+                            <div class="info-box__icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Uğurlu</div>
+                                <div class="info-box__text">Əməliyyat uğurla tamamlandı. Nəticələr aşağıda göstərilir.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--yellow">
+                            <div class="info-box__icon">
+                                <i class="ri-alert-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Diqqət</div>
+                                <div class="info-box__text">Bu əməliyyat geri qaytarıla bilməz. Davam etməzdən əvvəl əmin olun.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--orange">
+                            <div class="info-box__icon">
+                                <i class="ri-error-warning-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Xəbərdarlıq</div>
+                                <div class="info-box__text">Bəzi məlumatlar düzgün deyil. Zəhmət olmasa yenidən yoxlayın.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--red">
+                            <div class="info-box__icon">
+                                <i class="ri-close-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Xəta</div>
+                                <div class="info-box__text">Əməliyyat zamanı xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--pink">
+                            <div class="info-box__icon">
+                                <i class="ri-heart-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Tövsiyə</div>
+                                <div class="info-box__text">Bu xüsusiyyəti sizə tövsiyə edirik. Daha çox məlumat üçün oxuyun.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--black">
+                            <div class="info-box__icon">
+                                <i class="ri-file-text-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Qeyd</div>
+                                <div class="info-box__text">Bütün məlumatlar şəxsi məlumat siyasətinə uyğun olaraq saxlanılır.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-code">&lt;div class="info-box info-box--blue"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <!-- Color Variants - Outlined -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Outlined Info Boxes - Color Variants</h2>
+                    <p class="demo-subtitle">All available colors with transparent background</p>
+
+                    <div class="demo-grid">
+                        <div class="info-box info-box--outlined info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Blue Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--sky-blue">
+                            <div class="info-box__icon">
+                                <i class="ri-lightbulb-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Sky Blue Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--green">
+                            <div class="info-box__icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Green Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--yellow">
+                            <div class="info-box__icon">
+                                <i class="ri-alert-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Yellow Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--orange">
+                            <div class="info-box__icon">
+                                <i class="ri-error-warning-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Orange Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--red">
+                            <div class="info-box__icon">
+                                <i class="ri-close-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Red Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--pink">
+                            <div class="info-box__icon">
+                                <i class="ri-heart-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Pink Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--black">
+                            <div class="info-box__icon">
+                                <i class="ri-file-text-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Black Outlined</div>
+                                <div class="info-box__text">Outlined variant with transparent background.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-code">&lt;div class="info-box info-box--outlined info-box--blue"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <!-- Size Variants -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Size Variants</h2>
+                    <p class="demo-subtitle">Available sizes: sm, default (md), lg</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Small (--sm)</h3>
+                        <div class="info-box info-box--sm info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Kiçik ölçü</div>
+                                <div class="info-box__text">Bu info-box kiçik ölçüdədir.</div>
+                            </div>
+                        </div>
+                        <div class="demo-code">&lt;div class="info-box info-box--sm info-box--blue"&gt;...&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Default (Medium)</h3>
+                        <div class="info-box info-box--green">
+                            <div class="info-box__icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Standart ölçü</div>
+                                <div class="info-box__text">Bu info-box standart ölçüdədir (heç bir size modifier yoxdur).</div>
+                            </div>
+                        </div>
+                        <div class="demo-code">&lt;div class="info-box info-box--green"&gt;...&lt;/div&gt;</div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Large (--lg)</h3>
+                        <div class="info-box info-box--lg info-box--orange">
+                            <div class="info-box__icon">
+                                <i class="ri-error-warning-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Böyük ölçü</div>
+                                <div class="info-box__text">Bu info-box böyük ölçüdədir.</div>
+                            </div>
+                        </div>
+                        <div class="demo-code">&lt;div class="info-box info-box--lg info-box--orange"&gt;...&lt;/div&gt;</div>
+                    </div>
+                </div>
+
+                <!-- Without Icon -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Without Icon</h2>
+                    <p class="demo-subtitle">Info boxes without icons using --no-icon modifier</p>
+
+                    <div class="demo-grid">
+                        <div class="info-box info-box--no-icon info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">İkonsuz mesaj</div>
+                                <div class="info-box__text">Bu info-box heç bir ikon göstərmir.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--no-icon info-box--outlined info-box--red">
+                            <div class="info-box__icon">
+                                <i class="ri-close-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">İkonsuz xəta</div>
+                                <div class="info-box__text">Outlined variant da ikon olmadan işləyir.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-code">&lt;div class="info-box info-box--no-icon info-box--blue"&gt;...&lt;/div&gt;</div>
+                </div>
+
+                <!-- Icon Only (No Title) -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Icon with Text Only</h2>
+                    <p class="demo-subtitle">Info boxes without title, only icon and text</p>
+
+                    <div class="demo-grid">
+                        <div class="info-box info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__text">Kalkulyator təxmini hesablamalar göstərir. Faktiki faiz dərəcələri bank tərəfindən müəyyən edilir.</div>
+                            </div>
+                        </div>
+
+                        <div class="info-box info-box--outlined info-box--green">
+                            <div class="info-box__icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__text">Əməliyyat uğurla tamamlandı.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-code">&lt;div class="info-box info-box--blue"&gt;&lt;div class="info-box__icon"&gt;...&lt;/div&gt;&lt;div class="info-box__content"&gt;&lt;div class="info-box__text"&gt;...&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</div>
+                </div>
+
+                <!-- Real-World Examples -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Real-World Examples</h2>
+                    <p class="demo-subtitle">Common use cases for info boxes</p>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Calculator Notice</h3>
+                        <div class="info-box info-box--blue">
+                            <div class="info-box__icon">
+                                <i class="ri-information-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__text">Kalkulyator təxmini hesablamalar göstərir. Faktiki faiz dərəcələri bank tərəfindən müəyyən edilir.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Form Validation Error</h3>
+                        <div class="info-box info-box--sm info-box--red">
+                            <div class="info-box__icon">
+                                <i class="ri-error-warning-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__text">Zəhmət olmasa bütün məlumatları düzgün daxil edin.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Success Message</h3>
+                        <div class="info-box info-box--green">
+                            <div class="info-box__icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Uğurla göndərildi</div>
+                                <div class="info-box__text">Mesajınız uğurla göndərildi. Tezliklə sizinlə əlaqə saxlanılacaq.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Important Warning</h3>
+                        <div class="info-box info-box--lg info-box--yellow">
+                            <div class="info-box__icon">
+                                <i class="ri-alert-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Diqqət!</div>
+                                <div class="info-box__text">Bu əməliyyat geri qaytarıla bilməz. Davam etməzdən əvvəl məlumatlarınızı yoxlayın və əmin olun.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="demo-group">
+                        <h3 class="demo-group-title">Tip / Recommendation</h3>
+                        <div class="info-box info-box--outlined info-box--sky-blue">
+                            <div class="info-box__icon">
+                                <i class="ri-lightbulb-line"></i>
+                            </div>
+                            <div class="info-box__content">
+                                <div class="info-box__title">Faydalı məsləhət</div>
+                                <div class="info-box__text">Daha yaxşı nəticələr əldə etmək üçün aylıq gəlirinizin 30%-dən çoxunu kredit ödənişinə ayırmayın.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Guide -->
+                <div class="demo-section">
+                    <h2 class="demo-title">Usage Guide</h2>
+                    <p class="demo-subtitle">How to use the info-box component</p>
+
+                    <div style="background: var(--base-2); padding: 24px; border-radius: 12px;">
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Base Structure</h4>
+                        <p style="margin-bottom: 16px;">The info-box requires this HTML structure:</p>
+                        <div class="demo-code" style="margin-bottom: 24px;">
+                            &lt;div class="info-box info-box--blue"&gt;
+                            &lt;div class="info-box__icon"&gt;
+                            &lt;i class="ri-information-line"&gt;&lt;/i&gt;
+                            &lt;/div&gt;
+                            &lt;div class="info-box__content"&gt;
+                            &lt;div class="info-box__title"&gt;Title&lt;/div&gt;
+                            &lt;div class="info-box__text"&gt;Description text&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;/div&gt;
+                        </div>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Color Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--blue</code> - Information</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--sky-blue</code> - Tips</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--green</code> - Success</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--yellow</code> - Warning</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--orange</code> - Alert</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--red</code> - Error</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--pink</code> - Recommendation</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--black</code> - Note</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Size Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--sm</code> - Small size</li>
+                            <li style="margin-bottom: 8px;">Default (no modifier) - Medium size</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--lg</code> - Large size</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Style Modifiers</h4>
+                        <ul style="list-style: none; padding: 0; margin-bottom: 16px;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--outlined</code> - Transparent background with border</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box--no-icon</code> - Hide the icon</li>
+                        </ul>
+
+                        <h4 style="margin-bottom: 16px; font-weight: var(--fw-bold);">Optional Elements</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box__title</code> - Optional title (can be omitted)</li>
+                            <li style="margin-bottom: 8px;"><code style="background: var(--base-1); padding: 4px 8px; border-radius: 4px;">.info-box__icon</code> - Can be hidden with --no-icon modifier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="../index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">Info Box Component Documentation</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 Glob. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

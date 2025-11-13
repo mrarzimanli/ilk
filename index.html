@@ -48,10 +48,8 @@
         <div class="container">
             <div class="header__inner">
                 <!-- Logo -->
-                <a href="index.html" class="header__logo logo">
-                    <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
-                    </svg>
+                <a href="index.html" class="header__logo">
+                    <img src="./assets/images/logo.png" alt="ilk.az">
                 </a>
 
                 <!-- Weather Widget -->
@@ -109,7 +107,7 @@
                                     <h4 class="nav__submenu-title">İnformativ səhifələr</h4>
                                     <ul class="nav__submenu-list">
                                         <li><a href="category.html" class="nav__submenu-link">Kateqoriyalar</a></li>
-                                        <li><a href="posts.html" class="nav__submenu-link">Bloq</a></li>
+                                        <li><a href="post.html" class="nav__submenu-link">Bloq</a></li>
                                         <li><a href="weather.html" class="nav__submenu-link">Hava durumu</a></li>
                                         <li><a href="prayer-times.html" class="nav__submenu-link">Namaz vaxtları</a></li>
                                         <li><a href="privacy-policy.html" class="nav__submenu-link">Statik səhifə</a></li>
@@ -1249,20 +1247,21 @@
                         <h2 class="subscription__title">Bülten Aboneliği</h2>
                         <p class="subscription__description">En son haberleri e-posta adresinize alın.</p>
                     </div>
-                    <form class="subscription__form form">
+                    <form class="subscription__form">
                         <div class="form-control-wrapper">
                             <input type="email" class="form-control form-control--lg form-control--with-prefix" placeholder="E-posta adresiniz" required>
                             <span class="form-control-prefix">
                                 <i class="ri-mail-line"></i>
                             </span>
                         </div>
-                        <button type="submit" class="btn btn--filled btn--lg btn--blue">
-                            <i class="ri-mail-send-line"></i>
-                            Abone Ol
-                        </button>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn--filled btn--lg btn--blue">
+                                <i class="ri-mail-send-line"></i>
+                                <span>Abone Ol</span>
+                            </button>
+                        </div>
                     </form>
                 </div>
-            </div>
         </section>
     </main>
 
@@ -1273,9 +1272,7 @@
                 <!-- Footer Logo and Description -->
                 <div class="footer__brand">
                     <a href="index.html" class="footer__logo">
-                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
-                        </svg>
+                        <img src="./assets/images/logo.png" alt="ilk.az">
                     </a>
                     <p class="footer__description">
                         Your trusted source for the latest news, technology updates, and trending topics.
@@ -1385,7 +1382,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assets/js/script.js"></script>
     <script src="./assets/js/weather.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>

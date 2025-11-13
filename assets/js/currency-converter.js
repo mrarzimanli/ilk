@@ -404,10 +404,14 @@ class CurrencyConverter {
                         <p class="currency-card__name">${currency.name}</p>
                     </div>
                 </div>
-                <input type="number" class="currency-card__input" placeholder="0.00" value="0" disabled>
-                <div class="currency-card__meta">
-                    <span class="currency-card__date">Məlumatlar yüklənir...</span>
-                    <span class="currency-card__rate">1 AZN = --.-- ${currency.code}</span>
+                <div class="form-group form-group--xl">
+                    <div class="form-control-wrapper">
+                        <input type="number" class="form-control form-control--xl" placeholder="0.00" value="0" disabled>
+                    </div>
+                    <div class="currency-card__meta">
+                        <span class="currency-card__date">Məlumatlar yüklənir...</span>
+                        <span class="currency-card__rate">1 AZN = --.-- ${currency.code}</span>
+                    </div>
                 </div>
             `;
         } else {
@@ -420,10 +424,14 @@ class CurrencyConverter {
                         <p class="currency-card__name">${currency.name}</p>
                     </div>
                 </div>
-                <input type="number" class="currency-card__input" placeholder="0.00" value="0" oninput="currencyConverter.convertCurrency('${currency.code}', this.value)">
-                <div class="currency-card__meta">
-                    <span class="currency-card__date">${dateStr} | Mənbə: ${this.isUsingFallback ? 'Təxmini məlumatlar' : 'AR Mərkəzi Bank'}</span>
-                    <span class="currency-card__rate">1 AZN = ${currency.rate.toFixed(4)} ${currency.code}</span>
+                <div class="form-group form-group--xl">
+                    <div class="form-control-wrapper">
+                        <input type="number" class="form-control form-control--xl" placeholder="0.00" value="0" oninput="currencyConverter.convertCurrency('${currency.code}', this.value)">
+                    </div>
+                    <div class="currency-card__meta">
+                        <span class="currency-card__date">${dateStr} | Mənbə: ${this.isUsingFallback ? 'Təxmini məlumatlar' : 'AR Mərkəzi Bank'}</span>
+                        <span class="currency-card__rate">1 AZN = ${currency.rate.toFixed(4)} ${currency.code}</span>
+                    </div>
                 </div>
             `;
         }
@@ -437,7 +445,7 @@ class CurrencyConverter {
         this.selectedCurrencies.forEach(code => {
             if (code !== fromCurrency) {
                 const convertedAmount = this.calculateConversion(fromCurrency, code, numAmount);
-                const input = document.querySelector(`[data-currency="${code}"] .currency-card__input`);
+                const input = document.querySelector(`[data-currency="${code}"] .form-control`);
                 if (input) {
                     input.value = convertedAmount.toFixed(4);
                 }
@@ -566,12 +574,12 @@ class CurrencyConverter {
     getChangeIndicator(changeType) {
         switch (changeType) {
             case 'up':
-                return '<div class="exchange-rate-change exchange-rate-change--up"><i class="ri-arrow-up-line"></i></div>';
+                return '<div class="exchange-rates-change exchange-rates-change--up"><i class="ri-arrow-up-line"></i></div>';
             case 'down':
-                return '<div class="exchange-rate-change exchange-rate-change--down"><i class="ri-arrow-down-line"></i></div>';
+                return '<div class="exchange-rates-change exchange-rates-change--down"><i class="ri-arrow-down-line"></i></div>';
             case 'neutral':
             default:
-                return '<div class="exchange-rate-change exchange-rate-change--neutral"><div class="change-dot"></div></div>';
+                return '<div class="exchange-rates-change exchange-rates-change--neutral"><div class="change-dot"></div></div>';
         }
     }
 

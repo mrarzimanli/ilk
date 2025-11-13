@@ -745,14 +745,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ==================== Back to Top Button ====================
 document.addEventListener('DOMContentLoaded', () => {
-    const backToTopBtn = document.querySelector('.back-to-top');
+    const backToTopBtn = document.querySelector('#scrollToTop');
 
     if (backToTopBtn) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
+                backToTopBtn.classList.add('show');
             } else {
-                backToTopBtn.classList.remove('active');
+                backToTopBtn.classList.remove('show');
             }
         });
 
