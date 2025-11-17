@@ -610,21 +610,139 @@ class SubCategoriesSlider {
     }
 }
 
+
+// ============================================================================
+// MOBILE NAVIGATION CLASS
+// ============================================================================
+class MobileNav {
+    constructor() {
+        this.mobileNavOpenBtn = document.querySelector('#mobileNavOpen');
+        this.mobileNavCloseBtn = document.querySelector('#mobileNavClose');
+        this.navItemsWithSubmenu = document.querySelectorAll('.nav__item--has-submenu');
+        this.headerNav = document.querySelector('.header__nav');
+        this.overlay = document.querySelector('.header__nav__overlay');
+
+        if (this.mobileNavOpenBtn && this.headerNav) {
+            this.init();
+        }
+    }
+
+    init() {
+        // Toggle mobile menu
+        this.mobileNavOpenBtn.addEventListener('click', () => this.toggle());
+
+        // Close button
+        if (this.mobileNavCloseBtn) {
+            this.mobileNavCloseBtn.addEventListener('click', () => this.close());
+        }
+
+        // Close when clicking on overlay backdrop
+        if (this.overlay) {
+            this.overlay.addEventListener('click', () => this.close());
+        }
+
+        // Close on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.headerNav.classList.contains('active')) {
+                this.close();
+            }
+        });
+
+        // Handle submenu toggles for mobile
+        this.navItemsWithSubmenu.forEach(item => {
+            const link = item.querySelector('.nav__link');
+            if (link) {
+                link.addEventListener('click', (e) => {
+                    // Only prevent default and toggle on mobile
+                    if (window.innerWidth < 768) {
+                        e.preventDefault();
+                        this.toggleSubmenu(item);
+                    }
+                });
+            }
+        });
+
+        // Close mobile nav on link click (except parent links with submenus)
+        const navLinks = document.querySelectorAll('.nav__link:not(.nav__item--has-submenu > .nav__link), .nav__submenu-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    this.close();
+                }
+            });
+        });
+    }
+
+    toggle() {
+        if (this.headerNav.classList.contains('active')) {
+            this.close();
+        } else {
+            this.open();
+        }
+    }
+
+    open() {
+        this.headerNav.classList.add('active');
+        if (this.overlay) {
+            this.overlay.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+        this.mobileNavOpenBtn.querySelector('i').classList.replace('ri-menu-line', 'ri-close-line');
+    }
+
+    close() {
+        this.headerNav.classList.remove('active');
+        if (this.overlay) {
+            this.overlay.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+        this.mobileNavOpenBtn.querySelector('i').classList.replace('ri-close-line', 'ri-menu-line');
+
+        // Close all open submenus when closing mobile nav
+        setTimeout(() => {
+            this.navItemsWithSubmenu.forEach(item => {
+                item.classList.remove('active');
+            });
+        }, 300);
+    }
+
+    toggleSubmenu(item) {
+        const isActive = item.classList.contains('active');
+
+        if (isActive) {
+            // Close submenu
+            item.classList.remove('active');
+        } else {
+            // Close all other submenus first
+            this.navItemsWithSubmenu.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+
+            // Open this submenu
+            item.classList.add('active');
+        }
+    }
+}
+
+
 // ============================================================================
 // AUTO-INITIALIZATION
 // ============================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize UI components
+    new MobileNav();
+    new SearchOverlay();
+    new LanguageDropdown();
+    new Navigation();
+
     // Initialize all sliders
     new CurrencySlider();
     new HotNewsSlider();
     new NewsSlider();
     new SubCategoriesSlider();
-
-    // Initialize UI components
-    new SearchOverlay();
-    new LanguageDropdown();
-    new Navigation();
 });
 
 // ============================================================================
@@ -994,3 +1112,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+

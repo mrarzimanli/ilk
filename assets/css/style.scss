@@ -674,7 +674,7 @@ body {
       &:focus {
         outline: none;
         border-color: var(--blue-500);
-        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
       }
 
       &--icon-only {
@@ -696,6 +696,26 @@ body {
         transform: rotate(72deg);
       }
 
+      &--secondary {
+        background: var(--blue-50);
+        border-color: var(--blue-50);
+        color: var(--blue-500);
+
+        i {
+          color: var(--blue-500);
+        }
+      }
+
+      &--secondary:hover {
+        background: var(--blue-100);
+        border-color: var(--blue-100);
+        color: var(--blue-500);
+
+        i {
+          color: var(--blue-500);
+        }
+      }
+
       &__text {
         white-space: nowrap;
       }
@@ -709,13 +729,6 @@ body {
         font-weight: var(--fw-semi-bold);
       }
     }
-  }
-
-  &__game,
-  &__search,
-  &__tv {
-    cursor: pointer;
-    transition: all 0.3s ease;
   }
 }
 
@@ -2141,38 +2154,17 @@ body {
 }
 
 // Scroll to Top
-.scroll-to-top {
+#scrollToTop {
   position: fixed;
   bottom: 30px;
   right: 30px;
   width: 50px;
   height: 50px;
-  background: var(--blue-500);
-  border: none;
-  border-radius: 50%;
-  color: var(--base-1);
-  font-size: var(--fs-h6);
-  line-height: var(--lh-h6);
-  cursor: pointer;
-  z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(124, 148, 224, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background: var(--blue-600);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(124, 148, 224, 0.4);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
+  z-index: 1000;
 
   &.show {
     opacity: 1;
@@ -2708,8 +2700,8 @@ body {
 
     &--has-submenu {
       .nav__arrow {
-        font-size: var(--fs-b2);
-        line-height: var(--lh-b2);
+        font-size: 20px;
+        line-height: 1;
         margin-left: 4px;
         transition: transform 0.3s ease;
       }
@@ -2728,7 +2720,7 @@ body {
     font-weight: var(--fw-medium);
     color: var(--black-10);
     padding: 8px 4px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
 
     &::after {
@@ -4029,9 +4021,6 @@ body {
         }
       }
 
-      .news__slide__title {
-        color: var(--blue-500);
-      }
     }
 
     &__image {
@@ -4468,7 +4457,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  max-height: 90px;
+  max-height: 74px;
   overflow: hidden;
 
   &__link {
