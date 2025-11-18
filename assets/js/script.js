@@ -283,36 +283,6 @@ class CurrencySlider {
             },
             speed: 500,
             grabCursor: true,
-            breakpoints: {
-                320: {
-                    slidesPerView: 2,
-                    spaceBetween: 8,
-                },
-                480: {
-                    slidesPerView: 3,
-                    spaceBetween: 10,
-                },
-                640: {
-                    slidesPerView: 4,
-                    spaceBetween: 12,
-                },
-                768: {
-                    slidesPerView: 5,
-                    spaceBetween: 12,
-                },
-                1024: {
-                    slidesPerView: 5,
-                    spaceBetween: 12,
-                },
-                1200: {
-                    slidesPerView: 5,
-                    spaceBetween: 12,
-                },
-                1400: {
-                    slidesPerView: 5,
-                    spaceBetween: 12,
-                },
-            },
         });
     }
 
