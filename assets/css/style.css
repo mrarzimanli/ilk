@@ -370,7 +370,7 @@ body {
 }
 
 .main {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100dvh - 100px);
 }
 .main .section:last-child {
   padding-bottom: 64px;
@@ -569,10 +569,10 @@ body {
   font-size: var(--fs-b3);
   line-height: var(--lh-b3);
   font-weight: var(--fw-semi-bold);
-  transition: all 0.3s ease;
   min-height: 40px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 .header__actions__btn i {
   font-size: 18px;
@@ -2380,13 +2380,12 @@ body {
   visibility: visible;
 }
 .search-overlay__inner {
-  position: relative;
   width: 100%;
   max-width: 800px;
-  padding: 40px;
+  padding: 2px;
 }
 .search-overlay__close {
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
   width: 48px;
@@ -2394,6 +2393,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
   color: var(--black-1);
   cursor: pointer;
   border-radius: 50%;
@@ -2404,7 +2404,6 @@ body {
   line-height: 1;
 }
 .search-overlay__close:hover {
-  background: rgba(255, 255, 255, 0.1);
   transform: rotate(90deg);
 }
 .search-overlay__content {
