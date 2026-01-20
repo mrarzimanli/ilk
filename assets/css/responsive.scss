@@ -663,14 +663,506 @@
     }
   }
 
+  // Post Page
+  .post {
+    padding: 24px 0;
+
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    &__header {
+      padding: 24px 24px 16px;
+    }
+
+    &__title {
+      font-size: var(--fs-h4);
+      line-height: var(--lh-h4);
+      margin-bottom: 12px;
+    }
+
+    &__image {
+      height: 300px;
+    }
+
+    &__body {
+      padding: 24px;
+    }
+
+    &__excerpt {
+      font-size: var(--fs-b3);
+      line-height: var(--lh-b3);
+      padding: 16px;
+      margin-bottom: 24px;
+    }
+
+    &__footer {
+      padding: 24px;
+    }
+
+    &__tags {
+      margin-bottom: 24px;
+
+      &-title {
+        font-size: var(--fs-b3);
+        margin-bottom: 12px;
+      }
+
+      &-list {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+
+    &__tag {
+      font-size: var(--fs-b4);
+      padding: 6px 12px;
+    }
+
+    &__share {
+      &-title {
+        font-size: var(--fs-b3);
+        margin-bottom: 12px;
+      }
+
+      &-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      &-btn {
+        width: 40px;
+        height: 40px;
+        font-size: var(--fs-b3);
+      }
+    }
+
+    &__reactions {
+      padding: 20px 24px;
+    }
+
+    &__comments {
+      padding: 24px;
+    }
+  }
+
+  // Reactions
+  .reactions {
+    &__title {
+      font-size: var(--fs-b3);
+      margin-bottom: 16px;
+    }
+
+    &__list {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  }
+
+  // Comments
+  .comments {
+    &__title {
+      font-size: var(--fs-b2);
+      margin-bottom: 20px;
+    }
+  }
+
+  .comment-form {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__form {
+      width: 100%;
+    }
+  }
+
+  .comment {
+    gap: 12px;
+
+    &__avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__author {
+      font-size: var(--fs-b3);
+    }
+
+    &__date {
+      font-size: var(--fs-b5);
+    }
+
+    &__text {
+      font-size: var(--fs-b3);
+      line-height: var(--lh-b3);
+    }
+
+    &__actions {
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    &__replies {
+      padding-left: 36px;
+    }
+
+    &--reply {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  // Section Games
+  .section--games {
+    padding: 24px 0;
+  }
+
+  // Games
+  .games {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .game-card {
+    padding: 20px;
+
+    &__thumb {
+      margin-bottom: 12px;
+    }
+
+    &__header {
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    &__icon {
+      font-size: 28px;
+    }
+
+    &__title {
+      font-size: var(--fs-b2);
+    }
+
+    &__description {
+      font-size: var(--fs-b3);
+    }
+  }
+
+  // Individual Game Pages
+  .game {
+    border-radius: 12px;
+
+    &__header {
+      padding: 20px 20px 12px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+
+      &__title {
+        font-size: var(--fs-b2);
+      }
+
+      &__description {
+        font-size: var(--fs-b3);
+      }
+
+      &__actions {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      &__score {
+        font-size: var(--fs-b4);
+      }
+    }
+
+    &__body {
+      padding: 20px;
+      height: auto;
+      min-height: 350px;
+    }
+
+    &__keyboard {
+      gap: 6px;
+      grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+
+      &__key {
+        padding: 8px;
+        font-size: var(--fs-b4);
+      }
+    }
+
+    .snake-game {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    .memory-game {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      gap: 6px;
+
+      &__card {
+        font-size: 28px;
+      }
+    }
+
+    // Word Game
+    .word-game {
+      gap: 32px;
+
+      &__display {
+        font-size: var(--fs-h6);
+        line-height: var(--lh-h6);
+        letter-spacing: 6px;
+      }
+
+      &__keyboard {
+        width: 100%;
+        max-width: 320px;
+        grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+        gap: 6px;
+      }
+    }
+
+    // Reaction Game
+    .reaction-game {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    // Color Game
+    .color-game {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      gap: 20px;
+
+      &__display {
+        padding: 20px 16px;
+        font-size: var(--fs-b1);
+        line-height: 1.3;
+        min-height: 100px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+
+      &__buttons {
+        gap: 10px;
+      }
+
+      &__button {
+        padding: 12px 16px;
+        font-size: var(--fs-b3);
+      }
+    }
+  }
+
+  // Breadcrumbs
+  .breadcrumbs {
+    padding: 16px 0;
+
+    &__nav {
+      font-size: var(--fs-b4);
+      flex-wrap: wrap;
+    }
+
+    &__link,
+    &__current {
+      font-size: var(--fs-b5);
+    }
+  }
+
+  // Weather Page
+  .weather-location-selector {
+    margin-bottom: 24px;
+
+    &__wrapper {
+      padding: 10px 12px;
+    }
+
+    &__input {
+      font-size: var(--fs-b3);
+    }
+
+    &__btn {
+      width: 36px;
+      height: 36px;
+
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .current-weather {
+    padding: 24px;
+    margin-bottom: 32px;
+
+    &__main {
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__location-wrapper {
+      margin-bottom: 0;
+    }
+
+    &__location-icon {
+      width: 50px;
+      height: 50px;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    &__location {
+      font-size: var(--fs-h4);
+    }
+
+    &__date {
+      font-size: var(--fs-b3);
+    }
+
+    &__selectors {
+      width: 100%;
+    }
+
+    &__selector {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    &__details {
+      margin-bottom: 20px;
+    }
+
+    &__temp-section {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__temp {
+      font-size: 52px;
+
+      &-value {
+        font-size: 52px;
+      }
+
+      &-unit {
+        font-size: 28px;
+      }
+    }
+
+    &__icon {
+      i {
+        font-size: 52px;
+      }
+    }
+
+    &__condition {
+      font-size: var(--fs-b2);
+    }
+
+    &__feels {
+      font-size: var(--fs-b3);
+    }
+
+    &__stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    &__stat {
+      font-size: var(--fs-b3);
+
+      i {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .hourly-weather {
+    &__item {
+      padding: 20px 14px;
+      min-height: 130px;
+    }
+
+    &__time {
+      font-size: var(--fs-b4);
+    }
+
+    &__icon {
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+    }
+
+    &__temp {
+      font-size: var(--fs-b1);
+    }
+  }
+
+  .daily-weather {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+
+    &__item {
+      padding: 16px 12px;
+    }
+  }
+
+  .weather-details {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    &__item {
+      padding: 16px;
+    }
+
+    &__content {
+      gap: 4px;
+    }
+
+    &__label {
+      font-size: var(--fs-b5);
+    }
+
+    &__value {
+      font-size: var(--fs-b3);
+    }
+  }
+
   // Footer
   .footer {
     padding-top: 48px;
 
     &__content {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px;
       margin-bottom: 32px;
+    }
+
+    &__brand {
+      grid-column: 1 / -1;
+    }
+
+    &__contact {
+      grid-column: 1 / -1;
     }
 
     &__brand {
@@ -763,6 +1255,357 @@
       }
     }
   }
+
+  // Currency Converter
+  .currency-converter {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .currency-card {
+    padding: 20px;
+
+    &__header {
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    &__flag {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__code {
+      font-size: var(--fs-b1);
+    }
+
+    &__name {
+      font-size: var(--fs-b5);
+    }
+
+    &__remove {
+      top: 12px;
+      right: 12px;
+      width: 28px;
+      height: 28px;
+      font-size: var(--fs-b3);
+    }
+  }
+
+  .currency-modal {
+    &__content {
+      padding: 24px;
+      max-width: 480px;
+    }
+
+    &__title {
+      font-size: var(--fs-b1);
+    }
+
+    &__header {
+      margin-bottom: 20px;
+    }
+  }
+
+  .currency-item {
+    padding: 12px;
+    gap: 12px;
+
+    &__flag {
+      width: 36px;
+      height: 36px;
+      font-size: var(--fs-b2);
+    }
+
+    &__name {
+      font-size: var(--fs-b4);
+    }
+
+    &__code {
+      font-size: var(--fs-b5);
+    }
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    .table {
+      min-width: 600px;
+
+      th,
+      td {
+        padding: 12px;
+        font-size: var(--fs-b4);
+      }
+    }
+  }
+
+  // Fallback Notification
+  .fallback-notification {
+    top: 16px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100% - 32px);
+
+    &__content {
+      padding: 14px;
+      gap: 10px;
+    }
+
+    &__icon {
+      font-size: 20px;
+      line-height: 20px;
+    }
+
+    &__text {
+      h4 {
+        font-size: var(--fs-b4);
+        margin-bottom: 6px;
+        padding-right: 20px;
+      }
+
+      p {
+        font-size: var(--fs-b5);
+        margin-bottom: 10px;
+      }
+    }
+
+    &__actions {
+      gap: 6px;
+    }
+
+    &__retry {
+      padding: 5px 10px;
+      font-size: var(--fs-b6);
+      border-radius: 5px;
+    }
+
+    &__close {
+      top: 12px;
+      right: 12px;
+      width: 20px;
+      height: 20px;
+      font-size: 18px;
+    }
+  }
+
+  // Forms & Calculators
+  .form {
+    padding: 24px;
+    gap: 24px;
+
+    &-row {
+
+      &--2,
+      &--3,
+      &--4 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    &-group {
+      &--lg {
+        gap: 10px;
+      }
+    }
+
+    &-label {
+      &--lg {
+        font-size: var(--fs-b3);
+        gap: 8px;
+
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+
+    &-control {
+      &--lg {
+        padding: 10px 16px;
+        font-size: var(--fs-b4);
+        min-height: 44px;
+
+        &.form-control--with-suffix {
+          padding-right: 40px;
+        }
+      }
+    }
+
+    &-control-suffix {
+      &--text {
+        font-size: var(--fs-b4);
+      }
+    }
+
+    &__results {
+      padding-top: 24px;
+    }
+  }
+
+  .calculator-result-card {
+    padding: 20px;
+    gap: 16px;
+
+    &__icon {
+      width: 52px;
+      height: 52px;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    &__label {
+      font-size: var(--fs-b4);
+      margin-bottom: 6px;
+    }
+
+    &__value {
+      font-size: var(--fs-b1);
+    }
+  }
+
+  .credit-schedule {
+    margin-top: 48px;
+  }
+
+  // Countdown
+  .countdown {
+    gap: 16px;
+    flex-wrap: wrap;
+
+    &__item {
+      padding: 20px 24px;
+      min-width: 140px;
+
+      &__number {
+        font-size: var(--fs-h4);
+      }
+
+      &__label {
+        font-size: var(--fs-b5);
+      }
+    }
+  }
+
+  // Button Group
+  .btn-group {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  // Exam Wrapper
+  .exam-tabs-wrapper {
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .exam-forms-wrapper {
+    gap: 32px;
+  }
+
+  // Prayer Times
+  .prayer-times {
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    &__location {
+      width: 100%;
+    }
+
+    &__location-icon {
+      width: 50px;
+      height: 50px;
+
+      i {
+        font-size: 24px;
+      }
+    }
+
+    &__city {
+      font-size: var(--fs-h4);
+      line-height: var(--lh-h4);
+    }
+
+    &__date {
+      font-size: var(--fs-b3);
+    }
+
+    &__selectors {
+      width: 100%;
+      gap: 12px;
+    }
+
+    &__selector {
+      flex: 1;
+      min-width: 0;
+
+      &-label {
+        font-size: var(--fs-b5);
+      }
+
+      &-input {
+        padding: 10px 36px 10px 16px;
+        font-size: var(--fs-b4);
+        min-width: 0;
+      }
+
+      &-arrow {
+        font-size: 18px;
+        right: 12px;
+      }
+    }
+
+    &__today {
+      margin-bottom: 32px;
+    }
+
+    &__today-title {
+      font-size: var(--fs-h5);
+      margin-bottom: 20px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 12px;
+    }
+
+    &__monthly {
+      margin-top: 32px;
+    }
+
+    &__monthly-title {
+      font-size: var(--fs-h5);
+      margin-bottom: 20px;
+    }
+  }
+
+  .prayer-time-card {
+    padding: 20px 12px;
+    gap: 10px;
+
+    &__icon {
+      width: 44px;
+      height: 44px;
+      font-size: 22px;
+    }
+
+    &__name {
+      font-size: var(--fs-b4);
+    }
+
+    &__time {
+      font-size: var(--fs-b1);
+    }
+  }
 }
 
 // ============================================================================
@@ -810,13 +1653,691 @@
     }
   }
 
+  // Post Page
+  .post {
+    padding: 20px 0;
+
+    &__header {
+      padding: 20px 16px 12px;
+    }
+
+    &__title {
+      font-size: var(--fs-h5);
+      line-height: var(--lh-h5);
+    }
+
+    &__meta {
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    &__category {
+      font-size: var(--fs-b6);
+      padding: 3px 10px;
+    }
+
+    &__date,
+    &__read-time {
+      font-size: var(--fs-b6);
+
+      i {
+        font-size: 12px;
+      }
+    }
+
+    &__author {
+      padding: 12px 0;
+
+      &-avatar {
+        width: 40px;
+        height: 40px;
+      }
+
+      &-name {
+        font-size: var(--fs-b4);
+      }
+
+      &-title {
+        font-size: var(--fs-b6);
+      }
+    }
+
+    &__image {
+      height: 220px;
+    }
+
+    &__body {
+      padding: 20px 16px;
+    }
+
+    &__excerpt {
+      font-size: var(--fs-b4);
+      line-height: var(--lh-b4);
+      padding: 12px;
+      margin-bottom: 20px;
+    }
+
+    &__text {
+      font-size: var(--fs-b4);
+      line-height: var(--lh-b4);
+
+      p {
+        margin-bottom: 14px;
+        line-height: 1.7;
+      }
+
+      h2 {
+        font-size: var(--fs-h5);
+        line-height: var(--lh-h5);
+        margin: 20px 0 10px;
+      }
+
+      ul {
+        margin: 14px 0;
+        padding-left: 16px;
+
+        li {
+          margin-bottom: 6px;
+          line-height: 1.6;
+
+          strong {
+            font-weight: var(--fw-semi-bold);
+            display: inline;
+          }
+        }
+      }
+
+      blockquote {
+        margin: 16px 0;
+        padding: 12px 16px;
+        font-size: var(--fs-b4);
+      }
+    }
+
+    &__footer {
+      padding: 20px 16px;
+    }
+
+    &__tags {
+      margin-bottom: 20px;
+
+      &-title {
+        font-size: var(--fs-b4);
+        margin-bottom: 10px;
+      }
+
+      &-list {
+        gap: 6px;
+      }
+    }
+
+    &__tag {
+      font-size: var(--fs-b5);
+      padding: 4px 10px;
+    }
+
+    &__share {
+      &-title {
+        font-size: var(--fs-b4);
+        margin-bottom: 10px;
+      }
+
+      &-buttons {
+        gap: 6px;
+      }
+
+      &-btn {
+        width: 36px;
+        height: 36px;
+        font-size: var(--fs-b4);
+      }
+    }
+
+    &__reactions {
+      padding: 16px;
+    }
+
+    &__comments {
+      padding: 20px 16px;
+    }
+  }
+
+  // Reactions
+  .reactions {
+    &__title {
+      font-size: var(--fs-b4);
+      margin-bottom: 12px;
+    }
+
+    &__list {
+      gap: 6px;
+    }
+  }
+
+  // Comments
+  .comments {
+    &__title {
+      font-size: var(--fs-b3);
+      margin-bottom: 16px;
+    }
+  }
+
+  .comment-form {
+    gap: 10px;
+    margin-bottom: 20px;
+
+    &__avatar {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  .comment {
+    gap: 10px;
+
+    &__avatar {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__author {
+      font-size: var(--fs-b4);
+    }
+
+    &__date {
+      font-size: var(--fs-b6);
+    }
+
+    &__text {
+      font-size: var(--fs-b4);
+      line-height: var(--lh-b4);
+    }
+
+    &__actions {
+      gap: 10px;
+    }
+
+    &__action-btn {
+      font-size: var(--fs-b5);
+      padding: 6px 12px;
+    }
+
+    &__replies {
+      padding-left: 24px;
+    }
+
+    &--reply {
+      padding-left: 0;
+    }
+  }
+
+  // Newsletter
+  .newsletter {
+    &__text {
+      font-size: var(--fs-b5);
+      margin-bottom: 12px;
+    }
+  }
+
+  // Sidebar Widgets
+  .sidebar-widget {
+    margin-bottom: 0;
+
+    &__title {
+      font-size: var(--fs-b2);
+      padding: 16px 20px;
+      margin-bottom: 0;
+    }
+
+    &__content {
+      padding: 20px;
+    }
+  }
+
+  .related-post {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+
+    &__image {
+      width: 80px;
+      height: 64px;
+    }
+
+    &__title {
+      font-size: var(--fs-b4);
+    }
+  }
+
+  // Section Games
+  .section--games {
+    padding: 20px 0;
+  }
+
+  // Games
+  .games {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .game-card {
+    padding: 16px;
+    max-width: 100%;
+
+    &__thumb {
+      margin-bottom: 10px;
+      border-radius: 6px;
+    }
+
+    &__header {
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    &__icon {
+      font-size: 24px;
+    }
+
+    &__title {
+      font-size: var(--fs-b3);
+    }
+
+    &__description {
+      font-size: var(--fs-b4);
+    }
+  }
+
+  // Individual Game Pages
+  .game {
+    &__header {
+      padding: 16px 16px 12px;
+
+      &__title {
+        font-size: var(--fs-b3);
+        gap: 6px;
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      &__description {
+        font-size: var(--fs-b4);
+      }
+
+      &__score {
+        font-size: var(--fs-b5);
+      }
+    }
+
+    &__body {
+      padding: 16px;
+      min-height: 280px;
+    }
+
+    &__keyboard {
+      gap: 4px;
+      grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+
+      &__key {
+        padding: 6px;
+        font-size: var(--fs-b5);
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .snake-game {
+    width: 260px;
+    height: 260px;
+  }
+
+  .memory-game {
+    width: 260px;
+    height: 260px;
+    gap: 4px;
+    padding: 4px;
+
+    &__card {
+      font-size: 24px;
+      border-radius: 6px;
+    }
+  }
+
+  // Word Game
+  .word-game {
+    gap: 24px;
+
+    &__display {
+      font-size: var(--fs-b1);
+      letter-spacing: 4px;
+    }
+
+    &__keyboard {
+      max-width: 280px;
+      grid-template-columns: repeat(auto-fit, minmax(28px, 1fr));
+      gap: 4px;
+    }
+  }
+
+  // Reaction Game
+  .reaction-game {
+    max-width: 280px;
+    height: 160px;
+    font-size: var(--fs-b2);
+    padding: 12px;
+  }
+
+  // Color Game
+  .color-game {
+    max-width: 100%;
+    gap: 16px;
+
+    &__display {
+      padding: 16px 12px;
+      font-size: var(--fs-b2);
+      line-height: 1.2;
+      min-height: 80px;
+      border-radius: 10px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    &__buttons {
+      gap: 8px;
+    }
+
+    &__button {
+      padding: 10px 14px;
+      font-size: var(--fs-b4);
+      border-radius: 10px;
+      min-height: 48px;
+    }
+  }
+
+  // Game Notification
+  .game-notification {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    padding: 16px 20px;
+
+    &__content {
+      gap: 10px;
+    }
+
+    &__icon {
+      font-size: 20px;
+    }
+
+    &__text {
+      h4 {
+        font-size: var(--fs-b3);
+      }
+
+      p {
+        font-size: var(--fs-b4);
+      }
+    }
+  }
+
+  // Breadcrumbs
+  .breadcrumbs {
+    padding: 12px 0;
+
+    &__link,
+    &__current {
+      font-size: var(--fs-b6);
+    }
+  }
+
+  // Follow Us
+  .follow-us {
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px 20px;
+    text-align: center;
+
+    &__title {
+      font-size: var(--fs-b3);
+      line-height: var(--lh-b3);
+    }
+
+    &__description {
+      font-size: var(--fs-b4);
+      line-height: var(--lh-b4);
+    }
+
+    &__buttons {
+      gap: 8px;
+
+      .btn {
+        font-size: var(--fs-b5);
+        padding: 8px 16px;
+      }
+    }
+  }
+
+  // Weather Page
+  .weather-location-selector {
+    margin-bottom: 20px;
+
+    &__wrapper {
+      padding: 8px 10px;
+      gap: 8px;
+    }
+
+    &__icon {
+      font-size: 18px;
+    }
+
+    &__input {
+      font-size: var(--fs-b4);
+    }
+
+    &__btn {
+      width: 32px;
+      height: 32px;
+
+      i {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .current-weather {
+    padding: 20px 16px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+
+    &__main {
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    &__location-wrapper {
+      gap: 12px;
+    }
+
+    &__location-icon {
+      width: 44px;
+      height: 44px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    &__location {
+      font-size: var(--fs-h5);
+    }
+
+    &__date {
+      font-size: var(--fs-b4);
+    }
+
+    &__details {
+      margin-bottom: 12px;
+    }
+
+    &__temp-section {
+      gap: 12px;
+      margin-bottom: 0;
+    }
+
+    &__temp {
+      font-size: 44px;
+
+      &-value {
+        font-size: 44px;
+      }
+
+      &-unit {
+        font-size: 24px;
+      }
+    }
+
+    &__icon {
+      i {
+        font-size: 44px;
+      }
+    }
+
+    &__condition {
+      font-size: var(--fs-b3);
+    }
+
+    &__feels {
+      font-size: var(--fs-b4);
+    }
+
+    &__stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding-top: 16px;
+    }
+
+    &__stat {
+      font-size: var(--fs-b4);
+      gap: 6px;
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    &__stat-label,
+    &__stat-value {
+      font-size: var(--fs-b5);
+    }
+  }
+
+  .hourly-weather {
+    margin-bottom: 20px;
+
+    &__item {
+      padding: 16px 12px;
+      min-height: 120px;
+      gap: 10px;
+    }
+
+    &__time {
+      font-size: var(--fs-b5);
+    }
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    &__temp {
+      font-size: var(--fs-b2);
+    }
+
+    &__precipitation {
+      font-size: var(--fs-b6);
+    }
+  }
+
+  .daily-weather {
+    gap: 10px;
+    margin-bottom: 24px;
+
+    &__item {
+      padding: 14px 12px;
+      gap: 10px;
+      border-radius: 10px;
+    }
+
+    &__date {
+      font-size: var(--fs-b3);
+    }
+
+    &__icon {
+      font-size: 36px;
+    }
+
+    &__max {
+      font-size: var(--fs-b1);
+    }
+
+    &__min {
+      font-size: var(--fs-b4);
+    }
+
+    &__precipitation,
+    &__wind {
+      font-size: var(--fs-b5);
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .weather-details {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    &__item {
+      padding: 12px;
+      border-radius: 10px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    &__content {
+      gap: 2px;
+    }
+
+    &__label {
+      font-size: var(--fs-b6);
+    }
+
+    &__value {
+      font-size: var(--fs-b4);
+    }
+  }
+
   // Footer
   .footer {
     padding-top: 40px;
 
     &__content {
+      grid-template-columns: repeat(2, 1fr);
       gap: 28px;
       margin-bottom: 28px;
+    }
+
+    &__brand {
+      grid-column: 1 / -1;
+    }
+
+    &__contact {
+      grid-column: 1 / -1;
     }
 
     &__brand {
@@ -901,6 +2422,401 @@
           line-height: var(--lh-b6);
         }
       }
+    }
+  }
+
+  // Currency Converter
+  .currency-converter {
+    gap: 16px;
+  }
+
+  .currency-card {
+    padding: 16px;
+    border-radius: 14px;
+
+    &__header {
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    &__flag {
+      width: 36px;
+      height: 36px;
+      font-size: var(--fs-b2);
+    }
+
+    &__code {
+      font-size: var(--fs-b2);
+    }
+
+    &__name {
+      font-size: var(--fs-b6);
+    }
+
+    &__remove {
+      top: 10px;
+      right: 10px;
+      width: 26px;
+      height: 26px;
+      font-size: var(--fs-b4);
+    }
+
+    &__date,
+    &__source {
+      font-size: var(--fs-b6);
+    }
+
+    &__rate {
+      font-size: var(--fs-b5);
+    }
+  }
+
+  .currency-modal {
+    &__content {
+      padding: 20px 16px;
+      max-width: 90%;
+      border-radius: 16px;
+    }
+
+    &__title {
+      font-size: var(--fs-b2);
+    }
+
+    &__header {
+      margin-bottom: 16px;
+    }
+
+    &__close {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .currency-item {
+    padding: 10px 12px;
+    gap: 10px;
+    border-radius: 10px;
+
+    &__flag {
+      width: 32px;
+      height: 32px;
+      font-size: var(--fs-b3);
+    }
+
+    &__info {
+      gap: 2px;
+    }
+
+    &__name {
+      font-size: var(--fs-b5);
+    }
+
+    &__code {
+      font-size: var(--fs-b6);
+    }
+  }
+
+  .currency-list {
+    gap: 8px;
+  }
+
+  .table-wrapper {
+    .table {
+      min-width: 500px;
+
+      th,
+      td {
+        padding: 10px 8px;
+        font-size: var(--fs-b5);
+      }
+
+      th {
+        font-size: var(--fs-b5);
+      }
+    }
+  }
+
+  .exchange-rates-change {
+    font-size: var(--fs-b6);
+
+    i {
+      font-size: var(--fs-b3);
+    }
+  }
+
+  // Fallback Notification
+  .fallback-notification {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    max-width: calc(100% - 24px);
+    border-radius: 10px;
+
+    &__content {
+      padding: 12px;
+      gap: 8px;
+    }
+
+    &__icon {
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    &__text {
+      h4 {
+        font-size: var(--fs-b5);
+        margin-bottom: 4px;
+        padding-right: 16px;
+        line-height: 1.4;
+      }
+
+      p {
+        font-size: var(--fs-b6);
+        line-height: 1.4;
+        margin-bottom: 8px;
+      }
+    }
+
+    &__actions {
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    &__retry {
+      padding: 4px 8px;
+      font-size: var(--fs-b6);
+      border-radius: 4px;
+    }
+
+    &__close {
+      top: 10px;
+      right: 10px;
+      width: 18px;
+      height: 18px;
+      font-size: 16px;
+    }
+  }
+
+  // Forms & Calculators
+  .form {
+    padding: 20px 16px;
+    gap: 20px;
+    border-radius: 14px;
+
+    &-row {
+
+      &--2,
+      &--3,
+      &--4 {
+        gap: 16px;
+      }
+    }
+
+    &-group {
+      &--lg {
+        gap: 8px;
+      }
+    }
+
+    &-label {
+      &--lg {
+        font-size: var(--fs-b4);
+        gap: 6px;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-control {
+      &--lg {
+        padding: 8px 14px;
+        font-size: var(--fs-b5);
+        min-height: 40px;
+        border-radius: 10px;
+
+        &.form-control--with-suffix {
+          padding-right: 36px;
+        }
+      }
+    }
+
+    &-control-suffix {
+      &--text {
+        font-size: var(--fs-b5);
+        right: 12px;
+      }
+    }
+
+    &-range-wrapper {
+      margin-top: 8px;
+    }
+
+    &__results {
+      padding-top: 20px;
+    }
+  }
+
+  .calculator-result-card {
+    padding: 16px;
+    gap: 12px;
+    border-radius: 14px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+
+      i {
+        font-size: 22px;
+      }
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__label {
+      font-size: var(--fs-b5);
+      margin-bottom: 4px;
+    }
+
+    &__value {
+      font-size: var(--fs-b2);
+    }
+  }
+
+  .credit-schedule {
+    margin-top: 32px;
+
+    .section__header {
+      margin-bottom: 16px;
+    }
+  }
+
+  // Countdown
+  .countdown {
+    gap: 12px;
+
+    &__item {
+      padding: 16px 20px;
+      min-width: 0;
+      flex: 1;
+      min-width: calc(50% - 6px);
+      border-radius: 14px;
+
+      &__number {
+        font-size: var(--fs-h5);
+      }
+
+      &__label {
+        font-size: var(--fs-b6);
+        margin-top: 2px;
+      }
+    }
+  }
+
+  // Button Group
+  .btn-group {
+    width: 100%;
+    gap: 8px;
+
+    .btn {
+      font-size: var(--fs-b4);
+      padding: 10px 14px;
+    }
+  }
+
+  // Exam Wrapper
+  .exam-tabs-wrapper {
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+
+  .exam-forms-wrapper {
+    gap: 24px;
+  }
+
+  // Prayer Times
+  .prayer-times {
+    &__header {
+      gap: 20px;
+      padding: 20px 16px;
+      margin-bottom: 24px;
+      border-radius: 20px;
+    }
+
+    &__location {
+      gap: 16px;
+    }
+
+    &__location-icon {
+      width: 44px;
+      height: 44px;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    &__city {
+      font-size: var(--fs-h5);
+      line-height: var(--lh-h5);
+    }
+
+    &__date {
+      font-size: var(--fs-b4);
+    }
+
+    &__selectors {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__today {
+      margin-bottom: 24px;
+    }
+
+    &__today-title {
+      font-size: var(--fs-b1);
+      margin-bottom: 16px;
+    }
+
+    &__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    &__monthly {
+      margin-top: 24px;
+    }
+
+    &__monthly-title {
+      font-size: var(--fs-b1);
+      margin-bottom: 16px;
+    }
+  }
+
+  .prayer-time-card {
+    padding: 16px 10px;
+    gap: 8px;
+    border-radius: 14px;
+
+    &__icon {
+      width: 40px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    &__name {
+      font-size: var(--fs-b5);
+    }
+
+    &__time {
+      font-size: var(--fs-b2);
     }
   }
 }

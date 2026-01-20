@@ -12,9 +12,34 @@
 </head>
 <body>
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+    <button class="btn btn--filled btn--blue btn--icon" id="scrollToTop" aria-label="Scroll to top">
         <i class="ri-arrow-up-line"></i>
     </button>
+
+    <!-- Top Ads Above Header -->
+    <section class="section section--ads">
+        <div class="container">
+            <div class="ads">
+                <!-- Top Banner Ad 1 - Image/GIF -->
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <div class="ad">
+                    <a href="https://www.work.az/is-elanlari" target="_blank" class="ad__link">
+                        <img src="https://ilk.az/storage/banners/01K0E5KKPGG7DCN1H9H9GAQYNM.gif?v=2.0.0" alt="work.az">
+                    </a>
+                </div>
+
+                <!-- Top Banner Ad 2 - Iframe -->
+                <!-- <div class="ad">
+                    <iframe src="https://example.com" width="100%" height="90" frameborder="0"></iframe>
+                </div> -->
+            </div>
+        </div>
+    </section>
 
     <!-- Header -->
     <header class="header">
@@ -35,64 +60,94 @@
                 </a>
 
                 <!-- Navigation Menu -->
-                <nav class="header__nav nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriya 1</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriya 2</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriya 3</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="category.html" class="nav__link">Kateqoriya 4</a>
-                        </li>
-                        <li class="nav__item nav__item--has-submenu">
-                            <a href="category.html" class="nav__link">Səhifələr <i class="ri-arrow-down-s-line nav__arrow"></i></a>
-                            <div class="nav__submenu nav__submenu--multi-column">
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Oyun səhifələri</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="games.html" class="nav__submenu-link">Bütün oyunlar</a></li>
-                                        <li><a href="snake.html" class="nav__submenu-link">Snake</a></li>
-                                        <li><a href="memory.html" class="nav__submenu-link">Memory</a></li>
-                                        <li><a href="guess-number.html" class="nav__submenu-link">Guess the Number</a></li>
-                                        <li><a href="word-guess.html" class="nav__submenu-link">Word Guess</a></li>
-                                        <li><a href="reaction.html" class="nav__submenu-link">Reaction</a></li>
-                                        <li><a href="color-match.html" class="nav__submenu-link">Color Match</a></li>
-                                    </ul>
-                                </div>
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">Kalkulyator səhifələri</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="currency-converter.html" class="nav__submenu-link">Valyuta kalkulyatoru</a></li>
-                                        <li><a href="credit-calculator.html" class="nav__submenu-link">Kredit kalkulyatoru</a></li>
-                                        <li><a href="mortgage-calculator.html" class="nav__submenu-link">İpoteka kalkulyatoru</a></li>
-                                        <li><a href="deposit-calculator.html" class="nav__submenu-link">Depozit kalkulyatoru</a></li>
-                                        <li><a href="zodiacs.html" class="nav__submenu-link">Bürc kalkulyatoru</a></li>
-                                        <li><a href="ascendant.html" class="nav__submenu-link">Detallı bürc kalkulyatoru</a></li>
-                                        <li><a href="exam-calculator.html" class="nav__submenu-link">DİM bal hesablayıcı</a></li>
-                                    </ul>
-                                </div>
-                                <div class="nav__submenu-column">
-                                    <h4 class="nav__submenu-title">İnformativ səhifələr</h4>
-                                    <ul class="nav__submenu-list">
-                                        <li><a href="category.html" class="nav__submenu-link">Kateqoriyalar</a></li>
-                                        <li><a href="post.html" class="nav__submenu-link">Bloq</a></li>
-                                        <li><a href="weather.html" class="nav__submenu-link">Hava durumu</a></li>
-                                        <li><a href="prayer-times.html" class="nav__submenu-link">Namaz vaxtları</a></li>
-                                        <li><a href="privacy-policy.html" class="nav__submenu-link">Statik səhifə</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
+                <div class="header__nav__overlay"></div>
+                <div class="header__nav">
+                    <!-- Mobile Nav Header -->
+                    <div class="header__nav__title">
+                        <a href="index.html" class="header__logo">
+                            <img src="./assets/images/logo.png" alt="ilk.az">
+                        </a>
+                        <button class="header__actions__btn header__actions__btn--secondary header__actions__btn--icon-only" id="mobileNavClose" aria-label="Close Menu">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+
+                    <!-- Mobile Nav Body -->
+                    <div class="header__nav__body">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 1</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 2</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 3</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 4</a>
+                                </li>
+                                <li class="nav__item nav__item--has-submenu">
+                                    <a href="category.html" class="nav__link">Səhifələr <i class="ri-arrow-down-s-line nav__arrow"></i></a>
+                                    <div class="nav__submenu nav__submenu--multi-column">
+                                        <div class="nav__submenu-column">
+                                            <h4 class="nav__submenu-title">Oyun səhifələri</h4>
+                                            <ul class="nav__submenu-list">
+                                                <li><a href="games.html" class="nav__submenu-link">Bütün oyunlar</a></li>
+                                                <li><a href="snake.html" class="nav__submenu-link">Snake</a></li>
+                                                <li><a href="memory.html" class="nav__submenu-link">Memory</a></li>
+                                                <li><a href="guess-number.html" class="nav__submenu-link">Guess the Number</a></li>
+                                                <li><a href="word-guess.html" class="nav__submenu-link">Word Guess</a></li>
+                                                <li><a href="reaction.html" class="nav__submenu-link">Reaction</a></li>
+                                                <li><a href="color-match.html" class="nav__submenu-link">Color Match</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="nav__submenu-column">
+                                            <h4 class="nav__submenu-title">Kalkulyator səhifələri</h4>
+                                            <ul class="nav__submenu-list">
+                                                <li><a href="currency-converter.html" class="nav__submenu-link">Valyuta kalkulyatoru</a></li>
+                                                <li><a href="credit-calculator.html" class="nav__submenu-link">Kredit kalkulyatoru</a></li>
+                                                <li><a href="mortgage-calculator.html" class="nav__submenu-link">İpoteka kalkulyatoru</a></li>
+                                                <li><a href="deposit-calculator.html" class="nav__submenu-link">Depozit kalkulyatoru</a></li>
+                                                <li><a href="zodiacs.html" class="nav__submenu-link">Bürc kalkulyatoru</a></li>
+                                                <li><a href="ascendant.html" class="nav__submenu-link">Detallı bürc kalkulyatoru</a></li>
+                                                <li><a href="exam-calculator.html" class="nav__submenu-link">DİM bal hesablayıcı</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="nav__submenu-column">
+                                            <h4 class="nav__submenu-title">İnformativ səhifələr</h4>
+                                            <ul class="nav__submenu-list">
+                                                <li><a href="category.html" class="nav__submenu-link">Kateqoriyalar</a></li>
+                                                <li><a href="post.html" class="nav__submenu-link">Bloq</a></li>
+                                                <li><a href="weather.html" class="nav__submenu-link">Hava durumu</a></li>
+                                                <li><a href="prayer-times.html" class="nav__submenu-link">Namaz vaxtları</a></li>
+                                                <li><a href="privacy-policy.html" class="nav__submenu-link">Statik səhifə</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <!-- Mobile Nav Footer -->
+                    <div class="header__nav__footer">
+                        <a href="games.html" class="btn btn--filled btn--blue">
+                            <i class="ri-star-line"></i>
+                            <span>Eğlence</span>
+                        </a>
+                    </div>
+                </div>
 
                 <!-- Header Actions -->
                 <div class="header__actions">
+                    <!-- Game Button -->
+                    <a href="games.html" class="header__game header__actions__btn header__actions__btn--icon-only" aria-label="Oyun">
+                        <i class="ri-gamepad-line"></i>
+                        <span class="header__actions__btn__text">Əyləncə</span>
+                    </a>
+
                     <!-- Language Dropdown -->
                     <div class="header__language language-dropdown">
                         <button class="header__actions__btn header__actions__btn--language" aria-label="Dil Seçimi" aria-expanded="false">
@@ -127,15 +182,14 @@
                         </ul>
                     </div>
 
-                    <!-- Game Button -->
-                    <a href="games.html" class="header__game header__actions__btn header__actions__btn--with-text header__actions__btn--game">
-                        <i class="ri-star-line"></i>
-                        <span class="header__actions__btn__text">Eğlence</span>
-                    </a>
-
                     <!-- Search Button -->
                     <button class="header__search header__actions__btn header__actions__btn--icon-only" aria-label="Arama">
                         <i class="ri-search-line"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button class="header__hamburger header__actions__btn header__actions__btn--icon-only header__actions__btn--secondary" id="mobileNavOpen" aria-label="Menu">
+                        <i class="ri-apps-2-line"></i>
                     </button>
                 </div>
             </div>
@@ -145,11 +199,10 @@
     <!-- Full Page Search Overlay -->
     <div class="search-overlay">
         <div class="search-overlay__inner">
-            <button class="search-overlay__close" aria-label="Kapat">
+            <button class="search-overlay__close" aria-label="Bağla">
                 <i class="ri-close-line"></i>
             </button>
             <div class="search-overlay__content">
-                <h2 class="search-overlay__title">Arama</h2>
                 <form class="search-overlay__form search-form">
                     <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
                     <button type="submit" class="search-form__submit" aria-label="Ara">
@@ -325,7 +378,7 @@
                                 <div class="comment-form__avatar">
                                     <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=60&h=60&fit=crop&crop=face" alt="User">
                                 </div>
-                                <form class="comment-form__form form">
+                                <form class="comment-form__form">
                                     <div class="form-group">
                                         <textarea class="form-control form-control--textarea" placeholder="Yorumunuzu yazın..." rows="3" required></textarea>
                                     </div>
