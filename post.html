@@ -555,6 +555,7 @@
 
                 <!-- Sidebar -->
                 <aside class="post__sidebar">
+
                     <!-- Related Posts -->
                     <div class="sidebar-widget">
                         <h3 class="sidebar-widget__title">İlgili Haberler</h3>
@@ -608,8 +609,21 @@
                         <h3 class="sidebar-widget__title">Bülten Aboneliği</h3>
                         <div class="sidebar-widget__content">
                             <div class="newsletter">
-                                <p class="newsletter__text">En son haberleri e-posta adresinize alın.</p>
                                 <form class="newsletter__form">
+                                    <div class="form-group">
+                                        <select class="form-control form-control--md form-control--select" required>
+                                            <option value="">Kateqoriya seçin...</option>
+                                            <option value="all">Bütün Xəbərlər</option>
+                                            <option value="technology">Texnologiya</option>
+                                            <option value="sport">İdman</option>
+                                            <option value="economy">İqtisadiyyat</option>
+                                            <option value="politics">Siyasət</option>
+                                            <option value="culture">Mədəniyyət</option>
+                                            <option value="health">Səhiyyə</option>
+                                            <option value="education">Təhsil</option>
+                                            <option value="world">Dünya</option>
+                                        </select>
+                                    </div>
                                     <div class="form-control-wrapper">
                                         <input type="email" class="form-control form-control--md form-control--with-prefix" placeholder="E-posta adresiniz" required>
                                         <span class="form-control-prefix">

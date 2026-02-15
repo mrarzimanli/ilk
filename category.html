@@ -941,9 +941,23 @@
                 <div class="subscription">
                     <div class="subscription__text">
                         <h2 class="subscription__title">Bülten Aboneliği</h2>
-                        <p class="subscription__description">En son haberleri e-posta adresinize alın.</p>
+                        <p class="subscription__description">Seçdiyiniz kateqoriyalar üzrə xəbərləri e-posta adresinizə alın.</p>
                     </div>
                     <form class="subscription__form">
+                        <div class="form-group">
+                            <select class="form-control form-control--lg form-control--select" required>
+                                <option value="">Kateqoriya seçin...</option>
+                                <option value="all">Bütün Xəbərlər</option>
+                                <option value="technology">Texnologiya</option>
+                                <option value="sport">İdman</option>
+                                <option value="economy">İqtisadiyyat</option>
+                                <option value="politics">Siyasət</option>
+                                <option value="culture">Mədəniyyət</option>
+                                <option value="health">Səhiyyə</option>
+                                <option value="education">Təhsil</option>
+                                <option value="world">Dünya</option>
+                            </select>
+                        </div>
                         <div class="form-control-wrapper">
                             <input type="email" class="form-control form-control--lg form-control--with-prefix" placeholder="E-posta adresiniz" required>
                             <span class="form-control-prefix">
