@@ -1083,3 +1083,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// ==================== Pagination ====================
+document.addEventListener('DOMContentLoaded', () => {
+    const pagination = document.querySelector('.pagination');
+    
+    if (!pagination) return;
+    
+    const prevBtn = pagination.querySelector('.pagination__btn--prev');
+    const nextBtn = pagination.querySelector('.pagination__btn--next');
+    const pageNumbers = pagination.querySelectorAll('.pagination__number');
+    
+    let currentPage = 1;
+    const totalPages = 10; // Adjust based on your actual total pages
+    
+    // Update pagination state
+    function updatePagination() {
+        // Update prev button
+        prevBtn.disabled = currentPage === 1;
+        
+        // Update next button
+        nextBtn.disabled = currentPage === totalPages;
+        
+        // Update page numbers
+        pageNumbers.forEach(btn => {
+            const pageNum = parseInt(btn.textContent);
+            if (pageNum === currentPage) {
+                btn.classList.add('pagination__number--active');
+                btn.setAttribute('aria-current', 'page');
+            } else {
+                btn.classList.remove('pagination__number--active');
+                btn.removeAttribute('aria-current');
+            }
+        });
+        
+        // Scroll to section
+        const section = document.querySelector('.section--grid-posts');
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+    
+    // Previous button click
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+                // Here you would typically load new content via AJAX
+                console.log('Loading page:', currentPage);
+            }
+        });
+    }
+    
+    // Next button click
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePagination();
+                // Here you would typically load new content via AJAX
+                console.log('Loading page:', currentPage);
+            }
+        });
+    }
+    
+    // Page number clicks
+    pageNumbers.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const pageNum = parseInt(btn.textContent);
+            if (pageNum !== currentPage) {
+                currentPage = pageNum;
+                updatePagination();
+                // Here you would typically load new content via AJAX
+                console.log('Loading page:', currentPage);
+            }
+        });
+    });
+    
+    // Initialize
+    updatePagination();
+});
+

@@ -2081,6 +2081,41 @@
   .prayer-time-card__time {
     font-size: var(--fs-b2);
   }
+  
+  /* Pagination Responsive */
+  .pagination {
+    gap: 8px;
+    margin-top: 32px;
+    padding: 16px 0;
+  }
+  
+  .pagination__btn {
+    padding: 8px 14px;
+    font-size: var(--fs-b4);
+  }
+  
+  .pagination__btn span {
+    display: none;
+  }
+  
+  .pagination__btn i {
+    font-size: 20px;
+  }
+  
+  .pagination__numbers {
+    gap: 4px;
+  }
+  
+  .pagination__number {
+    min-width: 36px;
+    height: 36px;
+    padding: 0 8px;
+    font-size: var(--fs-b4);
+  }
+  
+  .pagination__dots {
+    padding: 0 2px;
+  }
 }
 
 /*# sourceMappingURL=responsive.css.map */
