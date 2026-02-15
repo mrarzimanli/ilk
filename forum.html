@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum - Glob</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <button class="btn btn--filled btn--blue btn--icon" id="scrollToTop" aria-label="Scroll to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="header__logo">
+                    <img src="./assets/images/logo.png" alt="ilk.az">
+                </a>
+
+                <a href="weather.html" class="header__weather weather">
+                    <i class="weather__icon ri-sun-line"></i>
+                    <div class="weather__info">
+                        <span class="weather__city">Loading...</span>
+                        <span class="weather__temp">--°C</span>
+                    </div>
+                </a>
+
+                <div class="header__nav__overlay"></div>
+                <div class="header__nav">
+                    <div class="header__nav__title">
+                        <a href="index.html" class="header__logo">
+                            <img src="./assets/images/logo.png" alt="ilk.az">
+                        </a>
+                        <button class="header__actions__btn header__actions__btn--secondary header__actions__btn--icon-only" id="mobileNavClose" aria-label="Close Menu">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+
+                    <div class="header__nav__body">
+                        <nav class="nav">
+                            <ul class="nav__list">
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 1</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="category.html" class="nav__link">Kateqoriya 2</a>
+                                </li>
+                                <li class="nav__item">
+                                    <a href="forum-list.html" class="nav__link">Forum</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="header__nav__footer">
+                        <a href="games.html" class="btn btn--filled btn--blue">
+                            <i class="ri-star-line"></i>
+                            <span>Eğlence</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="header__actions">
+                    <a href="games.html" class="header__game header__actions__btn header__actions__btn--icon-only" aria-label="Oyun">
+                        <i class="ri-gamepad-line"></i>
+                        <span class="header__actions__btn__text">Əyləncə</span>
+                    </a>
+
+                    <div class="header__language language-dropdown">
+                        <button class="header__actions__btn header__actions__btn--language" aria-label="Dil Seçimi" aria-expanded="false">
+                            <span class="header__actions__btn__flag">🇦🇿</span>
+                            <span class="header__actions__btn__code">AZ</span>
+                        </button>
+                        <ul class="language-dropdown__menu">
+                            <li class="language-dropdown__item">
+                                <a href="forum.html" class="language-dropdown__link" data-lang="az" data-code="AZ">
+                                    <span class="language-dropdown__flag">🇦🇿</span>
+                                    <span class="language-dropdown__name">Azərbaycan</span>
+                                </a>
+                            </li>
+                            <li class="language-dropdown__item">
+                                <a href="forum.html" class="language-dropdown__link" data-lang="en" data-code="EN">
+                                    <span class="language-dropdown__flag">🇺🇸</span>
+                                    <span class="language-dropdown__name">English</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="header__search header__actions__btn header__actions__btn--icon-only" aria-label="Arama">
+                        <i class="ri-search-line"></i>
+                    </button>
+
+                    <button class="header__hamburger header__actions__btn header__actions__btn--icon-only header__actions__btn--secondary" id="mobileNavOpen" aria-label="Menu">
+                        <i class="ri-apps-2-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Page Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-overlay__inner">
+            <button class="search-overlay__close" aria-label="Bağla">
+                <i class="ri-close-line"></i>
+            </button>
+            <div class="search-overlay__content">
+                <form class="search-overlay__form search-form">
+                    <input type="text" class="search-form__input" placeholder="Ne aramak istersiniz?" autocomplete="off">
+                    <button type="submit" class="search-form__submit" aria-label="Ara">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main main--forum">
+        <!-- Breadcrumbs -->
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <a href="index.html" class="breadcrumbs__link">Ana Səhifə</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <a href="forum-list.html" class="breadcrumbs__link">Forum</a>
+                    <i class="ri-arrow-right-s-line"></i>
+                    <span class="breadcrumbs__current">Kia servisleri</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Forum Content -->
+        <section class="section section--forum">
+            <div class="container">
+                <div class="forum-layout">
+                    <!-- Main Content -->
+                    <div class="forum-layout__main">
+                        <!-- Thread List -->
+                        <div class="forum-thread-list">
+                            <!-- Thread Item 1 -->
+                            <article class="forum-thread-item">
+                                <div class="forum-thread-item__header">
+                                    <div class="forum-thread-item__meta">
+                                        <div class="comment__avatar">
+                                            <span class="comment__avatar-text">A</span>
+                                        </div>
+                                        <div class="forum-thread-item__author-info">
+                                            <h4 class="forum-thread-item__author-name">Arif Abd</h4>
+                                            <span class="forum-thread-item__date">2 həftə əvvəl</span>
+                                        </div>
+                                    </div>
+                                    <span class="forum-thread-item__badge">Sual</span>
+                                </div>
+                                <div class="forum-thread-item__content">
+                                    <h3 class="forum-thread-item__title">Kia servisleri</h3>
+                                    <p class="forum-thread-item__excerpt">Salam. Mənə kimin məlumatı varsa zəhmət olması kia maşınları üçün məsləhətli servis yeri deyərdiniz</p>
+                                </div>
+                                <div class="forum-thread-item__footer">
+                                    <div class="forum-thread-item__tags">
+                                        <a href="#" class="forum-thread-item__tag">Kia</a>
+                                    </div>
+                                    <div class="forum-thread-item__stats">
+                                        <button type="button" class="forum-thread-item__stat forum-thread-item__stat--like">
+                                            <i class="ri-thumb-up-line"></i>
+                                            <span>1</span>
+                                        </button>
+                                        <span class="forum-thread-item__stat">
+                                            <i class="ri-eye-line"></i>
+                                            <span>32</span>
+                                        </span>
+                                        <span class="forum-thread-item__stat">
+                                            <i class="ri-chat-3-line"></i>
+                                            <span>2</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <!-- Replies Section -->
+                        <div class="forum-comments">
+                            <div class="forum-comments__header">
+                                <h2 class="forum-comments__title">Cavablar (2)</h2>
+                            </div>
+
+                            <div class="forum-comments__list">
+                                <!-- Comment 1 -->
+                                <article class="comment">
+                                    <div class="comment__avatar">
+                                        <span class="comment__avatar-text">M</span>
+                                    </div>
+                                    <div class="comment__content">
+                                        <div class="comment__header">
+                                            <h4 class="comment__author">Məmməd Əliyev</h4>
+                                            <span class="comment__date">1 həftə əvvəl</span>
+                                        </div>
+                                        <p class="comment__text">Mən özüm Gəncə Auto servisindən istifadə edirəm. Çox peşəkar komandaları var və qiymətləri də münasibdir.</p>
+                                        <div class="comment__actions">
+                                            <button class="comment__action-btn comment__action-btn--like" aria-label="Beğen">
+                                                <i class="ri-thumb-up-line"></i>
+                                                <span>5</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- Comment 2 -->
+                                <article class="comment">
+                                    <div class="comment__avatar">
+                                        <span class="comment__avatar-text">F</span>
+                                    </div>
+                                    <div class="comment__content">
+                                        <div class="comment__header">
+                                            <h4 class="comment__author">Fuad Quliyev</h4>
+                                            <span class="comment__date">3 gün əvvəl</span>
+                                        </div>
+                                        <p class="comment__text">Kia üçün "Azərkoreya Auto" servisi yaxşıdır. Bakı, Suraxanıda yerləşir. Orijinal ehtiyat hissələri ilə işləyirlər.</p>
+                                        <div class="comment__actions">
+                                            <button class="comment__action-btn comment__action-btn--like" aria-label="Beğen">
+                                                <i class="ri-thumb-up-line"></i>
+                                                <span>3</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <!-- Comment Form -->
+                        <div class="forum-comment-form">
+                            <div class="forum-comment-form__header">
+                                <h3 class="forum-comment-form__title">Cavabınızı yazın</h3>
+                            </div>
+                            <form class="forum-comment-form__form">
+                                <div class="form-group">
+                                    <textarea class="form-control form-control--textarea" rows="6" placeholder="Cavabınızı buraya yazın..." required></textarea>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn--filled btn--lg btn--blue">
+                                        <i class="ri-send-plane-fill"></i>
+                                        <span>Cavab göndər</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar -->
+                    <aside class="forum-layout__sidebar">
+                        <!-- Trend Questions -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-widget__title">Trend Suallar</h3>
+                            <div class="sidebar-widget__content">
+                                <div class="forum-trending">
+                                    <a href="forum.html" class="forum-trending__item">
+                                        <div class="forum-trending__number">1</div>
+                                        <div class="forum-trending__content">
+                                            <h4 class="forum-trending__title">Kia servisleri</h4>
+                                            <div class="forum-trending__meta">
+                                                <span>0 cavab</span>
+                                                <span>32 baxış</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="forum.html" class="forum-trending__item">
+                                        <div class="forum-trending__number">2</div>
+                                        <div class="forum-trending__content">
+                                            <h4 class="forum-trending__title">Mercedes E-Class 2020 motor yağı</h4>
+                                            <div class="forum-trending__meta">
+                                                <span>5 cavab</span>
+                                                <span>156 baxış</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="forum.html" class="forum-trending__item">
+                                        <div class="forum-trending__number">3</div>
+                                        <div class="forum-trending__content">
+                                            <h4 class="forum-trending__title">BMW 3 seriya təmiri</h4>
+                                            <div class="forum-trending__meta">
+                                                <span>12 cavab</span>
+                                                <span>289 baxış</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tags -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-widget__title">Etiketlər</h3>
+                            <div class="sidebar-widget__content">
+                                <div class="forum-tags">
+                                    <a href="#" class="forum-tag">Kia <span>1</span></a>
+                                    <a href="#" class="forum-tag">Mercedes <span>8</span></a>
+                                    <a href="#" class="forum-tag">BMW <span>15</span></a>
+                                    <a href="#" class="forum-tag">Toyota <span>23</span></a>
+                                    <a href="#" class="forum-tag">Servis <span>45</span></a>
+                                    <a href="#" class="forum-tag">Təmir <span>38</span></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="sidebar-widget">
+                            <h3 class="sidebar-widget__title">Kateqoriyalar</h3>
+                            <div class="sidebar-widget__content">
+                                <div class="forum-categories">
+                                    <a href="#" class="forum-category">
+                                        <i class="ri-car-line"></i>
+                                        <span class="forum-category__name">Avtomobil</span>
+                                        <span class="forum-category__count">156</span>
+                                    </a>
+                                    <a href="#" class="forum-category">
+                                        <i class="ri-tools-line"></i>
+                                        <span class="forum-category__name">Təmir və Servis</span>
+                                        <span class="forum-category__count">89</span>
+                                    </a>
+                                    <a href="#" class="forum-category">
+                                        <i class="ri-settings-3-line"></i>
+                                        <span class="forum-category__name">Ehtiyat hissələri</span>
+                                        <span class="forum-category__count">67</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- New Question Modal -->
+    <div class="modal" id="newQuestionModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__dialog">
+            <div class="modal__header">
+                <h2 class="modal__title">Yeni sual ver</h2>
+                <button type="button" class="modal__close" id="closeModalBtn" aria-label="Bağla">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="modal__body">
+                <form class="forum-new-question-form">
+                    <div class="form-group">
+                        <label class="form-label form-label--required">
+                            <i class="ri-file-text-line"></i>
+                            Sualın başlığı
+                        </label>
+                        <input type="text" class="form-control form-control--lg" placeholder="Məsələn: Mercedes E-Class 2020 motor yağı haqqında" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label form-label--required">
+                            <i class="ri-message-3-line"></i>
+                            Sualın məzmunu
+                        </label>
+                        <textarea class="form-control form-control--textarea" rows="8" placeholder="Sualınızı ətraflı şəkildə yazın..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label form-label--required">
+                            <i class="ri-price-tag-3-line"></i>
+                            Etiketlər
+                        </label>
+                        <div class="tag-selector">
+                            <div class="tag-selector__selected" id="selectedTags"></div>
+                            <div class="tag-selector__options">
+                                <button type="button" class="tag-selector__option" data-tag="kia">Kia</button>
+                                <button type="button" class="tag-selector__option" data-tag="mercedes">Mercedes</button>
+                                <button type="button" class="tag-selector__option" data-tag="bmw">BMW</button>
+                                <button type="button" class="tag-selector__option" data-tag="toyota">Toyota</button>
+                                <button type="button" class="tag-selector__option" data-tag="servis">Servis</button>
+                                <button type="button" class="tag-selector__option" data-tag="temir">Təmir</button>
+                                <button type="button" class="tag-selector__option" data-tag="motor-yagi">Motor yağı</button>
+                                <button type="button" class="tag-selector__option" data-tag="hisseler">Ehtiyat hissələri</button>
+                            </div>
+                        </div>
+                        <div class="form-help">
+                            <i class="ri-information-line"></i>
+                            Ən azı 1, maksimum 5 etiket seçə bilərsiniz
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label form-label--required">
+                            <i class="ri-folder-line"></i>
+                            Kateqoriya
+                        </label>
+                        <select class="form-control form-control--lg form-control--select" required>
+                            <option value="">Kateqoriya seçin</option>
+                            <option value="avtomobil">Avtomobil</option>
+                            <option value="temir">Təmir və Servis</option>
+                            <option value="hisseler">Ehtiyat hissələri</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn--filled btn--lg btn--blue btn--full-width">
+                            <i class="ri-send-plane-fill"></i>
+                            <span>Sual göndər</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="index.html" class="footer__logo">
+                        <svg class="logo__icon" width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="0" y="24" fill="#e74c3c" font-family="Poppins, sans-serif" font-size="28" font-weight="900">Glob</text>
+                        </svg>
+                    </a>
+                    <p class="footer__description">
+                        Your trusted source for the latest news, technology updates, and trending topics.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook">
+                            <i class="ri-facebook-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer__links">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__list">
+                        <li><a href="#" class="footer__link">Home</a></li>
+                        <li><a href="#" class="footer__link">Technology</a></li>
+                        <li><a href="forum-list.html" class="footer__link">Forum</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__contact">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <a href="mailto:info@newshub.com" class="footer__contact-item">
+                        <i class="ri-mail-line"></i>
+                        <span>info@newshub.com</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <div class="footer__bottom-content">
+                    <div class="footer__copyright">
+                        <p>&copy; 2024 NewsHub. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/forum.js"></script>
+</body>
+</html>
