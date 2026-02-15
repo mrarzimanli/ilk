@@ -2081,41 +2081,94 @@
   .prayer-time-card__time {
     font-size: var(--fs-b2);
   }
-  
-  /* Pagination Responsive */
+  .section--seo-content {
+    padding: 40px 0;
+  }
+  .seo-content__main {
+    gap: 32px;
+  }
+  .seo-content__title {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+  }
+  .seo-content__subtitle {
+    font-size: var(--fs-h5);
+    line-height: var(--lh-h5);
+  }
+  .seo-content__text {
+    font-size: var(--fs-b3);
+    line-height: var(--lh-b3);
+    text-align: left;
+  }
+  .seo-content__list {
+    gap: 10px;
+  }
+  .seo-content__list-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+  .seo-content__list-item i {
+    font-size: 18px;
+  }
+  .seo-content__list-item span {
+    font-size: var(--fs-b3);
+    line-height: var(--lh-b3);
+  }
+  .seo-content__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .seo-content__grid-item {
+    padding: 20px;
+  }
+  .seo-content__grid-title {
+    font-size: var(--fs-b2);
+    line-height: var(--lh-b2);
+  }
+  .seo-content__grid-text {
+    font-size: var(--fs-b4);
+    line-height: var(--lh-b4);
+  }
+  .seo-content__keywords {
+    padding: 20px;
+  }
+  .seo-content__keywords-title {
+    font-size: var(--fs-b2);
+    line-height: var(--lh-b2);
+    margin-bottom: 12px;
+  }
+  .seo-content__keywords-list {
+    gap: 8px;
+  }
+  .seo-content__keyword {
+    padding: 6px 12px;
+    font-size: var(--fs-b5);
+  }
   .pagination {
     gap: 8px;
     margin-top: 32px;
     padding: 16px 0;
   }
-  
   .pagination__btn {
     padding: 8px 14px;
     font-size: var(--fs-b4);
   }
-  
   .pagination__btn span {
     display: none;
   }
-  
   .pagination__btn i {
     font-size: 20px;
   }
-  
   .pagination__numbers {
     gap: 4px;
   }
-  
   .pagination__number {
     min-width: 36px;
     height: 36px;
     padding: 0 8px;
     font-size: var(--fs-b4);
   }
-  
   .pagination__dots {
     padding: 0 2px;
   }
 }
-
-/*# sourceMappingURL=responsive.css.map */

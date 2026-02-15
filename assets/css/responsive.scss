@@ -2819,4 +2819,122 @@
       font-size: var(--fs-b2);
     }
   }
+
+  // SEO Content Responsive
+  .section--seo-content {
+    padding: 40px 0;
+  }
+
+  .seo-content {
+    &__main {
+      gap: 32px;
+    }
+
+    &__title {
+      font-size: var(--fs-h3);
+      line-height: var(--lh-h3);
+    }
+
+    &__subtitle {
+      font-size: var(--fs-h5);
+      line-height: var(--lh-h5);
+    }
+
+    &__text {
+      font-size: var(--fs-b3);
+      line-height: var(--lh-b3);
+      text-align: left;
+    }
+
+    &__list {
+      gap: 10px;
+    }
+
+    &__list-item {
+      padding: 10px 12px;
+      gap: 10px;
+
+      i {
+        font-size: 18px;
+      }
+
+      span {
+        font-size: var(--fs-b3);
+        line-height: var(--lh-b3);
+      }
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__grid-item {
+      padding: 20px;
+    }
+
+    &__grid-title {
+      font-size: var(--fs-b2);
+      line-height: var(--lh-b2);
+    }
+
+    &__grid-text {
+      font-size: var(--fs-b4);
+      line-height: var(--lh-b4);
+    }
+
+    &__keywords {
+      padding: 20px;
+    }
+
+    &__keywords-title {
+      font-size: var(--fs-b2);
+      line-height: var(--lh-b2);
+      margin-bottom: 12px;
+    }
+
+    &__keywords-list {
+      gap: 8px;
+    }
+
+    &__keyword {
+      padding: 6px 12px;
+      font-size: var(--fs-b5);
+    }
+  }
+
+  // Pagination Responsive
+  .pagination {
+    gap: 8px;
+    margin-top: 32px;
+    padding: 16px 0;
+
+    &__btn {
+      padding: 8px 14px;
+      font-size: var(--fs-b4);
+
+      span {
+        display: none;
+      }
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    &__numbers {
+      gap: 4px;
+    }
+
+    &__number {
+      min-width: 36px;
+      height: 36px;
+      padding: 0 8px;
+      font-size: var(--fs-b4);
+    }
+
+    &__dots {
+      padding: 0 2px;
+    }
+  }
 }
