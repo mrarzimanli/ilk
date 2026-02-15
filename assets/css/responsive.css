@@ -1246,7 +1246,7 @@
   .post__author-name {
     font-size: var(--fs-b4);
   }
-  .post__author-title {
+  .post__author-desc {
     font-size: var(--fs-b6);
   }
   .post__image {
@@ -2170,5 +2170,33 @@
   }
   .pagination__dots {
     padding: 0 2px;
+  }
+  .post__body .post__text {
+    margin-bottom: 24px;
+  }
+  .post__body .post__text h2, .post__body .post__text h3, .post__body .post__text h4, .post__body .post__text h5, .post__body .post__text h6 {
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  .post__body .post__text p {
+    margin-bottom: 12px;
+  }
+  .post__body .post__text ul, .post__body .post__text ol {
+    margin-bottom: 12px;
+  }
+  .post__body blockquote {
+    margin: 24px 0;
+  }
+  .post__body .info-box {
+    margin: 24px 0;
+  }
+  .post__body .table-wrapper {
+    margin: 24px 0;
+  }
+  .post__body .faqs {
+    margin: 32px 0;
+  }
+  .post__body .faqs h3 {
+    margin-bottom: 16px;
   }
 }

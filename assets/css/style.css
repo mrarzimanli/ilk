@@ -3881,11 +3881,20 @@ body {
 }
 .post__author {
   display: flex;
+  flex-direction: column;
+}
+.post__author-title {
+  font-size: var(--fs-b3);
+  line-height: var(--lh-b3);
+  font-weight: var(--fw-semi-bold);
+  color: var(--base-13);
+  margin-bottom: 16px;
+}
+.post__author-content {
+  display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px 0;
   background: var(--base-2);
-  border-radius: 12px;
 }
 .post__author-avatar {
   width: 48px;
@@ -3906,7 +3915,7 @@ body {
   color: var(--base-13);
   margin-bottom: 2px;
 }
-.post__author-title {
+.post__author-desc {
   font-size: var(--fs-b5);
   line-height: var(--lh-b5);
   color: var(--base-8);
@@ -4019,6 +4028,9 @@ body {
   background: var(--blue-500);
   color: var(--base-1);
 }
+.post__share {
+  margin-bottom: 32px;
+}
 .post__share-title {
   font-size: var(--fs-b3);
   line-height: var(--lh-b3);
@@ -4102,8 +4114,7 @@ body {
   align-self: flex-start;
 }
 .post__reactions {
-  padding: 24px 32px;
-  border-top: 1px solid var(--base-3);
+  margin-bottom: 32px;
 }
 .post__comments {
   padding: 32px;
@@ -6275,4 +6286,51 @@ body {
   font-weight: var(--fw-medium);
   padding: 0 4px;
   user-select: none;
+}
+
+.post__body .post__text {
+  margin-bottom: 32px;
+}
+.post__body .post__text:last-child {
+  margin-bottom: 0;
+}
+.post__body .post__text p {
+  margin-bottom: 16px;
+}
+.post__body .post__text p:last-child {
+  margin-bottom: 0;
+}
+.post__body .post__text h2, .post__body .post__text h3, .post__body .post__text h4, .post__body .post__text h5, .post__body .post__text h6 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.post__body .post__text h2:first-child, .post__body .post__text h3:first-child, .post__body .post__text h4:first-child, .post__body .post__text h5:first-child, .post__body .post__text h6:first-child {
+  margin-top: 0;
+}
+.post__body .post__text ul, .post__body .post__text ol {
+  margin-bottom: 16px;
+}
+.post__body .post__text ul:last-child, .post__body .post__text ol:last-child {
+  margin-bottom: 0;
+}
+.post__body blockquote {
+  margin: 40px 0;
+}
+.post__body .info-box {
+  margin: 32px 0;
+}
+.post__body .table-wrapper {
+  margin: 32px 0;
+}
+.post__body .faqs {
+  margin: 40px 0;
+}
+.post__body .faqs h3 {
+  margin-bottom: 24px;
+}
+.post__body > *:first-child {
+  margin-top: 0;
+}
+.post__body > *:last-child {
+  margin-bottom: 0;
 }
