@@ -7534,8 +7534,136 @@ body {
   }
 }
 
+// ==================== Font Size Controls ====================
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: var(--base-2);
+  border-radius: 8px;
+  margin-top: 24px;
+  border: 1px solid var(--base-4);
+
+  &__label {
+    font-size: var(--fs-b3);
+    font-weight: var(--fw-medium);
+    color: var(--base-11);
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-1);
+    border: 1px solid var(--base-4);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: var(--base-11);
+
+    i {
+      font-size: 18px;
+    }
+
+    &:hover {
+      background-color: var(--base-3);
+      border-color: var(--base-6);
+      color: var(--base-13);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: var(--base-1);
+        border-color: var(--base-4);
+        color: var(--base-11);
+      }
+    }
+
+    &--reset {
+      background-color: var(--red-50);
+      border-color: var(--red-200);
+      color: var(--red-500);
+
+      &:hover {
+        background-color: var(--red-100);
+        border-color: var(--red-300);
+        color: var(--red-600);
+      }
+    }
+  }
+
+  &__current {
+    min-width: 50px;
+    text-align: center;
+    font-size: var(--fs-b3);
+    font-weight: var(--fw-semibold);
+    color: var(--base-13);
+  }
+}
+
 // ==================== Post Body Components Spacing ====================
 .post__body {
+  --font-scale: 1;
+
+  // Scale paragraphs
+  p,
+  li,
+  td,
+  th,
+  span,
+  div,
+  blockquote {
+    font-size: calc(var(--fs-b3) * var(--font-scale)) !important;
+    line-height: calc(var(--lh-b3) * var(--font-scale)) !important;
+  }
+
+  // Scale headings proportionally (same as post__text)
+  h1 {
+    font-size: calc(var(--fs-h3) * var(--font-scale)) !important;
+    line-height: calc(var(--lh-h3) * var(--font-scale)) !important;
+    font-weight: var(--fw-bold) !important;
+    color: var(--base-13) !important;
+  }
+
+  h2 {
+    font-size: calc(var(--fs-h4) * var(--font-scale)) !important;
+    line-height: calc(var(--lh-h4) * var(--font-scale)) !important;
+    font-weight: var(--fw-bold) !important;
+    color: var(--base-13) !important;
+  }
+
+  h3 {
+    font-size: calc(var(--fs-h5) * var(--font-scale)) !important;
+    line-height: calc(var(--lh-h5) * var(--font-scale)) !important;
+    font-weight: var(--fw-bold) !important;
+    color: var(--base-13) !important;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: calc(var(--fs-h6) * var(--font-scale)) !important;
+    line-height: calc(var(--lh-h6) * var(--font-scale)) !important;
+    font-weight: var(--fw-bold) !important;
+    color: var(--base-13) !important;
+  }
+
   // Text component
   .post__text {
     margin-bottom: 32px;
@@ -7552,16 +7680,8 @@ body {
       }
     }
 
-    h2, h3, h4, h5, h6 {
-      margin-top: 32px;
-      margin-bottom: 16px;
-
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-
-    ul, ol {
+    ul,
+    ol {
       margin-bottom: 16px;
 
       &:last-child {
@@ -7595,12 +7715,12 @@ body {
   }
 
   // First child spacing
-  > *:first-child {
+  >*:first-child {
     margin-top: 0;
   }
 
   // Last child spacing
-  > *:last-child {
+  >*:last-child {
     margin-bottom: 0;
   }
 }

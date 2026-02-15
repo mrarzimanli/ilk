@@ -2171,6 +2171,29 @@
   .pagination__dots {
     padding: 0 2px;
   }
+  .font-size-controls {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .font-size-controls__label {
+    font-size: var(--fs-b4);
+    width: 100%;
+  }
+  .font-size-controls__buttons {
+    gap: 6px;
+  }
+  .font-size-controls__btn {
+    width: 32px;
+    height: 32px;
+  }
+  .font-size-controls__btn i {
+    font-size: 16px;
+  }
+  .font-size-controls__current {
+    min-width: 45px;
+    font-size: var(--fs-b4);
+  }
   .post__body .post__text {
     margin-bottom: 24px;
   }

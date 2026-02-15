@@ -6288,6 +6288,116 @@ body {
   user-select: none;
 }
 
+.font-size-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background-color: var(--base-2);
+  border-radius: 8px;
+  margin-top: 24px;
+  border: 1px solid var(--base-4);
+}
+.font-size-controls__label {
+  font-size: var(--fs-b3);
+  font-weight: var(--fw-medium);
+  color: var(--base-11);
+}
+.font-size-controls__buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.font-size-controls__btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--base-1);
+  border: 1px solid var(--base-4);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--base-11);
+}
+.font-size-controls__btn i {
+  font-size: 18px;
+}
+.font-size-controls__btn:hover {
+  background-color: var(--base-3);
+  border-color: var(--base-6);
+  color: var(--base-13);
+}
+.font-size-controls__btn:active {
+  transform: scale(0.95);
+}
+.font-size-controls__btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.font-size-controls__btn:disabled:hover {
+  background-color: var(--base-1);
+  border-color: var(--base-4);
+  color: var(--base-11);
+}
+.font-size-controls__btn--reset {
+  background-color: var(--red-50);
+  border-color: var(--red-200);
+  color: var(--red-500);
+}
+.font-size-controls__btn--reset:hover {
+  background-color: var(--red-100);
+  border-color: var(--red-300);
+  color: var(--red-600);
+}
+.font-size-controls__current {
+  min-width: 50px;
+  text-align: center;
+  font-size: var(--fs-b3);
+  font-weight: var(--fw-semibold);
+  color: var(--base-13);
+}
+
+.post__body {
+  --font-scale: 1;
+}
+.post__body p,
+.post__body li,
+.post__body td,
+.post__body th,
+.post__body span,
+.post__body div,
+.post__body blockquote {
+  font-size: calc(var(--fs-b3) * var(--font-scale)) !important;
+  line-height: calc(var(--lh-b3) * var(--font-scale)) !important;
+}
+.post__body h1 {
+  font-size: calc(var(--fs-h3) * var(--font-scale)) !important;
+  line-height: calc(var(--lh-h3) * var(--font-scale)) !important;
+  font-weight: var(--fw-bold) !important;
+  color: var(--base-13) !important;
+}
+.post__body h2 {
+  font-size: calc(var(--fs-h4) * var(--font-scale)) !important;
+  line-height: calc(var(--lh-h4) * var(--font-scale)) !important;
+  font-weight: var(--fw-bold) !important;
+  color: var(--base-13) !important;
+}
+.post__body h3 {
+  font-size: calc(var(--fs-h5) * var(--font-scale)) !important;
+  line-height: calc(var(--lh-h5) * var(--font-scale)) !important;
+  font-weight: var(--fw-bold) !important;
+  color: var(--base-13) !important;
+}
+.post__body h4,
+.post__body h5,
+.post__body h6 {
+  font-size: calc(var(--fs-h6) * var(--font-scale)) !important;
+  line-height: calc(var(--lh-h6) * var(--font-scale)) !important;
+  font-weight: var(--fw-bold) !important;
+  color: var(--base-13) !important;
+}
 .post__body .post__text {
   margin-bottom: 32px;
 }
@@ -6300,17 +6410,12 @@ body {
 .post__body .post__text p:last-child {
   margin-bottom: 0;
 }
-.post__body .post__text h2, .post__body .post__text h3, .post__body .post__text h4, .post__body .post__text h5, .post__body .post__text h6 {
-  margin-top: 32px;
+.post__body .post__text ul,
+.post__body .post__text ol {
   margin-bottom: 16px;
 }
-.post__body .post__text h2:first-child, .post__body .post__text h3:first-child, .post__body .post__text h4:first-child, .post__body .post__text h5:first-child, .post__body .post__text h6:first-child {
-  margin-top: 0;
-}
-.post__body .post__text ul, .post__body .post__text ol {
-  margin-bottom: 16px;
-}
-.post__body .post__text ul:last-child, .post__body .post__text ol:last-child {
+.post__body .post__text ul:last-child,
+.post__body .post__text ol:last-child {
   margin-bottom: 0;
 }
 .post__body blockquote {

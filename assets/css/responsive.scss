@@ -2938,6 +2938,36 @@
     }
   }
 
+  // Font Size Controls - Mobile
+  .font-size-controls {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 8px;
+
+    &__label {
+      font-size: var(--fs-b4);
+      width: 100%;
+    }
+
+    &__buttons {
+      gap: 6px;
+    }
+
+    &__btn {
+      width: 32px;
+      height: 32px;
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    &__current {
+      min-width: 45px;
+      font-size: var(--fs-b4);
+    }
+  }
+
   // Post Body Components Spacing - Mobile
   .post__body {
     .post__text {

@@ -1082,3 +1082,88 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ==================== Font Size Controls ====================
+document.addEventListener('DOMContentLoaded', () => {
+    const postBody = document.querySelector('.post__body');
+    const increaseFontBtn = document.getElementById('increaseFontSize');
+    const decreaseFontBtn = document.getElementById('decreaseFontSize');
+    const resetFontBtn = document.getElementById('resetFontSize');
+    const currentFontSizeDisplay = document.getElementById('currentFontSize');
+
+    console.log('Font Size Controls Debug:', {
+        postBody: !!postBody,
+        increaseFontBtn: !!increaseFontBtn,
+        decreaseFontBtn: !!decreaseFontBtn,
+        resetFontBtn: !!resetFontBtn,
+        currentFontSizeDisplay: !!currentFontSizeDisplay
+    });
+
+    if (!postBody || !increaseFontBtn || !decreaseFontBtn || !resetFontBtn) {
+        console.error('Font size controls not found - check element IDs');
+        return;
+    }
+
+    // Font size settings
+    const MIN_FONT_SIZE = 80;
+    const MAX_FONT_SIZE = 140;
+    const DEFAULT_FONT_SIZE = 100;
+    const STEP = 10;
+    const STORAGE_KEY = 'postFontSize';
+
+    // Get saved font size from localStorage
+    let currentFontSize = parseInt(localStorage.getItem(STORAGE_KEY)) || DEFAULT_FONT_SIZE;
+
+    // Apply font size to post body
+    function applyFontSize(size) {
+        // Calculate scale value based on percentage
+        const scale = size / 100;
+        
+        // Set CSS variable on post body
+        postBody.style.setProperty('--font-scale', scale);
+        
+        // Update display
+        currentFontSizeDisplay.textContent = `${size}%`;
+        
+        // Update button states
+        decreaseFontBtn.disabled = size <= MIN_FONT_SIZE;
+        increaseFontBtn.disabled = size >= MAX_FONT_SIZE;
+        
+        // Save to localStorage
+        localStorage.setItem(STORAGE_KEY, size);
+        
+        console.log(`Font size set to: ${size}% (scale: ${scale})`);
+        console.log('CSS variable --font-scale:', getComputedStyle(postBody).getPropertyValue('--font-scale'));
+    }
+
+    // Initialize font size
+    applyFontSize(currentFontSize);
+
+    // Increase font size
+    increaseFontBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Increase button clicked');
+        if (currentFontSize < MAX_FONT_SIZE) {
+            currentFontSize += STEP;
+            applyFontSize(currentFontSize);
+        }
+    });
+
+    // Decrease font size
+    decreaseFontBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Decrease button clicked');
+        if (currentFontSize > MIN_FONT_SIZE) {
+            currentFontSize -= STEP;
+            applyFontSize(currentFontSize);
+        }
+    });
+
+    // Reset font size
+    resetFontBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        console.log('Reset button clicked');
+        currentFontSize = DEFAULT_FONT_SIZE;
+        applyFontSize(currentFontSize);
+    });
+});
