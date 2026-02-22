@@ -3334,22 +3334,54 @@
   }
 
   .modal {
+    padding: 8px;
+
     &__dialog {
       max-width: 100%;
-      max-height: 95vh;
-      margin: 0 10px;
+      max-height: 96vh;
+      margin: 0;
     }
 
     &__header {
-      padding: 16px 20px;
+      padding: 12px 16px;
     }
 
     &__title {
       font-size: var(--fs-h5);
+      gap: 8px;
+
+      i {
+        font-size: 20px;
+      }
     }
 
     &__body {
-      padding: 20px;
+      padding: 14px 16px 20px;
+    }
+  }
+
+  // New question modal: compact form on mobile
+  #newQuestionModal .forum-new-question-form {
+    gap: 12px;
+
+    .form-group {
+      padding: 12px 14px;
+
+      &:last-child {
+        padding-top: 2px;
+      }
+    }
+
+    .form-label {
+      margin-bottom: 4px;
+    }
+
+    .form-control--textarea {
+      min-height: 100px;
+    }
+
+    .form-help {
+      margin-top: 6px;
     }
   }
 

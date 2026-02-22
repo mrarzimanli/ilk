@@ -2475,19 +2475,44 @@
   .forum-trending__title {
     font-size: var(--fs-b4);
   }
+  .modal {
+    padding: 8px;
+  }
   .modal__dialog {
     max-width: 100%;
-    max-height: 95vh;
-    margin: 0 10px;
+    max-height: 96vh;
+    margin: 0;
   }
   .modal__header {
-    padding: 16px 20px;
+    padding: 12px 16px;
   }
   .modal__title {
     font-size: var(--fs-h5);
+    gap: 8px;
+  }
+  .modal__title i {
+    font-size: 20px;
   }
   .modal__body {
-    padding: 20px;
+    padding: 14px 16px 20px;
+  }
+  #newQuestionModal .forum-new-question-form {
+    gap: 12px;
+  }
+  #newQuestionModal .forum-new-question-form .form-group {
+    padding: 12px 14px;
+  }
+  #newQuestionModal .forum-new-question-form .form-group:last-child {
+    padding-top: 2px;
+  }
+  #newQuestionModal .forum-new-question-form .form-label {
+    margin-bottom: 4px;
+  }
+  #newQuestionModal .forum-new-question-form .form-control--textarea {
+    min-height: 100px;
+  }
+  #newQuestionModal .forum-new-question-form .form-help {
+    margin-top: 6px;
   }
   .forum-filters__collapse-btn {
     padding: 10px 14px;
