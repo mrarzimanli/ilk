@@ -127,34 +127,58 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Tag selector functionality
+    // Tag multiselect dropdown functionality
+    const tagMultiselect = document.getElementById('tagMultiselect');
+    const tagTrigger = document.getElementById('tagTrigger');
+    const tagMultiOptions = document.querySelectorAll('.tag-multiselect__option');
     const selectedTagsContainer = document.getElementById('selectedTags');
-    const tagOptions = document.querySelectorAll('.tag-selector__option');
     const selectedTags = new Set();
     const MAX_TAGS = 5;
 
-    tagOptions.forEach(option => {
+    tagTrigger?.addEventListener('click', function(e) {
+        e.stopPropagation();
+        tagMultiselect.classList.toggle('active');
+        this.setAttribute('aria-expanded', tagMultiselect.classList.contains('active'));
+    });
+
+    document.addEventListener('click', function(e) {
+        if (tagMultiselect && !tagMultiselect.contains(e.target)) {
+            tagMultiselect.classList.remove('active');
+            tagTrigger?.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    tagMultiOptions.forEach(option => {
         option.addEventListener('click', function() {
             const tagValue = this.getAttribute('data-tag');
-            const tagLabel = this.textContent.trim();
+            const tagLabel = this.querySelector('span:last-child').textContent.trim();
 
             if (selectedTags.has(tagValue)) {
-                // Remove tag
                 selectedTags.delete(tagValue);
                 this.classList.remove('selected');
                 removeTagFromUI(tagValue);
             } else {
-                // Add tag (if not at max)
                 if (selectedTags.size < MAX_TAGS) {
                     selectedTags.add(tagValue);
                     this.classList.add('selected');
                     addTagToUI(tagValue, tagLabel);
-                } else {
-                    alert(`Maksimum ${MAX_TAGS} etiket seçə bilərsiniz`);
                 }
             }
+            updateTriggerText();
         });
     });
+
+    function updateTriggerText() {
+        const placeholder = tagTrigger?.querySelector('.tag-multiselect__placeholder');
+        if (!placeholder) return;
+        if (selectedTags.size === 0) {
+            placeholder.textContent = 'Etiket seçin';
+            placeholder.classList.remove('tag-multiselect__placeholder--active');
+        } else {
+            placeholder.textContent = `${selectedTags.size} etiket seçildi`;
+            placeholder.classList.add('tag-multiselect__placeholder--active');
+        }
+    }
 
     function addTagToUI(value, label) {
         const tagElement = document.createElement('div');
@@ -166,16 +190,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 <i class="ri-close-line"></i>
             </button>
         `;
-
         const removeBtn = tagElement.querySelector('button');
-        removeBtn.addEventListener('click', () => {
+        removeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             selectedTags.delete(value);
             removeTagFromUI(value);
-            // Update option button state
-            const option = document.querySelector(`.tag-selector__option[data-tag="${value}"]`);
-            option?.classList.remove('selected');
+            const opt = tagMultiselect?.querySelector(`.tag-multiselect__option[data-tag="${value}"]`);
+            opt?.classList.remove('selected');
+            updateTriggerText();
         });
-
         selectedTagsContainer?.appendChild(tagElement);
     }
 

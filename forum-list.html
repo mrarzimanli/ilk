@@ -371,8 +371,9 @@
                                         <div class="forum-trending__content">
                                             <h4 class="forum-trending__title">Kia servisleri</h4>
                                             <div class="forum-trending__meta">
-                                                <span>0 cavab</span>
-                                                <span>32 baxış</span>
+                                                <span><i class="ri-thumb-up-line"></i> 1</span>
+                                                <span><i class="ri-eye-line"></i> 32</span>
+                                                <span><i class="ri-chat-3-line"></i> 0</span>
                                             </div>
                                         </div>
                                     </a>
@@ -381,8 +382,9 @@
                                         <div class="forum-trending__content">
                                             <h4 class="forum-trending__title">Mercedes E-Class 2020 motor yağı</h4>
                                             <div class="forum-trending__meta">
-                                                <span>5 cavab</span>
-                                                <span>156 baxış</span>
+                                                <span><i class="ri-thumb-up-line"></i> 8</span>
+                                                <span><i class="ri-eye-line"></i> 156</span>
+                                                <span><i class="ri-chat-3-line"></i> 5</span>
                                             </div>
                                         </div>
                                     </a>
@@ -391,8 +393,9 @@
                                         <div class="forum-trending__content">
                                             <h4 class="forum-trending__title">BMW 3 seriya təmiri</h4>
                                             <div class="forum-trending__meta">
-                                                <span>12 cavab</span>
-                                                <span>289 baxış</span>
+                                                <span><i class="ri-thumb-up-line"></i> 15</span>
+                                                <span><i class="ri-eye-line"></i> 289</span>
+                                                <span><i class="ri-chat-3-line"></i> 12</span>
                                             </div>
                                         </div>
                                     </a>
@@ -449,7 +452,10 @@
         <div class="modal__overlay"></div>
         <div class="modal__dialog">
             <div class="modal__header">
-                <h2 class="modal__title">Yeni sual ver</h2>
+                <h2 class="modal__title">
+                    <i class="ri-question-answer-line"></i>
+                    Yeni sual ver
+                </h2>
                 <button type="button" class="modal__close" id="closeModalBtn" aria-label="Bağla">
                     <i class="ri-close-line"></i>
                 </button>
@@ -477,18 +483,22 @@
                             <i class="ri-price-tag-3-line"></i>
                             Etiketlər
                         </label>
-                        <div class="tag-selector">
-                            <div class="tag-selector__selected" id="selectedTags"></div>
-                            <div class="tag-selector__options">
-                                <button type="button" class="tag-selector__option" data-tag="kia">Kia</button>
-                                <button type="button" class="tag-selector__option" data-tag="mercedes">Mercedes</button>
-                                <button type="button" class="tag-selector__option" data-tag="bmw">BMW</button>
-                                <button type="button" class="tag-selector__option" data-tag="toyota">Toyota</button>
-                                <button type="button" class="tag-selector__option" data-tag="servis">Servis</button>
-                                <button type="button" class="tag-selector__option" data-tag="temir">Təmir</button>
-                                <button type="button" class="tag-selector__option" data-tag="motor-yagi">Motor yağı</button>
-                                <button type="button" class="tag-selector__option" data-tag="hisseler">Ehtiyat hissələri</button>
+                        <div class="tag-multiselect" id="tagMultiselect">
+                            <button type="button" class="tag-multiselect__trigger form-control form-control--lg" id="tagTrigger" aria-haspopup="listbox" aria-expanded="false">
+                                <span class="tag-multiselect__placeholder">Etiket seçin</span>
+                                <i class="ri-arrow-down-s-line tag-multiselect__arrow"></i>
+                            </button>
+                            <div class="tag-multiselect__dropdown" role="listbox" aria-multiselectable="true">
+                                <div class="tag-multiselect__option" data-tag="kia" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Kia</span></div>
+                                <div class="tag-multiselect__option" data-tag="mercedes" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Mercedes</span></div>
+                                <div class="tag-multiselect__option" data-tag="bmw" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>BMW</span></div>
+                                <div class="tag-multiselect__option" data-tag="toyota" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Toyota</span></div>
+                                <div class="tag-multiselect__option" data-tag="servis" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Servis</span></div>
+                                <div class="tag-multiselect__option" data-tag="temir" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Təmir</span></div>
+                                <div class="tag-multiselect__option" data-tag="motor-yagi" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Motor yağı</span></div>
+                                <div class="tag-multiselect__option" data-tag="hisseler" role="option"><span class="tag-multiselect__check"><i class="ri-check-line"></i></span><span>Ehtiyat hissələri</span></div>
                             </div>
+                            <div class="tag-multiselect__selected" id="selectedTags"></div>
                         </div>
                         <div class="form-help">
                             <i class="ri-information-line"></i>
