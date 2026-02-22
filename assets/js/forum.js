@@ -3,7 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Modal functionality
     const newQuestionBtn = document.getElementById('newQuestionBtn');
-    const firstReplyBtn = document.getElementById('firstReplyBtn');
     const modal = document.getElementById('newQuestionModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
     const modalOverlay = modal?.querySelector('.modal__overlay');
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event listeners for modal
     newQuestionBtn?.addEventListener('click', openModal);
-    firstReplyBtn?.addEventListener('click', openModal);
     closeModalBtn?.addEventListener('click', closeModal);
     modalOverlay?.addEventListener('click', closeModal);
 
@@ -33,50 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Like functionality for thread detail
-    const threadLikeBtn = document.querySelector('.forum-thread__stat--like');
-    if (threadLikeBtn) {
-        threadLikeBtn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const likeCount = this.querySelector('span');
-            if (likeCount) {
-                const currentCount = parseInt(likeCount.textContent);
-                likeCount.textContent = this.classList.contains('active') 
-                    ? currentCount + 1 
-                    : currentCount - 1;
-            }
-        });
-    }
-
-    // Like functionality for thread item in forum detail page
+    // Like functionality for thread item
     const threadItemLikeBtn = document.querySelector('.forum-thread-item__stat--like');
     if (threadItemLikeBtn) {
-        threadItemLikeBtn.addEventListener('click', function() {
+        threadItemLikeBtn.addEventListener('click', function () {
             this.classList.toggle('active');
             const likeCount = this.querySelector('span');
             if (likeCount) {
                 const currentCount = parseInt(likeCount.textContent);
-                likeCount.textContent = this.classList.contains('active') 
-                    ? currentCount + 1 
+                likeCount.textContent = this.classList.contains('active')
+                    ? currentCount + 1
                     : currentCount - 1;
             }
         });
     }
-
-    // Like functionality for replies
-    const replyLikeBtns = document.querySelectorAll('.forum-reply__action--like');
-    replyLikeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            this.classList.toggle('active');
-            const likeCount = this.querySelector('span');
-            if (likeCount) {
-                const currentCount = parseInt(likeCount.textContent);
-                likeCount.textContent = this.classList.contains('active') 
-                    ? currentCount + 1 
-                    : currentCount - 1;
-            }
-        });
-    });
 
     // Form submission handlers (prevent default for demo)
     const replyForm = document.querySelector('.forum-comment-form__form');
@@ -98,30 +66,40 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Reply button functionality
-    const replyButtons = document.querySelectorAll('.forum-reply__action:not(.forum-reply__action--like)');
-    replyButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const replyForm = document.querySelector('.forum-comment-form');
-            if (replyForm) {
-                replyForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                const textarea = replyForm.querySelector('textarea');
-                setTimeout(() => {
-                    textarea?.focus();
-                }, 500);
-            }
-        });
+    // ── Forum filters collapse (mobile) ──────────────────────────────────────
+    const filtersCollapseBtn = document.getElementById('filtersCollapseBtn');
+    const forumFiltersEl     = document.getElementById('forumFiltersWrapper');
+    const filtersActiveIcon  = forumFiltersEl?.querySelector('.forum-filters__active-icon');
+    const filtersActiveLabel = forumFiltersEl?.querySelector('.forum-filters__active-label');
+
+    filtersCollapseBtn?.addEventListener('click', () => {
+        const isOpen = forumFiltersEl?.classList.toggle('open');
+        filtersCollapseBtn.setAttribute('aria-expanded', String(!!isOpen));
     });
 
     // Filter tabs functionality
     const filterTabs = document.querySelectorAll('.forum-filters__tab');
     filterTabs.forEach(tab => {
-        tab.addEventListener('click', function() {
+        tab.addEventListener('click', function () {
             // Remove active class from all tabs
             filterTabs.forEach(t => t.classList.remove('active'));
             // Add active class to clicked tab
             this.classList.add('active');
-            
+
+            // Update mobile header icon & label to match selected filter
+            const iconClass = this.dataset.icon;
+            const label     = this.dataset.label;
+            if (filtersActiveIcon && iconClass) {
+                filtersActiveIcon.className = `forum-filters__active-icon ${iconClass}`;
+            }
+            if (filtersActiveLabel && label) {
+                filtersActiveLabel.textContent = label;
+            }
+
+            // Collapse filters on mobile after selection
+            forumFiltersEl?.classList.remove('open');
+            filtersCollapseBtn?.setAttribute('aria-expanded', 'false');
+
             // In production, this would trigger filtering/sorting via PHP backend
             console.log('Filter changed:', this.textContent.trim());
         });
@@ -135,13 +113,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedTags = new Set();
     const MAX_TAGS = 5;
 
-    tagTrigger?.addEventListener('click', function(e) {
+    tagTrigger?.addEventListener('click', function (e) {
         e.stopPropagation();
         tagMultiselect.classList.toggle('active');
         this.setAttribute('aria-expanded', tagMultiselect.classList.contains('active'));
     });
 
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (tagMultiselect && !tagMultiselect.contains(e.target)) {
             tagMultiselect.classList.remove('active');
             tagTrigger?.setAttribute('aria-expanded', 'false');
@@ -149,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tagMultiOptions.forEach(option => {
-        option.addEventListener('click', function() {
+        option.addEventListener('click', function () {
             const tagValue = this.getAttribute('data-tag');
             const tagLabel = this.querySelector('span:last-child').textContent.trim();
 
@@ -206,4 +184,47 @@ document.addEventListener('DOMContentLoaded', () => {
         const tagElement = selectedTagsContainer?.querySelector(`[data-tag-value="${value}"]`);
         tagElement?.remove();
     }
+
+    // ── Mobile Sidebar Drawer ──────────────────────────────────────────────────
+    const sidebarToggle  = document.getElementById('sidebarToggle');
+    const forumSidebar   = document.getElementById('forumSidebar');
+    const sidebarClose   = document.getElementById('sidebarClose');
+    const sidebarOverlay = document.getElementById('forumSidebarOverlay');
+
+    const openSidebar = () => {
+        forumSidebar?.classList.add('open');
+        sidebarOverlay?.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeSidebar = () => {
+        forumSidebar?.classList.remove('open');
+        sidebarOverlay?.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    sidebarToggle?.addEventListener('click', openSidebar);
+    sidebarClose?.addEventListener('click', closeSidebar);
+    sidebarOverlay?.addEventListener('click', closeSidebar);
+
+    // Close sidebar on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && forumSidebar?.classList.contains('open')) {
+            closeSidebar();
+        }
+    });
+
+    // ── Sidebar widget collapsible (inside drawer) ─────────────────────────────
+    document.querySelectorAll('.forum-layout__sidebar .sidebar-widget__title').forEach(title => {
+        title.addEventListener('click', () => {
+            const widget = title.closest('.sidebar-widget');
+            if (widget) {
+                // Close other open widgets (accordion behaviour)
+                document.querySelectorAll('.forum-layout__sidebar .sidebar-widget.open').forEach(w => {
+                    if (w !== widget) w.classList.remove('open');
+                });
+                widget.classList.toggle('open');
+            }
+        });
+    });
 });

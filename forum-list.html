@@ -155,26 +155,43 @@
                 <div class="forum-layout">
                     <!-- Main Content -->
                     <div class="forum-layout__main">
-                        <!-- Filter Tabs -->
-                        <div class="forum-filters">
-                            <div class="forum-filters__tabs">
-                                <button class="forum-filters__tab active">
+                        <!-- Forum Filters Wrapper -->
+                        <div class="forum-filters-wrapper" id="forumFiltersWrapper">
+
+                            <!-- Row: Filterlər header box + sidebar toggle (mobile only) -->
+                            <div class="forum-filters-row">
+                                <div class="forum-filters">
+                                    <button class="forum-filters__collapse-btn" id="filtersCollapseBtn" aria-expanded="false" aria-controls="forumFilterTabs">
+                                        <i class="forum-filters__active-icon ri-fire-line"></i>
+                                        <span class="forum-filters__active-label">Filterlər</span>
+                                        <i class="forum-filters__chevron ri-arrow-down-s-line"></i>
+                                    </button>
+                                </div>
+                                <button class="forum-sidebar-toggle" id="sidebarToggle" aria-label="Panel aç">
+                                    <i class="ri-layout-right-2-line"></i>
+                                </button>
+                            </div>
+
+                            <!-- Filter tabs: inside wrapper box on desktop; separate full-width box on mobile -->
+                            <div class="forum-filters__tabs" id="forumFilterTabs">
+                                <button class="forum-filters__tab active" data-icon="ri-fire-line" data-label="Ən Yenilər">
                                     <i class="ri-fire-line"></i>
                                     <span>Ən Yenilər</span>
                                 </button>
-                                <button class="forum-filters__tab">
+                                <button class="forum-filters__tab" data-icon="ri-heart-line" data-label="Ən Çox Bəyənilən">
                                     <i class="ri-heart-line"></i>
                                     <span>Ən Çox Bəyənilən</span>
                                 </button>
-                                <button class="forum-filters__tab">
+                                <button class="forum-filters__tab" data-icon="ri-chat-3-line" data-label="Ən Çox Cavablanan">
                                     <i class="ri-chat-3-line"></i>
                                     <span>Ən Çox Cavablanan</span>
                                 </button>
-                                <button class="forum-filters__tab">
+                                <button class="forum-filters__tab" data-icon="ri-checkbox-circle-line" data-label="Həll Edilmiş">
                                     <i class="ri-checkbox-circle-line"></i>
                                     <span>Həll Edilmiş</span>
                                 </button>
                             </div>
+
                         </div>
 
                         <!-- Thread List -->
@@ -359,88 +376,119 @@
                         </div>
                     </div>
 
+                    <!-- Sidebar Overlay (mobile) -->
+                    <div class="forum-sidebar-overlay" id="forumSidebarOverlay"></div>
+
                     <!-- Sidebar -->
-                    <aside class="forum-layout__sidebar">
-                        <!-- Trend Questions -->
-                        <div class="sidebar-widget">
-                            <h3 class="sidebar-widget__title">Trend Suallar</h3>
-                            <div class="sidebar-widget__content">
-                                <div class="forum-trending">
-                                    <a href="forum.html" class="forum-trending__item">
-                                        <div class="forum-trending__number">1</div>
-                                        <div class="forum-trending__content">
-                                            <h4 class="forum-trending__title">Kia servisleri</h4>
-                                            <div class="forum-trending__meta">
-                                                <span><i class="ri-thumb-up-line"></i> 1</span>
-                                                <span><i class="ri-eye-line"></i> 32</span>
-                                                <span><i class="ri-chat-3-line"></i> 0</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="forum.html" class="forum-trending__item">
-                                        <div class="forum-trending__number">2</div>
-                                        <div class="forum-trending__content">
-                                            <h4 class="forum-trending__title">Mercedes E-Class 2020 motor yağı</h4>
-                                            <div class="forum-trending__meta">
-                                                <span><i class="ri-thumb-up-line"></i> 8</span>
-                                                <span><i class="ri-eye-line"></i> 156</span>
-                                                <span><i class="ri-chat-3-line"></i> 5</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <a href="forum.html" class="forum-trending__item">
-                                        <div class="forum-trending__number">3</div>
-                                        <div class="forum-trending__content">
-                                            <h4 class="forum-trending__title">BMW 3 seriya təmiri</h4>
-                                            <div class="forum-trending__meta">
-                                                <span><i class="ri-thumb-up-line"></i> 15</span>
-                                                <span><i class="ri-eye-line"></i> 289</span>
-                                                <span><i class="ri-chat-3-line"></i> 12</span>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                    <aside class="forum-layout__sidebar" id="forumSidebar">
+                        <!-- Panel header (mobile drawer only) -->
+                        <div class="forum-sidebar-panel__header">
+                            <div class="forum-sidebar-panel__title">
+                                <i class="ri-layout-right-2-line"></i>
+                                <span>Panel</span>
                             </div>
+                            <button class="forum-sidebar-panel__close" id="sidebarClose" aria-label="Bağla">
+                                <i class="ri-close-line"></i>
+                            </button>
                         </div>
 
-                        <!-- Tags -->
-                        <div class="sidebar-widget">
-                            <h3 class="sidebar-widget__title">Etiketlər</h3>
-                            <div class="sidebar-widget__content">
-                                <div class="forum-tags">
-                                    <a href="#" class="forum-tag">Kia <span>1</span></a>
-                                    <a href="#" class="forum-tag">Mercedes <span>8</span></a>
-                                    <a href="#" class="forum-tag">BMW <span>15</span></a>
-                                    <a href="#" class="forum-tag">Toyota <span>23</span></a>
-                                    <a href="#" class="forum-tag">Servis <span>45</span></a>
-                                    <a href="#" class="forum-tag">Təmir <span>38</span></a>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- Panel body: widget-lər -->
+                        <div class="forum-sidebar-panel__body">
 
-                        <!-- Categories -->
-                        <div class="sidebar-widget">
-                            <h3 class="sidebar-widget__title">Kateqoriyalar</h3>
-                            <div class="sidebar-widget__content">
-                                <div class="forum-categories">
-                                    <a href="#" class="forum-category">
-                                        <i class="ri-car-line"></i>
-                                        <span class="forum-category__name">Avtomobil</span>
-                                        <span class="forum-category__count">156</span>
-                                    </a>
-                                    <a href="#" class="forum-category">
-                                        <i class="ri-tools-line"></i>
-                                        <span class="forum-category__name">Təmir və Servis</span>
-                                        <span class="forum-category__count">89</span>
-                                    </a>
-                                    <a href="#" class="forum-category">
-                                        <i class="ri-settings-3-line"></i>
-                                        <span class="forum-category__name">Ehtiyat hissələri</span>
-                                        <span class="forum-category__count">67</span>
-                                    </a>
+                            <!-- Trend Questions -->
+                            <div class="sidebar-widget">
+                                <h3 class="sidebar-widget__title">
+                                    <i class="sidebar-widget__title-icon ri-fire-line"></i>
+                                    Trend Suallar
+                                    <i class="sidebar-widget__chevron ri-arrow-down-s-line"></i>
+                                </h3>
+                                <div class="sidebar-widget__content">
+                                    <div class="forum-trending">
+                                        <a href="forum.html" class="forum-trending__item">
+                                            <div class="forum-trending__number">1</div>
+                                            <div class="forum-trending__content">
+                                                <h4 class="forum-trending__title">Kia servisleri</h4>
+                                                <div class="forum-trending__meta">
+                                                    <span><i class="ri-thumb-up-line"></i> 1</span>
+                                                    <span><i class="ri-eye-line"></i> 32</span>
+                                                    <span><i class="ri-chat-3-line"></i> 0</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="forum.html" class="forum-trending__item">
+                                            <div class="forum-trending__number">2</div>
+                                            <div class="forum-trending__content">
+                                                <h4 class="forum-trending__title">Mercedes E-Class 2020 motor yağı</h4>
+                                                <div class="forum-trending__meta">
+                                                    <span><i class="ri-thumb-up-line"></i> 8</span>
+                                                    <span><i class="ri-eye-line"></i> 156</span>
+                                                    <span><i class="ri-chat-3-line"></i> 5</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="forum.html" class="forum-trending__item">
+                                            <div class="forum-trending__number">3</div>
+                                            <div class="forum-trending__content">
+                                                <h4 class="forum-trending__title">BMW 3 seriya təmiri</h4>
+                                                <div class="forum-trending__meta">
+                                                    <span><i class="ri-thumb-up-line"></i> 15</span>
+                                                    <span><i class="ri-eye-line"></i> 289</span>
+                                                    <span><i class="ri-chat-3-line"></i> 12</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Tags -->
+                            <div class="sidebar-widget">
+                                <h3 class="sidebar-widget__title">
+                                    <i class="sidebar-widget__title-icon ri-price-tag-3-line"></i>
+                                    Etiketlər
+                                    <i class="sidebar-widget__chevron ri-arrow-down-s-line"></i>
+                                </h3>
+                                <div class="sidebar-widget__content">
+                                    <div class="forum-tags">
+                                        <a href="#" class="forum-tag">Kia <span>1</span></a>
+                                        <a href="#" class="forum-tag">Mercedes <span>8</span></a>
+                                        <a href="#" class="forum-tag">BMW <span>15</span></a>
+                                        <a href="#" class="forum-tag">Toyota <span>23</span></a>
+                                        <a href="#" class="forum-tag">Servis <span>45</span></a>
+                                        <a href="#" class="forum-tag">Təmir <span>38</span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Categories -->
+                            <div class="sidebar-widget">
+                                <h3 class="sidebar-widget__title">
+                                    <i class="sidebar-widget__title-icon ri-apps-2-line"></i>
+                                    Kateqoriyalar
+                                    <i class="sidebar-widget__chevron ri-arrow-down-s-line"></i>
+                                </h3>
+                                <div class="sidebar-widget__content">
+                                    <div class="forum-categories">
+                                        <a href="#" class="forum-category">
+                                            <i class="ri-car-line"></i>
+                                            <span class="forum-category__name">Avtomobil</span>
+                                            <span class="forum-category__count">156</span>
+                                        </a>
+                                        <a href="#" class="forum-category">
+                                            <i class="ri-tools-line"></i>
+                                            <span class="forum-category__name">Təmir və Servis</span>
+                                            <span class="forum-category__count">89</span>
+                                        </a>
+                                        <a href="#" class="forum-category">
+                                            <i class="ri-settings-3-line"></i>
+                                            <span class="forum-category__name">Ehtiyat hissələri</span>
+                                            <span class="forum-category__count">67</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /.forum-sidebar-panel__body -->
                     </aside>
                 </div>
             </div>
