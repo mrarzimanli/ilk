@@ -3334,11 +3334,14 @@
   }
 
   .modal {
-    padding: 8px;
+    padding: max(8px, env(safe-area-inset-top)) max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+    min-height: 100vh;
+    min-height: 100dvh;
 
     &__dialog {
       max-width: 100%;
       max-height: 96vh;
+      max-height: 96svh;
       margin: 0;
     }
 
