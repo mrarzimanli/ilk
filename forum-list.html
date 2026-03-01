@@ -152,6 +152,17 @@
                         </button>
                     </div>
                 </div>
+                <!-- Forum Search -->
+                <div class="forum-search">
+                    <div class="forum-search__wrapper">
+                        <i class="ri-search-line forum-search__icon"></i>
+                        <input type="text" class="forum-search__input" id="forumSearchInput" placeholder="Sual, etiket və ya müəllif axtar..." autocomplete="off">
+                        <button class="forum-search__clear" id="forumSearchClear" aria-label="Axtarışı təmizlə">
+                            <i class="ri-close-line"></i>
+                        </button>
+                    </div>
+                </div>
+
                 <div class="forum-layout">
                     <!-- Main Content -->
                     <div class="forum-layout__main">
@@ -195,7 +206,7 @@
                         </div>
 
                         <!-- Thread List -->
-                        <div class="forum-thread-list">
+                        <div class="forum-thread-list" id="forumThreadList">
                             <!-- Thread Item 1 -->
                             <article class="forum-thread-item">
                                 <div class="forum-thread-item__header">
@@ -354,6 +365,13 @@
                                     </div>
                                 </div>
                             </article>
+                        </div>
+
+                        <!-- Search Empty State -->
+                        <div class="forum-empty-state" id="forumEmptyState">
+                            <i class="ri-search-line"></i>
+                            <p>Nəticə tapılmadı</p>
+                            <span id="forumEmptyStateQuery"></span>
                         </div>
 
                         <!-- Pagination -->

@@ -185,6 +185,69 @@ document.addEventListener('DOMContentLoaded', () => {
         tagElement?.remove();
     }
 
+    // ── Forum Search ──────────────────────────────────────────────────────────
+    const searchInput     = document.getElementById('forumSearchInput');
+    const searchClear     = document.getElementById('forumSearchClear');
+    const threadList      = document.getElementById('forumThreadList');
+    const emptyState      = document.getElementById('forumEmptyState');
+    const emptyStateQuery = document.getElementById('forumEmptyStateQuery');
+    const pagination      = threadList?.parentElement?.querySelector('.pagination');
+
+    const performSearch = (raw) => {
+        const q = raw.trim().toLowerCase();
+
+        // Toggle clear button
+        searchClear?.classList.toggle('visible', q.length > 0);
+
+        // Filter threads
+        const items = threadList?.querySelectorAll('.forum-thread-item') ?? [];
+        let visible = 0;
+
+        items.forEach(item => {
+            const title   = item.querySelector('.forum-thread-item__title')?.textContent.toLowerCase()       ?? '';
+            const excerpt = item.querySelector('.forum-thread-item__excerpt')?.textContent.toLowerCase()     ?? '';
+            const author  = item.querySelector('.forum-thread-item__author-name')?.textContent.toLowerCase() ?? '';
+            const tags    = Array.from(item.querySelectorAll('.forum-thread-item__tag'))
+                                .map(t => t.textContent.toLowerCase()).join(' ');
+
+            const match = !q || title.includes(q) || excerpt.includes(q) || author.includes(q) || tags.includes(q);
+            item.style.display = match ? '' : 'none';
+            if (match) visible++;
+        });
+
+        // Empty state
+        const noResults = visible === 0 && q.length > 0;
+        emptyState?.classList.toggle('visible', noResults);
+        if (emptyStateQuery) {
+            emptyStateQuery.innerHTML = noResults
+                ? `"<mark>${raw.trim()}</mark>" üçün heç bir nəticə tapılmadı`
+                : '';
+        }
+
+        // Hide pagination while searching
+        if (pagination) pagination.style.display = q ? 'none' : '';
+    };
+
+    let searchTimer;
+    searchInput?.addEventListener('input', function () {
+        clearTimeout(searchTimer);
+        searchTimer = setTimeout(() => performSearch(this.value), 220);
+    });
+
+    searchClear?.addEventListener('click', () => {
+        if (searchInput) searchInput.value = '';
+        performSearch('');
+        searchInput?.focus();
+    });
+
+    // Clear search on Escape when input is focused
+    searchInput?.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && searchInput.value) {
+            searchInput.value = '';
+            performSearch('');
+        }
+    });
+
     // ── Mobile Sidebar Drawer ──────────────────────────────────────────────────
     const sidebarToggle  = document.getElementById('sidebarToggle');
     const forumSidebar   = document.getElementById('forumSidebar');

@@ -19,7 +19,6 @@
     4. Improve text rendering
 */
 body {
-
   -webkit-font-smoothing: antialiased;
 }
 
@@ -228,7 +227,7 @@ a {
 
 html,
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: var(--fs-b2);
   line-height: var(--lh-b2);
   font-weight: var(--fw-regular);
@@ -315,7 +314,7 @@ body {
       display: inline-block;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -328,7 +327,7 @@ body {
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -501,7 +500,7 @@ body {
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -8px;
       left: 0;
@@ -2124,7 +2123,6 @@ body {
   }
 
   &--bordered {
-
     td,
     th {
       border: 1px solid var(--base-3);
@@ -2460,7 +2458,6 @@ body {
 }
 
 @keyframes bellShake {
-
   0%,
   100% {
     transform: scale(1.1) rotate(0deg);
@@ -2495,7 +2492,6 @@ body {
 }
 
 @keyframes shake {
-
   0%,
   100% {
     transform: translateX(0);
@@ -2547,35 +2543,35 @@ body {
     .swiper-slide {
       width: 210px;
 
-      &:nth-child(5n+1) {
+      &:nth-child(5n + 1) {
         .currency__slide__icon {
           background: var(--green-100);
           color: var(--green-700);
         }
       }
 
-      &:nth-child(5n+2) {
+      &:nth-child(5n + 2) {
         .currency__slide__icon {
           background: var(--blue-100);
           color: var(--blue-700);
         }
       }
 
-      &:nth-child(5n+3) {
+      &:nth-child(5n + 3) {
         .currency__slide__icon {
           background: var(--yellow-100);
           color: var(--yellow-700);
         }
       }
 
-      &:nth-child(5n+4) {
+      &:nth-child(5n + 4) {
         .currency__slide__icon {
           background: var(--orange-100);
           color: var(--orange-700);
         }
       }
 
-      &:nth-child(5n+5) {
+      &:nth-child(5n + 5) {
         .currency__slide__icon {
           background: var(--sky-blue-100);
           color: var(--sky-blue-700);
@@ -2610,31 +2606,31 @@ body {
     }
 
     .swiper-slide {
-      &:nth-child(5n+1) {
+      &:nth-child(5n + 1) {
         .subcategories__slide__icon {
           color: var(--green-500);
         }
       }
 
-      &:nth-child(5n+2) {
+      &:nth-child(5n + 2) {
         .subcategories__slide__icon {
           color: var(--blue-500);
         }
       }
 
-      &:nth-child(5n+3) {
+      &:nth-child(5n + 3) {
         .subcategories__slide__icon {
           color: var(--blue-500);
         }
       }
 
-      &:nth-child(5n+4) {
+      &:nth-child(5n + 4) {
         .subcategories__slide__icon {
           color: var(--purple-500);
         }
       }
 
-      &:nth-child(5n+5) {
+      &:nth-child(5n + 5) {
         .subcategories__slide__icon {
           color: var(--yellow-500);
         }
@@ -2709,7 +2705,6 @@ body {
   }
 
   &__item {
-
     &--has-submenu {
       .nav__arrow {
         font-size: 20px;
@@ -2736,7 +2731,7 @@ body {
     position: relative;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -3201,7 +3196,7 @@ body {
     cursor: pointer;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -3523,7 +3518,7 @@ body {
   cursor: pointer;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     opacity: 1;
@@ -3532,7 +3527,7 @@ body {
   }
 
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 164px;
     height: 164px;
@@ -3945,7 +3940,7 @@ body {
     gap: 4px;
 
     &::before {
-      content: '📝';
+      content: "📝";
       font-size: var(--fs-b4);
       line-height: var(--lh-b4);
     }
@@ -3954,7 +3949,6 @@ body {
 
 // News
 .news {
-
   &__slider {
     width: 100%;
 
@@ -4019,7 +4013,6 @@ body {
     height: 100%;
 
     &:hover {
-
       .news__slide__image img {
         transform: scale(1.1);
       }
@@ -4033,7 +4026,6 @@ body {
           opacity: 1;
         }
       }
-
     }
 
     &__image {
@@ -4060,7 +4052,7 @@ body {
       z-index: 2;
 
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -4072,7 +4064,7 @@ body {
       }
 
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -4190,7 +4182,7 @@ body {
     overflow: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -4349,7 +4341,6 @@ body {
 
 // Subcategories
 .subcategories {
-
   &__slider {
     position: relative;
     overflow: hidden;
@@ -4847,7 +4838,6 @@ body {
 
       li {
         margin-bottom: 8px;
-
       }
     }
 
@@ -4900,7 +4890,6 @@ body {
         }
       }
     }
-
   }
 
   &__share {
@@ -5151,7 +5140,6 @@ body {
     align-items: center;
     justify-content: flex-end;
   }
-
 }
 
 // Comment
@@ -5270,12 +5258,17 @@ body {
   cursor: pointer;
   transition: all 0.2s ease;
 
-  i { font-size: 18px; color: var(--base-11); }
+  i {
+    font-size: 18px;
+    color: var(--base-11);
+  }
 
   &:hover {
     background: var(--blue-500);
     border-color: var(--blue-500);
-    i { color: white; }
+    i {
+      color: white;
+    }
   }
 }
 
@@ -5286,7 +5279,9 @@ body {
 
 // Forum sidebar panel header & body (desktop: header hidden; body is just a flex wrapper)
 .forum-sidebar-panel {
-  &__header { display: none; }
+  &__header {
+    display: none;
+  }
 
   &__body {
     display: flex;
@@ -5411,7 +5406,6 @@ body {
       flex: 1;
     }
   }
-
 }
 
 // Game
@@ -5438,7 +5432,6 @@ body {
     border-radius: 12px;
     padding: 24px;
     transition: all 0.3s ease;
-
 
     &:hover {
       border-color: var(--blue-500);
@@ -6067,7 +6060,6 @@ body {
     color: var(--base-13);
     margin: 0 0 24px 0;
   }
-
 }
 
 .prayer-time-card {
@@ -6204,7 +6196,7 @@ body {
     overflow: hidden;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       bottom: 0;
       left: 0;
@@ -7693,8 +7685,8 @@ body {
   &__main {
     display: flex;
     flex-direction: column;
-    gap: 32px;
-    min-width: 0; // allow shrinking in grid so content doesn't overflow
+    gap: 24px;
+    min-width: 0;
   }
 
   &__sidebar {
@@ -7757,7 +7749,6 @@ body {
   }
 }
 
-
 // Comment Avatar Text (for initials)
 .comment__avatar-text {
   width: 100%;
@@ -7772,23 +7763,23 @@ body {
 }
 
 // Avatar color variants by position
-.comment:nth-child(4n+1) .comment__avatar-text,
-.forum-thread-item:nth-child(4n+1) .comment__avatar-text {
+.comment:nth-child(4n + 1) .comment__avatar-text,
+.forum-thread-item:nth-child(4n + 1) .comment__avatar-text {
   background: linear-gradient(135deg, var(--blue-500), var(--sky-blue-400));
 }
 
-.comment:nth-child(4n+2) .comment__avatar-text,
-.forum-thread-item:nth-child(4n+2) .comment__avatar-text {
+.comment:nth-child(4n + 2) .comment__avatar-text,
+.forum-thread-item:nth-child(4n + 2) .comment__avatar-text {
   background: linear-gradient(135deg, var(--pink-500), var(--pink-300));
 }
 
-.comment:nth-child(4n+3) .comment__avatar-text,
-.forum-thread-item:nth-child(4n+3) .comment__avatar-text {
+.comment:nth-child(4n + 3) .comment__avatar-text,
+.forum-thread-item:nth-child(4n + 3) .comment__avatar-text {
   background: linear-gradient(135deg, var(--green-700), var(--green-500));
 }
 
-.comment:nth-child(4n+4) .comment__avatar-text,
-.forum-thread-item:nth-child(4n+4) .comment__avatar-text {
+.comment:nth-child(4n + 4) .comment__avatar-text,
+.forum-thread-item:nth-child(4n + 4) .comment__avatar-text {
   background: linear-gradient(135deg, var(--orange-600), var(--orange-400));
 }
 
@@ -7876,12 +7867,20 @@ body {
       align-items: center;
       gap: 5px;
 
-      i { font-size: var(--fs-b3); }
+      i {
+        font-size: var(--fs-b3);
+      }
     }
 
-    .ri-thumb-up-line { color: var(--pink-400); }
-    .ri-eye-line      { color: var(--sky-blue-500); }
-    .ri-chat-3-line   { color: var(--green-600); }
+    .ri-thumb-up-line {
+      color: var(--pink-400);
+    }
+    .ri-eye-line {
+      color: var(--sky-blue-500);
+    }
+    .ri-chat-3-line {
+      color: var(--green-600);
+    }
   }
 }
 
@@ -7914,7 +7913,9 @@ body {
     background-color: var(--blue-500);
     color: white;
 
-    span { color: white; }
+    span {
+      color: white;
+    }
   }
 }
 
@@ -7972,23 +7973,47 @@ body {
 
   // Avtomobil - blue
   &:nth-child(1) {
-    i { color: var(--blue-500); }
-    &:hover { border-color: var(--blue-500); background-color: var(--blue-50); }
-    .forum-category__count { background-color: var(--blue-50); color: var(--blue-700); }
+    i {
+      color: var(--blue-500);
+    }
+    &:hover {
+      border-color: var(--blue-500);
+      background-color: var(--blue-50);
+    }
+    .forum-category__count {
+      background-color: var(--blue-50);
+      color: var(--blue-700);
+    }
   }
 
   // Temir ve Servis - orange
   &:nth-child(2) {
-    i { color: var(--orange-500); }
-    &:hover { border-color: var(--orange-500); background-color: var(--orange-50); }
-    .forum-category__count { background-color: var(--orange-50); color: var(--orange-700); }
+    i {
+      color: var(--orange-500);
+    }
+    &:hover {
+      border-color: var(--orange-500);
+      background-color: var(--orange-50);
+    }
+    .forum-category__count {
+      background-color: var(--orange-50);
+      color: var(--orange-700);
+    }
   }
 
   // Ehtiyat hissalari - green
   &:nth-child(3) {
-    i { color: var(--green-600); }
-    &:hover { border-color: var(--green-600); background-color: var(--green-50); }
-    .forum-category__count { background-color: var(--green-50); color: var(--green-700); }
+    i {
+      color: var(--green-600);
+    }
+    &:hover {
+      border-color: var(--green-600);
+      background-color: var(--green-50);
+    }
+    .forum-category__count {
+      background-color: var(--green-50);
+      color: var(--green-700);
+    }
   }
 }
 
@@ -8046,7 +8071,7 @@ body {
 
     i {
       font-size: 24px;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
     }
   }
 
@@ -8056,7 +8081,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     border: none;
     cursor: pointer;
     color: white;
@@ -8068,7 +8093,7 @@ body {
     }
 
     &:hover {
-      background: rgba(255,255,255,0.25);
+      background: rgba(255, 255, 255, 0.25);
     }
   }
 
@@ -8088,10 +8113,18 @@ body {
     border: 1px solid var(--base-4);
     border-radius: 12px;
     padding: 16px 20px;
-    &:nth-child(1) .form-label i { color: var(--blue-500); }
-    &:nth-child(2) .form-label i { color: var(--green-600); }
-    &:nth-child(3) .form-label i { color: var(--orange-500); }
-    &:nth-child(4) .form-label i { color: var(--sky-blue-600); }
+    &:nth-child(1) .form-label i {
+      color: var(--blue-500);
+    }
+    &:nth-child(2) .form-label i {
+      color: var(--green-600);
+    }
+    &:nth-child(3) .form-label i {
+      color: var(--orange-500);
+    }
+    &:nth-child(4) .form-label i {
+      color: var(--sky-blue-600);
+    }
 
     // submit button group - no bg card
     &:last-child {
@@ -8166,14 +8199,46 @@ body {
     cursor: pointer;
     transition: all 0.2s ease;
 
-    &:nth-child(8n+1):hover { background: var(--blue-50);     border-color: var(--blue-500);     color: var(--blue-700); }
-    &:nth-child(8n+2):hover { background: var(--pink-50);     border-color: var(--pink-500);     color: var(--pink-700); }
-    &:nth-child(8n+3):hover { background: var(--sky-blue-50); border-color: var(--sky-blue-500); color: var(--sky-blue-700); }
-    &:nth-child(8n+4):hover { background: var(--green-50);    border-color: var(--green-600);    color: var(--green-700); }
-    &:nth-child(8n+5):hover { background: var(--orange-50);   border-color: var(--orange-500);   color: var(--orange-700); }
-    &:nth-child(8n+6):hover { background: var(--red-50);      border-color: var(--red-500);      color: var(--red-700); }
-    &:nth-child(8n+7):hover { background: var(--blue-50);     border-color: var(--blue-600);     color: var(--blue-800); }
-    &:nth-child(8n+8):hover { background: var(--green-50);    border-color: var(--green-700);    color: var(--green-800); }
+    &:nth-child(8n + 1):hover {
+      background: var(--blue-50);
+      border-color: var(--blue-500);
+      color: var(--blue-700);
+    }
+    &:nth-child(8n + 2):hover {
+      background: var(--pink-50);
+      border-color: var(--pink-500);
+      color: var(--pink-700);
+    }
+    &:nth-child(8n + 3):hover {
+      background: var(--sky-blue-50);
+      border-color: var(--sky-blue-500);
+      color: var(--sky-blue-700);
+    }
+    &:nth-child(8n + 4):hover {
+      background: var(--green-50);
+      border-color: var(--green-600);
+      color: var(--green-700);
+    }
+    &:nth-child(8n + 5):hover {
+      background: var(--orange-50);
+      border-color: var(--orange-500);
+      color: var(--orange-700);
+    }
+    &:nth-child(8n + 6):hover {
+      background: var(--red-50);
+      border-color: var(--red-500);
+      color: var(--red-700);
+    }
+    &:nth-child(8n + 7):hover {
+      background: var(--blue-50);
+      border-color: var(--blue-600);
+      color: var(--blue-800);
+    }
+    &:nth-child(8n + 8):hover {
+      background: var(--green-50);
+      border-color: var(--green-700);
+      color: var(--green-800);
+    }
 
     &.selected {
       background-color: var(--blue-500);
@@ -8288,7 +8353,9 @@ body {
     background: var(--blue-500);
     border-color: var(--blue-500);
 
-    i { color: white; }
+    i {
+      color: white;
+    }
   }
 
   &__selected {
@@ -8299,14 +8366,120 @@ body {
   }
 }
 
-// Forum Filters
-// Desktop: styled box wrapping tabs; mobile: transparent flex-column container
-.forum-filters-wrapper {
-  background-color: var(--base-1);
-  border-radius: 16px;
-  padding: 16px;
-  border: 1px solid var(--base-4);
+// Forum Search
+.forum-search {
+  margin-bottom: 24px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--base-1);
+    border: 1.5px solid var(--base-4);
+    border-radius: 16px;
+    padding: 0 16px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus-within {
+      border-color: var(--blue-400);
+      box-shadow: 0 0 0 3px var(--blue-100);
+    }
+  }
+
+  &__icon {
+    font-size: 20px;
+    color: var(--base-7);
+    flex-shrink: 0;
+  }
+
+  &__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: var(--fs-b3);
+    color: var(--base-13);
+    padding: 14px 0;
+    font-family: inherit;
+
+    &::placeholder {
+      color: var(--base-7);
+    }
+  }
+
+  &__clear {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background: var(--base-3);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s ease;
+
+    i {
+      font-size: 15px;
+      color: var(--base-8);
+      line-height: 1;
+    }
+
+    &.visible {
+      display: flex;
+    }
+
+    &:hover {
+      background: var(--base-4);
+
+      i {
+        color: var(--base-11);
+      }
+    }
+  }
 }
+
+// Forum Search Empty State
+.forum-empty-state {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  gap: 10px;
+  text-align: center;
+
+  &.visible {
+    display: flex;
+  }
+
+  i {
+    font-size: 52px;
+    color: var(--base-5);
+    margin-bottom: 4px;
+  }
+
+  p {
+    font-size: var(--fs-b1);
+    font-weight: var(--fw-semi-bold);
+    color: var(--base-10);
+    margin: 0;
+  }
+
+  span {
+    font-size: var(--fs-b3);
+    color: var(--base-7);
+
+    mark {
+      background: none;
+      color: var(--blue-600);
+      font-weight: var(--fw-medium);
+    }
+  }
+}
+
+// Forum Filters
 
 // Desktop: hidden (mobile-only row)
 .forum-filters-row {
@@ -8352,13 +8525,17 @@ body {
 
   &__tabs {
     display: flex;
-    flex-wrap: wrap;
+    overflow: auto;
     gap: 12px;
   }
 
   &__tab {
     display: flex;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+    white-space: nowrap;
     gap: 8px;
     padding: 10px 20px;
     background: none;
@@ -8384,35 +8561,77 @@ body {
       border-color: var(--blue-500);
       color: white;
 
-      i { color: white; }
+      i {
+        color: white;
+      }
     }
 
     // fire = orange
     &:nth-child(1) {
-      i { color: var(--orange-500); }
-      &:hover { border-color: var(--orange-500); }
-      &.active { background-color: var(--orange-500); border-color: var(--orange-500); i { color: white; } }
+      i {
+        color: var(--orange-500);
+      }
+      &:hover {
+        border-color: var(--orange-500);
+      }
+      &.active {
+        background-color: var(--orange-500);
+        border-color: var(--orange-500);
+        i {
+          color: white;
+        }
+      }
     }
 
     // heart = pink
     &:nth-child(2) {
-      i { color: var(--pink-500); }
-      &:hover { border-color: var(--pink-500); }
-      &.active { background-color: var(--pink-500); border-color: var(--pink-500); i { color: white; } }
+      i {
+        color: var(--pink-500);
+      }
+      &:hover {
+        border-color: var(--pink-500);
+      }
+      &.active {
+        background-color: var(--pink-500);
+        border-color: var(--pink-500);
+        i {
+          color: white;
+        }
+      }
     }
 
     // chat = green
     &:nth-child(3) {
-      i { color: var(--green-600); }
-      &:hover { border-color: var(--green-600); }
-      &.active { background-color: var(--green-600); border-color: var(--green-600); i { color: white; } }
+      i {
+        color: var(--green-600);
+      }
+      &:hover {
+        border-color: var(--green-600);
+      }
+      &.active {
+        background-color: var(--green-600);
+        border-color: var(--green-600);
+        i {
+          color: white;
+        }
+      }
     }
 
     // checkbox = sky-blue
     &:nth-child(4) {
-      i { color: var(--sky-blue-600); }
-      &:hover { border-color: var(--sky-blue-600); }
-      &.active { background-color: var(--sky-blue-600); border-color: var(--sky-blue-600); i { color: white; } }
+      i {
+        color: var(--sky-blue-600);
+      }
+      &:hover {
+        border-color: var(--sky-blue-600);
+      }
+      &.active {
+        background-color: var(--sky-blue-600);
+        border-color: var(--sky-blue-600);
+        i {
+          color: white;
+        }
+      }
     }
   }
 }
@@ -8552,7 +8771,11 @@ body {
     transition: all 0.2s ease;
     border: 1px solid var(--base-4);
 
-    &:hover { background: var(--blue-500); color: white; border-color: var(--blue-500); }
+    &:hover {
+      background: var(--blue-500);
+      color: white;
+      border-color: var(--blue-500);
+    }
   }
 
   &__stats {
@@ -8597,12 +8820,17 @@ body {
 
       &:hover {
         color: var(--pink-600);
-        i { color: var(--pink-600); }
+        i {
+          color: var(--pink-600);
+        }
       }
 
       &.active {
         color: var(--pink-500);
-        i { color: var(--pink-500); font-weight: bold; }
+        i {
+          color: var(--pink-500);
+          font-weight: bold;
+        }
       }
     }
   }
@@ -8706,12 +8934,12 @@ body {
   }
 
   // First child spacing
-  >*:first-child {
+  > *:first-child {
     margin-top: 0;
   }
 
   // Last child spacing
-  >*:last-child {
+  > *:last-child {
     margin-bottom: 0;
   }
 }

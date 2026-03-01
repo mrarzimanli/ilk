@@ -78,7 +78,6 @@
 // MD: Medium Devices (< 768px - Tablets)
 // ============================================================================
 @media screen and (max-width: 767.98px) {
-
   // Forum Layout — single column, sidebar removed from flow (fixed drawer)
   .forum-layout {
     grid-template-columns: 1fr;
@@ -332,7 +331,7 @@
     }
   }
 
-  // Forum section: tighter padding, column header, full-width btn--md on mobile
+  // Forum section: mobile header with icon button on the right
   .section--forum-list {
     padding: 16px 0 24px;
 
@@ -343,10 +342,15 @@
 
     .section__header {
       text-align: left;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 12px;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 8px;
       margin-bottom: 16px;
+
+      .section__header__content {
+        flex: 1;
+        min-width: 0;
+      }
 
       .section__header__title::before,
       .section__header__title::after {
@@ -356,20 +360,29 @@
     }
 
     .section__header__actions {
-      width: 100%;
+      width: auto;
+      align-self: flex-start;
 
-      // Full-width btn--md sizing
+      // Icon-only "Yeni Sual" button on mobile
       .btn {
-        width: 100%;
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+        min-height: auto;
+        padding: 0;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
         justify-content: center;
-        padding: 10px 20px;
-        min-height: 44px;
-        font-size: var(--fs-b3);
-        line-height: var(--lh-b3);
-        border-radius: 12px;
+        gap: 0;
+        font-size: 0; // hide text spacing
 
         i {
           font-size: 20px;
+        }
+
+        span {
+          display: none;
         }
       }
     }
@@ -434,7 +447,6 @@
       }
 
       &--center {
-
         .section__header__title {
           max-width: 100%;
         }
@@ -742,7 +754,6 @@
         padding: 12px 16px 12px 28px;
         margin: 0;
         border-top: 1px solid var(--base-4);
-
 
         &:hover {
           transform: none;
@@ -1488,7 +1499,6 @@
 
     &__brand {
       .footer__logo {
-
         img,
         svg {
           height: 40px;
@@ -1717,7 +1727,6 @@
     gap: 24px;
 
     &-row {
-
       &--2,
       &--3,
       &--4 {
@@ -2912,7 +2921,6 @@
     border-radius: 14px;
 
     &-row {
-
       &--2,
       &--3,
       &--4 {
@@ -3444,6 +3452,33 @@
 
     &__stats {
       gap: 12px;
+    }
+  }
+
+  // Forum search: make input a bit shorter on small screens
+  .forum-search {
+    &__wrapper {
+      padding: 0 12px;
+      border-radius: 14px;
+      gap: 8px;
+    }
+
+    &__icon {
+      font-size: 18px;
+    }
+
+    &__input {
+      padding: 10px 0;
+      font-size: var(--fs-b4);
+    }
+
+    &__clear {
+      width: 24px;
+      height: 24px;
+
+      i {
+        font-size: 14px;
+      }
     }
   }
 
